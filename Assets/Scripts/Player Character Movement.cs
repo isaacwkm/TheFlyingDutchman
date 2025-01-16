@@ -11,7 +11,7 @@ public class PlayerCharacterMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
     [SerializeField] private float lookSpeed = 2f;
-    [SerializeField] private float lookXLimit = 45f;
+    [SerializeField] private float lookXLimit = 90f;
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchSpeed = 3f;
