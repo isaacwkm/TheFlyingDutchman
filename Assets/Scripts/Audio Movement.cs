@@ -2,13 +2,23 @@ using UnityEngine;
 
 public class FootstepSound : MonoBehaviour
 {
-    public AudioClip[] fallbackFootsteps; // Backup footsteps in case others fail
     public AudioClip[] grassFootsteps; // Footsteps for grass
     public AudioClip[] stoneFootsteps; // Footsteps for stone
-    public AudioClip[] woodFootsteps;  // Footsteps for wood (new type)
-    public AudioClip[] dirtFootsteps;  // Footsteps for dirt (new type)
+    public AudioClip[] woodFootsteps;  // Footsteps for wood
+    public AudioClip[] dirtFootsteps;  // Footsteps for dirt
+    public AudioClip[] fallbackFootsteps; // Backup footsteps in case others fail
+
+    // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
+    public float grassVolume = 1.0f;  // Grass footstep volume (default)
+    public float stoneVolume = 0.7f;  // Stone footstep volume (lower than grass)
+    public float woodVolume = 0.8f;   // Wood footstep volume
+    public float dirtVolume = 0.6f;   // Dirt footstep volume
+    public float fallbackVolume = 0.5f; // Volume for fallback footsteps
+
     public Transform footTransform;    // Reference to the foot or footstep GameObject
     public float walkSpeedThreshold = 0.1f; // Speed threshold to trigger footstep sound
+
+    private float footstepVolumeMultiplier = 0.03f; // Multiply all footstep sounds by this value to bring it to a background level.
     private AudioSource audioSource;
     private CharacterController characterController;
     private int lastFootstepIndex = -1;  // Track the last played footstep index
@@ -66,28 +76,34 @@ public class FootstepSound : MonoBehaviour
     {
         // Get the surface material or tag
         AudioClip[] footstepArray = null;
+        float volumeMultiplier = 1.0f; // Default volume multiplier
 
         // Floor types based on tags (add more floor types as needed)
         if (surface.CompareTag("Grass"))
         {
             footstepArray = grassFootsteps;
+            volumeMultiplier = grassVolume;  // Set volume for grass
         }
         else if (surface.CompareTag("Stone"))
         {
             footstepArray = stoneFootsteps;
+            volumeMultiplier = stoneVolume; // Set volume for stone
         }
         else if (surface.CompareTag("Wood"))
         {
             footstepArray = woodFootsteps;  // Wood footstep logic
+            volumeMultiplier = woodVolume;  // Set volume for wood
         }
         else if (surface.CompareTag("Dirt"))
         {
             footstepArray = dirtFootsteps;  // Dirt footstep logic
+            volumeMultiplier = dirtVolume;  // Set volume for dirt
         }
         else
         {
-            // Default to stone sound if no tag matches
+            // Default to fallback sound if no tag matches
             footstepArray = fallbackFootsteps;
+            volumeMultiplier = fallbackVolume; // Set volume for fallback
         }
 
         // Check if the footstep array is empty to avoid out-of-bounds errors
@@ -100,6 +116,8 @@ public class FootstepSound : MonoBehaviour
         // If only one sound is available, no need to repeat check
         if (footstepArray.Length == 1)
         {
+            // Apply volume multiplier when playing the single sound
+            audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
             return footstepArray[0]; // Always return the only sound in the array
         }
 
@@ -122,6 +140,9 @@ public class FootstepSound : MonoBehaviour
 
         // Update the last played footstep index
         lastFootstepIndex = randomIndex;
+
+        // Apply the volume multiplier for this footstep type
+        audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
 
         // Return the selected footstep sound
         return footstepArray[randomIndex];
