@@ -1,0 +1,129 @@
+using UnityEngine;
+
+public class FootstepSound : MonoBehaviour
+{
+    public AudioClip[] fallbackFootsteps; // Backup footsteps in case others fail
+    public AudioClip[] grassFootsteps; // Footsteps for grass
+    public AudioClip[] stoneFootsteps; // Footsteps for stone
+    public AudioClip[] woodFootsteps;  // Footsteps for wood (new type)
+    public AudioClip[] dirtFootsteps;  // Footsteps for dirt (new type)
+    public Transform footTransform;    // Reference to the foot or footstep GameObject
+    public float walkSpeedThreshold = 0.1f; // Speed threshold to trigger footstep sound
+    private AudioSource audioSource;
+    private CharacterController characterController;
+    private int lastFootstepIndex = -1;  // Track the last played footstep index
+    private int repeatCount = 0;         // Count how many times the same footstep has been played consecutively
+
+    private void Start()
+    {
+        audioSource = footTransform.GetComponent<AudioSource>(); // Get AudioSource on foot
+        characterController = GetComponent<CharacterController>();
+    }
+
+    private void Update()
+    {
+        // Check if the character is walking and grounded (not in mid-air)
+        if (characterController.isGrounded && characterController.velocity.magnitude > walkSpeedThreshold)
+        {
+            PlayFootstepSound();
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
+        // If audio is already playing, don't play again until the clip finishes
+        if (audioSource.isPlaying) return;
+
+        // Use a raycast to detect the ground material
+        RaycastHit hit;
+        if (Physics.Raycast(footTransform.position, Vector3.down, out hit, 1f))
+        {
+            // Select the appropriate sound based on the surface texture
+            AudioClip selectedFootstep = GetFootstepSoundBasedOnSurface(hit.collider.gameObject);
+
+            // If a valid sound is found, play it
+            if (selectedFootstep != null)
+            {
+                audioSource.PlayOneShot(selectedFootstep);
+            }
+            else
+            {
+                // If no valid sound was found, fall back to a default sound
+                Debug.LogWarning("No valid footstep sound found, falling back to default.");
+                if (fallbackFootsteps != null && fallbackFootsteps.Length > 0)
+                {
+                    audioSource.PlayOneShot(fallbackFootsteps[Random.Range(0, fallbackFootsteps.Length)]);
+                }
+                else
+                {
+                    Debug.LogWarning("Fallback sounds are also missing! Playing nothing.");
+                }
+            }
+        }
+    }
+
+    private AudioClip GetFootstepSoundBasedOnSurface(GameObject surface)
+    {
+        // Get the surface material or tag
+        AudioClip[] footstepArray = null;
+
+        // Floor types based on tags (add more floor types as needed)
+        if (surface.CompareTag("Grass"))
+        {
+            footstepArray = grassFootsteps;
+        }
+        else if (surface.CompareTag("Stone"))
+        {
+            footstepArray = stoneFootsteps;
+        }
+        else if (surface.CompareTag("Wood"))
+        {
+            footstepArray = woodFootsteps;  // Wood footstep logic
+        }
+        else if (surface.CompareTag("Dirt"))
+        {
+            footstepArray = dirtFootsteps;  // Dirt footstep logic
+        }
+        else
+        {
+            // Default to stone sound if no tag matches
+            footstepArray = fallbackFootsteps;
+        }
+
+        // Check if the footstep array is empty to avoid out-of-bounds errors
+        if (footstepArray == null || footstepArray.Length == 0)
+        {
+            Debug.LogWarning("Footstep array is empty for surface: " + surface.tag);
+            return null; // Return null if no valid audio clips are available
+        }
+
+        // If only one sound is available, no need to repeat check
+        if (footstepArray.Length == 1)
+        {
+            return footstepArray[0]; // Always return the only sound in the array
+        }
+
+        // Select a random footstep sound, ensuring it doesn't repeat more than twice
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, footstepArray.Length); // Randomly pick an index
+        } while (randomIndex == lastFootstepIndex && repeatCount >= 2); // Avoid repeating more than twice
+
+        // Update the repeat count and last footstep index
+        if (randomIndex == lastFootstepIndex)
+        {
+            repeatCount++;
+        }
+        else
+        {
+            repeatCount = 0; // Reset repeat count when a new sound is selected
+        }
+
+        // Update the last played footstep index
+        lastFootstepIndex = randomIndex;
+
+        // Return the selected footstep sound
+        return footstepArray[randomIndex];
+    }
+}
