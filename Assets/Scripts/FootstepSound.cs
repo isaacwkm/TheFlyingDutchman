@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class FootstepSound : MonoBehaviour
 {
+    public AudioClip[] fallbackFootsteps; // Backup footsteps in case others fail
     public AudioClip[] grassFootsteps; // Footsteps for grass
     public AudioClip[] stoneFootsteps; // Footsteps for stone
     public AudioClip[] woodFootsteps;  // Footsteps for wood
     public AudioClip[] dirtFootsteps;  // Footsteps for dirt
-    public AudioClip[] fallbackFootsteps; // Backup footsteps in case others fail
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
+    public float fallbackVolume = 0.5f; // Volume for fallback footsteps
     public float grassVolume = 1.0f;  // Grass footstep volume (default)
     public float stoneVolume = 0.7f;  // Stone footstep volume (lower than grass)
     public float woodVolume = 0.8f;   // Wood footstep volume
     public float dirtVolume = 0.6f;   // Dirt footstep volume
-    public float fallbackVolume = 0.5f; // Volume for fallback footsteps
 
     public Transform footTransform;    // Reference to the foot or footstep GameObject
     public float walkSpeedThreshold = 0.1f; // Speed threshold to trigger footstep sound
