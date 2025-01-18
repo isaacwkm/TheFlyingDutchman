@@ -1,3 +1,7 @@
+// This file moves the player, lets the player jump, fall, and look around.
+// This file is coupled with the Input Event Dispatcher script, which notifies this script to execute the desired movement.
+// In the observer pattern, this script is the subscriber. One of the publishers this script is subscribed to is the Input Event Dispatcher Script.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
