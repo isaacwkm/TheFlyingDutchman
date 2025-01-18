@@ -2901,9 +2901,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.217
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10474,8 +10474,8 @@ GameObject:
   - component: {fileID: 1110878439}
   - component: {fileID: 1110878438}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: GrassRoomMusicTrigger
+  m_TagString: MusicGrassroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10508,7 +10508,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110878437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10563,9 +10563,9 @@ Transform:
   m_GameObject: {fileID: 1110878437}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.01, y: -0.61, z: -1.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 40.64, y: 2.29, z: -0.69}
+  m_LocalScale: {x: 14.9, y: 14.9, z: 14.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11898,6 +11898,7 @@ GameObject:
   - component: {fileID: 1251019153}
   - component: {fileID: 1251019154}
   - component: {fileID: 1251019155}
+  - component: {fileID: 1251019156}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Untagged
@@ -12074,6 +12075,23 @@ MonoBehaviour:
   dirtVolume: 1
   footTransform: {fileID: 1137293833}
   walkSpeedThreshold: 0.1
+--- !u!114 &1251019156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251019148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3087bce10cd767348a7a799bf36a843b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallbackMusic: {fileID: 8300000, guid: cc92490387916aa4aa1471c56beeb65b, type: 3}
+  GrassRoomMusic: {fileID: 8300000, guid: a4bcb3cc00c607147b53e747d1171018, type: 3}
+  fallbackVolume: 0.2
+  grassRoomVolume: 0.2
+  listenerTransform: {fileID: 330585546}
 --- !u!4 &1267918087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7200927917085622770, guid: a84a636a35a83fe408bd4b3d8c2b8058, type: 3}
