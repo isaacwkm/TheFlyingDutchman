@@ -11,8 +11,9 @@ public class EnvMusic : MonoBehaviour
     public float grassRoomVolume = 0.2f;  // Grass music volume (default)
     public Transform listenerTransform;    // Reference to the camera that has the listener
     private CharacterController characterController;
-    private float volumeMultiplier = 0.03f; // Multiply all footstep sounds by this value to bring it to a background level.
+    private float targetVolume = 0.5f; // Bring all music volume towards this value.
     private AudioSource audioSource;
+    private float fadeDuration = 2;
     AudioClip selectedMusic;
 
     private void Start()
@@ -33,7 +34,9 @@ public class EnvMusic : MonoBehaviour
         if (selectedMusic != null && !audioSource.isPlaying)
         { // It won't play if an audio is not found, or it won't play if a music is already playing.
             audioSource.clip = selectedMusic;
+            audioSource.volume = 0;
             audioSource.Play();
+            StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, targetVolume));
         }
 
     }
@@ -44,7 +47,7 @@ public class EnvMusic : MonoBehaviour
         if (audioSource.clip == selectedMusic)
         { // It won't play if an audio is not found, or it won't play if a music is already playing.
             audioSource.clip = selectedMusic;
-            audioSource.Stop();
+            StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
         }
 
     }
