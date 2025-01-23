@@ -6,11 +6,13 @@ public class FlyingVehicle : MonoBehaviour
 {
     [SerializeField] private Interactable interactTarget;
     [SerializeField] private float linearAcceleration = 1.0f;
-    [SerializeField] private float angularAcceleration = 0.25f;
+    [SerializeField] private float angularAcceleration = 12.0f;
     [SerializeField] private float traction = 0.75f;
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobRange = 0.1f;
+    [SerializeField] private float vantage = 1.5f;
     private Camera playerCamera = null;
+    private Vector3 cameraInitialDisplacement;
     private Vector3 impetus = Vector3.zero;
     private float baseY;
     private float bobDirection = -1.0f;
@@ -62,6 +64,8 @@ public class FlyingVehicle : MonoBehaviour
             var pcm = player.GetComponent<PlayerCharacterMovement>();
             if (pcm) {
                 playerCamera = pcm.playerCamera;
+                cameraInitialDisplacement = playerCamera.transform.localPosition;
+                playerCamera.transform.localPosition += Vector3.up*vantage;
             } else {
                 playerCamera = null;
             }
@@ -70,6 +74,9 @@ public class FlyingVehicle : MonoBehaviour
 
     void RelinquishFocus(bool really = true) {
         if (really) {
+            if (playerCamera) {
+                playerCamera.transform.localPosition = cameraInitialDisplacement;
+            }
             InputEventDispatcher.OnInteractInput -= RelinquishFocus;
             InputEventDispatcher.OnMovementInput -= HandleMovementInput;
             InputEventDispatcher.relinquishInputFocus(this);
