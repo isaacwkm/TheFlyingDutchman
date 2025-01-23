@@ -5,14 +5,13 @@ using UnityEngine;
 public class FlyingVehicle : MonoBehaviour
 {
     [SerializeField] private Interactable interactTarget;
-    [SerializeField] private float linearAcceleration = 1.0f;
+    [SerializeField] private float linearAcceleration = 3.0f;
     [SerializeField] private float angularAcceleration = 12.0f;
     [SerializeField] private float traction = 0.75f;
     [SerializeField] private float bobSpeed = 1.0f;
-    [SerializeField] private float bobRange = 0.1f;
+    [SerializeField] private float bobRange = 1.0f;
     [SerializeField] private float vantage = 1.5f;
-    [SerializeField] private Rigidbody rudder;
-    [SerializeField] private Vector3 rudderAxis = Vector3.up;
+    [SerializeField] private HingeJoint rudder;
     [SerializeField] private float rudderSpin = 20.0f;
     private Camera playerCamera = null;
     private Vector3 cameraInitialDisplacement;
@@ -50,16 +49,18 @@ public class FlyingVehicle : MonoBehaviour
         if ((transform.position.y - baseY)/bobDirection > bobRange) {
             bobDirection = -bobDirection;
         }
-        rbody.AddTorque(transform.up*impetus.x*angularAcceleration*Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(transform.forward*impetus.z*linearAcceleration*Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(Vector3.up*bobSpeed*bobDirection*Time.deltaTime, ForceMode.Impulse);
+        rbody.AddTorque(transform.up*impetus.x*rbody.mass*angularAcceleration*Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(transform.forward*impetus.z*rbody.mass*linearAcceleration*Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(Vector3.up*rbody.mass*bobSpeed*bobDirection*Time.deltaTime, ForceMode.Impulse);
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
         );
         if (rudder) {
-            rudder.angularVelocity = rbody.angularVelocity.y*rudderAxis*rudderSpin;
+            var motor = rudder.motor;
+            motor.targetVelocity = rbody.angularVelocity.y*rudderSpin;
+            rudder.motor = motor;
         }
     }
 
