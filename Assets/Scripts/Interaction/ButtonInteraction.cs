@@ -4,6 +4,7 @@ public class ButtonInteraction : MonoBehaviour
 {
     [SerializeField] private Interactable interactTarget;
     [SerializeField] private GameObject buttonObj;
+    [SerializeField] private ButtonTask buttonTasksObj;
     
     // Class-specific
     public Vector3 pressOffset = new Vector3(0, 0, +0.1f); // Offset when pressed (relative to the button's original position)
@@ -36,8 +37,7 @@ public class ButtonInteraction : MonoBehaviour
     }
 
     void doButtonFunction(){
-        Debug.Log("Command Block: message");
-        // do whatever here
+        buttonTasksObj.doTasks();
     }
 
     void moveButton(GameObject button){
