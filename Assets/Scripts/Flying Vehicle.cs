@@ -11,6 +11,9 @@ public class FlyingVehicle : MonoBehaviour
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobRange = 0.1f;
     [SerializeField] private float vantage = 1.5f;
+    [SerializeField] private Rigidbody rudder;
+    [SerializeField] private Vector3 rudderAxis = Vector3.up;
+    [SerializeField] private float rudderSpin = 20.0f;
     private Camera playerCamera = null;
     private Vector3 cameraInitialDisplacement;
     private Vector3 impetus = Vector3.zero;
@@ -55,6 +58,9 @@ public class FlyingVehicle : MonoBehaviour
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
         );
+        if (rudder) {
+            rudder.angularVelocity = rbody.angularVelocity.y*rudderAxis*rudderSpin;
+        }
     }
 
     void TryAcquireFocus(GameObject player) {
