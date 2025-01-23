@@ -38632,30 +38632,14 @@ GameObject:
   - component: {fileID: 1242931192}
   - component: {fileID: 1242931191}
   - component: {fileID: 1242931190}
-  - component: {fileID: 1242931189}
   - component: {fileID: 1242931193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ship Physics Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1242931189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242931188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f786e34477cacfee5a393bed62322d69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1680856690}
-  linearOffset: {x: 0, y: -5.09, z: 5.53}
-  angularOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!114 &1242931190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38670,7 +38654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTarget: {fileID: 1734052715}
   linearAcceleration: 1
-  angularAcceleration: 0.25
+  angularAcceleration: 12
   traction: 0.75
   bobSpeed: 1
   bobRange: 0.1
@@ -38693,14 +38677,14 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &1242931192
 Transform:
   m_ObjectHideFlags: 0
@@ -38709,15 +38693,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242931188}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.58, y: -2.39, z: -23.56}
+  m_LocalRotation: {x: -0, y: 0.71158856, z: -0, w: 0.7025965}
+  m_LocalPosition: {x: -22.128166, y: -2.3900003, z: -55.35823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1882423699}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!65 &1242931193
-BoxCollider:
+  m_LocalEulerAnglesHint: {x: 0, y: 90.729, z: 0}
+--- !u!136 &1242931193
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38731,12 +38716,14 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 12.84, y: 28.775341, z: 38.316048}
-  m_Center: {x: -1.9387026e-15, y: 8.07267, z: 8.136422}
+  serializedVersion: 2
+  m_Radius: 6.130754
+  m_Height: 33.337173
+  m_Direction: 2
+  m_Center: {x: -1.3008705e-14, y: -1.315062, z: 4.9154053}
 --- !u!1001 &1244019013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38887,7 +38874,7 @@ GameObject:
   - component: {fileID: 1251019154}
   - component: {fileID: 1251019155}
   - component: {fileID: 1251019156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38978,15 +38965,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251019148}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.75983894, z: -0, w: 0.6501114}
-  m_LocalPosition: {x: 69.689606, y: 88.71954, z: -132.48721}
+  m_LocalRotation: {x: -0, y: 0.645267, z: -0, w: -0.76395714}
+  m_LocalPosition: {x: 71.54776, y: 88.71954, z: -163.29613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   - {fileID: 1137293833}
   m_Father: {fileID: 2147330302}
-  m_LocalEulerAnglesHint: {x: 0, y: 98.9, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 279.629, z: 0}
 --- !u!114 &1251019153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51233,8 +51220,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680856689}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.11, y: -7.48, z: -23.72}
+  m_LocalRotation: {x: -0, y: 0.9999798, z: -0, w: -0.0063583283}
+  m_LocalPosition: {x: -16.596575, y: -7.4800005, z: -55.268578}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -51252,7 +51239,7 @@ Transform:
   - {fileID: 372597375}
   - {fileID: 1450968509}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.729, z: 0}
 --- !u!4 &1682671730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8528820825029762706, guid: a05d4d94c1106004abcd87df4b8f1777, type: 3}
@@ -60369,6 +60356,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61bb62591466c3649bdf4905822d72f6, type: 3}
+--- !u!1 &1882423698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882423699}
+  - component: {fileID: 1882423700}
+  - component: {fileID: 1882423701}
+  m_Layer: 7
+  m_Name: Ship Transform Sync Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882423699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882423698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242931192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1882423700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882423698}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.84, y: 28.775341, z: 38.316048}
+  m_Center: {x: -1.9387026e-15, y: 8.07267, z: 8.136422}
+--- !u!114 &1882423701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882423698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f786e34477cacfee5a393bed62322d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1680856690}
+  linearOffset: {x: 0, y: -5.09, z: 5.53}
+  angularOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
 --- !u!4 &1883283211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010002477438, guid: 5ca4c580b3888314581688fa46fb142d, type: 3}

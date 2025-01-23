@@ -55,10 +55,10 @@ public class SyncTransform : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        if (
+        if (other.gameObject != this.gameObject && (
             other.GetComponent<Rigidbody>() ||
             other.GetComponent<CharacterController>()
-        ) {
+        )) {
             bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
         }
     }
