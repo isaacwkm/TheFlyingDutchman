@@ -59,7 +59,22 @@ public class SyncTransform : MonoBehaviour
             other.GetComponent<Rigidbody>() ||
             other.GetComponent<CharacterController>()
         )) {
-            bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
+            bool redundant = false;
+            Transform ancestor = other.transform.parent;
+            while (ancestor) {
+                if (
+                    ancestor.gameObject == this.gameObject ||
+                    ancestor.gameObject == target.gameObject
+                ) {
+                    redundant = true;
+                    break;
+                } else {
+                    ancestor = ancestor.parent;
+                }
+            }
+            if (!redundant) {
+                bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
+            }
         }
     }
 
