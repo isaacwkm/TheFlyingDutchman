@@ -38670,9 +38670,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTarget: {fileID: 1734052715}
   linearAcceleration: 1
-  linearDeceleration: 0.1
-  angularAcceleration: 1
-  angularDeceleration: 0.1
+  angularAcceleration: 0.25
+  traction: 0.75
   bobSpeed: 1
   bobRange: 0.1
 --- !u!54 &1242931191
@@ -38684,8 +38683,8 @@ Rigidbody:
   m_GameObject: {fileID: 1242931188}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -5,9 +6,8 @@ public class FlyingVehicle : MonoBehaviour
 {
     [SerializeField] private Interactable interactTarget;
     [SerializeField] private float linearAcceleration = 1.0f;
-    [SerializeField] private float linearDeceleration = 0.1f;
-    [SerializeField] private float angularAcceleration = 1.0f;
-    [SerializeField] private float angularDeceleration = 0.1f;
+    [SerializeField] private float angularAcceleration = 0.25f;
+    [SerializeField] private float traction = 0.75f;
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobRange = 0.1f;
     private Camera playerCamera = null;
@@ -48,6 +48,11 @@ public class FlyingVehicle : MonoBehaviour
         rbody.AddTorque(transform.up*impetus.x*angularAcceleration*Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(transform.forward*impetus.z*linearAcceleration*Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(Vector3.up*bobSpeed*bobDirection*Time.deltaTime, ForceMode.Impulse);
+        rbody.linearVelocity = Vector3.Lerp(
+            rbody.linearVelocity,
+            Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
+            1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
+        );
     }
 
     void TryAcquireFocus(GameObject player) {
