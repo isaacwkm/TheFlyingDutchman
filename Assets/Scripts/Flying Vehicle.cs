@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -50,7 +51,7 @@ public class FlyingVehicle : MonoBehaviour
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
-            traction
+            1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
         );
     }
 
