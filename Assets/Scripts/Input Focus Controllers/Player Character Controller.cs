@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerCharacterMovement : MonoBehaviour
+public class PlayerCharacterController : MonoBehaviour
 {
     public Camera playerCamera;
     [SerializeField] private float walkSpeed = 6f;
@@ -35,6 +35,8 @@ public class PlayerCharacterMovement : MonoBehaviour
         InputEventDispatcher.OnJumpInput += HandleJumpInput;
         InputEventDispatcher.OnCrouchInput += HandleCrouchInput;
         InputEventDispatcher.OnInteractInput += HandleInteractInput;
+        InputEventDispatcher.OnItemPrev += HandleItemPrevInput;
+        InputEventDispatcher.OnItemNext += HandleItemNextInput;
     }
 
     private void OnDisable()
@@ -43,6 +45,8 @@ public class PlayerCharacterMovement : MonoBehaviour
         InputEventDispatcher.OnJumpInput -= HandleJumpInput;
         InputEventDispatcher.OnCrouchInput -= HandleCrouchInput;
         InputEventDispatcher.OnInteractInput -= HandleInteractInput;
+        InputEventDispatcher.OnItemPrev -= HandleItemPrevInput;
+        InputEventDispatcher.OnItemNext -= HandleItemNextInput;
     }
 
     void Start()
@@ -129,6 +133,18 @@ public class PlayerCharacterMovement : MonoBehaviour
                     whom.receiveInteract(this.gameObject);
                 }
             }
+        }
+    }
+
+    private void HandleItemPrevInput(bool prevItem){
+        if (prevItem && InputEventDispatcher.holdsInputFocus(this)){
+
+        }
+    }
+
+    private void HandleItemNextInput(bool nextItem){
+        if (nextItem && InputEventDispatcher.holdsInputFocus(this)){
+
         }
     }
 }

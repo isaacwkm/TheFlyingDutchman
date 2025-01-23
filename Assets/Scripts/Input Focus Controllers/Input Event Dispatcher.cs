@@ -7,6 +7,8 @@ public class InputEventDispatcher : MonoBehaviour
     public static event Action<bool> OnJumpInput;
     public static event Action<bool> OnCrouchInput;
     public static event Action<bool> OnInteractInput;
+    public static event Action<bool> OnItemPrev;
+    public static event Action<bool> OnItemNext;
     private static GameObject inputFocusOwner = null;
 
     void Update()
@@ -36,6 +38,19 @@ public class InputEventDispatcher : MonoBehaviour
         } else if (Input.GetButtonUp("Interact")) {
             OnInteractInput?.Invoke(false);
         }
+
+        // Switch
+        if (Input.GetButtonDown("PrevItem")) {
+            OnItemPrev?.Invoke(true);
+        } else if (Input.GetButtonUp("PrevItem")) {
+            OnItemPrev?.Invoke(false);
+        }
+
+        if (Input.GetButtonDown("NextItem")) {
+            OnItemNext?.Invoke(true);
+        } else if (Input.GetButtonUp("NextItem")) {
+            OnItemNext?.Invoke(false);
+        }
     }
 
     public static bool acquireInputFocus(GameObject whom) {
@@ -56,7 +71,7 @@ public class InputEventDispatcher : MonoBehaviour
     public static bool holdsInputFocus(GameObject whom) {
         return inputFocusOwner == whom || (
             inputFocusOwner == null &&
-            whom.GetComponent<PlayerCharacterMovement>() != null
+            whom.GetComponent<PlayerCharacterController>() != null
         );
     }
 
