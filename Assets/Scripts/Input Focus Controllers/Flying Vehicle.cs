@@ -67,7 +67,7 @@ public class FlyingVehicle : MonoBehaviour
         if (InputEventDispatcher.acquireInputFocus(this)) {
             InputEventDispatcher.OnInteractInput += RelinquishFocus;
             InputEventDispatcher.OnMovementInput += HandleMovementInput;
-            var pcm = player.GetComponent<PlayerCharacterMovement>();
+            var pcm = player.GetComponent<PlayerCharacterController>();
             if (pcm) {
                 playerCamera = pcm.playerCamera;
                 cameraInitialDisplacement = playerCamera.transform.localPosition;
