@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class FlyingVehicle : MonoBehaviour
@@ -17,30 +18,49 @@ public class FlyingVehicle : MonoBehaviour
     private InputSystem_Actions inputActions;
     private Camera playerCamera = null;
     private Vector3 cameraInitialDisplacement;
+    private Vector2 xzMovementInput = Vector2.zero;
     private Vector3 impetus = Vector3.zero;
     private float baseY;
     private float bobDirection = -1.0f;
     private Rigidbody rbody;
 
+    // events
+    private System.Action<InputAction.CallbackContext> movePerformedAction;
+    private System.Action<InputAction.CallbackContext> moveCanceledAction;
+    private System.Action<InputAction.CallbackContext> interactPerformedAction;
+    private System.Action<InputAction.CallbackContext> jumpOffPerformedAction;
+
     void Awake()
     {
-        inputActions = new InputSystem_Actions();
+        inputActions = InputModeManager.Instance.inputActions;
     }
     void OnEnable()
     {
-        inputActions.Enable();
         rudderInteractTarget.OnInteract += doRudderInteraction;
 
-        // Bind actions to methods
-        //inputActions.Flying.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
-        //inputActions.Flying.Move.canceled += ctx => movementInput = Vector2.zero;
-        inputActions.Flying.Interact.performed += ctx => RelinquishFocus();
-        inputActions.Flying.Jump_Off.performed += ctx => RelinquishFocus();
+        inputActions.Flying.Enable();
+
+        // Bind actions to methods and store them
+        movePerformedAction = ctx => xzMovementInput = ctx.ReadValue<Vector2>();
+        moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
+        interactPerformedAction = ctx => RelinquishFocus();
+        jumpOffPerformedAction = ctx => RelinquishFocus();
+
+        inputActions.Flying.Move.performed += movePerformedAction;
+        inputActions.Flying.Move.canceled += moveCanceledAction;
+        inputActions.Flying.Interact.performed += interactPerformedAction;
+        inputActions.Flying.Jump_Off.performed += jumpOffPerformedAction;
     }
 
     void OnDisable()
     {
-        inputActions.Disable();
+        // Unbind actions using stored lambdas
+        inputActions.Flying.Move.performed -= movePerformedAction;
+        inputActions.Flying.Move.canceled -= moveCanceledAction;
+        inputActions.Flying.Interact.performed -= interactPerformedAction;
+        inputActions.Flying.Jump_Off.performed -= jumpOffPerformedAction;
+
+        inputActions.Flying.Disable();
         rudderInteractTarget.OnInteract -= doRudderInteraction;
     }
 
@@ -66,10 +86,14 @@ public class FlyingVehicle : MonoBehaviour
             playerCamera = null;
             impetus = Vector3.zero;
         }
+        // Bobbing
         if ((transform.position.y - baseY) / bobDirection > bobRange)
         {
             bobDirection = -bobDirection;
         }
+        // Handle movement inputs at current frame
+        HandleMovementInput(xzMovementInput);
+        // Apply Forces
         rbody.AddTorque(transform.up * impetus.x * rbody.mass * angularAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(transform.forward * impetus.z * rbody.mass * linearAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(Vector3.up * rbody.mass * bobSpeed * bobDirection * Time.deltaTime, ForceMode.Impulse);
@@ -78,6 +102,7 @@ public class FlyingVehicle : MonoBehaviour
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime * 60.0f)
         );
+        // Steering Wheel Animation
         if (rudder)
         {
             var motor = rudder.motor;

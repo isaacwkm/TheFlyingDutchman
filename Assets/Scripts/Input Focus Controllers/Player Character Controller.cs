@@ -27,38 +27,58 @@ public class PlayerCharacterController : MonoBehaviour
     private bool isJumping = false;
     private bool isCrouching = false;
 
+    private InputAction.CallbackContext movementInputCtx; // Added to store delegate
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        inputActions = new InputSystem_Actions();
+        inputActions = InputModeManager.Instance.inputActions;
     }
 
-    private void OnEnable()
-    {
-        inputActions.Enable();
+private void OnEnable()
+{
+    inputActions.Player.Enable();
 
-        // Bind actions to methods
-        inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
-        inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
+    // Bind actions to methods
+    inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+    inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
 
-        inputActions.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
-        inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+    inputActions.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+    inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
 
-        inputActions.Player.Jump.performed += ctx => isJumping = true;
-        inputActions.Player.Jump.canceled += ctx => isJumping = false;
+    inputActions.Player.Jump.performed += ctx => isJumping = true;
+    inputActions.Player.Jump.canceled += ctx => isJumping = false;
 
-        inputActions.Player.Crouch.performed += ctx => isCrouching = true;
-        inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
+    inputActions.Player.Crouch.performed += ctx => isCrouching = true;
+    inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
 
-        inputActions.Player.Interact.performed += ctx => HandleInteractInput();
-        inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
-        inputActions.Player.Next.performed += ctx => HandleItemNextInput();
-    }
+    inputActions.Player.Interact.performed += ctx => HandleInteractInput();
+    inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
+    inputActions.Player.Next.performed += ctx => HandleItemNextInput();
+}
 
-    private void OnDisable()
-    {
-        inputActions.Disable();
-    }
+private void OnDisable()
+{
+    // Unsubscribe from events to prevent memory leaks or unwanted behavior
+    inputActions.Player.Move.performed -= ctx => movementInput = ctx.ReadValue<Vector2>();
+    inputActions.Player.Move.canceled -= ctx => movementInput = Vector2.zero;
+
+    inputActions.Player.Look.performed -= ctx => lookInput = ctx.ReadValue<Vector2>();
+    inputActions.Player.Look.canceled -= ctx => lookInput = Vector2.zero;
+
+    inputActions.Player.Jump.performed -= ctx => isJumping = true;
+    inputActions.Player.Jump.canceled -= ctx => isJumping = false;
+
+    inputActions.Player.Crouch.performed -= ctx => isCrouching = true;
+    inputActions.Player.Crouch.canceled -= ctx => isCrouching = false;
+
+    inputActions.Player.Interact.performed -= ctx => HandleInteractInput();
+    inputActions.Player.Previous.performed -= ctx => HandleItemPrevInput();
+    inputActions.Player.Next.performed -= ctx => HandleItemNextInput();
+
+    inputActions.Player.Disable();
+}
+
 
     void Start()
     {
@@ -137,7 +157,8 @@ public class PlayerCharacterController : MonoBehaviour
 
     // Getters & Setters
 
-    public float getMaxInteractDistance(){
+    public float getMaxInteractDistance()
+    {
         return maxInteractDistance;
     }
 }
