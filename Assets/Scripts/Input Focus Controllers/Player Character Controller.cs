@@ -1,72 +1,85 @@
-// This file moves the player, lets the player jump, fall, and look around.
-// This file is coupled with the Input Event Dispatcher script, which notifies this script to execute the desired movement.
-// In the observer pattern, this script is the subscriber. One of the publishers this script is subscribed to is the Input Event Dispatcher Script.
-
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCharacterController : MonoBehaviour
 {
     public Camera playerCamera;
     [SerializeField] private float walkSpeed = 6f;
-    //[SerializeField] private float runSpeed = 12f;
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
-    [SerializeField] private float lookSpeed = 2f;
+    [SerializeField] private float lookSens = 1f;
+    private const float lookSpeedMult = 0.1F; // Constant multipler to make looking around feel natural at lookspeed = 1 (default setting for new players);
     [SerializeField] private float lookXLimit = 90f;
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchSpeed = 3f;
-    [SerializeField] private float maxInteractDistance = 3f;
+    [SerializeField] private float maxInteractDistance = 2f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
     private CharacterController characterController;
 
-    private Vector2 currentMovementInput;
+    private InputSystem_Actions inputActions;
+    private Vector2 movementInput;
+    private Vector2 lookInput;
     private bool isJumping = false;
     private bool isCrouching = false;
 
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        inputActions = new InputSystem_Actions();
+    }
+
     private void OnEnable()
     {
-        InputEventDispatcher.OnMovementInput += HandleMovementInput;
-        InputEventDispatcher.OnJumpInput += HandleJumpInput;
-        InputEventDispatcher.OnCrouchInput += HandleCrouchInput;
-        InputEventDispatcher.OnInteractInput += HandleInteractInput;
-        InputEventDispatcher.OnItemPrev += HandleItemPrevInput;
-        InputEventDispatcher.OnItemNext += HandleItemNextInput;
+        inputActions.Enable();
+
+        // Bind actions to methods
+        inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
+        inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
+
+        inputActions.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+        inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
+
+        inputActions.Player.Jump.performed += ctx => isJumping = true;
+        inputActions.Player.Jump.canceled += ctx => isJumping = false;
+
+        inputActions.Player.Crouch.performed += ctx => isCrouching = true;
+        inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
+
+        inputActions.Player.Interact.performed += ctx => HandleInteractInput();
+        inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
+        inputActions.Player.Next.performed += ctx => HandleItemNextInput();
     }
 
     private void OnDisable()
     {
-        InputEventDispatcher.OnMovementInput -= HandleMovementInput;
-        InputEventDispatcher.OnJumpInput -= HandleJumpInput;
-        InputEventDispatcher.OnCrouchInput -= HandleCrouchInput;
-        InputEventDispatcher.OnInteractInput -= HandleInteractInput;
-        InputEventDispatcher.OnItemPrev -= HandleItemPrevInput;
-        InputEventDispatcher.OnItemNext -= HandleItemNextInput;
+        inputActions.Disable();
     }
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update()
     {
+        MovePlayer();
+        HandleCameraRotation();
+    }
+
+    private void MovePlayer()
+    {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        float curSpeedX = 0.0f;
-        float curSpeedY = 0.0f;
-        if (InputEventDispatcher.holdsInputFocus(this)) {
-            curSpeedY = currentMovementInput.y * (isCrouching ? crouchSpeed : walkSpeed);
-            curSpeedX = currentMovementInput.x * (isCrouching ? crouchSpeed : walkSpeed);
-        }
+        float curSpeedX = movementInput.x * (isCrouching ? crouchSpeed : walkSpeed);
+        float curSpeedY = movementInput.y * (isCrouching ? crouchSpeed : walkSpeed);
+
         float movementDirectionY = moveDirection.y;
         moveDirection = (right * curSpeedX) + (forward * curSpeedY);
 
@@ -86,65 +99,45 @@ public class PlayerCharacterController : MonoBehaviour
 
         characterController.height = isCrouching ? crouchHeight : defaultHeight;
         characterController.Move(moveDirection * Time.deltaTime);
-
-        // Camera rotation
-        if (InputEventDispatcher.holdsInputFocus(this)) {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
     }
 
-    private void HandleMovementInput(Vector2 movement)
+    private void HandleCameraRotation()
     {
-        if (InputEventDispatcher.holdsInputFocus(this)) {
-            currentMovementInput = movement;
-        } else {
-            currentMovementInput = Vector2.zero;
-        }
+        float lookSpeed = lookSens * lookSpeedMult;
+        rotationX += -lookInput.y * lookSens * lookSpeedMult;
+        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSens * lookSpeedMult, 0);
     }
 
-    private void HandleJumpInput(bool jump)
+    private void HandleInteractInput()
     {
-        if (InputEventDispatcher.holdsInputFocus(this)) {
-            isJumping = jump;
-        } else {
-            isJumping = false;
-        }
-    }
-
-    private void HandleCrouchInput(bool crouch)
-    {
-        if (InputEventDispatcher.holdsInputFocus(this)) {
-            isCrouching = crouch;
-        } else {
-            isCrouching = false;
-        }
-    }
-
-    private void HandleInteractInput(bool interact) {
-        if (interact && InputEventDispatcher.holdsInputFocus(this)) {
-            Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && hit.distance <= maxInteractDistance) {
-                Interactable whom = hit.collider.GetComponent<Interactable>();
-                if (whom) {
-                    whom.receiveInteract(this.gameObject);
-                }
+        //Debug.Log("HandleInteractInput()");
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out RaycastHit hit, maxInteractDistance))
+        {
+            Interactable whom = hit.collider.GetComponent<Interactable>();
+            if (whom)
+            {
+                whom.receiveInteract(this.gameObject);
             }
         }
     }
 
-    private void HandleItemPrevInput(bool prevItem){
-        if (prevItem && InputEventDispatcher.holdsInputFocus(this)){
-
-        }
+    private void HandleItemPrevInput()
+    {
+        Debug.Log("Previous item selected");
     }
 
-    private void HandleItemNextInput(bool nextItem){
-        if (nextItem && InputEventDispatcher.holdsInputFocus(this)){
+    private void HandleItemNextInput()
+    {
+        Debug.Log("Next item selected");
+    }
 
-        }
+
+    // Getters & Setters
+
+    public float getMaxInteractDistance(){
+        return maxInteractDistance;
     }
 }

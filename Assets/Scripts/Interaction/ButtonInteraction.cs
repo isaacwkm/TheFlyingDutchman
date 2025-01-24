@@ -29,8 +29,10 @@ public class ButtonInteraction : MonoBehaviour
     }
 
     void DoInteraction(GameObject player){ // gameObject player = reference to the player that interacted with button
-
-    interactTarget.OnInteract -= DoInteraction;
+    //Debug.Log("DoInteraction()");
+    if (!interactTarget.isActiveAndEnabled) return;
+    
+    interactTarget.enabled = false;
     moveButton(buttonObj);
     doButtonFunction();
         
@@ -58,7 +60,7 @@ public class ButtonInteraction : MonoBehaviour
         buttonObj.transform.localPosition = originalPosition;
 
         // Allow button to be interacted with again
-        interactTarget.OnInteract += DoInteraction;
+        interactTarget.enabled = true;
     }
 
     // Update is called once per frame
