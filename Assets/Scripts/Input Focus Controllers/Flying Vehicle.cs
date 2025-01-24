@@ -1,101 +1,102 @@
-using System;
-using UnityEngine;
+// using System;
+// using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class FlyingVehicle : MonoBehaviour
-{
-    [SerializeField] private Interactable interactTarget;
-    [SerializeField] private float linearAcceleration = 3.0f;
-    [SerializeField] private float angularAcceleration = 12.0f;
-    [SerializeField] private float traction = 0.75f;
-    [SerializeField] private float bobSpeed = 1.0f;
-    [SerializeField] private float bobRange = 1.0f;
-    [SerializeField] private float vantage = 1.5f;
-    [SerializeField] private HingeJoint rudder;
-    [SerializeField] private float rudderSpin = 20.0f;
-    private Camera playerCamera = null;
-    private Vector3 cameraInitialDisplacement;
-    private Vector3 impetus = Vector3.zero;
-    private float baseY;
-    private float bobDirection = -1.0f;
-    private Rigidbody rbody;
+// [RequireComponent(typeof(Rigidbody))]
+// public class FlyingVehicle : MonoBehaviour
+// {
+//     [SerializeField] private Interactable interactTarget;
+//     [SerializeField] private InputModeManager inputMode;
+//     [SerializeField] private float linearAcceleration = 3.0f;
+//     [SerializeField] private float angularAcceleration = 12.0f;
+//     [SerializeField] private float traction = 0.75f;
+//     [SerializeField] private float bobSpeed = 1.0f;
+//     [SerializeField] private float bobRange = 1.0f;
+//     [SerializeField] private float vantage = 1.5f;
+//     [SerializeField] private HingeJoint rudder;
+//     [SerializeField] private float rudderSpin = 20.0f;
+//     private Camera playerCamera = null;
+//     private Vector3 cameraInitialDisplacement;
+//     private Vector3 impetus = Vector3.zero;
+//     private float baseY;
+//     private float bobDirection = -1.0f;
+//     private Rigidbody rbody;
 
-    void OnEnable() {
-        interactTarget.OnInteract += TryAcquireFocus;
-    }
+//     void OnEnable() {
+//         interactTarget.OnInteract += TryAcquireFocus;
+//     }
 
-    void OnDisable() {
-        interactTarget.OnInteract -= TryAcquireFocus;
-    }
+//     void OnDisable() {
+//         interactTarget.OnInteract -= TryAcquireFocus;
+//     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        baseY = transform.position.y;
-        rbody = GetComponent<Rigidbody>();
-    }
+//     // Start is called once before the first execution of Update after the MonoBehaviour is created
+//     void Start()
+//     {
+//         baseY = transform.position.y;
+//         rbody = GetComponent<Rigidbody>();
+//     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Operating()) {
-            if (playerCamera) {
-                playerCamera.transform.rotation = transform.rotation;
-            }
-        } else {
-            playerCamera = null;
-            impetus = Vector3.zero;
-        }
-        if ((transform.position.y - baseY)/bobDirection > bobRange) {
-            bobDirection = -bobDirection;
-        }
-        rbody.AddTorque(transform.up*impetus.x*rbody.mass*angularAcceleration*Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(transform.forward*impetus.z*rbody.mass*linearAcceleration*Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(Vector3.up*rbody.mass*bobSpeed*bobDirection*Time.deltaTime, ForceMode.Impulse);
-        rbody.linearVelocity = Vector3.Lerp(
-            rbody.linearVelocity,
-            Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
-            1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
-        );
-        if (rudder) {
-            var motor = rudder.motor;
-            motor.targetVelocity = rbody.angularVelocity.y*rudderSpin;
-            rudder.motor = motor;
-        }
-    }
+//     // Update is called once per frame
+//     void Update()
+//     {
+//         if (Operating()) {
+//             if (playerCamera) {
+//                 playerCamera.transform.rotation = transform.rotation;
+//             }
+//         } else {
+//             playerCamera = null;
+//             impetus = Vector3.zero;
+//         }
+//         if ((transform.position.y - baseY)/bobDirection > bobRange) {
+//             bobDirection = -bobDirection;
+//         }
+//         rbody.AddTorque(transform.up*impetus.x*rbody.mass*angularAcceleration*Time.deltaTime, ForceMode.Impulse);
+//         rbody.AddForce(transform.forward*impetus.z*rbody.mass*linearAcceleration*Time.deltaTime, ForceMode.Impulse);
+//         rbody.AddForce(Vector3.up*rbody.mass*bobSpeed*bobDirection*Time.deltaTime, ForceMode.Impulse);
+//         rbody.linearVelocity = Vector3.Lerp(
+//             rbody.linearVelocity,
+//             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
+//             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime*60.0f)
+//         );
+//         if (rudder) {
+//             var motor = rudder.motor;
+//             motor.targetVelocity = rbody.angularVelocity.y*rudderSpin;
+//             rudder.motor = motor;
+//         }
+//     }
 
-    void TryAcquireFocus(GameObject player) {
-        if (InputEventDispatcher.acquireInputFocus(this)) {
-            InputEventDispatcher.OnInteractInput += RelinquishFocus;
-            InputEventDispatcher.OnMovementInput += HandleMovementInput;
-            var pcm = player.GetComponent<PlayerCharacterController>();
-            if (pcm) {
-                playerCamera = pcm.playerCamera;
-                cameraInitialDisplacement = playerCamera.transform.localPosition;
-                playerCamera.transform.localPosition += Vector3.up*vantage;
-            } else {
-                playerCamera = null;
-            }
-        }
-    }
+//     void TryAcquireFocus(GameObject player) {
+//         if (InputEventDispatcher.acquireInputFocus(this)) {
+//             InputEventDispatcher.OnInteractInput += RelinquishFocus;
+//             InputEventDispatcher.OnMovementInput += HandleMovementInput;
+//             var pcm = player.GetComponent<PlayerCharacterController>();
+//             if (pcm) {
+//                 playerCamera = pcm.playerCamera;
+//                 cameraInitialDisplacement = playerCamera.transform.localPosition;
+//                 playerCamera.transform.localPosition += Vector3.up*vantage;
+//             } else {
+//                 playerCamera = null;
+//             }
+//         }
+//     }
 
-    void RelinquishFocus(bool really = true) {
-        if (really) {
-            if (playerCamera) {
-                playerCamera.transform.localPosition = cameraInitialDisplacement;
-            }
-            InputEventDispatcher.OnInteractInput -= RelinquishFocus;
-            InputEventDispatcher.OnMovementInput -= HandleMovementInput;
-            InputEventDispatcher.relinquishInputFocus(this);
-        }
-    }
+//     void RelinquishFocus(bool really = true) {
+//         if (really) {
+//             if (playerCamera) {
+//                 playerCamera.transform.localPosition = cameraInitialDisplacement;
+//             }
+//             InputEventDispatcher.OnInteractInput -= RelinquishFocus;
+//             InputEventDispatcher.OnMovementInput -= HandleMovementInput;
+//             InputEventDispatcher.relinquishInputFocus(this);
+//         }
+//     }
 
-    public bool Operating() {
-        return InputEventDispatcher.holdsInputFocus(this);
-    }
+//     public bool Operating() {
+//         return InputEventDispatcher.holdsInputFocus(this);
+//     }
 
-    void HandleMovementInput(Vector2 movement) {
-        impetus.x = movement.x;
-        impetus.z = movement.y;
-    }
-}
+//     void HandleMovementInput(Vector2 movement) {
+//         impetus.x = movement.x;
+//         impetus.z = movement.y;
+//     }
+// }

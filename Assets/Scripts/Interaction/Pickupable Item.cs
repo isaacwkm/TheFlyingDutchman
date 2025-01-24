@@ -25,7 +25,6 @@ public class PickupableItem : MonoBehaviour
 
     void pickUp(GameObject player){
         inventorySystem.attemptPickup(this.gameObject);
-        
     }
 
     // Update is called once per frame
