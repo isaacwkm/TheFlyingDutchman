@@ -38819,7 +38819,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f7c62bab955832813dfc2af1987e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactTarget: {fileID: 1734052715}
+  rudderInteractTarget: {fileID: 1734052715}
+  inputMode: {fileID: 1251019158}
   linearAcceleration: 3
   angularAcceleration: 12
   traction: 0.75
@@ -38828,12 +38829,6 @@ MonoBehaviour:
   vantage: 1.5
   rudder: {fileID: 1734052719}
   rudderSpin: 2000
-  playerCamera: {fileID: 0}
-  cameraInitialDisplacement: {x: 0, y: 0, z: 0}
-  impetus: {x: 0, y: 0, z: 0}
-  baseY: 0
-  bobDirection: -1
-  rbody: {fileID: 0}
 --- !u!54 &1242931191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39289,6 +39284,7 @@ MonoBehaviour:
   playerController: {fileID: 1251019153}
   cameraObj: {fileID: 330585543}
   tooltipText: {fileID: 1841002823}
+  crosshair: {fileID: 1012691807}
 --- !u!1001 &1253140309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43218,7 +43214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: 
+  actionText: Open/Close
 --- !u!4 &1458528059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4196278371253528, guid: a53fe34087284794dbe0aad895670634, type: 3}
@@ -45664,7 +45660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: 
+  actionText: Open/Close
 --- !u!59 &1575289576
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -52518,7 +52514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: 
+  actionText: Pilot Ship
 --- !u!59 &1734052719
 HingeJoint:
   m_ObjectHideFlags: 0
