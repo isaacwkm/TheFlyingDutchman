@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class FlyingVehicle : MonoBehaviour
 {
     [SerializeField] private Interactable rudderInteractTarget;
-    [SerializeField] private InputModeManager inputMode;
+    [SerializeField] private Transform rudderHelmSeat; // The seat location for the player
+    [SerializeField] private Transform sceneCore; // return the player here after un-parenting
     [SerializeField] private float linearAcceleration = 3.0f;
     [SerializeField] private float angularAcceleration = 12.0f;
     [SerializeField] private float traction = 0.75f;
@@ -15,6 +16,7 @@ public class FlyingVehicle : MonoBehaviour
     [SerializeField] private float vantage = 1.5f;
     [SerializeField] private HingeJoint rudder;
     [SerializeField] private float rudderSpin = 20.0f;
+    private InputModeManager inputMan;
     private InputSystem_Actions inputActions;
     private Camera playerCamera = null;
     private Vector3 cameraInitialDisplacement;
@@ -23,6 +25,7 @@ public class FlyingVehicle : MonoBehaviour
     private float baseY;
     private float bobDirection = -1.0f;
     private Rigidbody rbody;
+    private GameObject currentPlayer = null;
 
     // events
     private System.Action<InputAction.CallbackContext> movePerformedAction;
@@ -32,19 +35,18 @@ public class FlyingVehicle : MonoBehaviour
 
     void Awake()
     {
+        inputMan = InputModeManager.Instance;
         inputActions = InputModeManager.Instance.inputActions;
     }
     void OnEnable()
     {
         rudderInteractTarget.OnInteract += doRudderInteraction;
 
-        inputActions.Flying.Enable();
-
         // Bind actions to methods and store them
         movePerformedAction = ctx => xzMovementInput = ctx.ReadValue<Vector2>();
         moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
-        interactPerformedAction = ctx => RelinquishFocus();
-        jumpOffPerformedAction = ctx => RelinquishFocus();
+        interactPerformedAction = ctx => RelinquishFocus(currentPlayer);
+        jumpOffPerformedAction = ctx => RelinquishFocus(currentPlayer);
 
         inputActions.Flying.Move.performed += movePerformedAction;
         inputActions.Flying.Move.canceled += moveCanceledAction;
@@ -113,13 +115,20 @@ public class FlyingVehicle : MonoBehaviour
 
     void doRudderInteraction(GameObject player)
     {
-        inputMode.SwitchToShipControls();
+        inputMan.SwitchToShipControls();
         var pcm = player.GetComponent<PlayerCharacterController>();
         if (pcm)
         {
+            // Snap the player to the rudderHelmSeat position and rotation
+            currentPlayer = player;
+            currentPlayer.transform.position = rudderHelmSeat.position;
+            currentPlayer.transform.SetParent(rudderHelmSeat); // Parent the player to the rudderHelmSeat
+
+            // Raise the camera
             playerCamera = pcm.playerCamera;
             cameraInitialDisplacement = playerCamera.transform.localPosition;
             playerCamera.transform.localPosition += Vector3.up * vantage;
+
         }
         else
         {
@@ -127,13 +136,14 @@ public class FlyingVehicle : MonoBehaviour
         }
     }
 
-    void RelinquishFocus()
+    private void RelinquishFocus(GameObject player)
     {
         if (playerCamera)
         {
             playerCamera.transform.localPosition = cameraInitialDisplacement;
         }
-        inputMode.SwitchToPlayerControls();
+        player.transform.SetParent(sceneCore); // Parent the player to the rudderHelmSeat
+        inputMan.SwitchToPlayerControls();
     }
 
     public bool Operating()

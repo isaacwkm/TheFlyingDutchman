@@ -33,7 +33,8 @@ public class InputModeManager : MonoBehaviour
 
     private void OnEnable()
     {
-        inputActions.Enable();
+        inputActions.Disable();
+        SwitchToPlayerControls();
     }
 
     private void OnDisable()
