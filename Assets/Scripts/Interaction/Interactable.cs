@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] private string actionText = "Interact";
     public event Action<GameObject> OnInteract;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +18,11 @@ public class Interactable : MonoBehaviour
         
     }
 
+    public string peekActionText(){
+        return actionText;
+    }
     public void receiveInteract(GameObject whom) {
+        // Debug.Log("receiveInteract()");
         OnInteract?.Invoke(whom);
     }
 }

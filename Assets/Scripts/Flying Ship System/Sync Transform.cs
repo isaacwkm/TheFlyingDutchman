@@ -18,23 +18,35 @@ public class SyncTransform : MonoBehaviour
             characterController = gameObject.GetComponent<CharacterController>();
             relPosn = Vector3.zero;
         }
-        public void setPosition(Vector3 what) {
-            if (characterController) characterController.enabled = false;
-            transform.position = what;
-            if (rigidbody) rigidbody.position = what;
-            if (characterController) characterController.enabled = true;
+        public void setPhysicsEnabled(bool whether) {
+            if (characterController) characterController.enabled = whether;
+            if (rigidbody) {
+                if (whether) {
+                    rigidbody.Sleep();
+                } else {
+                    rigidbody.WakeUp();
+                }
+            }
+        }
+        public void setPosition(Vector3 where) {
+            transform.position = where;
+            if (rigidbody) rigidbody.position = where;
         }
     }
 
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 linearOffset;
     [SerializeField] private Quaternion angularOffset;
+    [SerializeField] private GameObject[] initialBodiesInfluenced;
     private List<BodyInfluenced> bodiesInfluenced;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bodiesInfluenced = new List<BodyInfluenced>();
+        foreach (var other in initialBodiesInfluenced) {
+            bodiesInfluenced.Add(new BodyInfluenced(other));
+        }
     }
 
     // Update is called once per frame
@@ -50,7 +62,9 @@ public class SyncTransform : MonoBehaviour
             linearOffset.z*transform.forward
         );
         foreach (var body in bodiesInfluenced) {
+            body.setPhysicsEnabled(false);
             body.setPosition(target.TransformPoint(body.relPosn));
+            body.setPhysicsEnabled(true);
         }
     }
 
@@ -59,22 +73,7 @@ public class SyncTransform : MonoBehaviour
             other.GetComponent<Rigidbody>() ||
             other.GetComponent<CharacterController>()
         )) {
-            bool redundant = false;
-            Transform ancestor = other.transform.parent;
-            while (ancestor) {
-                if (
-                    ancestor.gameObject == this.gameObject ||
-                    ancestor.gameObject == target.gameObject
-                ) {
-                    redundant = true;
-                    break;
-                } else {
-                    ancestor = ancestor.parent;
-                }
-            }
-            if (!redundant) {
-                bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
-            }
+            bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
         }
     }
 
