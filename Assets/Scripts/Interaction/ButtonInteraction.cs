@@ -4,7 +4,7 @@ public class ButtonInteraction : MonoBehaviour
 {
     [SerializeField] private Interactable interactTarget;
     [SerializeField] private GameObject buttonObj;
-    [SerializeField] private ButtonTask buttonTasksObj;
+    [SerializeField] private TaskExecutor taskList;
     
     // Class-specific
     public Vector3 pressOffset = new Vector3(0, 0, +0.1f); // Offset when pressed (relative to the button's original position)
@@ -34,12 +34,12 @@ public class ButtonInteraction : MonoBehaviour
     
     interactTarget.enabled = false;
     moveButton(buttonObj);
-    doButtonFunction();
+    doButtonFunction(player);
         
     }
 
-    void doButtonFunction(){
-        buttonTasksObj.doTasks();
+    void doButtonFunction(GameObject player){
+        taskList.ExecuteAllCommands(player);
     }
 
     void moveButton(GameObject button){
