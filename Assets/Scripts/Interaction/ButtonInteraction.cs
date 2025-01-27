@@ -15,10 +15,12 @@ public class ButtonInteraction : MonoBehaviour
 
     void OnEnable() {
         interactTarget.OnInteract += DoInteraction;
+        interactTarget.OffInteract += ReturnButton;
     }
 
     void OnDisable() {
         interactTarget.OnInteract -= DoInteraction;
+        interactTarget.OffInteract -= ReturnButton;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,26 +39,17 @@ public class ButtonInteraction : MonoBehaviour
     doButtonFunction(player);
         
     }
-
     void doButtonFunction(GameObject player){
-        AudioManager.Instance.PlaySound(gameObject);
         taskList.ExecuteAllCommands(player);
     }
 
     void moveButton(GameObject button){
-
-        // Start the press animation
-        StartCoroutine(PressAnimation());
-    }
-
-    private System.Collections.IEnumerator PressAnimation()
-    {
         // Move the button to the "pressed" position
         buttonObj.transform.localPosition = originalPosition + pressOffset;
+    }
 
-        // Wait for the duration
-        yield return new WaitForSeconds(pressDuration);
-
+    void ReturnButton(GameObject player)
+    {
         // Return the button to its original position
         buttonObj.transform.localPosition = originalPosition;
 
