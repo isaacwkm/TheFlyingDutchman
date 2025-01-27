@@ -23,15 +23,15 @@ public class SingleSoundComponent : MonoBehaviour
     }
 
     /// Plays a specific sound clip from the list by index.
-    public void PlaySoundAtIndex(int clipIndex)
+    public void PlaySingleAtIndex(int clipIndex)
     {
-        AudioManager.Instance.PlaySoundAt(this, clipIndex);
+        AudioManager.Instance.PlaySingleSoundAt(this, clipIndex);
     }
 
 
     /// Plays a random sound clip from the list.
-    public int PlaySoundRandom()
+    public int PlaySingleRandom()
     {
-        return AudioManager.Instance.PlayRandomSound(this);
+        return AudioManager.Instance.PlayRandomSingleSound(this);
     }
 }

@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Plays a specific sound clip from a SingleSound component by index.
-    public void PlaySoundAt(SingleSoundComponent sound, int clipIndex)
+    public void PlaySingleSoundAt(SingleSoundComponent sound, int clipIndex)
     {
         if (sound == null)
         {
@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Plays a random sound clip from a SingleSound component.
-    public int PlayRandomSound(SingleSoundComponent sound)
+    public int PlayRandomSingleSound(SingleSoundComponent sound)
     {
         if (sound == null)
         {

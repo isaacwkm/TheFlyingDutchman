@@ -41,7 +41,7 @@ public class Interactable : MonoBehaviour
         if (interactSound == null) return;
 
         Debug.Log("Playing button sound");
-        interactSound.PlaySoundRandom();
+        interactSound.PlaySingleRandom();
     }
 
     private System.Collections.IEnumerator InteractCooldown(GameObject whom) // Whom = the player who initially interacted with object
@@ -51,7 +51,7 @@ public class Interactable : MonoBehaviour
 
         // Play any sound effects associated with animation end
         if (CooldownReturnSound != null)
-        CooldownReturnSound.PlaySoundRandom();
+        CooldownReturnSound.PlaySingleRandom();
 
         // Send out an event
         OffInteract?.Invoke(whom);
