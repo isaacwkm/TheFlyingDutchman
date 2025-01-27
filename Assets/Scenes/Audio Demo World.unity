@@ -4747,10 +4747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af380c655ab5a7d448d413ad18810416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - clip: {fileID: 0}
-    volume: 0
-    pitch: 0
 --- !u!1001 &387947999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11554,6 +11550,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 922924961706154322, guid: a8df3746f46c949429b741b6b3defcb3, type: 3}
   m_PrefabInstance: {fileID: 988966464}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &995502054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6128834027124643979, guid: aff510001f28fef4b883f33988ce0fae, type: 3}
+  m_PrefabInstance: {fileID: 7043484020350440857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &995502060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995502054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 9a31479836602bf49912fddf3f3d5c0a, type: 3}
+  volume: 0.2
+  pitch: 1
+  spatialBlend: 1
+  source: {fileID: 0}
 --- !u!1001 &1018471249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26701,7 +26719,10 @@ PrefabInstance:
     - {fileID: 1806465933419053558, guid: aff510001f28fef4b883f33988ce0fae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6128834027124643979, guid: aff510001f28fef4b883f33988ce0fae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 995502060}
   m_SourcePrefab: {fileID: 100100000, guid: aff510001f28fef4b883f33988ce0fae, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
