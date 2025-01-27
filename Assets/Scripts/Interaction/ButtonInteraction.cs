@@ -39,6 +39,7 @@ public class ButtonInteraction : MonoBehaviour
     }
 
     void doButtonFunction(GameObject player){
+        AudioManager.Instance.PlaySound(gameObject);
         taskList.ExecuteAllCommands(player);
     }
 
