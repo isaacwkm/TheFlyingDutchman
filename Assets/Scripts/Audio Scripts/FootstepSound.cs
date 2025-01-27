@@ -7,6 +7,8 @@ public class FootstepSound : MonoBehaviour
     public AudioClip[] stoneFootsteps; // Footsteps for stone
     public AudioClip[] woodFootsteps;  // Footsteps for wood
     public AudioClip[] dirtFootsteps;  // Footsteps for dirt
+    public AudioClip[] specialFootsteps1; // Footsteps for special surface 1
+    public AudioClip[] specialFootsteps2; // Footsteps for special surface 2
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
     public float fallbackVolume = 0.5f; // Volume for fallback footsteps
@@ -14,6 +16,8 @@ public class FootstepSound : MonoBehaviour
     public float stoneVolume = 0.7f;  // Stone footstep volume (lower than grass)
     public float woodVolume = 0.8f;   // Wood footstep volume
     public float dirtVolume = 0.6f;   // Dirt footstep volume
+    public float specialVolume1 = 1.2f; // Volume for special surface 1
+    public float specialVolume2 = 1.1f; // Volume for special surface 2
 
     public Transform footTransform;    // Reference to the foot or footstep GameObject
     public float walkSpeedThreshold = 0.1f; // Speed threshold to trigger footstep sound
@@ -98,6 +102,16 @@ public class FootstepSound : MonoBehaviour
         {
             footstepArray = dirtFootsteps;  // Dirt footstep logic
             volumeMultiplier = dirtVolume;  // Set volume for dirt
+        }
+        else if (surface.CompareTag("Special1"))
+        {
+            footstepArray = specialFootsteps1;  // Special footstep 1 logic
+            volumeMultiplier = specialVolume1; // Set volume for special 1
+        }
+        else if (surface.CompareTag("Special2"))
+        {
+            footstepArray = specialFootsteps2;  // Special footstep 2 logic
+            volumeMultiplier = specialVolume2; // Set volume for special 2
         }
         else
         {
