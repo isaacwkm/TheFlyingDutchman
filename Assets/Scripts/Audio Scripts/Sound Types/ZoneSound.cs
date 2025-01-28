@@ -6,15 +6,16 @@ public class ZoneSound : MonoBehaviour
     public AudioClip envMusicClip;
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
-    public float envMusicVolume = 0.2f; // Volume
     public Transform listenerTransform;    // Reference to the object (camera currently) that has the listener
     [Range(0, 1f)]
-    public float musicVolume = 0.1f; // Volume for this track.
-    private CharacterController characterController; // Private reference to player character controller
+    public float soundVolume = 0.1f; // Volume for this track.
+    public float fadeDuration = 2;
+    public float secondsToStayInZoneBeforePlaying = 1;
+    [HideInInspector]
+    public AudioSource audioSource;
     private float musicVolumeMultiplier = 0.8f; // Bring all music volume towards this value.
     private float targetVolume; // Final target volume after formulas and multipliers
-    public AudioSource audioSource;
-    private float fadeDuration = 2;
+    private bool staying = false;
 
     private void Awake()
     {
@@ -23,9 +24,8 @@ public class ZoneSound : MonoBehaviour
     }
     private void Start()
     {
-        audioSource = listenerTransform.GetComponent<AudioSource>();
-        characterController = GetComponent<CharacterController>();
-        targetVolume = musicVolume * musicVolumeMultiplier;
+        audioSource = gameObject.GetComponent<AudioSource>();
+        targetVolume = soundVolume * musicVolumeMultiplier;
 
     }
 
@@ -38,6 +38,8 @@ public class ZoneSound : MonoBehaviour
     {
         if (envMusicClip != null && !audioSource.isPlaying)
         { // It won't play if an audio is not found, or it won't play if a music is already playing.
+            //startStayCheck();
+
             audioSource.clip = envMusicClip;
             audioSource.volume = 0;
             audioSource.Play();
@@ -47,8 +49,26 @@ public class ZoneSound : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        staying = false;
         StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
+    }
 
+    private void startStayCheck()
+    {
+        
+    }
+
+    private bool stayChecker(){
+
+        return true;
+    }
+
+    private System.Collections.IEnumerator stayCheckCooldown(Collider whom) // checks if the player is committed to staying in the zone
+    {
+        
+        // Wait for the duration
+        yield return new WaitForSeconds(secondsToStayInZoneBeforePlaying);
+        
     }
 
 
