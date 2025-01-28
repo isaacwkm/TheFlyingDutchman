@@ -1,25 +1,32 @@
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class EnvMusic : MonoBehaviour
+public class ZoneSound : MonoBehaviour
 {
-    public AudioClip fallbackMusic; // 
-    public AudioClip GrassRoomMusic; //
+    public AudioClip envMusicClip;
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
-    public float fallbackVolume = 0.2f; // Volume for fallback music
-    public float grassRoomVolume = 0.2f;  // Grass music volume (default)
-    public Transform listenerTransform;    // Reference to the camera that has the listener
-    private CharacterController characterController;
-    private float targetVolume = 0.5f; // Bring all music volume towards this value.
-    private AudioSource audioSource;
+    public float envMusicVolume = 0.2f; // Volume
+    public Transform listenerTransform;    // Reference to the object (camera currently) that has the listener
+    [Range(0, 1f)]
+    public float musicVolume = 0.1f; // Volume for this track.
+    private CharacterController characterController; // Private reference to player character controller
+    private float musicVolumeMultiplier = 0.8f; // Bring all music volume towards this value.
+    private float targetVolume; // Final target volume after formulas and multipliers
+    public AudioSource audioSource;
     private float fadeDuration = 2;
-    AudioClip selectedMusic;
 
+    private void Awake()
+    {
+        // Register this sound with the AudioManager
+        AudioManager.Instance.RegisterSound(this);
+    }
     private void Start()
     {
         audioSource = listenerTransform.GetComponent<AudioSource>();
         characterController = GetComponent<CharacterController>();
+        targetVolume = musicVolume * musicVolumeMultiplier;
+
     }
 
     private void Update()
@@ -29,11 +36,9 @@ public class EnvMusic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        selectedMusic = findCorrectMusicTrack(other);
-
-        if (selectedMusic != null && !audioSource.isPlaying)
+        if (envMusicClip != null && !audioSource.isPlaying)
         { // It won't play if an audio is not found, or it won't play if a music is already playing.
-            audioSource.clip = selectedMusic;
+            audioSource.clip = envMusicClip;
             audioSource.volume = 0;
             audioSource.Play();
             StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, targetVolume));
@@ -42,32 +47,8 @@ public class EnvMusic : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        selectedMusic = findCorrectMusicTrack(other);
+        StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
 
-        if (audioSource.clip == selectedMusic)
-        { // It won't play if an audio is not found, or it won't play if a music is already playing.
-            audioSource.clip = selectedMusic;
-            StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
-        }
-
-    }
-
-    private AudioClip findCorrectMusicTrack(Collider other)
-    {
-        AudioClip selectedTrack = null;
-
-        if (other.CompareTag("MusicGrassroom"))
-        {
-            selectedTrack = GrassRoomMusic;
-        }
-
-        /*else if (other.CompareTag("MusicStoneroom")){
-            selectedMusic = StoneRoomMusic;
-            audioSource.clip = selectedMusic; 
-            selectedMusic.Play();
-        }*/
-
-        return selectedTrack;
     }
 
 
