@@ -14,7 +14,7 @@ public class SingleSoundComponent : MonoBehaviour
     public float spatialBlend = 1;  // Spatial Blend - 0 for 2D, 1 for 3D
 
     [HideInInspector]
-    public AudioSource source;  // AudioSource used to play the sound
+    public AudioSource audioSource;  // AudioSource used to play the sound
 
     private void Awake()
     {

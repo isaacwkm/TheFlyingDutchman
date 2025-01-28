@@ -29,7 +29,22 @@ public class AudioManager : MonoBehaviour
         // Create and configure an AudioSource
         AudioSource audioSource = sound.gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        sound.source = audioSource;
+        sound.audioSource = audioSource;
+    }
+
+    /// Registers a SingleSound component and configures its AudioSource.
+    public void RegisterSound(ZoneSound sound)
+    {
+        if (sound.envMusicClip == null)
+        {
+            Debug.LogWarning($"Sound component on {sound.gameObject.name} has no clip assigned.");
+            return;
+        }
+
+        // Create and configure an AudioSource
+        AudioSource audioSource = sound.gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        sound.audioSource = audioSource;
     }
 
     /// Plays a specific sound clip from a SingleSound component by index.
@@ -73,16 +88,16 @@ public class AudioManager : MonoBehaviour
     /// Helper method to play a sound clip from the given SingleSound component.
     private void PlayClip(SingleSoundComponent sound, AudioClip clip)
     {
-        if (clip == null || sound.source == null)
+        if (clip == null || sound.audioSource == null)
         {
             Debug.LogWarning($"Clip or AudioSource is missing for {sound.gameObject.name}.");
             return;
         }
 
-        sound.source.clip = clip;
-        sound.source.volume = sound.volume;
-        sound.source.pitch = sound.pitch;
-        sound.source.spatialBlend = sound.spatialBlend;
-        sound.source.PlayOneShot(clip);
+        sound.audioSource.clip = clip;
+        sound.audioSource.volume = sound.volume;
+        sound.audioSource.pitch = sound.pitch;
+        sound.audioSource.spatialBlend = sound.spatialBlend;
+        sound.audioSource.PlayOneShot(clip);
     }
 }
