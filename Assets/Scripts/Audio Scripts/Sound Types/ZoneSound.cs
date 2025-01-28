@@ -53,23 +53,5 @@ public class ZoneSound : MonoBehaviour
         StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
     }
 
-    private void startStayCheck()
-    {
-        
-    }
-
-    private bool stayChecker(){
-
-        return true;
-    }
-
-    private System.Collections.IEnumerator stayCheckCooldown(Collider whom) // checks if the player is committed to staying in the zone
-    {
-        
-        // Wait for the duration
-        yield return new WaitForSeconds(secondsToStayInZoneBeforePlaying);
-        
-    }
-
 
 }

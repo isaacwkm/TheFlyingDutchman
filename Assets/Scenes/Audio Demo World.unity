@@ -2276,7 +2276,6 @@ GameObject:
   - component: {fileID: 203014524}
   - component: {fileID: 203014523}
   - component: {fileID: 203014522}
-  - component: {fileID: 203014521}
   - component: {fileID: 203014520}
   m_Layer: 8
   m_Name: Player Character
@@ -2317,24 +2316,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCatalog:
   - {fileID: 8468861148628278426, guid: 91926e1dd7fd5e74284f395a676a9f27, type: 3}
---- !u!114 &203014521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203014518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3087bce10cd767348a7a799bf36a843b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  envMusicClip: {fileID: 0}
-  listenerTransform: {fileID: 1613308705}
-  soundVolume: 0.1
-  fadeDuration: 2
-  secondsToStayInZoneBeforePlaying: 1
-  audioSource: {fileID: 0}
 --- !u!114 &203014522
 MonoBehaviour:
   m_ObjectHideFlags: 0
