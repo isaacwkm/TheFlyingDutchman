@@ -90,7 +90,9 @@ private void OnDisable()
     void Update()
     {
         MovePlayer();
-        HandleCameraRotation();
+        if (InputModeManager.Instance?.inputMode == InputModeManager.InputMode.Player) {
+            HandleCameraRotation();
+        }
     }
 
     private void MovePlayer()
