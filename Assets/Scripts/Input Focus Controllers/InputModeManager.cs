@@ -5,6 +5,13 @@ public class InputModeManager : MonoBehaviour
 {
     public InputSystem_Actions inputActions;
 
+    public enum InputMode {
+        None,
+        Player,
+        Flying
+    }
+    public InputMode inputMode {get; protected set;}
+
     private static InputModeManager _instance;
     public static InputModeManager Instance // Singleton Pattern
     {
@@ -35,22 +42,26 @@ public class InputModeManager : MonoBehaviour
     {
         inputActions.Disable();
         SwitchToPlayerControls();
+        inputMode = InputMode.Player;
     }
 
     private void OnDisable()
     {
         inputActions.Disable();
+        inputMode = InputMode.None;
     }
 
     public void SwitchToPlayerControls()
     {
         inputActions.Flying.Disable();  // Disable Flying action map
         inputActions.Player.Enable();   // Enable Player action map
+        inputMode = InputMode.Player;
     }
 
     public void SwitchToShipControls()
     {
         inputActions.Player.Disable();  // Disable Player action map
         inputActions.Flying.Enable();   // Enable Flying action map
+        inputMode = InputMode.Flying;
     }
 }
