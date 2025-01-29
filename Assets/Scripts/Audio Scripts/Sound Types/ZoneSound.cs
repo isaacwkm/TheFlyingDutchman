@@ -53,5 +53,9 @@ public class ZoneSound : MonoBehaviour
         StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
     }
 
+    private float getCurrentPlayingVolume(){
+        return FadeAudioSource.GetCurrentVolume();
+    }
+
 
 }
