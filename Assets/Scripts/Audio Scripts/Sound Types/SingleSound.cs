@@ -3,15 +3,12 @@ using System.Collections.Generic;
 
 public class SingleSoundComponent : MonoBehaviour
 {
-    [Tooltip("List of audio clips for this sound.")]
-    public List<AudioClip> clips;  // Array of clips for the sound
+    public MonoBehaviour referencedScript;
+    [Tooltip("List of audio clips for this sound.")] public List<AudioClip> clips;  // Array of clips for the sound
 
-    [Range(0f, 1f)]
-    public float volume = 0.05f;  // Volume - How loud the sound will play
-    [Range(0.1f, 3f)]
-    public float pitch = 1;  // Pitch - Changes the pitch of the sound
-    [Range(0f, 1f)]
-    public float spatialBlend = 1;  // Spatial Blend - 0 for 2D, 1 for 3D
+    [Range(0f, 1f)] public float volume = 0.05f;  // Volume - How loud the sound will play
+    [Range(0.1f, 3f)] public float pitch = 1;  // Pitch - Changes the pitch of the sound
+    [Range(0f, 1f)] public float spatialBlend = 1;  // Spatial Blend - 0 for 2D, 1 for 3D
 
     [HideInInspector]
     public AudioSource audioSource;  // AudioSource used to play the sound
