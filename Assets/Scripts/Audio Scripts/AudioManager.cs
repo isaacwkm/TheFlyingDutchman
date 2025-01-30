@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
         // Create and configure an AudioSource
         AudioSource audioSource = sound.gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        audioSource.loop = true;
         sound.audioSource = audioSource;
     }
 
