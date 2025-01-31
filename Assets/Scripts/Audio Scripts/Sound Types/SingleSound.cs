@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SingleSoundComponent : MonoBehaviour
+public class ActionSound : MonoBehaviour
 {
-    public MonoBehaviour referencedScript;
     [Tooltip("List of audio clips for this sound.")] public List<AudioClip> clips;  // Array of clips for the sound
 
     [Range(0f, 1f)] public float volume = 0.05f;  // Volume - How loud the sound will play

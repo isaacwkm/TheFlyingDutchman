@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Registers a SingleSound component and configures its AudioSource.
-    public void RegisterSound(SingleSoundComponent sound)
+    public void RegisterSound(ActionSound sound)
     {
         if (sound.clips == null || sound.clips.Count == 0)
         {
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Plays a specific sound clip from a SingleSound component by index.
-    public void PlaySingleSoundAt(SingleSoundComponent sound, int clipIndex)
+    public void PlaySingleSoundAt(ActionSound sound, int clipIndex)
     {
         if (sound == null)
         {
@@ -67,7 +67,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Plays a random sound clip from a SingleSound component.
-    public int PlayRandomSingleSound(SingleSoundComponent sound)
+    public int PlayRandomSingleSound(ActionSound sound)
     {
         if (sound == null)
         {
@@ -87,7 +87,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Helper method to play a sound clip from the given SingleSound component.
-    private void PlayClip(SingleSoundComponent sound, AudioClip clip)
+    private void PlayClip(ActionSound sound, AudioClip clip)
     {
         if (clip == null || sound.audioSource == null)
         {
