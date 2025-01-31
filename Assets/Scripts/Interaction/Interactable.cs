@@ -5,8 +5,8 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] private string actionText = "Interact";
     [SerializeField] private float interactCooldownSeconds = 1;
-    [SerializeField] private SingleSoundComponent interactSound = null;
-    [SerializeField] private SingleSoundComponent CooldownReturnSound = null;
+    [SerializeField] private ActionSound interactSound = null;
+    [SerializeField] private ActionSound CooldownReturnSound = null;
     private bool canInteract = true;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
