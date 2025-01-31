@@ -6,7 +6,7 @@ public class ZoneSound : MonoBehaviour
     public AudioClip envMusicClip;
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
-    public Transform listenerTransform;    // Reference to the object (camera currently) that has the listener
+    public Transform playerCameraHere;    // Reference to the object (camera currently) that has the listener
     [Range(0, 1f)]
     public float soundVolume = 0.1f; // Volume for this track.
     public float fadeDuration = 2;
