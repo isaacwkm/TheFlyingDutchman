@@ -16451,6 +16451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7750370834963051906, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2124489464}
+    - targetCorrespondingSourceObject: {fileID: 7750370834963051906, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124489471}
   m_SourcePrefab: {fileID: 100100000, guid: b7ed1f58ec447ad4fb0c93a62eb4c4b6, type: 3}
 --- !u!4 &825574405 stripped
 Transform:
@@ -21340,6 +21343,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6322556187633357650, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1049457883}
+    - targetCorrespondingSourceObject: {fileID: 6322556187633357650, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1049457890}
   m_SourcePrefab: {fileID: 100100000, guid: f5e4cf5af47ee60418f92554c028a4ce, type: 3}
 --- !u!4 &1049457879 stripped
 Transform:
@@ -21360,7 +21366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionText: Interact
   interactCooldownSeconds: 2
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 1049457890}
   CooldownReturnSound: {fileID: 0}
 --- !u!114 &1049457884
 MonoBehaviour:
@@ -21441,6 +21447,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1049457890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684761662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referencedScript: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!1001 &1051153444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44937,7 +44962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionText: Interact
   interactCooldownSeconds: 2
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 2124489471}
   CooldownReturnSound: {fileID: 0}
 --- !u!114 &2124489465
 MonoBehaviour:
@@ -45018,6 +45043,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2124489471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124489463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referencedScript: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!1001 &2130939166
 PrefabInstance:
   m_ObjectHideFlags: 0
