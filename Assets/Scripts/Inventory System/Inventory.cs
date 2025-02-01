@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public GameObject[] itemCatalog;
-    private ActiveHeldItem itemSnapper;
+    private ActiveItem itemSnapper;
     private int activeItem;
     private int inventorySize = 0;
     private int inventoryCapacity = 4;
@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
 
     void Awake(){
         // Find the ItemSnapper component on the same GameObject
-        itemSnapper = GetComponent<ActiveHeldItem>();
+        itemSnapper = GetComponent<ActiveItem>();
     }
     void OnEnable() {
         //interactTarget.OnItemPickup += addItem;
