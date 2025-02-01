@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ActiveHeldItem : MonoBehaviour
+public class ActiveItem : MonoBehaviour
 {
     public Transform handPosition; // Assign the "RightHandPosition" in the Inspector
 
