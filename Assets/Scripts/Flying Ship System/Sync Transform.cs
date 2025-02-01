@@ -20,13 +20,6 @@ public class SyncTransform : MonoBehaviour
         }
         public void setPhysicsEnabled(bool whether) {
             if (characterController) characterController.enabled = whether;
-            if (rigidbody) {
-                if (whether) {
-                    rigidbody.Sleep();
-                } else {
-                    rigidbody.WakeUp();
-                }
-            }
         }
         public void setPosition(Vector3 where) {
             transform.position = where;
