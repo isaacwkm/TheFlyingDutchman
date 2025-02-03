@@ -8,6 +8,10 @@ public class Door : MonoBehaviour
     private HingeJoint hjoint;
     private bool isOpen;
 
+    public bool InteractRequirementsMet()
+    {
+        return true;
+    }
     void OnEnable() {
         interactTarget.OnInteract += OpenOrClose;
     }

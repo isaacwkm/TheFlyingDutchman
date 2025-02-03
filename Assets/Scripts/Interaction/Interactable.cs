@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] private float interactCooldownSeconds = 1;
     [SerializeField] private ActionSound interactSound = null;
     [SerializeField] private ActionSound CooldownReturnSound = null;
+    [SerializeField] private string FailConditionText = "Need the right tool for this!";
     private bool canInteract = true;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
@@ -58,5 +59,9 @@ public class Interactable : MonoBehaviour
 
         // Allow button to be interacted with again
         canInteract = true;
+    }
+
+    public bool hasInteractionPrerequisites(){
+        return true;
     }
 }

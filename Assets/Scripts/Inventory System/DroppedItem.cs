@@ -7,16 +7,34 @@ public class DroppedItem : MonoBehaviour
     private Rigidbody rb;
     private Collider itemCollider;
     private bool hasLanded = false;
+    private Interactable interactTarget;
+
+    public bool InteractRequirementsMet()
+    {
+        return true;
+    }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         itemCollider = GetComponent<Collider>();
+        interactTarget = gameObject.GetComponent<Interactable>();
     }
 
+    void OnEnable() {
+        
+        interactTarget.OnInteract += tryPickUpItem;
+
+    }
+
+    void OnDisable() {
+        interactTarget.OnInteract -= tryPickUpItem;
+    }
+    
     private void Start(){
         Drop(gameObject.transform.position);
     }
+    
 
     public void Drop(Vector3 dropPosition)
     {
@@ -61,5 +79,12 @@ public class DroppedItem : MonoBehaviour
         {
             transform.SetParent(surface.transform);
         }
+    }
+
+    private void tryPickUpItem(GameObject player){
+        
+        // If inventory is full, do nothing
+
+        // If it's not full, add it to inventory and delete it from ground.
     }
 }
