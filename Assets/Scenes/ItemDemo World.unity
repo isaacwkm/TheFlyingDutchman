@@ -2414,7 +2414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 203014524}
   cameraObj: {fileID: 1613308704}
-  tooltipText: {fileID: 1746727572}
+  UiTextComponent: {fileID: 1746727572}
   crosshair: {fileID: 1107118511}
 --- !u!114 &203014526
 MonoBehaviour:
@@ -6330,6 +6330,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 499755017}
   CooldownReturnSound: {fileID: 499755024}
+  FailConditionText: Need the right tool for this!
 --- !u!114 &499755024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7638,6 +7639,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!114 &602538631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19236,6 +19238,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!1001 &1469179151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19926,6 +19929,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 1514333285}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!114 &1514333285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21114,6 +21118,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!59 &1575289576
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -22239,6 +22244,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!1001 &1651351328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23351,6 +23357,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
+  FailConditionText: Need the right tool for this!
 --- !u!59 &1734052719
 HingeJoint:
   m_ObjectHideFlags: 0

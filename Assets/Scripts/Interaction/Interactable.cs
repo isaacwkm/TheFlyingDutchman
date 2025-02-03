@@ -8,7 +8,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] private ActionSound interactSound = null;
     [SerializeField] private ActionSound CooldownReturnSound = null;
     [SerializeField] private string FailConditionText = "Need the right tool for this!";
-    private bool canInteract = true;
+    private bool onCooldown = false;
+    private bool interactAllowed = true;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
 
@@ -29,12 +30,12 @@ public class Interactable : MonoBehaviour
     }
     public void receiveInteract(GameObject whom) { // Whom = the player who interacted with object
         // Debug.Log("receiveInteract()");
-        if (!canInteract) return;
+        if (onCooldown) return;
 
         // Debug.Log("receiveInteract(): Interacted");
         OnInteract?.Invoke(whom);
         playInteractSound();
-        canInteract = false; // Prevent interaction for a cooldown
+        onCooldown = true; // Prevent interaction for a cooldown
         StartCoroutine(InteractCooldown(whom)); // Start cooldown
     }
 
@@ -58,7 +59,11 @@ public class Interactable : MonoBehaviour
         OffInteract?.Invoke(whom);
 
         // Allow button to be interacted with again
-        canInteract = true;
+        onCooldown = false;
+    }
+
+    public bool canInteract(){
+        return interactAllowed;
     }
 
     public bool hasInteractionPrerequisites(){

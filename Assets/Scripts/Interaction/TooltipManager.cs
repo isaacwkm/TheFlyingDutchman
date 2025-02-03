@@ -79,12 +79,9 @@ public class TooltipManager : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, interactionRange))
         {
             Interactable whom = hit.collider.GetComponent<Interactable>();
-            IInteractable whomst = null;
             if (whom && whom.isActiveAndEnabled)
             {
-                if (whomst.InteractRequirementsMet()){
-
-                }
+                // if (requirements met)
                 tooltipText = whom.peekActionText();
                 ShowTooltip();
                 return;
