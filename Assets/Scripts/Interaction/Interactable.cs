@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] private float interactCooldownSeconds = 1;
     [SerializeField] private ActionSound interactSound = null;
     [SerializeField] private ActionSound CooldownReturnSound = null;
-    [SerializeField] private string FailConditionText = "Need the right tool for this!";
+    [SerializeField] private InteractRequirements requirements = null;
     private bool onCooldown = false;
     private bool interactAllowed = true;
     public event Action<GameObject> OnInteract;
@@ -63,10 +63,10 @@ public class Interactable : MonoBehaviour
     }
 
     public bool canInteract(){
-        return interactAllowed;
-    }
+        if (requirements == null) return true;
 
-    public bool hasInteractionPrerequisites(){
-        return true;
+        else{
+            return requirements.getInteractAllowed();
+        }
     }
 }
