@@ -6330,7 +6330,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 499755017}
   CooldownReturnSound: {fileID: 499755024}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!114 &499755024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7639,7 +7639,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!114 &602538631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19238,7 +19238,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!1001 &1469179151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19929,7 +19929,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 1514333285}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!114 &1514333285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21118,7 +21118,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!59 &1575289576
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -22244,7 +22244,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!1001 &1651351328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23357,7 +23357,7 @@ MonoBehaviour:
   interactCooldownSeconds: 1
   interactSound: {fileID: 0}
   CooldownReturnSound: {fileID: 0}
-  FailConditionText: Need the right tool for this!
+  requirements: {fileID: 0}
 --- !u!59 &1734052719
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -26314,6 +26314,10 @@ PrefabInstance:
     - target: {fileID: 1498212798615711268, guid: 91926e1dd7fd5e74284f395a676a9f27, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579406611146350053, guid: 91926e1dd7fd5e74284f395a676a9f27, type: 3}
+      propertyPath: requirements
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4998027682988589855, guid: 91926e1dd7fd5e74284f395a676a9f27, type: 3}
       propertyPath: m_Layer
