@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject[] itemCatalog;
+    public ItemCatalog catalog;
     private ActiveItem itemSnapper;
     private int activeItem;
     private int inventorySize = 0;
@@ -66,6 +66,14 @@ public class Inventory : MonoBehaviour
 
     private void addItem(GameObject item, int slotNum){
         
+    }
+
+    public void switchToNext(){
+
+    }
+
+    public void switchToPrev(){
+
     }
 
     private void switchItem(int slot){

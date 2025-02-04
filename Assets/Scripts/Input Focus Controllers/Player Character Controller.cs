@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerCharacterController : MonoBehaviour
 {
     public Camera playerCamera;
+    public Inventory inventoryMananger;
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
@@ -28,7 +29,6 @@ public class PlayerCharacterController : MonoBehaviour
     private bool isJumping = false;
     private bool isCrouching = false;
 
-    private InputAction.CallbackContext movementInputCtx; // Added to store delegate
 
     private void Awake()
     {
@@ -149,12 +149,14 @@ private void OnDisable()
 
     private void HandleItemPrevInput()
     {
-        Debug.Log("Previous item selected");
+        Debug.Log("Prev item selected");
+        inventoryMananger.switchToPrev();
     }
 
     private void HandleItemNextInput()
     {
         Debug.Log("Next item selected");
+        inventoryMananger.switchToNext();
     }
 
 
