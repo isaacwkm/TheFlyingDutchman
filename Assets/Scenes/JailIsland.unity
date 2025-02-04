@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Custom_Border_Flat (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1167486463325589580, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 1167486463325949036, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -2774,6 +2778,10 @@ PrefabInstance:
     - target: {fileID: 1167486463325589580, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
       propertyPath: m_Name
       value: Dungeon_Custom_Border_Flat (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167486463325589580, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 1167486463325949036, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
       propertyPath: m_RootOrder
@@ -11488,7 +11496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f26b04e946f24c9f87b9e680246bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handPosition: {fileID: 814756995}
 --- !u!1001 &582162891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13622,6 +13629,10 @@ PrefabInstance:
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_Name
       value: Dungeon_Passage (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247, type: 3}
       propertyPath: m_RootOrder
@@ -15919,9 +15930,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   envMusicClip: {fileID: 0}
-  envMusicVolume: 0.2
-  listenerTransform: {fileID: 124179318}
-  musicVolume: 0.1
+  playerCameraHere: {fileID: 0}
+  soundVolume: 0.1
+  fadeDuration: 2
+  secondsToStayInZoneBeforePlaying: 1
   audioSource: {fileID: 0}
 --- !u!114 &811306564
 MonoBehaviour:
@@ -19135,6 +19147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Custom_Border_Flat (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1167486463325589580, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 1167486463325949036, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -22074,6 +22090,10 @@ PrefabInstance:
     - target: {fileID: 2470529085382041525, guid: a9c55b2fac05ba248a24bd117da7b964, type: 3}
       propertyPath: m_Name
       value: Balcony (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470529085382041525, guid: a9c55b2fac05ba248a24bd117da7b964, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35514,6 +35534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Custom_Border_Flat (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1167486463325589580, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 1167486463325949036, guid: 672e720ef69a65b44a71577cd7cc26ed, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -37177,6 +37201,10 @@ PrefabInstance:
     - target: {fileID: 8702035252243360985, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
       propertyPath: m_Name
       value: Stairs_Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702035252243360985, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40712,7 +40740,7 @@ GameObject:
   - component: {fileID: 1916245436}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
