@@ -9,7 +9,6 @@ public class Interactable : MonoBehaviour
     [SerializeField] private ActionSound CooldownReturnSound = null;
     [SerializeField] private InteractRequirements requirements = null;
     private bool onCooldown = false;
-    private bool interactAllowed = true;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
 
