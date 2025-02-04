@@ -4,8 +4,10 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public ItemCatalog catalog;
+    public Transform[] itemIconTransforms;
     private ActiveItem itemSnapper;
     private int activeItem;
+    private int activeSlot = 0;
     private int inventorySize = 0;
     private int inventoryCapacity = 4;
     private int[] inventoryItems = {0, 0, 0, 0};
@@ -45,9 +47,8 @@ public class Inventory : MonoBehaviour
         if (!isFull()){
             int slot = findFirstOpenSlotIndex();
 
-            addItem(this.gameObject, slot);
-            gameObject.SetActive(false); // Disable the GameObject
-            this.enabled = false;
+            addItem(item, slot);
+            item.SetActive(false); // Disable the GameObject
         }
     }
 
@@ -65,11 +66,16 @@ public class Inventory : MonoBehaviour
     // Methods called by event subscription
 
     private void addItem(GameObject item, int slotNum){
-        
+        inventorySize++;
     }
 
     public void switchToNext(){
+        activeSlot++;
+        if (activeSlot > inventoryCapacity - 1){
+            activeSlot = 0;
+        }
 
+        setActiveSlotMarker(activeSlot);
     }
 
     public void switchToPrev(){

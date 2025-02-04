@@ -1,4 +1,5 @@
 using System;
+using Needle.Console;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour

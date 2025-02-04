@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class DroppedItem : MonoBehaviour
 {
+    public int itemId = 1;
     private Rigidbody rb;
     private Collider itemCollider;
     private bool hasLanded = false;
@@ -82,9 +83,14 @@ public class DroppedItem : MonoBehaviour
     }
 
     private void tryPickUpItem(GameObject player){
-        
+        Inventory inventory = player.GetComponent<Inventory>();
+
         // If inventory is full, do nothing
+        if (inventory.isFull()){
+            return;
+        }
 
         // If it's not full, add it to inventory and delete it from ground.
+        
     }
 }
