@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Needle.Console;
 
 [SelectionBase] // Automatically select the parent when its child is selected
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCharacterController : MonoBehaviour
 {
     public Camera playerCamera;
-    public Inventory inventoryMananger;
+    public Inventory inventoryComponent;
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
@@ -56,6 +57,7 @@ private void OnEnable()
     inputActions.Player.Interact.performed += ctx => HandleInteractInput();
     inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
     inputActions.Player.Next.performed += ctx => HandleItemNextInput();
+    inputActions.Player.Drop.performed += ctx => HandleDropInput();
 }
 
 private void OnDisable()
@@ -149,14 +151,19 @@ private void OnDisable()
 
     private void HandleItemPrevInput()
     {
-        Debug.Log("Prev item selected");
-        inventoryMananger.switchToPrev();
+        D.Log("Prev item selected",  null, "Inv");
+        inventoryComponent.switchToPrev();
     }
 
     private void HandleItemNextInput()
     {
-        Debug.Log("Next item selected");
-        inventoryMananger.switchToNext();
+        D.Log("Next item selected", null, "Inv");
+        inventoryComponent.switchToNext();
+    }
+
+    private void HandleDropInput(){
+        D.Log("Drop selected", null, "Inv");
+        inventoryComponent.dropItem();
     }
 
 

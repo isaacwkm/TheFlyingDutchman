@@ -9,6 +9,7 @@ public class LogManager : MonoBehaviour
     public bool logAny = true; // Any = uncategorized. Any can be disabled and still have other categories show up.
     public bool logUI = true;
     public bool logInv = true; // inventory system
+    public bool logInt = true; // interaction system
 
     private static LogManager instance;
 
@@ -38,6 +39,7 @@ public class LogManager : MonoBehaviour
         categoryStates["Any"] = logAny; // Any = uncategorized. Any can be disabled and still have other categories show up.
         categoryStates["UI"] = logUI;
         categoryStates["Inv"] = logInv; // inventory system
+        categoryStates["Int"] = logInt; // interaction system
     }
 
     public static bool ShouldLog(string category)

@@ -1,10 +1,11 @@
+using Needle.Console;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
 public class DroppedItem : MonoBehaviour
 {
-    public int itemId = 1;
+    [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
     private Collider itemCollider;
     private bool hasLanded = false;
@@ -33,9 +34,10 @@ public class DroppedItem : MonoBehaviour
     }
     
     private void Start(){
+        int ActiveItemID = gameObject.GetComponent<ActiveItem>().itemIDPleaseDoNotChange;
+        itemID = ActiveItemID;
         Drop(gameObject.transform.position);
     }
-    
 
     public void Drop(Vector3 dropPosition)
     {
@@ -85,12 +87,12 @@ public class DroppedItem : MonoBehaviour
     private void tryPickUpItem(GameObject player){
         Inventory inventory = player.GetComponent<Inventory>();
 
-        // If inventory is full, do nothing
-        if (inventory.isFull()){
-            return;
-        }
+        inventory.attemptPickup(gameObject);
+    }
 
-        // If it's not full, add it to inventory and delete it from ground.
-        
+    public void disablePickup(GameObject player){
+        gameObject.transform.SetParent(player.transform, false);
+        this.enabled = false;
+        gameObject.SetActive(false);
     }
 }

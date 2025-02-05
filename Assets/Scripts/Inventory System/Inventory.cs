@@ -1,29 +1,35 @@
+using Needle.Console;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public ItemCatalog catalog;
-    public Transform[] itemIconTransforms;
+    public Transform[] iconPositionTransforms;
+    public GameObject activeItemMarker;
+    public Transform handPosition; // Assign the "RightHandPosition" in the Inspector
     private ActiveItem itemSnapper;
-    private int activeItem;
-    private int activeSlot = 0;
+    private GameObject[] itemsInSlots = new GameObject[4];
+    private GameObject[] itemIcons = new GameObject[4];
+    private int currentActiveSlot = 0;
     private int inventorySize = 0;
     private int inventoryCapacity = 4;
-    private int[] inventoryItems = {0, 0, 0, 0};
-    //private int[] inventoryKeys;
-    private Vector3 inventorySpaceCoords = new Vector3(12, 0, 57);
+    private int offsetActiveItemIcon = -40;
 
-    void Awake(){
+    void Awake()
+    {
         // Find the ItemSnapper component on the same GameObject
         itemSnapper = GetComponent<ActiveItem>();
     }
-    void OnEnable() {
+    void OnEnable()
+    {
         //interactTarget.OnItemPickup += addItem;
 
     }
 
-    void OnDisable() {
+    void OnDisable()
+    {
         //interactTarget.OnItemPickup += addItem;
     }
 
@@ -38,25 +44,35 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public bool isFull(){
+    public bool isFull()
+    {
         if (inventorySize >= inventoryCapacity) return true;
         else return false;
     }
 
-    public void attemptPickup(GameObject item){
-        if (!isFull()){
-            int slot = findFirstOpenSlotIndex();
+    public bool attemptPickup(GameObject item)
+    {
+        // If inventory is full, do nothing
+        // If it's not full, add it to inventory.
+        if (!isFull())
+        {
+            item.GetComponent<DroppedItem>().disablePickup(gameObject); // passing gameObject (the player this is attached to) as the object to follow for newly gained item
 
+            int slot = findFirstOpenSlotIndex();
             addItem(item, slot);
-            item.SetActive(false); // Disable the GameObject
+            return true;
         }
+        return false;
     }
 
-    private int findFirstOpenSlotIndex(){
-        if (isFull()) throw new System.Exception("Check if inventory is full before finding first open slot index!");;
+    private int findFirstOpenSlotIndex()
+    {
+        if (isFull()) throw new System.Exception("Check if inventory is full before finding first open slot index!"); ;
 
-        for (int i = 0; i < inventoryCapacity; i++){
-            if (inventoryItems[i] == 0){
+        for (int i = 0; i < inventoryCapacity; i++)
+        {
+            if (itemsInSlots[i] == null)
+            {
                 return i;
             }
         }
@@ -65,35 +81,131 @@ public class Inventory : MonoBehaviour
 
     // Methods called by event subscription
 
-    private void addItem(GameObject item, int slotNum){
+    private void addItem(GameObject item, int slotNum)
+    {
         inventorySize++;
+        int itemID = item.GetComponent<DroppedItem>().itemID; // Used to obtain Texture data from catalog
+        D.Log($"{itemID} is the item ID being added to slot ${slotNum}.", gameObject, "Inv");
+
+        GameObject newIcon = new GameObject("ItemIcon", typeof(RectTransform), typeof(RawImage)); // Create object to hold rawimage
+        newIcon.transform.SetParent(iconPositionTransforms[slotNum], false); // Set parent while preserving UI layout
+        RawImage rawImage = newIcon.GetComponent<RawImage>(); // Get the RawImage component
+        rawImage.texture = Instantiate(catalog.itemIconCatalog[itemID], new Vector3(0, 0, 0), Quaternion.identity); // Set the texture field of the rawimage component
+
+
+        // Equip the new item if the player was empty-handed
+        if (nothingEquipped())
+        {
+            itemsInSlots[slotNum] = item;
+            itemIcons[slotNum] = newIcon;
+            switchToSlot(slotNum, true);
+        }
+        else{
+            itemsInSlots[slotNum] = item;
+            itemIcons[slotNum] = newIcon;
+        }
     }
 
-    public void switchToNext(){
-        activeSlot++;
-        if (activeSlot > inventoryCapacity - 1){
-            activeSlot = 0;
+    public void dropItem(){
+        
+    }
+
+    public void switchToNext()
+    {
+        makeItemInactive(currentActiveSlot);
+        currentActiveSlot++;
+        if (currentActiveSlot > inventoryCapacity - 1)
+        {
+            currentActiveSlot = 0;
         }
 
-        setActiveSlotMarker(activeSlot);
+        makeItemActive(currentActiveSlot);
+
+        setActiveSlotMarker(currentActiveSlot);
     }
 
-    public void switchToPrev(){
-
-    }
-
-    private void switchItem(int slot){
-
-    }
-
-    /*
-    OnCrouchInput?.Invoke(isCrouching); publish
-    InputEventDispatcher.OnMovementInput += HandleMovementInput; subscribe
-    
-    private void HandleMovementInput(Vector2 movement); implementation
+    public void switchToPrev()
     {
-        ...
+
     }
 
-    */
+    private void switchToSlot(int slot, bool forceReEquip = false)
+    {
+        if (slot == currentActiveSlot)
+        { // Do nothing if the slot to switch to is the same as current active slot. Except in case of a forceReEquip override.
+
+            if (forceReEquip == true)
+            {
+                makeItemActive(slot);
+            }
+
+            return;
+        }
+
+        if (slot < 0 || slot > inventoryCapacity - 1)
+        {
+            D.LogError("Out of bounds access", gameObject, "Inv");
+            return;
+        }
+        makeItemInactive(currentActiveSlot);
+        currentActiveSlot = slot;
+        makeItemActive(currentActiveSlot);
+
+        setActiveSlotMarker(currentActiveSlot);
+    }
+
+    private void setActiveSlotMarker(int activeSlot)
+    {
+        Vector3 iconPos = iconPositionTransforms[activeSlot].position;
+        iconPos.y += offsetActiveItemIcon;
+        activeItemMarker.transform.position = iconPos;
+    }
+
+    private void makeItemActive(int slotNum)
+    {
+        D.Log("makeItemActive", gameObject, "Inv");
+        // Initialization
+        GameObject item = itemsInSlots[slotNum];
+
+        // Exit if making nothing Active
+        if (item == null) return;
+
+        // Resume initialization
+        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+
+        // Begin to set new item active
+        item.SetActive(true);
+        activeItemComponent.enabled = true;
+        activeItemComponent.SnapToHand(item.transform, handPosition);
+    }
+
+    private void makeItemInactive(int slotNum)
+    {
+        D.Log("makeItemInactive", gameObject, "Inv");
+        // Initialization
+        GameObject item = itemsInSlots[slotNum];
+
+        // Exit if making nothing Active
+        if (item == null) return;
+
+        // Resume initialization
+        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+
+        // Begin to set item inactive
+        // activeItemComponent.SnapToHand(item.transform); // not needed, but keep for reflective programming 
+        activeItemComponent.enabled = false;
+        item.SetActive(false);
+    }
+
+    public bool nothingEquipped()
+    {
+        if (itemsInSlots[currentActiveSlot] == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
