@@ -1,43 +1,53 @@
 using System;
+using Needle.Console;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private string actionText = "Interact";
-    [SerializeField] private float interactCooldownSeconds = 1;
-    [SerializeField] private ActionSound interactSound = null;
-    [SerializeField] private ActionSound CooldownReturnSound = null;
-    private bool canInteract = true;
+    public string actionText = "Interact";
+    public ActionSound interactSound = null;
+    public bool doCooldown = true;
+    public float interactCooldownSeconds = 1;
+    public ActionSound CooldownReturnSound = null;
+    public InteractRequirements requirements = null;
+    private bool onCooldown = false;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
+    private Coroutine cooldownCoroutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public string peekActionText(){
+    public string peekActionText()
+    {
         return actionText;
     }
-    public void receiveInteract(GameObject whom) { // Whom = the player who interacted with object
-        // Debug.Log("receiveInteract()");
-        if (!canInteract) return;
+    public void receiveInteract(GameObject whom)
+    { // Whom = the player who interacted with object
+        D.Log("receiveInteract()", gameObject, "Int");
+        if (onCooldown) return;
 
-        // Debug.Log("receiveInteract(): Interacted");
+        D.Log("receiveInteract(): Interacted", gameObject, "Int");
         OnInteract?.Invoke(whom);
         playInteractSound();
-        canInteract = false; // Prevent interaction for a cooldown
-        StartCoroutine(InteractCooldown(whom)); // Start cooldown
+        if (doCooldown)
+        {
+            onCooldown = true; // Prevent interaction for a cooldown
+            cooldownCoroutine = StartCoroutine(InteractCooldown(whom)); // Start cooldown
+        }
     }
 
-    private void playInteractSound(){
+    private void playInteractSound()
+    {
         if (interactSound == null) return;
 
         Debug.Log("Playing button sound");
@@ -51,12 +61,27 @@ public class Interactable : MonoBehaviour
 
         // Play any sound effects associated with animation end
         if (CooldownReturnSound != null)
-        CooldownReturnSound.PlaySingleRandom();
+            CooldownReturnSound.PlaySingleRandom();
 
         // Send out an event
         OffInteract?.Invoke(whom);
 
         // Allow button to be interacted with again
-        canInteract = true;
+        onCooldown = false;
+    }
+
+    public bool canInteract()
+    {
+        if (requirements == null) return true;
+
+        else
+        {
+            return requirements.getInteractAllowed();
+        }
+    }
+
+    public void stopInteractCooldown()
+    {
+        StopCoroutine(cooldownCoroutine);
     }
 }

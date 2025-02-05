@@ -1,20 +1,41 @@
+using Needle.Console;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
 public class DroppedItem : MonoBehaviour
 {
+    [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
     private Collider itemCollider;
     private bool hasLanded = false;
+    private Interactable interactTarget;
+
+    public bool InteractRequirementsMet()
+    {
+        return true;
+    }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         itemCollider = GetComponent<Collider>();
+        interactTarget = gameObject.GetComponent<Interactable>();
     }
 
+    void OnEnable() {
+        
+        interactTarget.OnInteract += tryPickUpItem;
+
+    }
+
+    void OnDisable() {
+        interactTarget.OnInteract -= tryPickUpItem;
+    }
+    
     private void Start(){
+        int ActiveItemID = gameObject.GetComponent<ActiveItem>().itemIDPleaseDoNotChange;
+        itemID = ActiveItemID;
         Drop(gameObject.transform.position);
     }
 
@@ -61,5 +82,17 @@ public class DroppedItem : MonoBehaviour
         {
             transform.SetParent(surface.transform);
         }
+    }
+
+    private void tryPickUpItem(GameObject player){
+        Inventory inventory = player.GetComponent<Inventory>();
+
+        inventory.attemptPickup(gameObject);
+    }
+
+    public void disablePickup(GameObject player){
+        gameObject.transform.SetParent(player.transform, false);
+        this.enabled = false;
+        gameObject.SetActive(false);
     }
 }

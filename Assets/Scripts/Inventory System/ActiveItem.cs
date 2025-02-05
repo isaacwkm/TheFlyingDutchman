@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class ActiveItem : MonoBehaviour
 {
-    public Transform handPosition; // Assign the "RightHandPosition" in the Inspector
+    [Tooltip("Do not re-assign during runtime.")] 
+    public int itemIDPleaseDoNotChange = 1; // Do not re-assign during runtime. The weird variable naming is only to discourage ID re-assignment after it has been correctly set to the right item id.
 
-    public void SnapToHand(Transform item)
+    public void SnapToHand(Transform item, Transform handPosition)
     {
         // Parent the item to the hand position
         item.SetParent(handPosition);
@@ -14,6 +15,10 @@ public class ActiveItem : MonoBehaviour
         item.localRotation = Quaternion.identity;
     }
 
+    void OnEnable(){
+    }
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
