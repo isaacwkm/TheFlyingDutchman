@@ -7,7 +7,7 @@ public class DroppedItem : MonoBehaviour
 {
     [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
-    private Collider itemCollider;
+    public Collider itemCollider;
     private bool hasLanded = false;
     private Interactable interactTarget;
 
@@ -19,7 +19,8 @@ public class DroppedItem : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        itemCollider = GetComponent<Collider>();
+        // itemCollider = GetComponent<Collider>();
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // Prevent tunneling
         interactTarget = gameObject.GetComponent<Interactable>();
     }
 
@@ -41,10 +42,13 @@ public class DroppedItem : MonoBehaviour
 
     public void Drop(Vector3 dropPosition)
     {
+        // Unparent
+        gameObject.transform.SetParent(null, worldPositionStays: true);
+
         // Enable physics for the drop
         rb.isKinematic = false;
         rb.useGravity = true;
-        itemCollider.enabled = true; // Enable collider for ground detection
+        itemCollider.isTrigger = false; // Enable collider for ground detection
 
         // Start falling
         transform.position = dropPosition;
@@ -75,12 +79,12 @@ public class DroppedItem : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
 
         // Disable collider so player can walk through it
-        if (itemCollider) itemCollider.enabled = false;
+        if (itemCollider) itemCollider.isTrigger = true;
 
         // Parent to the surface if it's a moving object (except players)
         if (!surface.CompareTag("Player"))
         {
-            transform.SetParent(surface.transform);
+            transform.SetParent(surface.transform, worldPositionStays: true);
         }
     }
 

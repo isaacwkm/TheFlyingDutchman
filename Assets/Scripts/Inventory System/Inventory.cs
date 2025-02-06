@@ -9,7 +9,6 @@ public class Inventory : MonoBehaviour
     public Transform[] iconPositionTransforms;
     public GameObject activeItemMarker;
     public Transform handPosition; // Assign the "RightHandPosition" in the Inspector
-    private ActiveItem itemSnapper;
     private GameObject[] itemsInSlots = new GameObject[4];
     private GameObject[] itemIcons = new GameObject[4];
     private int currentActiveSlot = 0;
@@ -19,8 +18,6 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
-        // Find the ItemSnapper component on the same GameObject
-        itemSnapper = GetComponent<ActiveItem>();
     }
     void OnEnable()
     {
@@ -92,7 +89,6 @@ public class Inventory : MonoBehaviour
         RawImage rawImage = newIcon.GetComponent<RawImage>(); // Get the RawImage component
         rawImage.texture = Instantiate(catalog.itemIconCatalog[itemID], new Vector3(0, 0, 0), Quaternion.identity); // Set the texture field of the rawimage component
 
-
         // Equip the new item if the player was empty-handed
         if (nothingEquipped())
         {
@@ -107,7 +103,26 @@ public class Inventory : MonoBehaviour
     }
 
     public void dropItem(){
-        
+        if (nothingEquipped()) return; // do nothing if the player is holding nothing
+
+        // if the player is holding something...
+
+        // First initialize some variables to drop the item
+        GameObject item = itemsInSlots[currentActiveSlot];
+        DroppedItem droppedItemComponent = item.GetComponent<DroppedItem>();
+        Transform playerTransform = gameObject.transform;
+        Vector3 dropPosition = playerTransform.position + playerTransform.forward * 0.6f + Vector3.up * 1.2f;
+        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+
+        activeItemComponent.enabled = false; // Disable activeItem component
+        droppedItemComponent.enabled = true;
+        droppedItemComponent.Drop(dropPosition); // Drop it.
+
+        // Cleanup
+        Destroy(itemIcons[currentActiveSlot]); // remove the texture
+        itemIcons[currentActiveSlot] = null; // remove dangling pointer just in case unity doesnt do it for us
+        itemsInSlots[currentActiveSlot] = null; // Set dropped item pointer to null
+        inventorySize--; // update inventory size
     }
 
     public void switchToNext()
@@ -126,10 +141,19 @@ public class Inventory : MonoBehaviour
 
     public void switchToPrev()
     {
+        makeItemInactive(currentActiveSlot);
+        currentActiveSlot--;
+        if (currentActiveSlot < 0)
+        {
+            currentActiveSlot = inventoryCapacity - 1;
+        }
 
+        makeItemActive(currentActiveSlot);
+
+        setActiveSlotMarker(currentActiveSlot);
     }
 
-    private void switchToSlot(int slot, bool forceReEquip = false)
+    public void switchToSlot(int slot, bool forceReEquip = false)
     {
         if (slot == currentActiveSlot)
         { // Do nothing if the slot to switch to is the same as current active slot. Except in case of a forceReEquip override.
