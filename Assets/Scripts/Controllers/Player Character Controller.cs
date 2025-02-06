@@ -13,7 +13,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
     [SerializeField] private float lookSens = 1f;
-    private const float lookSpeedMult = 0.1F; // Constant multipler to make looking around feel natural at lookspeed = 1 (default setting for new players);
+    private const float lookSpeedMult = 0.1F; // Constant multipler to make looking around feel natural at lookspeed = 1 (default sensitivity setting for new players);
     [SerializeField] private float lookXLimit = 90f;
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
@@ -58,6 +58,13 @@ private void OnEnable()
     inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
     inputActions.Player.Next.performed += ctx => HandleItemNextInput();
     inputActions.Player.Drop.performed += ctx => HandleDropInput();
+
+    inputActions.Player.SwitchTo1.performed += ctx => HandleSwitchToSlotInput(0);
+    inputActions.Player.SwitchTo2.performed += ctx => HandleSwitchToSlotInput(1);
+    inputActions.Player.SwitchTo3.performed += ctx => HandleSwitchToSlotInput(2);
+    inputActions.Player.SwitchTo4.performed += ctx => HandleSwitchToSlotInput(3);
+
+    inputActions.Player.SwitchScroll.performed += ctx => HandleScrollInput(ctx);
 }
 
 private void OnDisable()
@@ -78,6 +85,14 @@ private void OnDisable()
     inputActions.Player.Interact.performed -= ctx => HandleInteractInput();
     inputActions.Player.Previous.performed -= ctx => HandleItemPrevInput();
     inputActions.Player.Next.performed -= ctx => HandleItemNextInput();
+    inputActions.Player.Drop.performed -= ctx => HandleDropInput();
+
+    inputActions.Player.SwitchTo1.performed -= ctx => HandleSwitchToSlotInput(0);
+    inputActions.Player.SwitchTo2.performed -= ctx => HandleSwitchToSlotInput(1);
+    inputActions.Player.SwitchTo3.performed -= ctx => HandleSwitchToSlotInput(2);
+    inputActions.Player.SwitchTo4.performed -= ctx => HandleSwitchToSlotInput(3);
+
+    inputActions.Player.SwitchScroll.performed -= ctx => HandleScrollInput(ctx);
 
     inputActions.Player.Disable();
 }
@@ -149,6 +164,18 @@ private void OnDisable()
         }
     }
 
+    private void HandleScrollInput(InputAction.CallbackContext context){
+        float scrollValue = context.ReadValue<float>();
+
+        if (scrollValue > 0)
+        {
+            HandleItemPrevInput(); // Scroll up (Prev Item)
+        }
+        else if (scrollValue < 0)
+        {
+            HandleItemNextInput(); // Scroll down (Next Item)
+        }
+    }
     private void HandleItemPrevInput()
     {
         D.Log("Prev item selected",  null, "Inv");
@@ -164,6 +191,10 @@ private void OnDisable()
     private void HandleDropInput(){
         D.Log("Drop selected", null, "Inv");
         inventoryComponent.dropItem();
+    }
+
+    private void HandleSwitchToSlotInput(int slotNum){
+        inventoryComponent.switchToSlot(slotNum);
     }
 
 

@@ -6,9 +6,12 @@ public class LogManager : MonoBehaviour
 {
     [Header("Log Categories")]
     public bool enableLogs = true;
+    [Tooltip("Log Any and Uncategorized messages")]
     public bool logAny = true; // Any = uncategorized. Any can be disabled and still have other categories show up.
     public bool logUI = true;
+    [Tooltip("Log Inventory System")]
     public bool logInv = true; // inventory system
+    [Tooltip("Log Interactions")]
     public bool logInt = true; // interaction system
 
     private static LogManager instance;

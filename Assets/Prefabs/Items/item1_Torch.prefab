@@ -124,15 +124,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -144.99
+      value: -148.5839
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20.43
+      value: -22.93
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.026
+      value: -8.250425
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -178,6 +178,9 @@ PrefabInstance:
       addedObject: {fileID: 6980778099385022827}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2051955788375131602}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6389189320516599234}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
@@ -192,15 +195,24 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2575680803305992413}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3973150774860762895}
   m_SourcePrefab: {fileID: 100100000, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
 --- !u!1 &8468861148628278426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d98873a7ed997f4a84fbdcf2dc7de31, type: 3}
   m_PrefabInstance: {fileID: 8738700205913104843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2051955788375131602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468861148628278426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb54b58e4623944893b765052386563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6389189320516599234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f26b04e946f24c9f87b9e680246bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
-  handPosition: {fileID: 0}
+  itemIDPleaseDoNotChange: 1
 --- !u!114 &4840019903959820988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1
+  itemCollider: {fileID: 2575680803305992413}
 --- !u!114 &3579406611146350053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +284,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &2575680803305992413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -289,27 +301,6 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.17385852, y: 0.50000006, z: 0.17385852}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &3973150774860762895
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8468861148628278426}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

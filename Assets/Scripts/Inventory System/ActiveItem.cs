@@ -11,6 +11,7 @@ public class ActiveItem : MonoBehaviour
         item.SetParent(handPosition);
 
         // Reset the local position and rotation to align it perfectly with the hand
+        item.localScale = Vector3.one; // Reset local scale
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
     }
