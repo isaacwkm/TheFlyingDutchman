@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class InteractRequirements : MonoBehaviour
 {
-    [SerializeField] 
+    //[SerializeField] 
     private string[] requirements; // Array of strings for the user to create requirements in
     [SerializeField][Tooltip("Include any items that can be used to allow interaction with object.")]
     private int[] activeItemIdsNeeded;
