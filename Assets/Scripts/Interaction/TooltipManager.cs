@@ -7,7 +7,7 @@ public class TooltipManager : MonoBehaviour
     [Header("Interaction Tooltip References")]
     [SerializeField] private PlayerCharacterController playerController; // reference to player controller script
     [SerializeField] private GameObject cameraObj; // reference to camera obj
-    [SerializeField] private TextMeshProUGUI UiTextComponent; // Reference to the tooltip UI Text component
+    [SerializeField] private TextMeshProUGUI tooltipUiComponent; // Reference to the tooltip UI Text component
     [SerializeField] private Image crosshair; // Reference to crosshair
     private InputSystem_Actions inputActions; // Reference to the input actions
 
@@ -25,7 +25,8 @@ public class TooltipManager : MonoBehaviour
         inputActions = new InputSystem_Actions();
     }
 
-    private void OnEnable(){
+    private void OnEnable()
+    {
         // Enable the input actions (make sure they're enabled)
         inputActions.Enable();
     }
@@ -36,14 +37,14 @@ public class TooltipManager : MonoBehaviour
     }
     private void Start()
     {
-        playerCamera = cameraObj.GetComponent<Camera>(); 
+        playerCamera = cameraObj.GetComponent<Camera>();
         cameraTransform = cameraObj.transform;
         interactionRange = playerController.getMaxInteractDistance();
 
         // Disable tooltip text at start
-        if (UiTextComponent != null)
+        if (tooltipUiComponent != null)
         {
-            UiTextComponent.gameObject.SetActive(false);
+            tooltipUiComponent.gameObject.SetActive(false);
         }
 
     }
@@ -56,20 +57,20 @@ public class TooltipManager : MonoBehaviour
 
     private void ShowTooltip()
     {
-        if (UiTextComponent != null)
+        if (tooltipUiComponent != null)
         {
             crosshair.gameObject.SetActive(false);
-            UiTextComponent.gameObject.SetActive(true);
-            UiTextComponent.text = $"{tooltipText}: [{inputActions.Player.Interact.bindings[0].ToDisplayString()}]"; // Display the action key
+            tooltipUiComponent.gameObject.SetActive(true);
+            tooltipUiComponent.text = tooltipText;
         }
     }
 
     private void HideTooltip()
     {
-        if (UiTextComponent != null)
+        if (tooltipUiComponent != null)
         {
             crosshair.gameObject.SetActive(true);
-            UiTextComponent.gameObject.SetActive(false);
+            tooltipUiComponent.gameObject.SetActive(false);
         }
     }
 
@@ -81,14 +82,26 @@ public class TooltipManager : MonoBehaviour
             Interactable whom = hit.collider.GetComponent<Interactable>();
             if (whom && whom.isActiveAndEnabled)
             {
-                // if (requirements met)
-                tooltipText = whom.peekActionText();
+                // if (requirements not met)
+                if (!whom.canInteract(gameObject)) // Game object is player here
+                {
+                    tooltipText = whom.peekRequirementText();
+                }
+                else
+                { // if (requirements met)
+                    tooltipText = whom.peekActionText();
+                    tooltipText = appendActionKey(tooltipText); // Append the action key for interact to the tooltip message
+                }
                 ShowTooltip();
                 return;
             }
         }
         HideTooltip();
 
+    }
+
+    private string appendActionKey(string toolTipText){
+        return $"{tooltipText}: [{inputActions.Player.Interact.bindings[0].ToDisplayString()}]"; // Display the action key
     }
 
 }

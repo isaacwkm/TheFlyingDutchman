@@ -125,6 +125,17 @@ public class Inventory : MonoBehaviour
         inventorySize--; // update inventory size
     }
 
+    public int getHeldItemId(){
+        if (itemsInSlots[currentActiveSlot] == null) return 0;
+
+        else return getItemId(itemsInSlots[currentActiveSlot]);
+    }
+
+    public int getItemId(GameObject item){
+        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+        return activeItemComponent.itemIDPleaseDoNotChange;
+    }
+
     public void switchToNext()
     {
         makeItemInactive(currentActiveSlot);

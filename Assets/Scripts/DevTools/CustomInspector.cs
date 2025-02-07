@@ -8,7 +8,7 @@ public class MyComponentEditor : Editor
     {
         Interactable myComponent = (Interactable)target;
 
-        myComponent.actionText = EditorGUILayout.TextField("Action Text", myComponent.actionText);
+        myComponent.actionTooltip = EditorGUILayout.TextField("Action Text", myComponent.actionTooltip);
         myComponent.interactSound = (ActionSound)EditorGUILayout.ObjectField("Interact Sound", myComponent.interactSound, typeof(ActionSound), true);
         myComponent.doCooldown = EditorGUILayout.Toggle("Do Cooldowns", myComponent.doCooldown);
 
@@ -18,6 +18,10 @@ public class MyComponentEditor : Editor
         EditorGUI.EndDisabledGroup();
         
         myComponent.requirements = (InteractRequirements)EditorGUILayout.ObjectField("Interact Prerequisites", myComponent.requirements, typeof(InteractRequirements), true);
+
+        EditorGUI.BeginDisabledGroup(myComponent.requirements == null);
+        myComponent.requirementTooltipText = EditorGUILayout.TextField("Requirement Tooltip Text", myComponent.requirementTooltipText);
+        EditorGUI.EndDisabledGroup();
 
         serializedObject.ApplyModifiedProperties();
     }
