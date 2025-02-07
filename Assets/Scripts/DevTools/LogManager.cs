@@ -13,6 +13,7 @@ public class LogManager : MonoBehaviour
     public bool logInv = true; // inventory system
     [Tooltip("Log Interactions")]
     public bool logInt = true; // interaction system
+    public bool logItem = true;
 
     private static LogManager instance;
 
@@ -43,6 +44,7 @@ public class LogManager : MonoBehaviour
         categoryStates["UI"] = logUI;
         categoryStates["Inv"] = logInv; // inventory system
         categoryStates["Int"] = logInt; // interaction system
+        categoryStates["Item"] = logItem; // interaction system
     }
 
     public static bool ShouldLog(string category)

@@ -49,6 +49,7 @@ public class DroppedItem : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
         itemCollider.isTrigger = false; // Enable collider for ground detection
+        hasLanded = false; // Reset hasLanded
 
         // Start falling
         transform.position = dropPosition;
@@ -70,6 +71,7 @@ public class DroppedItem : MonoBehaviour
 
     private void LandOnSurface(GameObject surface)
     {
+        D.Log("Item landed on surface!", gameObject, "Item");
         hasLanded = true;
 
         // Disable physics to prevent movement
