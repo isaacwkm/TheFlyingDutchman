@@ -111,7 +111,7 @@ public class Inventory : MonoBehaviour
         GameObject item = itemsInSlots[currentActiveSlot];
         DroppedItem droppedItemComponent = item.GetComponent<DroppedItem>();
         Transform playerTransform = gameObject.transform;
-        Vector3 dropPosition = playerTransform.position + playerTransform.forward * 0.6f + Vector3.up * 1.2f;
+        Vector3 dropPosition = playerTransform.position + playerTransform.forward * 0.6f + Vector3.up * 0.6f;
         ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
 
         activeItemComponent.enabled = false; // Disable activeItem component

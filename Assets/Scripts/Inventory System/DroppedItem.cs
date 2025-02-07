@@ -1,13 +1,15 @@
 using Needle.Console;
 using UnityEngine;
 
+[RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BoxCollider))]
 public class DroppedItem : MonoBehaviour
 {
+    public Quaternion defaultRotation = Quaternion.Euler(0, 0, 0);
     [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
-    public Collider itemCollider;
+    private Collider itemCollider;
     private bool hasLanded = false;
     private Interactable interactTarget;
 
@@ -19,7 +21,7 @@ public class DroppedItem : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        // itemCollider = GetComponent<Collider>();
+        itemCollider = GetComponent<Collider>();
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // Prevent tunneling
         interactTarget = gameObject.GetComponent<Interactable>();
     }
@@ -42,6 +44,7 @@ public class DroppedItem : MonoBehaviour
 
     public void Drop(Vector3 dropPosition)
     {
+        D.Log("Dropping!", gameObject, "Item");
         // Unparent
         gameObject.transform.SetParent(null, worldPositionStays: true);
 
@@ -52,8 +55,13 @@ public class DroppedItem : MonoBehaviour
         hasLanded = false; // Reset hasLanded
 
         // Start falling
+        // Set drop position
         transform.position = dropPosition;
-        transform.rotation = Quaternion.Euler(90f, Random.Range(0, 360), 0f);
+
+        // Set Drop rotation
+        Quaternion rotationModifier = Quaternion.Euler(0f, Random.Range(0, 360), 90f);
+        Quaternion targetRotation = rotationModifier * defaultRotation;
+        transform.rotation = targetRotation;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -71,14 +79,14 @@ public class DroppedItem : MonoBehaviour
 
     private void LandOnSurface(GameObject surface)
     {
-        D.Log("Item landed on surface!", gameObject, "Item");
+        D.Log($"Item landed on {surface.name}!", gameObject, "Item");
         hasLanded = true;
 
         // Disable physics to prevent movement
-        rb.isKinematic = true;
-        rb.useGravity = false;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        rb.useGravity = false;
 
         // Disable collider so player can walk through it
         if (itemCollider) itemCollider.isTrigger = true;

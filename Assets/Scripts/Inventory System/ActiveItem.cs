@@ -1,10 +1,15 @@
 using UnityEngine;
 
+[RequireComponent(typeof(DroppedItem))]
 public class ActiveItem : MonoBehaviour
 {
     [Tooltip("Do not re-assign during runtime.")] 
     public int itemIDPleaseDoNotChange = 1; // Do not re-assign during runtime. The weird variable naming is only to discourage ID re-assignment after it has been correctly set to the right item id.
+    private Quaternion defaultRotation;
 
+    void Awake(){
+        defaultRotation = gameObject.GetComponent<DroppedItem>().defaultRotation;
+    }
     public void SnapToHand(Transform item, Transform handPosition)
     {
         // Parent the item to the hand position
@@ -13,7 +18,7 @@ public class ActiveItem : MonoBehaviour
         // Reset the local position and rotation to align it perfectly with the hand
         item.localScale = Vector3.one; // Reset local scale
         item.localPosition = Vector3.zero;
-        item.localRotation = Quaternion.identity;
+        item.localRotation = defaultRotation;
     }
 
     void OnEnable(){
