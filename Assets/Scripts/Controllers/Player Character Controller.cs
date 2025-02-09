@@ -2,14 +2,21 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Needle.Console;
+using System.Collections;
 
 [SelectionBase] // Automatically select the parent when its child is selected
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCharacterController : MonoBehaviour
 {
+    private enum MovementMode {
+        Normal,
+        Ladder
+    }
+
     public Camera playerCamera;
     public Inventory inventoryComponent;
     [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float climbSpeed = 6f;
     [SerializeField] private float jumpPower = 7f;
     [SerializeField] private float gravity = 10f;
     [SerializeField] private float lookSens = 1f;
@@ -32,6 +39,8 @@ public class PlayerCharacterController : MonoBehaviour
     private bool wasGrounded = false;
     private bool justLanded = false;
 
+    private MovementMode movementMode = MovementMode.Normal;
+    private GameObject movementMedium = null;
 
     private void Awake()
     {
@@ -106,7 +115,15 @@ private void OnDisable()
         Cursor.visible = false;
     }
 
-    void Update()
+    void Update() {
+        if (movementMode == MovementMode.Normal) {
+            UpdateNormal();
+        } else if (movementMode == MovementMode.Ladder) {
+            UpdateOnLadder();
+        }
+    }
+
+    void UpdateNormal()
     {
         MovePlayer();
         if (InputModeManager.Instance?.inputMode == InputModeManager.InputMode.Player) {
@@ -117,6 +134,15 @@ private void OnDisable()
             Mathf.Abs(characterController.velocity.y) >= 0.1f
         );
         wasGrounded = characterController.isGrounded;
+    }
+
+    void UpdateOnLadder() {
+        MovePlayerOnLadder();
+        if (InputModeManager.Instance?.inputMode == InputModeManager.InputMode.Player) {
+            HandleCameraRotation();
+        }
+        justLanded = false;
+        wasGrounded = true;
     }
 
     private void MovePlayer()
@@ -146,6 +172,47 @@ private void OnDisable()
 
         characterController.height = isCrouching ? crouchHeight : defaultHeight;
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void MovePlayerOnLadder() {
+        if (movementMedium) {
+            var collFlags = characterController.Move(
+                Time.deltaTime*transform.up*climbSpeed*Vector3.Dot(
+                    -(transform.forward*movementInput.y).normalized,
+                    movementMedium.transform.forward
+                )
+            );
+            if ((collFlags & CollisionFlags.Below) != 0) {
+                RestoreMovementMode();
+            }
+        }
+    }
+
+    public void RestoreMovementMode() {
+        movementMode = MovementMode.Normal;
+        movementMedium = null;
+    }
+
+    public void AttachToLadder(GameObject ladder) {
+        moveDirection = Vector3.zero;
+        movementMode = MovementMode.Ladder;
+        movementMedium = ladder;
+    }
+
+    public void DetachFromLadder() {
+        if (movementMode == MovementMode.Ladder) {
+            movementMode = MovementMode.Normal;
+            movementMedium = null;
+            characterController.Move(0.5f*Vector3.up);
+        }
+    }
+
+    public bool AttachedTo(GameObject medium) {
+        return movementMedium == medium;
+    }
+
+    public GameObject GetMovementMedium() {
+        return movementMedium;
     }
 
     private void HandleCameraRotation()
@@ -218,5 +285,9 @@ private void OnDisable()
 
     public bool JustLanded() {
         return justLanded;
+    }
+
+    public bool Climbing() {
+        return movementMode == MovementMode.Ladder;
     }
 }

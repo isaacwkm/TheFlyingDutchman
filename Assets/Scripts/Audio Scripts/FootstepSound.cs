@@ -37,45 +37,53 @@ public class FootstepSound : MonoBehaviour
     private void Update()
     {
         var pcc = characterController.GetComponent<PlayerCharacterController>();
+        GameObject movementMedium = pcc?.GetMovementMedium();
+        bool magnitudeSufficient = characterController.velocity.magnitude > walkSpeedThreshold;
         // Check if the character is walking and grounded (not in mid-air)
-        if (characterController.isGrounded && (
+        if ((
+            movementMedium && magnitudeSufficient
+        ) || (characterController.isGrounded && (
             (pcc && pcc.AnyMovementInput()) ||
             (pcc && pcc.JustLanded()) ||
-            (!pcc && characterController.velocity.magnitude > walkSpeedThreshold)
-        )) {
-            PlayFootstepSound();
+            (!pcc && magnitudeSufficient)
+        ))) {
+            PlayFootstepSound(movementMedium);
         }
     }
 
-    private void PlayFootstepSound()
+    private void PlayFootstepSound(GameObject movementMedium = null)
     {
         // If audio is already playing, don't play again until the clip finishes
         if (audioSource.isPlaying) return;
 
-        // Use a raycast to detect the ground material
-        RaycastHit hit;
-        if (Physics.Raycast(footTransform.position, Vector3.down, out hit, 1f))
-        {
-            // Select the appropriate sound based on the surface texture
-            AudioClip selectedFootstep = GetFootstepSoundBasedOnSurface(hit.collider.gameObject);
-
-            // If a valid sound is found, play it
-            if (selectedFootstep != null)
+        AudioClip selectedFootstep = null;
+        if (movementMedium) {
+            selectedFootstep = GetFootstepSoundBasedOnSurface(movementMedium);
+        } else {
+            // Use a raycast to detect the ground material
+            RaycastHit hit;
+            if (Physics.Raycast(footTransform.position, Vector3.down, out hit, 1f))
             {
-                audioSource.PlayOneShot(selectedFootstep);
+                selectedFootstep = GetFootstepSoundBasedOnSurface(hit.collider.gameObject);
+            }
+        }
+
+        // If a valid sound is found, play it
+        if (selectedFootstep != null)
+        {
+            audioSource.PlayOneShot(selectedFootstep);
+        }
+        else
+        {
+            // If no valid sound was found, fall back to a default sound
+            Debug.LogWarning("No valid footstep sound found, falling back to default.");
+            if (fallbackFootsteps != null && fallbackFootsteps.Length > 0)
+            {
+                audioSource.PlayOneShot(fallbackFootsteps[Random.Range(0, fallbackFootsteps.Length)]);
             }
             else
             {
-                // If no valid sound was found, fall back to a default sound
-                Debug.LogWarning("No valid footstep sound found, falling back to default.");
-                if (fallbackFootsteps != null && fallbackFootsteps.Length > 0)
-                {
-                    audioSource.PlayOneShot(fallbackFootsteps[Random.Range(0, fallbackFootsteps.Length)]);
-                }
-                else
-                {
-                    Debug.LogWarning("Fallback sounds are also missing! Playing nothing.");
-                }
+                Debug.LogWarning("Fallback sounds are also missing! Playing nothing.");
             }
         }
     }
