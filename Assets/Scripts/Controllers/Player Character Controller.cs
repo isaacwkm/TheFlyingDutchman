@@ -29,6 +29,8 @@ public class PlayerCharacterController : MonoBehaviour
     private Vector2 lookInput;
     private bool isJumping = false;
     private bool isCrouching = false;
+    private bool wasGrounded = false;
+    private bool justLanded = false;
 
 
     private void Awake()
@@ -110,6 +112,11 @@ private void OnDisable()
         if (InputModeManager.Instance?.inputMode == InputModeManager.InputMode.Player) {
             HandleCameraRotation();
         }
+        justLanded = (
+            characterController.isGrounded && !wasGrounded &&
+            Mathf.Abs(characterController.velocity.y) >= 0.1f
+        );
+        wasGrounded = characterController.isGrounded;
     }
 
     private void MovePlayer()
@@ -203,5 +210,13 @@ private void OnDisable()
     public float getMaxInteractDistance()
     {
         return maxInteractDistance;
+    }
+
+    public bool AnyMovementInput() {
+        return movementInput != Vector2.zero;
+    }
+
+    public bool JustLanded() {
+        return justLanded;
     }
 }
