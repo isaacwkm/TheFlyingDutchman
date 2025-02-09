@@ -76,14 +76,7 @@ public class FlyingVehicle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Operating())
-        {
-            if (playerCamera)
-            {
-                playerCamera.transform.rotation = transform.rotation;
-            }
-        }
-        else
+        if (!Operating())
         {
             playerCamera = null;
             impetus = Vector3.zero;
@@ -128,6 +121,7 @@ public class FlyingVehicle : MonoBehaviour
             playerCamera = pcm.playerCamera;
             cameraInitialDisplacement = playerCamera.transform.localPosition;
             playerCamera.transform.localPosition += Vector3.up * vantage;
+            playerCamera.transform.rotation = transform.rotation;
 
         }
         else
