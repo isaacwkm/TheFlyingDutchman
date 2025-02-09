@@ -174,7 +174,10 @@ public class FlyingVehicle : MonoBehaviour
         {
             playerCamera.transform.localPosition = cameraInitialDisplacement;
         }
-        player.transform.SetParent(sceneCore); // Parent the player to the rudderHelmSeat
+        player.transform.SetParent(sceneCore); // Unparent the player from the rudderHelmSeat
+        player.transform.eulerAngles = new Vector3(
+            0.0f, player.transform.eulerAngles.y, 0.0f
+        );
         inputMan.SwitchToPlayerControls();
     }
 
