@@ -262,7 +262,7 @@ MonoBehaviour:
   sceneCore: {fileID: 0}
   linearAcceleration: 3
   angularAcceleration: 12
-  traction: 0.75
+  traction: 0.01
   bobSpeed: 1
   bobRange: 1
   vantage: 1.5
@@ -455,10 +455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: Open/Close
-  interactCooldownSeconds: 1
+  actionTooltip: Interact
   interactSound: {fileID: 0}
+  doCooldown: 1
+  interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
+  requirements: {fileID: 0}
+  requirementTooltipText: Need key
 --- !u!114 &6602142238876780373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,10 +648,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: Open/Close
-  interactCooldownSeconds: 1
+  actionTooltip: Interact
   interactSound: {fileID: 0}
+  doCooldown: 1
+  interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
+  requirements: {fileID: 0}
+  requirementTooltipText: Need key
 --- !u!54 &1969465001414909605
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1380,10 +1386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: Pilot Ship
-  interactCooldownSeconds: 1
+  actionTooltip: Interact
   interactSound: {fileID: 0}
+  doCooldown: 1
+  interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
+  requirements: {fileID: 0}
+  requirementTooltipText: Need key
 --- !u!54 &2390350788359516047
 Rigidbody:
   m_ObjectHideFlags: 0
