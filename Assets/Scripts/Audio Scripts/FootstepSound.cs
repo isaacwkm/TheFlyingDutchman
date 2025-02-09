@@ -36,9 +36,13 @@ public class FootstepSound : MonoBehaviour
 
     private void Update()
     {
+        var pcc = characterController.GetComponent<PlayerCharacterController>();
         // Check if the character is walking and grounded (not in mid-air)
-        if (characterController.isGrounded && characterController.velocity.magnitude > walkSpeedThreshold)
-        {
+        if (characterController.isGrounded && (
+            (pcc && pcc.AnyMovementInput()) ||
+            (pcc && pcc.JustLanded()) ||
+            (!pcc && characterController.velocity.magnitude > walkSpeedThreshold)
+        )) {
             PlayFootstepSound();
         }
     }
