@@ -21,9 +21,11 @@ public class FlyingVehicle : MonoBehaviour
     private Camera playerCamera = null;
     private Vector3 cameraInitialDisplacement;
     private Vector2 xzMovementInput = Vector2.zero;
+    private float yMovementInput = 0.0f;
     private Vector3 impetus = Vector3.zero;
     private float baseY;
     private float bobDirection = -1.0f;
+    private float targetY;
     private Rigidbody rbody;
     private GameObject currentPlayer = null;
 
@@ -32,6 +34,10 @@ public class FlyingVehicle : MonoBehaviour
     private System.Action<InputAction.CallbackContext> moveCanceledAction;
     private System.Action<InputAction.CallbackContext> interactPerformedAction;
     private System.Action<InputAction.CallbackContext> jumpOffPerformedAction;
+    private System.Action<InputAction.CallbackContext> ascendPerformedAction;
+    private System.Action<InputAction.CallbackContext> ascendCanceledAction;
+    private System.Action<InputAction.CallbackContext> descendPerformedAction;
+    private System.Action<InputAction.CallbackContext> descendCanceledAction;
 
     void Awake()
     {
@@ -47,11 +53,19 @@ public class FlyingVehicle : MonoBehaviour
         moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
         interactPerformedAction = ctx => RelinquishFocus(currentPlayer);
         jumpOffPerformedAction = ctx => RelinquishFocus(currentPlayer);
+        ascendPerformedAction = ctx => yMovementInput = 1.0f;
+        ascendCanceledAction = ctx => yMovementInput = 0.0f;
+        descendPerformedAction = ctx => yMovementInput = -1.0f;
+        descendCanceledAction = ctx => yMovementInput = 0.0f;
 
         inputActions.Flying.Move.performed += movePerformedAction;
         inputActions.Flying.Move.canceled += moveCanceledAction;
         inputActions.Flying.Interact.performed += interactPerformedAction;
         inputActions.Flying.Jump_Off.performed += jumpOffPerformedAction;
+        inputActions.Flying.Ascend.performed += ascendPerformedAction;
+        inputActions.Flying.Ascend.canceled += ascendCanceledAction;
+        inputActions.Flying.Descend.performed += descendPerformedAction;
+        inputActions.Flying.Descend.canceled += descendCanceledAction;
     }
 
     void OnDisable()
@@ -61,6 +75,10 @@ public class FlyingVehicle : MonoBehaviour
         inputActions.Flying.Move.canceled -= moveCanceledAction;
         inputActions.Flying.Interact.performed -= interactPerformedAction;
         inputActions.Flying.Jump_Off.performed -= jumpOffPerformedAction;
+        inputActions.Flying.Ascend.performed -= ascendPerformedAction;
+        inputActions.Flying.Ascend.canceled -= ascendCanceledAction;
+        inputActions.Flying.Descend.performed -= descendPerformedAction;
+        inputActions.Flying.Descend.canceled -= descendCanceledAction;
 
         inputActions.Flying.Disable();
         rudderInteractTarget.OnInteract -= doRudderInteraction;
@@ -69,7 +87,7 @@ public class FlyingVehicle : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        baseY = transform.position.y;
+        targetY = baseY = transform.position.y;
         rbody = GetComponent<Rigidbody>();
     }
 
@@ -81,17 +99,24 @@ public class FlyingVehicle : MonoBehaviour
             playerCamera = null;
             impetus = Vector3.zero;
         }
-        // Bobbing
-        if ((transform.position.y - baseY) / bobDirection > bobRange)
-        {
-            bobDirection = -bobDirection;
-        }
         // Handle movement inputs at current frame
-        HandleMovementInput(xzMovementInput);
+        HandleMovementInput(xzMovementInput, yMovementInput);
+        // Move altitude targets if ascending/descending
+        if (impetus.y == 0.0f) {
+            // Bobbing
+            targetY += bobDirection*bobSpeed*Time.deltaTime;
+            if ((targetY - baseY) / bobDirection > bobRange)
+            {
+                bobDirection = -bobDirection;
+            }
+        } else {
+            targetY = transform.position.y;
+            baseY = transform.position.y;
+        }
         // Apply Forces
         rbody.AddTorque(transform.up * impetus.x * rbody.mass * angularAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(transform.forward * impetus.z * rbody.mass * linearAcceleration * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(Vector3.up * rbody.mass * bobSpeed * bobDirection * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(Vector3.up * rbody.mass * (targetY - transform.position.y) * bobSpeed * Time.deltaTime, ForceMode.Impulse);
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
@@ -104,6 +129,19 @@ public class FlyingVehicle : MonoBehaviour
             motor.targetVelocity = rbody.angularVelocity.y * rudderSpin;
             rudder.motor = motor;
         }
+        // Tilt ship with ascent/descent
+        rbody.AddTorque(
+            -rbody.mass*angularAcceleration*Time.deltaTime*transform.right*impetus.y *
+                Vector3.Dot(transform.up, Vector3.up)/4.0f,
+            ForceMode.Impulse
+        );
+        // Stabilize
+        rbody.AddTorque(
+            rbody.mass*angularAcceleration*Time.deltaTime*(
+                Vector3.Cross(transform.up, Vector3.up)
+            ),
+            ForceMode.Impulse
+        );
     }
 
     void doRudderInteraction(GameObject player)
@@ -145,9 +183,10 @@ public class FlyingVehicle : MonoBehaviour
         return inputActions.Flying.enabled;
     }
 
-    void HandleMovementInput(Vector2 movement)
+    void HandleMovementInput(Vector2 xz, float y)
     {
-        impetus.x = movement.x;
-        impetus.z = movement.y;
+        impetus.x = xz.x;
+        impetus.y = y;
+        impetus.z = xz.y;
     }
 }

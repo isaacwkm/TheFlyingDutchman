@@ -243,7 +243,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &277970663228825012
 MonoBehaviour:
@@ -263,6 +263,7 @@ MonoBehaviour:
   linearAcceleration: 3
   angularAcceleration: 12
   traction: 0.01
+  verticalSpeed: 1
   bobSpeed: 1
   bobRange: 1
   vantage: 1.5
