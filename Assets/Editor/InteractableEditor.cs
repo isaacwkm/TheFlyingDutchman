@@ -1,8 +1,8 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Interactable))]
-public class MyComponentEditor : Editor
+[CustomEditor(typeof(Interactable)), CanEditMultipleObjects]
+public class InteractableEditor : Editor
 {
     public override void OnInspectorGUI()
     {
@@ -10,8 +10,8 @@ public class MyComponentEditor : Editor
 
         myComponent.actionTooltip = EditorGUILayout.TextField("Action Text", myComponent.actionTooltip);
         myComponent.interactSound = (ActionSound)EditorGUILayout.ObjectField("Interact Sound", myComponent.interactSound, typeof(ActionSound), true);
-        myComponent.doCooldown = EditorGUILayout.Toggle("Do Cooldowns", myComponent.doCooldown);
 
+        myComponent.doCooldown = EditorGUILayout.Toggle("Do Cooldowns", myComponent.doCooldown);
         EditorGUI.BeginDisabledGroup(!myComponent.doCooldown);
         myComponent.interactCooldownSeconds = EditorGUILayout.FloatField("Interact Cooldown", myComponent.interactCooldownSeconds);
         myComponent.CooldownReturnSound = (ActionSound)EditorGUILayout.ObjectField("Cooldown Return Sound", myComponent.CooldownReturnSound, typeof(ActionSound), true);
