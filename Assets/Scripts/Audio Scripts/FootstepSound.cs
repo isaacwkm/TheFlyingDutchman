@@ -27,6 +27,8 @@ public class FootstepSound : MonoBehaviour
     private CharacterController characterController;
     private int lastFootstepIndex = -1;  // Track the last played footstep index
     private int repeatCount = 0;         // Count how many times the same footstep has been played consecutively
+    private int lastWoodFootstepIndex = -1; // Track last played wood footstep index
+
 
     private void Start()
     {
@@ -109,6 +111,13 @@ public class FootstepSound : MonoBehaviour
         {
             footstepArray = woodFootsteps;  // Wood footstep logic
             volumeMultiplier = woodVolume;  // Set volume for wood
+
+            if (footstepArray != null && footstepArray.Length > 1)
+            {
+                lastWoodFootstepIndex = (lastWoodFootstepIndex + 1) % footstepArray.Length;
+                audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
+                return footstepArray[lastWoodFootstepIndex]; // Return the next clip in sequence
+            }
         }
         else if (surface.CompareTag("Dirt"))
         {
