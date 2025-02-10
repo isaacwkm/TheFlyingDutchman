@@ -23,6 +23,10 @@ public class ActiveItem : MonoBehaviour
         item.localRotation = defaultRotation * Quaternion.Euler(itemRotationOffset);
     }
 
+    private void doAttack(){
+
+    }
+
     void OnEnable(){
     }
 

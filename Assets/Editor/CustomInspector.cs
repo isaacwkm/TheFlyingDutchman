@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(Interactable))]
-public class MyComponentEditor : Editor
+public class InteractableEditor : Editor
 {
     public override void OnInspectorGUI()
     {
