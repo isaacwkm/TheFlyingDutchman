@@ -107,11 +107,10 @@ public class Inventory : MonoBehaviour
         // if the player is holding something...
 
         // First initialize some variables to drop the item
-        GameObject item = itemsInSlots[currentActiveSlot];
-        DroppedItem droppedItemComponent = item.GetComponent<DroppedItem>();
+        DroppedItem droppedItemComponent = currentItem().GetComponent<DroppedItem>();
         Transform playerTransform = gameObject.transform;
         Vector3 dropPosition = playerTransform.position + playerTransform.forward * 0.6f + Vector3.up * 0.6f;
-        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+        ActiveItem activeItemComponent = currentItem().GetComponent<ActiveItem>();
 
         activeItemComponent.enabled = false; // Disable activeItem component
         droppedItemComponent.enabled = true;
@@ -125,9 +124,9 @@ public class Inventory : MonoBehaviour
     }
 
     public int getHeldItemId(){
-        if (itemsInSlots[currentActiveSlot] == null) return 0;
+        if (currentItem() == null) return 0;
 
-        else return getItemId(itemsInSlots[currentActiveSlot]);
+        else return getItemId(currentItem());
     }
 
     public int getItemId(GameObject item){
@@ -233,7 +232,7 @@ public class Inventory : MonoBehaviour
 
     public bool nothingEquipped()
     {
-        if (itemsInSlots[currentActiveSlot] == null)
+        if (currentItem() == null)
         {
             return true;
         }
@@ -241,5 +240,16 @@ public class Inventory : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private GameObject currentItem(){
+        return itemsInSlots[currentActiveSlot];
+    }
+
+    public void  attackWithActiveItem(){
+        if (nothingEquipped()) return;
+
+        ActiveItem activeItemComponent = currentItem().GetComponent<ActiveItem>();
+        activeItemComponent.doAttack();
     }
 }

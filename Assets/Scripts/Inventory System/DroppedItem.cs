@@ -91,11 +91,8 @@ public class DroppedItem : MonoBehaviour
         // Disable collider so player can walk through it
         if (itemCollider) itemCollider.isTrigger = true;
 
-        // Parent to the surface if it's a moving object (except players)
-        if (!surface.CompareTag("Player"))
-        {
-            transform.SetParent(surface.transform, worldPositionStays: true);
-        }
+        transform.SetParent(surface.transform, worldPositionStays: true);
+
     }
 
     private void tryPickUpItem(GameObject player){
