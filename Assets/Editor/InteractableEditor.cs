@@ -23,8 +23,11 @@ public class InteractableEditor : Editor
         myComponent.requirementTooltipText = EditorGUILayout.TextField("Requirement Tooltip Text", myComponent.requirementTooltipText);
         EditorGUI.EndDisabledGroup();
 
-        // Mark the object as dirty to ensure changes are tracked
-        EditorUtility.SetDirty(myComponent);
+        // Ensure changes to the prefab are tracked and applied
+        if (PrefabUtility.IsPartOfPrefabInstance(myComponent))
+        {
+            PrefabUtility.RecordPrefabInstancePropertyModifications(myComponent);
+        }
 
         serializedObject.ApplyModifiedProperties();
     }
