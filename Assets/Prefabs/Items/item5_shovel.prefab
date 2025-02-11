@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       propertyPath: m_Name
       value: item5_shovel
@@ -179,5 +183,5 @@ MonoBehaviour:
   heldPositionOffset: {x: 0.1, y: -0.5, z: 0.2}
   heldRotationOffset: {x: 0, y: -10, z: 0}
   handAnim: {fileID: 0}
-  hasAttack: 0
+  hasAttack: 1
   attackAnimName: Dig

@@ -4,35 +4,54 @@ using UnityEngine;
 [CustomEditor(typeof(ActiveItem)), CanEditMultipleObjects]
 public class ActiveItemEditor : Editor
 {
+    private SerializedProperty itemIDPleaseDoNotChange;
+    private SerializedProperty heldPositionOffset;
+    private SerializedProperty heldRotationOffset;
+    private SerializedProperty handAnim;
+    private SerializedProperty hasAttack;
+    private SerializedProperty attackAnimName;
+
+    private void OnEnable()
+    {
+        // Find all serialized properties
+        itemIDPleaseDoNotChange = serializedObject.FindProperty("itemIDPleaseDoNotChange");
+        heldPositionOffset = serializedObject.FindProperty("heldPositionOffset");
+        heldRotationOffset = serializedObject.FindProperty("heldRotationOffset");
+        handAnim = serializedObject.FindProperty("handAnim");
+        hasAttack = serializedObject.FindProperty("hasAttack");
+        attackAnimName = serializedObject.FindProperty("attackAnimName");
+    }
+
     public override void OnInspectorGUI()
     {
-        ActiveItem myComponent = (ActiveItem)target;
+        // Update the serialized object
+        serializedObject.Update();
 
-        // Track changes for undo/redo
-        Undo.RecordObject(myComponent, "Modify ActiveItem");
+        // Draw fields using SerializedProperty
+        EditorGUILayout.PropertyField(itemIDPleaseDoNotChange, new GUIContent("Item ID (Please do not change)"));
+        EditorGUILayout.PropertyField(heldPositionOffset, new GUIContent("Held Position Offset"));
+        EditorGUILayout.PropertyField(heldRotationOffset, new GUIContent("Held Rotation Offset"));
+        EditorGUILayout.PropertyField(handAnim, new GUIContent("Hand Animator"));
 
-        myComponent.itemIDPleaseDoNotChange = EditorGUILayout.IntField("Item ID (Please do not change)", myComponent.itemIDPleaseDoNotChange);
-        myComponent.heldPositionOffset = EditorGUILayout.Vector3Field("Held Position Offset", myComponent.heldPositionOffset);
-        myComponent.heldRotationOffset = EditorGUILayout.Vector3Field("Held Rotation Offset", myComponent.heldRotationOffset);
-        myComponent.handAnim = (Animator)EditorGUILayout.ObjectField("Hand Animator", myComponent.handAnim, typeof(Animator), true);
-
-        myComponent.hasAttack = EditorGUILayout.Toggle("Has Attack", myComponent.hasAttack);
-        EditorGUI.BeginDisabledGroup(!myComponent.hasAttack);
-        myComponent.attackAnimName = EditorGUILayout.TextField("Attack Anim Name", myComponent.attackAnimName);
-        EditorGUI.EndDisabledGroup();
-
-        // Check if the object is part of a prefab instance
-        if (PrefabUtility.IsPartOfPrefabInstance(myComponent))
+        EditorGUILayout.PropertyField(hasAttack, new GUIContent("Has Attack"));
+        if (hasAttack.boolValue)
         {
-            // Record property modifications
-            PrefabUtility.RecordPrefabInstancePropertyModifications(myComponent);
-            
-            // Explicitly apply changes to the prefab instance
-            PrefabUtility.ApplyPrefabInstance(myComponent.gameObject, InteractionMode.UserAction);
+            EditorGUILayout.PropertyField(attackAnimName, new GUIContent("Attack Anim Name"));
         }
-        AssetDatabase.SaveAssets();
 
-
+        // Apply changes to the serialized object
         serializedObject.ApplyModifiedProperties();
+
+        // Handle prefab modifications
+        if (GUI.changed)
+        {
+            foreach (var targetObject in targets)
+            {
+                if (PrefabUtility.IsPartOfPrefabInstance(targetObject))
+                {
+                    PrefabUtility.RecordPrefabInstancePropertyModifications(targetObject);
+                }
+            }
+        }
     }
 }

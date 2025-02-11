@@ -4,40 +4,57 @@ using UnityEngine;
 [CustomEditor(typeof(Interactable)), CanEditMultipleObjects]
 public class InteractableEditor : Editor
 {
+    private SerializedProperty actionTooltip;
+    private SerializedProperty interactSound;
+    private SerializedProperty doCooldown;
+    private SerializedProperty interactCooldownSeconds;
+    private SerializedProperty CooldownReturnSound;
+    private SerializedProperty requirements;
+    private SerializedProperty requirementTooltipText;
+
+    private void OnEnable()
+    {
+        actionTooltip = serializedObject.FindProperty("actionTooltip");
+        interactSound = serializedObject.FindProperty("interactSound");
+        doCooldown = serializedObject.FindProperty("doCooldown");
+        interactCooldownSeconds = serializedObject.FindProperty("interactCooldownSeconds");
+        CooldownReturnSound = serializedObject.FindProperty("CooldownReturnSound");
+        requirements = serializedObject.FindProperty("requirements");
+        requirementTooltipText = serializedObject.FindProperty("requirementTooltipText");
+    }
+
     public override void OnInspectorGUI()
     {
-        Interactable myComponent = (Interactable)target;
+        serializedObject.Update();
 
-        // Track changes for undo/redo
-        Undo.RecordObject(myComponent, "Modify ActiveItem");
+        EditorGUILayout.PropertyField(actionTooltip, new GUIContent("Action Text"));
+        EditorGUILayout.PropertyField(interactSound, new GUIContent("Interact Sound"));
 
-        myComponent.actionTooltip = EditorGUILayout.TextField("Action Text", myComponent.actionTooltip);
-        myComponent.interactSound = (ActionSound)EditorGUILayout.ObjectField("Interact Sound", myComponent.interactSound, typeof(ActionSound), true);
-
-        myComponent.doCooldown = EditorGUILayout.Toggle("Do Cooldowns", myComponent.doCooldown);
-        EditorGUI.BeginDisabledGroup(!myComponent.doCooldown);
-        myComponent.interactCooldownSeconds = EditorGUILayout.FloatField("Interact Cooldown", myComponent.interactCooldownSeconds);
-        myComponent.CooldownReturnSound = (ActionSound)EditorGUILayout.ObjectField("Cooldown Return Sound", myComponent.CooldownReturnSound, typeof(ActionSound), true);
-        EditorGUI.EndDisabledGroup();
-        
-        myComponent.requirements = (InteractRequirements)EditorGUILayout.ObjectField("Interact Prerequisites", myComponent.requirements, typeof(InteractRequirements), true);
-
-        EditorGUI.BeginDisabledGroup(myComponent.requirements == null);
-        myComponent.requirementTooltipText = EditorGUILayout.TextField("Requirement Tooltip Text", myComponent.requirementTooltipText);
-        EditorGUI.EndDisabledGroup();
-
-        // Check if the object is part of a prefab instance
-        if (PrefabUtility.IsPartOfPrefabInstance(myComponent))
+        EditorGUILayout.PropertyField(doCooldown, new GUIContent("Do Cooldowns"));
+        if (doCooldown.boolValue)
         {
-            // Record property modifications
-            PrefabUtility.RecordPrefabInstancePropertyModifications(myComponent);
-            
-            // Explicitly apply changes to the prefab instance
-            PrefabUtility.ApplyPrefabInstance(myComponent.gameObject, InteractionMode.UserAction);
+            EditorGUILayout.PropertyField(interactCooldownSeconds, new GUIContent("Interact Cooldown"));
+            EditorGUILayout.PropertyField(CooldownReturnSound, new GUIContent("Cooldown Return Sound"));
         }
-        AssetDatabase.SaveAssets();
 
+        EditorGUILayout.PropertyField(requirements, new GUIContent("Interact Prerequisites"));
+        if (requirements.objectReferenceValue != null)
+        {
+            EditorGUILayout.PropertyField(requirementTooltipText, new GUIContent("Requirement Tooltip Text"));
+        }
 
         serializedObject.ApplyModifiedProperties();
+
+        // Handle prefab modifications
+        if (GUI.changed)
+        {
+            foreach (var targetObject in targets)
+            {
+                if (PrefabUtility.IsPartOfPrefabInstance(targetObject))
+                {
+                    PrefabUtility.RecordPrefabInstancePropertyModifications(targetObject);
+                }
+            }
+        }
     }
 }
