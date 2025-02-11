@@ -103,12 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionText: Interact
+  actionTooltip: Interact
   interactSound: {fileID: 0}
-  doCooldown: 1
+  doCooldown: 0
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
+  requirementTooltipText: Need key
 --- !u!54 &2588994435284577368
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultRotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+  dropSound: {fileID: 0}
   itemID: 1
 --- !u!114 &-9136100263071108795
 MonoBehaviour:
@@ -184,3 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIDPleaseDoNotChange: 4
+  heldPositionOffset: {x: 0, y: 0, z: 0}
+  heldRotationOffset: {x: 0, y: 0, z: 0}
+  handAnim: {fileID: 0}
+  hasAttack: 0
+  attackAnimName: 

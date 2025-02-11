@@ -18,6 +18,9 @@ public class ActiveItemEditor : Editor
         myComponent.attackAnimName = EditorGUILayout.TextField("Attack Anim Name", myComponent.attackAnimName);
         EditorGUI.EndDisabledGroup();
 
+        // Mark the object as dirty to ensure changes are tracked
+        EditorUtility.SetDirty(myComponent);
+
         serializedObject.ApplyModifiedProperties();
     }
 }
