@@ -7,8 +7,9 @@ public class ActiveItem : MonoBehaviour
     public int itemIDPleaseDoNotChange = 1; // Do not re-assign during runtime. The weird variable naming is only to discourage ID re-assignment after it has been correctly set to the right item id.
     public Vector3 heldPositionOffset;
     public Vector3 heldRotationOffset;
+    public Animator handAnim;
     public bool hasAttack = false;
-    public Animation attackAnimation;
+    public string attackAnimName;
     private Quaternion defaultRotation;
 
     void Awake(){
@@ -28,7 +29,9 @@ public class ActiveItem : MonoBehaviour
     public void doAttack(){
         if (!hasAttack) return;
 
-        //attackAnimation;
+        if (handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !handAnim.IsInTransition(0)){
+            handAnim.Play(attackAnimName, -1, 0);
+        }
     }
 
     void OnEnable(){
