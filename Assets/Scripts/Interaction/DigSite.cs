@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -7,6 +8,7 @@ public class DigSite : MonoBehaviour
     [SerializeField] private Transform digSpotTransform;
     [SerializeField] private Transform[] pileTransforms;
     [SerializeField] private Transform itemInstantiateSpot;
+    [SerializeField] private GameObject itemToInstantiate;
     [SerializeField] private int digsNeeded = 7;
     [SerializeField] private int digsNeededPerStage = 2;
     private const float dirtPileHeight = 0.1f;
@@ -37,12 +39,27 @@ public class DigSite : MonoBehaviour
     }
 
     void Dig(GameObject player){
-        if (digProgress == 0){
+        if (digProgress == -1) return; // is set to -1 when fully dug out.
+
+        // Handle first dig or digs that come after it
+        if (digProgress == 0){ // On first dig, don't create a pile, just show the spot with a small dirt hole
             createFirstDig();
         }
-        else if (digProgress > 0){
+        else if (digProgress > 0){ // Increase the dirt pile and widen the hole
             calculateDigPileHeight();
+            IncreaseDigSiteRadius();
         }
+
+        // Check if the site is fully dug
+        if (digProgress == digsNeeded){
+            revealItem();
+            digProgress = -1;
+        }
+    }
+
+    void revealItem(){
+        GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
+        item.GetComponent<DroppedItem>().enableSilentDrop(true);
     }
 
     void createFirstDig(){

@@ -1,3 +1,4 @@
+using System;
 using Needle.Console;
 using UnityEngine;
 
@@ -7,11 +8,13 @@ using UnityEngine;
 public class DroppedItem : MonoBehaviour
 {
     public Quaternion defaultRotation = Quaternion.Euler(0, 0, 0);
+    public ActionSound dropSound;
     [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
     private Collider itemCollider;
     private bool hasLanded = false;
     private Interactable interactTarget;
+    private bool silentDropEnabled = false;
 
     public bool InteractRequirementsMet()
     {
@@ -29,16 +32,21 @@ public class DroppedItem : MonoBehaviour
     void OnEnable() {
         
         interactTarget.OnInteract += tryPickUpItem;
-
     }
 
     void OnDisable() {
         interactTarget.OnInteract -= tryPickUpItem;
     }
     
+    public void enableSilentDrop(bool enabled){ // If enabled, the object is invisble while falling and produces no sound. Great for spawning items in without any visible drop animation.
+        silentDropEnabled = enabled;
+    }
     private void Start(){
         int ActiveItemID = gameObject.GetComponent<ActiveItem>().itemIDPleaseDoNotChange;
         itemID = ActiveItemID;
+        if (silentDropEnabled == true){
+            gameObject.GetComponent<MeshRenderer>().enabled = false; // make the object invisible while it is falling
+        }
         Drop(gameObject.transform.position);
     }
 
@@ -59,7 +67,7 @@ public class DroppedItem : MonoBehaviour
         transform.position = dropPosition;
 
         // Set Drop rotation
-        Quaternion rotationModifier = Quaternion.Euler(0f, Random.Range(0, 360), 90f);
+        Quaternion rotationModifier = Quaternion.Euler(0f, UnityEngine.Random.Range(0, 360), 90f);
         Quaternion targetRotation = rotationModifier * defaultRotation;
         transform.rotation = targetRotation;
     }
@@ -82,6 +90,15 @@ public class DroppedItem : MonoBehaviour
         D.Log($"Item landed on {surface.name}!", gameObject, "Item");
         hasLanded = true;
 
+        // Play drop sound
+        if (silentDropEnabled == false && dropSound != null){
+            dropSound.PlaySingleRandom();
+        }
+        else{
+            gameObject.GetComponent<MeshRenderer>().enabled = true; // make the object visible again if silent drop was enabled - silent drop makes the object invisible as it is falling.
+        }
+        
+
         // Disable physics to prevent movement
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -92,6 +109,10 @@ public class DroppedItem : MonoBehaviour
         if (itemCollider) itemCollider.isTrigger = true;
 
         transform.SetParent(surface.transform, worldPositionStays: true);
+
+    }
+
+    public void silentDrop(){
 
     }
 
