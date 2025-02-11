@@ -9718,6 +9718,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1458709536193697459, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+      propertyPath: handAnim
+      value: 
+      objectReference: {fileID: 1225614570}
+    - target: {fileID: 1458709536193697459, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+      propertyPath: hasAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458709536193697459, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: attackAnimation
       value: 
       objectReference: {fileID: 0}
@@ -24321,7 +24329,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1062388785322481188, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
   m_PrefabInstance: {fileID: 9166617664817866794}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1225614571
+--- !u!95 &1225614570
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -44866,7 +44874,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1062388785322481188, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1225614571}
+      addedObject: {fileID: 1225614570}
   m_SourcePrefab: {fileID: 100100000, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
