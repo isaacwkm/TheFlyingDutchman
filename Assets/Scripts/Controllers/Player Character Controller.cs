@@ -76,6 +76,8 @@ private void OnEnable()
     inputActions.Player.SwitchTo4.performed += ctx => HandleSwitchToSlotInput(3);
 
     inputActions.Player.SwitchScroll.performed += ctx => HandleScrollInput(ctx);
+
+    inputActions.Player.Attack.performed += ctx => HandleAttackInput();
 }
 
 private void OnDisable()
@@ -104,6 +106,8 @@ private void OnDisable()
     inputActions.Player.SwitchTo4.performed -= ctx => HandleSwitchToSlotInput(3);
 
     inputActions.Player.SwitchScroll.performed -= ctx => HandleScrollInput(ctx);
+
+    inputActions.Player.Attack.performed -= ctx => HandleAttackInput();
 
     inputActions.Player.Disable();
 }
@@ -269,6 +273,10 @@ private void OnDisable()
 
     private void HandleSwitchToSlotInput(int slotNum){
         inventoryComponent.switchToSlot(slotNum);
+    }
+
+    private void HandleAttackInput(){
+        inventoryComponent.attackWithActiveItem();
     }
 
 
