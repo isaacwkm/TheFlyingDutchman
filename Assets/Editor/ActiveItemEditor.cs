@@ -31,7 +31,7 @@ public class ActiveItemEditor : Editor
         EditorGUILayout.PropertyField(itemIDPleaseDoNotChange, new GUIContent("Item ID (Please do not change)"));
         EditorGUILayout.PropertyField(heldPositionOffset, new GUIContent("Held Position Offset"));
         EditorGUILayout.PropertyField(heldRotationOffset, new GUIContent("Held Rotation Offset"));
-        EditorGUILayout.PropertyField(handAnim, new GUIContent("Hand Animator"));
+        EditorGUILayout.PropertyField(handAnim, new GUIContent("Hand Animator"), true);
 
         EditorGUILayout.PropertyField(hasAttack, new GUIContent("Has Attack"));
         if (hasAttack.boolValue)
