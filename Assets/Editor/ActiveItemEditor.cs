@@ -8,6 +8,9 @@ public class ActiveItemEditor : Editor
     {
         ActiveItem myComponent = (ActiveItem)target;
 
+        // Track changes for undo/redo
+        Undo.RecordObject(myComponent, "Modify ActiveItem");
+
         myComponent.itemIDPleaseDoNotChange = EditorGUILayout.IntField("Item ID (Please do not change)", myComponent.itemIDPleaseDoNotChange);
         myComponent.heldPositionOffset = EditorGUILayout.Vector3Field("Held Position Offset", myComponent.heldPositionOffset);
         myComponent.heldRotationOffset = EditorGUILayout.Vector3Field("Held Rotation Offset", myComponent.heldRotationOffset);
@@ -18,11 +21,17 @@ public class ActiveItemEditor : Editor
         myComponent.attackAnimName = EditorGUILayout.TextField("Attack Anim Name", myComponent.attackAnimName);
         EditorGUI.EndDisabledGroup();
 
-        // Ensure changes to the prefab are tracked and applied
+        // Check if the object is part of a prefab instance
         if (PrefabUtility.IsPartOfPrefabInstance(myComponent))
         {
+            // Record property modifications
             PrefabUtility.RecordPrefabInstancePropertyModifications(myComponent);
+            
+            // Explicitly apply changes to the prefab instance
+            PrefabUtility.ApplyPrefabInstance(myComponent.gameObject, InteractionMode.UserAction);
         }
+        AssetDatabase.SaveAssets();
+
 
         serializedObject.ApplyModifiedProperties();
     }
