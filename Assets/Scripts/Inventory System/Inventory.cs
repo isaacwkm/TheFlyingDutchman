@@ -20,13 +20,10 @@ public class Inventory : MonoBehaviour
     }
     void OnEnable()
     {
-        //interactTarget.OnItemPickup += addItem;
-
     }
 
     void OnDisable()
     {
-        //interactTarget.OnItemPickup += addItem;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -242,7 +239,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private GameObject currentItem(){
+    public GameObject currentItem(){
         return itemsInSlots[currentActiveSlot];
     }
 

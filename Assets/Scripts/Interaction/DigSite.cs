@@ -1,3 +1,4 @@
+using Needle.Console;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -11,6 +12,7 @@ public class DigSite : MonoBehaviour
     [SerializeField] private GameObject itemToInstantiate;
     [SerializeField] private int digsNeeded = 7;
     [SerializeField] private int digsNeededPerStage = 2;
+    [SerializeField] private ActionSound digSound;
     private const float dirtPileHeight = 0.1f;
     private Transform currentPile;
     private int digProgress = 0; // overall dig progress
@@ -30,7 +32,9 @@ public class DigSite : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        digSiteRadiusIncreaseAmount = 1 / digSiteRadiusIncreaseAmount;
+        digSiteRadiusIncreaseAmount = 1f / digsNeeded;
+        D.Log($"Digs Needed Amount: {digsNeeded}", gameObject, "Dig");
+        D.Log($"Dig Site Radius Increase Amount: {digSiteRadiusIncreaseAmount}", gameObject, "Dig");
         MeshRenderer digSpotMeshRender = digSpotTransform.gameObject.GetComponent<MeshRenderer>();
         digSpotMeshRender.enabled = false;
         foreach (Transform pile in pileTransforms){
@@ -39,7 +43,27 @@ public class DigSite : MonoBehaviour
     }
 
     void Dig(GameObject player){
+        D.Log("Dig() called", gameObject, "Dig");
         if (digProgress == -1) return; // is set to -1 when fully dug out.
+
+        // Play dig animation
+        Inventory playerInv = player.GetComponent<Inventory>();
+        GameObject currItem = playerInv.currentItem();
+        ActiveItem activeItem = currItem.GetComponent<ActiveItem>();
+
+        activeItem.doAttack(forcePlayAnim: true); // Performs dig animation and interrupts any ongoing hand animation.
+
+        StartCoroutine(updateDigProgress());
+    }
+
+    private System.Collections.IEnumerator updateDigProgress(){
+        // Wait for the duration
+        yield return new WaitForSeconds(1);
+
+        // Play sound effect
+        if (digSound){
+        digSound.PlaySingleRandom();
+        }
 
         // Handle first dig or digs that come after it
         if (digProgress == 0){ // On first dig, don't create a pile, just show the spot with a small dirt hole
@@ -63,19 +87,20 @@ public class DigSite : MonoBehaviour
     }
 
     void createFirstDig(){
+        D.Log("createFirstDig", gameObject, "Dig");
         digProgress = 1;
 
         MeshRenderer digSpotMeshRender = digSpotTransform.gameObject.GetComponent<MeshRenderer>();
         digSpotMeshRender.enabled = true;
         float x = digSiteRadiusIncreaseAmount;
-        float y = currentPile.localScale.y;
+        float y = digSpotTransform.localScale.y;
         float z = digSiteRadiusIncreaseAmount;
         digSpotTransform.localScale = new Vector3(x, y, z);
     }
     void IncreaseDigSiteRadius(){
-        float x = currentPile.localScale.x + digSiteRadiusIncreaseAmount;
-        float y = currentPile.localScale.y;
-        float z = currentPile.localScale.z + digSiteRadiusIncreaseAmount;
+        float x = digSpotTransform.localScale.x + digSiteRadiusIncreaseAmount;
+        float y = digSpotTransform.localScale.y;
+        float z = digSpotTransform.localScale.z + digSiteRadiusIncreaseAmount;
         digSpotTransform.localScale = new Vector3(x, y, z);
     }
 

@@ -26,8 +26,12 @@ public class ActiveItem : MonoBehaviour
         item.localRotation = defaultRotation * Quaternion.Euler(heldRotationOffset);
     }
 
-    public void doAttack(){
+    public void doAttack(bool forcePlayAnim = false){
         if (!hasAttack) return;
+
+        if (forcePlayAnim == true){
+            handAnim.Play(attackAnimName, -1, 0);
+        }
 
         if (handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !handAnim.IsInTransition(0)){
             handAnim.Play(attackAnimName, -1, 0);

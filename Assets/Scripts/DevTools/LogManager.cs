@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script is attached to a game object, so multiple instances are automatically existent! TODO!!!
+
 [ExecuteAlways] // Allows updating logs in Editor mode
 public class LogManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class LogManager : MonoBehaviour
     public bool logInv = true; // inventory system
     [Tooltip("Log Interactions")]
     public bool logInt = true; // interaction system
+    public bool logDig = true;
     public bool logItem = true;
 
     private static LogManager instance;
@@ -44,6 +47,7 @@ public class LogManager : MonoBehaviour
         categoryStates["UI"] = logUI;
         categoryStates["Inv"] = logInv; // inventory system
         categoryStates["Int"] = logInt; // interaction system
+        categoryStates["Dig"] = logDig; // Shovel dig feature logs
         categoryStates["Item"] = logItem; // interaction system
     }
 

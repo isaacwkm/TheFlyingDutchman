@@ -59,6 +59,7 @@ public class DroppedItem : MonoBehaviour
         // Enable physics for the drop
         rb.isKinematic = false;
         rb.useGravity = true;
+        itemCollider.enabled = true;
         itemCollider.isTrigger = false; // Enable collider for ground detection
         hasLanded = false; // Reset hasLanded
 
@@ -124,6 +125,7 @@ public class DroppedItem : MonoBehaviour
 
     public void disablePickup(GameObject player){
         gameObject.transform.SetParent(player.transform, false);
+        itemCollider.enabled = false;
         this.enabled = false;
         gameObject.SetActive(false);
     }
