@@ -74,7 +74,7 @@ public class Interactable : MonoBehaviour
         // Send out an event
         OffInteract?.Invoke(whom);
 
-        // Allow button to be interacted with again
+        // Allow object to be interacted with again
         onCooldown = false;
     }
 
