@@ -11,6 +11,8 @@ public class LogManager : MonoBehaviour
     [Tooltip("Log Any and Uncategorized messages")]
     public bool logAny = true; // Any = uncategorized. Any can be disabled and still have other categories show up.
     public bool logUI = true;
+    [Tooltip("Log Audio")]
+    public bool logAud = true;
     [Tooltip("Log Inventory System")]
     public bool logInv = true; // inventory system
     [Tooltip("Log Interactions")]
@@ -45,6 +47,7 @@ public class LogManager : MonoBehaviour
     {
         categoryStates["Any"] = logAny; // Any = uncategorized. Any can be disabled and still have other categories show up.
         categoryStates["UI"] = logUI;
+        categoryStates["Aud"] = logAud;
         categoryStates["Inv"] = logInv; // inventory system
         categoryStates["Int"] = logInt; // interaction system
         categoryStates["Dig"] = logDig; // Shovel dig feature logs

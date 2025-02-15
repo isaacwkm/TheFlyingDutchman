@@ -9589,10 +9589,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4225471941151165403, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
-      propertyPath: m_TagString
-      value: Wood
-      objectReference: {fileID: 0}
     - target: {fileID: 5743085064461989245, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -26831,6 +26827,63 @@ Transform:
   - {fileID: 2101421806}
   m_Father: {fileID: 1818222209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1204488922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -370.8252
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -116.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457120945397595550, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: m_Name
+      value: DigSite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
 --- !u!1001 &1207421252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49140,19 +49193,23 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: e3d57d0ab4076e442ae1c2a4ea6945eb, type: 3}
     - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: woodFootsteps.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: 'woodFootsteps.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 6bccf03b23f74924cba366e0935caa40, type: 3}
+      objectReference: {fileID: 8300000, guid: d510b2af88282f84e9e1e848582a85e2, type: 3}
     - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: 'woodFootsteps.Array.data[1]'
       value: 
-      objectReference: {fileID: 8300000, guid: 9bb7579183e1f1d4fafd87df20fca22c, type: 3}
+      objectReference: {fileID: 8300000, guid: 48800f479c142e34f826b6b1b3eddb78, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'woodFootsteps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: c79c762cce2774a438d3a5926461723d, type: 3}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -298.61
+      value: -294.44
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49191,3 +49248,4 @@ SceneRoots:
   - {fileID: 413549844}
   - {fileID: 261263557}
   - {fileID: 606668534}
+  - {fileID: 1204488922}

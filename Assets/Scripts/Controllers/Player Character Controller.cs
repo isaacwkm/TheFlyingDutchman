@@ -40,7 +40,7 @@ public class PlayerCharacterController : MonoBehaviour
     private bool justLanded = false;
 
     private MovementMode movementMode = MovementMode.Normal;
-    private GameObject movementMedium = null;
+    private GameObject movementMedium = null; // Represents the gameObject that the player is using to access a special mode of movement (?) - Isaac
 
     private void Awake()
     {
