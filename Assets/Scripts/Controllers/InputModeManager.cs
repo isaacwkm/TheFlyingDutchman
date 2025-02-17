@@ -8,7 +8,8 @@ public class InputModeManager : MonoBehaviour
     public enum InputMode {
         None,
         Player,
-        Flying
+        Flying,
+        UI
     }
     public InputMode inputMode {get; protected set;}
 
@@ -53,8 +54,9 @@ public class InputModeManager : MonoBehaviour
 
     public void SwitchToPlayerControls()
     {
-        inputActions.Flying.Disable();  // Disable Flying action map
         inputActions.Player.Enable();   // Enable Player action map
+        inputActions.Flying.Disable();  // Disable Flying action map
+        inputActions.UI.Disable();
         inputMode = InputMode.Player;
     }
 
@@ -62,6 +64,15 @@ public class InputModeManager : MonoBehaviour
     {
         inputActions.Player.Disable();  // Disable Player action map
         inputActions.Flying.Enable();   // Enable Flying action map
+        inputActions.UI.Disable();
         inputMode = InputMode.Flying;
+    }
+
+    public void SwitchToUIControls()
+    {
+        inputActions.Player.Disable();
+        inputActions.Flying.Disable();
+        inputActions.UI.Enable();
+        inputMode = InputMode.UI;
     }
 }
