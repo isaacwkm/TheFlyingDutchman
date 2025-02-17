@@ -35,7 +35,7 @@ public class SpawnObjectOnInteract : MonoBehaviour
         {
             spawned = Instantiate(objectToSpawn, position, rotation);
         }
-        initializer.Initialize(spawned);
+        initializer?.Initialize(spawned);
         OnSpawn?.Invoke(spawned);
         if (!repeatable)
         {
