@@ -5402,6 +5402,8 @@ GameObject:
   - component: {fileID: 261263553}
   - component: {fileID: 261263552}
   - component: {fileID: 261263551}
+  - component: {fileID: 261263558}
+  - component: {fileID: 261263559}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5559,6 +5561,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261263558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261263550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e727dc1a18b645d6a56e51c8a8a6064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTarget: {fileID: 261263553}
+  objectToSpawn: {fileID: 4521462654246050277, guid: 239f4675ce467864c8c9d5b410f76041, type: 3}
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  parent: {fileID: 0}
+  initializer: {fileID: 261263559}
+  repeatable: 1
+--- !u!114 &261263559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261263550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e047c2e78b74e6512b365ec75d29c605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'I think I''ve escaped them--but only narrowly.
+
+
+    My wounds are severe.
+    Even back out in the light of the Great Giver, I may not last. It''s becoming
+    more difficult to move.
+
+
+    They''ll return to clean up the mess I''ve made
+    for them. By the time they do, I suspect I''ll have left this husk behind for
+    the Giver''s domain. It will be easy for them to find the trinket then--the one
+    they use to bind us--and for the sake of Myrsine and young Glaucium, who remain
+    condemned, it must not be found again.
+
+
+    One of our mindless bretheren which
+    dwell on this planet is keeping me company here. I''ll hide it under this one''s
+    watch.'
 --- !u!1001 &264247946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14500,12 +14551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &670756320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25350,12 +25395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &1145547912
 MonoBehaviour:
   m_ObjectHideFlags: 0
