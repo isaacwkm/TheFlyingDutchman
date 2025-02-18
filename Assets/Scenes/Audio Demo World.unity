@@ -3369,12 +3369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 9a31479836602bf49912fddf3f3d5c0a, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &289013765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,7 +4415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.03
+      value: -13.2
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4429,7 +4423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -129.88
+      value: -134.8
       objectReference: {fileID: 0}
     - target: {fileID: 9140299550088894792, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: catalog
@@ -5670,12 +5664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 70591c13105eb3645b1eb2fb4d3b20e9, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &499755018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,12 +5801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: bf50b4fdba1665d44be4d8c1cb7a00e1, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!1001 &509008236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6982,12 +6964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 0}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!1 &604973217
 GameObject:
   m_ObjectHideFlags: 0
@@ -10058,6 +10034,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIDPleaseDoNotChange: 1
+  heldPositionOffset: {x: 0, y: 0, z: 0}
+  heldRotationOffset: {x: 0, y: 0, z: 0}
+  handAnim: {fileID: 0}
+  hasAttack: 0
+  attackAnimName: 
 --- !u!114 &889924341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10071,6 +10052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultRotation: {x: 0, y: 0, z: 0, w: 1}
+  dropSound: {fileID: 0}
   itemID: 1
 --- !u!65 &889924342
 BoxCollider:
@@ -11873,17 +11855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: ee488e1edb94d8d4d9b567af7364b12e, type: 3}
-  - {fileID: 8300000, guid: d38fc5114e8ca254e856017a9c32d26b, type: 3}
-  - {fileID: 8300000, guid: 6b20d722a372b304aabb45490fe368d3, type: 3}
-  - {fileID: 8300000, guid: fdf424f05b3fd6f40ad9389d28e193f9, type: 3}
-  - {fileID: 8300000, guid: fb0839e4472780c45b8bd392b84a4be5, type: 3}
-  - {fileID: 8300000, guid: eee4eb622febc18468b64687b56ef037, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &1038235247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18184,12 +18155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 9a31479836602bf49912fddf3f3d5c0a, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!1 &1520536672
 GameObject:
   m_ObjectHideFlags: 0
