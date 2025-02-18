@@ -8,6 +8,7 @@ public class FootstepSound : MonoBehaviour
     public AudioClip[] stoneFootsteps; // Footsteps for stone
     public AudioClip[] woodFootsteps;  // Footsteps for wood
     public AudioClip[] dirtFootsteps;  // Footsteps for dirt
+    public AudioClip[] sandFootsteps;  // Footsteps for sand
     public AudioClip[] specialFootsteps1; // Footsteps for special surface 1
     public AudioClip[] specialFootsteps2; // Footsteps for special surface 2
 
@@ -17,6 +18,7 @@ public class FootstepSound : MonoBehaviour
     public float stoneVolume = 0.7f;  // Stone footstep volume (lower than grass)
     public float woodVolume = 0.8f;   // Wood footstep volume
     public float dirtVolume = 0.6f;   // Dirt footstep volume
+    public float sandVolume = 1.0f;   // Sand footstep volume
     public float specialVolume1 = 1.2f; // Volume for special surface 1
     public float specialVolume2 = 1.1f; // Volume for special surface 2
 
@@ -150,6 +152,11 @@ public class FootstepSound : MonoBehaviour
         {
             footstepArray = specialFootsteps2;  // Special footstep 2 logic
             volumeMultiplier = specialVolume2; // Set volume for special 2
+        }
+        else if (surface.CompareTag("Sand"))
+        {
+            footstepArray = sandFootsteps;  // Sand footstep logic
+            volumeMultiplier = sandVolume;  // Set volume for sand
         }
         else
         {

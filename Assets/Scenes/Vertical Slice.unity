@@ -1696,6 +1696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plank_01
       objectReference: {fileID: 0}
+    - target: {fileID: 3181916495347918271, guid: c95646f11c8203b438f9c638247c3121, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4347,7 +4351,7 @@ GameObject:
   - component: {fileID: 220630507}
   m_Layer: 0
   m_Name: Terrain_Lite
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -14140,12 +14144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &670756320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15611,6 +15609,10 @@ PrefabInstance:
     - target: {fileID: 4527213066457459841, guid: c4ce77fae258db1419fe426be4a51bbb, type: 3}
       propertyPath: m_Name
       value: Pier_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527213066457459841, guid: c4ce77fae258db1419fe426be4a51bbb, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24990,12 +24992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
-  volume: 0.05
-  pitch: 1
-  spatialBlend: 1
-  audioSource: {fileID: 0}
 --- !u!114 &1145547912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28534,6 +28530,10 @@ PrefabInstance:
     - target: {fileID: 197416473921609954, guid: e059938ac4b575643a3345b530869d15, type: 3}
       propertyPath: m_Name
       value: Stairs_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 197416473921609954, guid: e059938ac4b575643a3345b530869d15, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 717916840937405016, guid: e059938ac4b575643a3345b530869d15, type: 3}
       propertyPath: m_RootOrder
@@ -34658,6 +34658,10 @@ PrefabInstance:
     - target: {fileID: 7857723176079672709, guid: c8a2815ff94c8cf4c817008d9af097ad, type: 3}
       propertyPath: m_Name
       value: Rock_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857723176079672709, guid: c8a2815ff94c8cf4c817008d9af097ad, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47142,6 +47146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5418299342752462037, guid: 2d1aed8ada79e4d4e99084037c3b094a, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47406,6 +47414,10 @@ PrefabInstance:
     - target: {fileID: 3181916495347918271, guid: c95646f11c8203b438f9c638247c3121, type: 3}
       propertyPath: m_Name
       value: Plank_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3181916495347918271, guid: c95646f11c8203b438f9c638247c3121, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48745,6 +48757,38 @@ PrefabInstance:
       propertyPath: 'itemIconCatalog.Array.data[5]'
       value: 
       objectReference: {fileID: 2800000, guid: e3d57d0ab4076e442ae1c2a4ea6945eb, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: sandFootsteps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: woodFootsteps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'sandFootsteps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f48d3347c75b3604497940beb8b1a1c9, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'sandFootsteps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ecfc505f3cfb4074ca7791ad76ae0e95, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'sandFootsteps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: bb504e1fe5d2a2b4ba508cbcc2458d33, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'woodFootsteps.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e06c8559ba0064409985f90311a1a6e, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'woodFootsteps.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dfe739eded625004a81d87a1bfb8c29c, type: 3}
+    - target: {fileID: 7254715029211404667, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: 'woodFootsteps.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d510b2af88282f84e9e1e848582a85e2, type: 3}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -362.3
