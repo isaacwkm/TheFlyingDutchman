@@ -723,6 +723,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!4 &39221485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+  m_PrefabInstance: {fileID: 943691910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &43004231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8729,6 +8734,10 @@ PrefabInstance:
     - target: {fileID: 7759381522125351291, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
       propertyPath: m_Name
       value: Chest_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759381522125351291, guid: 2269c5cfaa7f7314bba868f540b5ddad, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17072,7 +17081,7 @@ GameObject:
   - component: {fileID: 793582540}
   m_Layer: 0
   m_Name: Water_Lite (1)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18345,7 +18354,7 @@ GameObject:
   - component: {fileID: 853802606}
   m_Layer: 0
   m_Name: Water_Lite
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21050,6 +21059,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8599792117849368541, guid: 112473a489e4f4e47b0127b8a56f8582, type: 3}
   m_PrefabInstance: {fileID: 940323356}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &943691910
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 981205295}
+    m_Modifications:
+    - target: {fileID: 605244852076820385, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_Name
+      value: Beach Noise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: envMusicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 30fdbf359f06cf84783ad8f08c04e67d, type: 3}
+    - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: playerCameraHere
+      value: 
+      objectReference: {fileID: 1964635082}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 36.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 39.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
 --- !u!1001 &947278332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21492,6 +21582,7 @@ Transform:
   - {fileID: 793582539}
   - {fileID: 1374733888}
   - {fileID: 1513124685}
+  - {fileID: 39221485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984194529
@@ -27365,6 +27456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_01 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5284406570180094706, guid: ad36c3d044d312e44a986a07f2c7f0b2, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29610,7 +29705,7 @@ GameObject:
   - component: {fileID: 1374733889}
   m_Layer: 0
   m_Name: Water_Lite (2)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32193,7 +32288,7 @@ GameObject:
   - component: {fileID: 1485515650}
   m_Layer: 0
   m_Name: Main Foyer Flooring
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44844,6 +44939,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4250845954542789874, guid: d157978297aa03d40bfe76f9decb9828, type: 3}
   m_PrefabInstance: {fileID: 1964117272}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1964635082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3464752501116790041, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965124703
 GameObject:
   m_ObjectHideFlags: 0
@@ -48791,11 +48891,15 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d510b2af88282f84e9e1e848582a85e2, type: 3}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -362.3
+      value: -345.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63.22
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -173.6
+      value: -174.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
