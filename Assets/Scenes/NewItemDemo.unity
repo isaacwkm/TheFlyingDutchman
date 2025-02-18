@@ -13443,6 +13443,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1458709536193697459, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+      propertyPath: handAnim
+      value: 
+      objectReference: {fileID: 1225614571}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -376.41
@@ -14551,6 +14555,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!114 &670756320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25395,6 +25404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!114 &1145547912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26876,7 +26890,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -370.8252
+      value: -372.42
       objectReference: {fileID: 0}
     - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26884,7 +26898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -116.52
+      value: -114.62
       objectReference: {fileID: 0}
     - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
       propertyPath: m_LocalRotation.w
