@@ -161,6 +161,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SuperJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""4042dfef-0ede-49ea-bb41-7c98e01e5702"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -601,6 +610,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""639bc315-6ddc-49b4-8036-a5da4c1eb779"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SuperJump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1763,6 +1783,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_SwitchTo3 = m_Player.FindAction("SwitchTo3", throwIfNotFound: true);
         m_Player_SwitchTo4 = m_Player.FindAction("SwitchTo4", throwIfNotFound: true);
         m_Player_SwitchScroll = m_Player.FindAction("SwitchScroll", throwIfNotFound: true);
+        m_Player_SuperJump = m_Player.FindAction("SuperJump", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1870,6 +1891,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchTo3;
     private readonly InputAction m_Player_SwitchTo4;
     private readonly InputAction m_Player_SwitchScroll;
+    private readonly InputAction m_Player_SuperJump;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1889,6 +1911,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @SwitchTo3 => m_Wrapper.m_Player_SwitchTo3;
         public InputAction @SwitchTo4 => m_Wrapper.m_Player_SwitchTo4;
         public InputAction @SwitchScroll => m_Wrapper.m_Player_SwitchScroll;
+        public InputAction @SuperJump => m_Wrapper.m_Player_SuperJump;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1943,6 +1966,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchScroll.started += instance.OnSwitchScroll;
             @SwitchScroll.performed += instance.OnSwitchScroll;
             @SwitchScroll.canceled += instance.OnSwitchScroll;
+            @SuperJump.started += instance.OnSuperJump;
+            @SuperJump.performed += instance.OnSuperJump;
+            @SuperJump.canceled += instance.OnSuperJump;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1992,6 +2018,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchScroll.started -= instance.OnSwitchScroll;
             @SwitchScroll.performed -= instance.OnSwitchScroll;
             @SwitchScroll.canceled -= instance.OnSwitchScroll;
+            @SuperJump.started -= instance.OnSuperJump;
+            @SuperJump.performed -= instance.OnSuperJump;
+            @SuperJump.canceled -= instance.OnSuperJump;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -2307,6 +2336,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnSwitchTo3(InputAction.CallbackContext context);
         void OnSwitchTo4(InputAction.CallbackContext context);
         void OnSwitchScroll(InputAction.CallbackContext context);
+        void OnSuperJump(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
