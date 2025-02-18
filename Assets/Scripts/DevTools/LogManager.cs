@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script is attached to a game object, so multiple instances are automatically existent! TODO!!!
+
 [ExecuteAlways] // Allows updating logs in Editor mode
 public class LogManager : MonoBehaviour
 {
@@ -9,10 +11,13 @@ public class LogManager : MonoBehaviour
     [Tooltip("Log Any and Uncategorized messages")]
     public bool logAny = true; // Any = uncategorized. Any can be disabled and still have other categories show up.
     public bool logUI = true;
+    [Tooltip("Log Audio")]
+    public bool logAud = true;
     [Tooltip("Log Inventory System")]
     public bool logInv = true; // inventory system
     [Tooltip("Log Interactions")]
     public bool logInt = true; // interaction system
+    public bool logDig = true;
     public bool logItem = true;
 
     private static LogManager instance;
@@ -42,8 +47,10 @@ public class LogManager : MonoBehaviour
     {
         categoryStates["Any"] = logAny; // Any = uncategorized. Any can be disabled and still have other categories show up.
         categoryStates["UI"] = logUI;
+        categoryStates["Aud"] = logAud;
         categoryStates["Inv"] = logInv; // inventory system
         categoryStates["Int"] = logInt; // interaction system
+        categoryStates["Dig"] = logDig; // Shovel dig feature logs
         categoryStates["Item"] = logItem; // interaction system
     }
 
