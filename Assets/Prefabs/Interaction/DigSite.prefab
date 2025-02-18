@@ -261,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5038722070518953086}
   - component: {fileID: 5200468073539598910}
+  - component: {fileID: 7493037297661763708}
   m_Layer: 0
   m_Name: DigSite
   m_TagString: Untagged
@@ -308,6 +309,25 @@ MonoBehaviour:
   itemToInstantiate: {fileID: 3474203028830785264, guid: dbaae011cad590347a34933bed810931, type: 3}
   digsNeeded: 7
   digsNeededPerStage: 2
+  digSound: {fileID: 7493037297661763708}
+--- !u!114 &7493037297661763708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457120945397595550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: cb5fcbd3904d85440aff634dde0871bc, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 0.6
+  audioSource: {fileID: 0}
 --- !u!1 &7330133635604700199
 GameObject:
   m_ObjectHideFlags: 0
