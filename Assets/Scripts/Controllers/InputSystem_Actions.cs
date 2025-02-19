@@ -161,6 +161,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SuperJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""4042dfef-0ede-49ea-bb41-7c98e01e5702"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -603,6 +612,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""639bc315-6ddc-49b4-8036-a5da4c1eb779"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SuperJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -632,7 +652,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""15cef263-9014-4fd5-94d9-4e4a6234a6ef"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -968,22 +988,99 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc"",
-                    ""path"": ""*/{Submit}"",
+                    ""id"": ""969a311c-7928-4ccd-a10f-e183c279945b"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Submit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""82627dcc-3b13-4ba9-841d-e4b746d6553e"",
-                    ""path"": ""*/{Cancel}"",
+                    ""id"": ""ff9c2672-18b6-4ad9-bb53-39e946ed2cb9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""552363b4-1757-473f-95b4-732cc42da1b9"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d3ae39c-eeda-455d-909d-493c211f9ce2"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffc169ad-17e8-4524-a85c-fc513cdcb238"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fe22ef62-fe14-4e70-a057-30483d6d85cc"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""204fcad8-b1d3-40f6-880e-4719e3d96f30"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af99fb1c-a2fb-4cac-bbe2-047bfd29f254"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb3352c5-2bac-454e-ba81-8cf5f176df4f"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1686,6 +1783,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_SwitchTo3 = m_Player.FindAction("SwitchTo3", throwIfNotFound: true);
         m_Player_SwitchTo4 = m_Player.FindAction("SwitchTo4", throwIfNotFound: true);
         m_Player_SwitchScroll = m_Player.FindAction("SwitchScroll", throwIfNotFound: true);
+        m_Player_SuperJump = m_Player.FindAction("SuperJump", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1793,6 +1891,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchTo3;
     private readonly InputAction m_Player_SwitchTo4;
     private readonly InputAction m_Player_SwitchScroll;
+    private readonly InputAction m_Player_SuperJump;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1812,6 +1911,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @SwitchTo3 => m_Wrapper.m_Player_SwitchTo3;
         public InputAction @SwitchTo4 => m_Wrapper.m_Player_SwitchTo4;
         public InputAction @SwitchScroll => m_Wrapper.m_Player_SwitchScroll;
+        public InputAction @SuperJump => m_Wrapper.m_Player_SuperJump;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1866,6 +1966,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchScroll.started += instance.OnSwitchScroll;
             @SwitchScroll.performed += instance.OnSwitchScroll;
             @SwitchScroll.canceled += instance.OnSwitchScroll;
+            @SuperJump.started += instance.OnSuperJump;
+            @SuperJump.performed += instance.OnSuperJump;
+            @SuperJump.canceled += instance.OnSuperJump;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1915,6 +2018,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchScroll.started -= instance.OnSwitchScroll;
             @SwitchScroll.performed -= instance.OnSwitchScroll;
             @SwitchScroll.canceled -= instance.OnSwitchScroll;
+            @SuperJump.started -= instance.OnSuperJump;
+            @SuperJump.performed -= instance.OnSuperJump;
+            @SuperJump.canceled -= instance.OnSuperJump;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -2230,6 +2336,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnSwitchTo3(InputAction.CallbackContext context);
         void OnSwitchTo4(InputAction.CallbackContext context);
         void OnSwitchScroll(InputAction.CallbackContext context);
+        void OnSuperJump(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

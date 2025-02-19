@@ -9773,6 +9773,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: shovel
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 7515516343232207231, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+      propertyPath: doCooldown
+      value: 0
+      objectReference: {fileID: 0}
+=======
+>>>>>>> main
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -12751,8 +12758,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  clips: []
+=======
   clips:
   - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
+>>>>>>> main
   volume: 0.05
   pitch: 1
   spatialBlend: 1
@@ -22463,8 +22474,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  clips: []
+=======
   clips:
   - {fileID: 8300000, guid: a4a04500d39b61d4b813bed51391f3be, type: 3}
+>>>>>>> main
   volume: 0.05
   pitch: 1
   spatialBlend: 1
@@ -38856,6 +38871,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 922924961706154322, guid: a8df3746f46c949429b741b6b3defcb3, type: 3}
   m_PrefabInstance: {fileID: 1890973914}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+--- !u!1 &1892551539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5457120945397595550, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+  m_PrefabInstance: {fileID: 1678878126397619150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1892551542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892551539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: cb5fcbd3904d85440aff634dde0871bc, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!114 &1892931165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44363,6 +44404,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 5200468073539598910, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      propertyPath: digSound
+      value: 
+      objectReference: {fileID: 1892551542}
+=======
+>>>>>>> main
     - target: {fileID: 5457120945397595550, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
       propertyPath: m_Name
       value: DigSite
@@ -44374,7 +44422,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+<<<<<<< HEAD
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5457120945397595550, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1892551542}
+=======
     m_AddedComponents: []
+>>>>>>> main
   m_SourcePrefab: {fileID: 100100000, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
 --- !u!1001 &9166617664817866794
 PrefabInstance:

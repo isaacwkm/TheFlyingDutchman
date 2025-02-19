@@ -118,6 +118,8 @@ public class DroppedItem : MonoBehaviour
     }
 
     private void tryPickUpItem(GameObject player){
+        if (gameObject.GetComponent<ActiveItem>() == null) return;
+        
         Inventory inventory = player.GetComponent<Inventory>();
 
         inventory.attemptPickup(gameObject);

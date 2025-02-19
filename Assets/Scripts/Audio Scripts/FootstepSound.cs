@@ -1,4 +1,5 @@
 using UnityEngine;
+using Needle.Console;
 
 public class FootstepSound : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class FootstepSound : MonoBehaviour
     public AudioClip[] stoneFootsteps; // Footsteps for stone
     public AudioClip[] woodFootsteps;  // Footsteps for wood
     public AudioClip[] dirtFootsteps;  // Footsteps for dirt
+    public AudioClip[] sandFootsteps;  // Footsteps for sand
     public AudioClip[] specialFootsteps1; // Footsteps for special surface 1
     public AudioClip[] specialFootsteps2; // Footsteps for special surface 2
 
@@ -16,6 +18,7 @@ public class FootstepSound : MonoBehaviour
     public float stoneVolume = 0.7f;  // Stone footstep volume (lower than grass)
     public float woodVolume = 0.8f;   // Wood footstep volume
     public float dirtVolume = 0.6f;   // Dirt footstep volume
+    public float sandVolume = 1.0f;   // Sand footstep volume
     public float specialVolume1 = 1.2f; // Volume for special surface 1
     public float specialVolume2 = 1.1f; // Volume for special surface 2
 
@@ -27,7 +30,7 @@ public class FootstepSound : MonoBehaviour
     private CharacterController characterController;
     private int lastFootstepIndex = -1;  // Track the last played footstep index
     private int repeatCount = 0;         // Count how many times the same footstep has been played consecutively
-    private int lastWoodFootstepIndex = -1; // Track last played wood footstep index
+    //private int lastWoodFootstepIndex = -1; // Track last played wood footstep index // Un-comment if you go back to fixed alternating footstep as opposed to random cycling
 
 
     private void Start()
@@ -48,7 +51,8 @@ public class FootstepSound : MonoBehaviour
             (pcc && pcc.AnyMovementInput()) ||
             (pcc && pcc.JustLanded()) ||
             (!pcc && magnitudeSufficient)
-        ))) {
+        )))
+        {
             PlayFootstepSound(movementMedium);
         }
     }
@@ -58,13 +62,18 @@ public class FootstepSound : MonoBehaviour
         // If audio is already playing, don't play again until the clip finishes
         if (audioSource.isPlaying) return;
 
+        // Use a raycast to detect the ground material
+        RaycastHit hit;
         AudioClip selectedFootstep = null;
-        if (movementMedium) {
+        bool didItHit = Physics.Raycast(footTransform.position, Vector3.down, out hit, 1f); // Checks the floor underneath the player
+
+        if (movementMedium != null)
+        {
             selectedFootstep = GetFootstepSoundBasedOnSurface(movementMedium);
-        } else {
-            // Use a raycast to detect the ground material
-            RaycastHit hit;
-            if (Physics.Raycast(footTransform.position, Vector3.down, out hit, 1f))
+        }
+        else
+        {
+            if (didItHit)
             {
                 selectedFootstep = GetFootstepSoundBasedOnSurface(hit.collider.gameObject);
             }
@@ -73,20 +82,25 @@ public class FootstepSound : MonoBehaviour
         // If a valid sound is found, play it
         if (selectedFootstep != null)
         {
-            audioSource.PlayOneShot(selectedFootstep);
-        }
-        else
-        {
-            // If no valid sound was found, fall back to a default sound
-            Debug.LogWarning("No valid footstep sound found, falling back to default.");
-            if (fallbackFootsteps != null && fallbackFootsteps.Length > 0)
+            if (movementMedium != null)
             {
-                audioSource.PlayOneShot(fallbackFootsteps[Random.Range(0, fallbackFootsteps.Length)]);
+                D.Log($"Footstepped on {movementMedium.name}", movementMedium, "Aud");
             }
             else
             {
-                Debug.LogWarning("Fallback sounds are also missing! Playing nothing.");
+                if (hit.collider.gameObject)
+                {
+                    D.Log($"Footstepped on {hit.collider.gameObject.name}", hit.collider.gameObject, "Aud");
+                }
+                //D.Log($"Footstepped clip {selectedFootstep.name}", null, "Aud");
             }
+            audioSource.PlayOneShot(selectedFootstep);
+
+        }
+        else if (hit.collider != null)
+        {
+            // If no valid sound was found, fall back to a default sound
+            D.LogWarning("No valid footstep sound found, falling back to default.", hit.collider.gameObject, "Aud");
         }
     }
 
@@ -97,7 +111,11 @@ public class FootstepSound : MonoBehaviour
         float volumeMultiplier = 1.0f; // Default volume multiplier
 
         // Floor types based on tags (add more floor types as needed)
-        if (surface.CompareTag("Grass"))
+        if (surface.CompareTag("SilentFootstep"))
+        {
+            return null;
+        }
+        else if (surface.CompareTag("Grass"))
         {
             footstepArray = grassFootsteps;
             volumeMultiplier = grassVolume;  // Set volume for grass
@@ -112,12 +130,13 @@ public class FootstepSound : MonoBehaviour
             footstepArray = woodFootsteps;  // Wood footstep logic
             volumeMultiplier = woodVolume;  // Set volume for wood
 
-            if (footstepArray != null && footstepArray.Length > 1)
-            {
-                lastWoodFootstepIndex = (lastWoodFootstepIndex + 1) % footstepArray.Length;
-                audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
-                return footstepArray[lastWoodFootstepIndex]; // Return the next clip in sequence
-            }
+            // Commented out Jalen's implementation of alternating footsteps to try 3+ footsteps in line with other footsteps.
+            // if (footstepArray != null && footstepArray.Length > 1)
+            // {
+            //     lastWoodFootstepIndex = (lastWoodFootstepIndex + 1) % footstepArray.Length;
+            //     audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
+            //     return footstepArray[lastWoodFootstepIndex]; // Return the next clip in sequence
+            // }
         }
         else if (surface.CompareTag("Dirt"))
         {
@@ -134,19 +153,26 @@ public class FootstepSound : MonoBehaviour
             footstepArray = specialFootsteps2;  // Special footstep 2 logic
             volumeMultiplier = specialVolume2; // Set volume for special 2
         }
+        else if (surface.CompareTag("Sand"))
+        {
+            footstepArray = sandFootsteps;  // Sand footstep logic
+            volumeMultiplier = sandVolume;  // Set volume for sand
+        }
         else
         {
             // Default to fallback sound if no tag matches
             footstepArray = fallbackFootsteps;
             volumeMultiplier = fallbackVolume; // Set volume for fallback
         }
+        ///////////////////////////////////////////////////////////////////
 
         // Check if the footstep array is empty to avoid out-of-bounds errors
         if (footstepArray == null || footstepArray.Length == 0)
         {
             Debug.LogWarning("Footstep array is empty for surface: " + surface.tag);
-            return null; // Return null if no valid audio clips are available
+            return footstepArray[0]; // Return null if no valid audio clips are available
         }
+        ///////////////////////////////////////////////////////////////////
 
         // If only one sound is available, no need to repeat check
         if (footstepArray.Length == 1)
@@ -155,6 +181,7 @@ public class FootstepSound : MonoBehaviour
             audioSource.volume = volumeMultiplier * footstepVolumeMultiplier;
             return footstepArray[0]; // Always return the only sound in the array
         }
+        //////////////////////////////////////////////////////////////////
 
         // Select a random footstep sound, ensuring it doesn't repeat more than twice
         int randomIndex;
@@ -162,6 +189,7 @@ public class FootstepSound : MonoBehaviour
         {
             randomIndex = Random.Range(0, footstepArray.Length); // Randomly pick an index
         } while (randomIndex == lastFootstepIndex && repeatCount >= 2); // Avoid repeating more than twice
+        ///////////////////////////////////////////////////////////////////
 
         // Update the repeat count and last footstep index
         if (randomIndex == lastFootstepIndex)
@@ -172,6 +200,7 @@ public class FootstepSound : MonoBehaviour
         {
             repeatCount = 0; // Reset repeat count when a new sound is selected
         }
+        ////////////////////////////////////////////////////////////////////
 
         // Update the last played footstep index
         lastFootstepIndex = randomIndex;
@@ -181,5 +210,45 @@ public class FootstepSound : MonoBehaviour
 
         // Return the selected footstep sound
         return footstepArray[randomIndex];
+    }
+
+
+    // PerformanceTestLoop() - Read something interesting if you're having a boring day...
+    //
+    // Question: What if the footsteps rolled on the same footstep a million times? Would it create a noticable performance impact?
+    //
+    //
+    // For perspective, if you had only two footstep sounds, the probability of rolling the same one 1 million times in a row would be:
+    // (1/2)^1,000,000
+    // That's a 1 in 10^301030 chance — a number so absurdly small that it’s beyond comprehension.
+    // Even if you walked every second for the entire lifetime of the universe, you wouldn't hit that streak.
+    //
+    // With three footstep sounds, it gets even more ridiculous:
+    // (1/3)^1,0000,000
+    // Which is around 1 in 10^477122 — you’d literally have better odds of quantum tunneling through a wall than experiencing that in a game.
+    //
+    //
+    // TEST RESULTS 2/14/2025 (happy valentines day!):
+    // 1,000,000 footstep checks took on average 12-13 ms. May vary depending on machine used.
+    //
+    // Conclusion:
+    // On average though, you would be looking at 2-3 repeats, maybe up to 10 as extreme outliers. That would lie around 10-100 nanoseconds.
+    // Our worst-case scenario is 1,000,000 and it's at most 12 ms.
+    public void PerformanceTestLoop()
+    {
+        int lastIndex = -1;
+        int count = 0;
+        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+        sw.Start();
+
+        while (count < 1_000_000) // ONE MILLION CHECKS!!!
+        {
+            int newIndex = Random.Range(0, 10);
+            if (newIndex != lastIndex) lastIndex = newIndex;
+            count++;
+        }
+
+        sw.Stop();
+        Debug.Log($"Time taken: {sw.ElapsedMilliseconds} ms");
     }
 }

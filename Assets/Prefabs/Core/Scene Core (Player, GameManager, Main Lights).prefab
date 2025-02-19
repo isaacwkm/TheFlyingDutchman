@@ -494,9 +494,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391313327125650074}
+  - component: {fileID: 5380181150393994304}
   m_Layer: 0
   m_Name: Scene Core (Player, GameManager, Main Lights)
-  m_TagString: Untagged
+  m_TagString: SceneCore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,6 +523,23 @@ Transform:
   - {fileID: 7382959966379793325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5380181150393994304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3173036603734237580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991b67b12fa34304781093a01ca33725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerCharacter: {fileID: 7413195310463255404}
+  m_camera: {fileID: 3659518526947304689}
+  m_audioManager: {fileID: 6785916161591768165}
+  m_itemCatalog: {fileID: 5714826499939119375}
+  m_canvas: {fileID: 7349530578359876276}
 --- !u!1 &3349699302217261728
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,8 +772,10 @@ MonoBehaviour:
   enableLogs: 1
   logAny: 1
   logUI: 0
+  logAud: 1
   logInv: 0
   logInt: 0
+  logDig: 1
   logItem: 0
 --- !u!1 &4212854018637580436
 GameObject:
@@ -1229,6 +1249,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3659518526947304689}
   inventoryComponent: {fileID: 9140299550088894792}
   walkSpeed: 6
+  climbSpeed: 6
   jumpPower: 10
   gravity: 20
   lookSens: 1
