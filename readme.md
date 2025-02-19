@@ -3,10 +3,10 @@ A 10-week game design studio
 
 ## Collaborators:
 
-**Isaac Kim** - (Programming, Production)
+**Isaac Kim:** (Programming, Production)
 
-**Jaime McCann** - (Programming, Gameplay Design)
+**Jaime McCann:** (Programming, Gameplay Design)
 
-**Garrett Yu** - (Level Design, Art Direction)
+**Garrett Yu:** (Level Design, Art Direction)
 
-**Jalen Suwa** - (Audio, Programming, Writing)
+**Jalen Suwa:** (Audio, Programming, Writing)
