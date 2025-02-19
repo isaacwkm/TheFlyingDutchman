@@ -1,4 +1,5 @@
 UC: Santa Cruz - CMPM 171
+
 A 10-week game design studio
 
 ## Collaborators:
