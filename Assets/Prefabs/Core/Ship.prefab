@@ -393,13 +393,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rudderInteractTarget: {fileID: 1732906299933345058}
   rudderHelmSeat: {fileID: 8119690699660904881}
-  sceneCore: {fileID: 0}
   linearAcceleration: 3
+  verticalAcceleration: 1
   angularAcceleration: 12
+  tiltStrength: 2
+  stabilizeStrength: 1
   traction: 0.01
   bobSpeed: 1
   bobRange: 1
-  vantage: 1.5
+  vantage: {x: 0, y: 20, z: -20}
   rudder: {fileID: 6982291689904399655}
   rudderSpin: 2000
 --- !u!136 &80247806842157409
