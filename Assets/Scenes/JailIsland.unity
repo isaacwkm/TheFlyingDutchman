@@ -1694,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -3190,6 +3194,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -3723,6 +3731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Convex (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -3788,6 +3800,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
@@ -3932,6 +3948,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -4595,84 +4615,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
---- !u!1001 &240022295
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1818222209}
-    m_Modifications:
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_RootOrder
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -53.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5905313355104841211, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-      propertyPath: m_Name
-      value: Cauldron_Empty
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
---- !u!4 &240022296 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5905313355104743899, guid: 9ebd52a346641ab469fe9220a7c27ff8, type: 3}
-  m_PrefabInstance: {fileID: 240022295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &244216618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5510,6 +5452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -5577,7 +5523,7 @@ GameObject:
   - component: {fileID: 289173849}
   m_Layer: 0
   m_Name: Terrain_(40.00, 13.00, 20.00)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -8501,6 +8447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -9999,7 +9949,7 @@ GameObject:
   - component: {fileID: 468600489}
   m_Layer: 0
   m_Name: Terrain_(-50.00, 13.00, 20.00)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -10659,6 +10609,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -11356,6 +11310,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
@@ -12253,6 +12211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Convex (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -12474,6 +12436,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
       propertyPath: m_Name
       value: Clifftile Convex (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
       propertyPath: m_LocalScale.y
@@ -13589,6 +13555,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.x
@@ -15648,6 +15618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -16170,6 +16144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -16239,6 +16217,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
@@ -16827,6 +16809,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2642311626253648332, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
   m_PrefabInstance: {fileID: 832019904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &833776494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
+  m_PrefabInstance: {fileID: 1541967589}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &835358739
 PrefabInstance:
@@ -19598,6 +19585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -19663,6 +19654,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -20293,6 +20288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTIle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20493,6 +20492,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.x
@@ -20803,7 +20806,7 @@ GameObject:
   - component: {fileID: 1019192606}
   m_Layer: 0
   m_Name: Terrain_(-140.00, 13.00, 20.00)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -21420,23 +21423,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3995533555671293492, guid: e22e29840e07aca4693bb3288c909879, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -21766,6 +21769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTIle
       objectReference: {fileID: 0}
+    - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21865,6 +21872,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -23644,6 +23655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -24247,6 +24262,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.x
@@ -25191,6 +25210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -25729,6 +25752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -25952,7 +25979,7 @@ GameObject:
   - component: {fileID: 1263772226}
   m_Layer: 0
   m_Name: Terrain_(40.00, 13.00, -110.00)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -27055,6 +27082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Convex
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e32d5719741f7dd4f972f523484077f3, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -27354,6 +27385,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -28234,6 +28269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -28381,6 +28420,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
@@ -30563,6 +30606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -31131,6 +31178,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
@@ -31853,6 +31904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -31978,6 +32033,10 @@ PrefabInstance:
     - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
       propertyPath: m_Name
       value: FloorTIle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32743,7 +32802,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1818222209}
     m_Modifications:
     - target: {fileID: 6647226472413488857, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_Name
@@ -32763,31 +32822,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.36
+      value: -24.64
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.824
+      value: 7.824
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -48.508
+      value: 8.492001
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9355057
+      value: 0.93550575
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.35331157
+      value: -0.3533116
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7221580543714281408, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34134,6 +34193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -34556,84 +34619,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5754540700685751215, guid: d4fdeae2fb6f5d245b9a6116920d503e, type: 3}
   m_PrefabInstance: {fileID: 1611875570}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1613504839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1818222209}
-    m_Modifications:
-    - target: {fileID: 3403033971355921497, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_Name
-      value: Switch
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_RootOrder
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
---- !u!4 &1613504840 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4686046836153891166, guid: 3a1dc3e054a222f48a2dd916be2f8b01, type: 3}
-  m_PrefabInstance: {fileID: 1613504839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1616353029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34836,6 +34821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -34924,7 +34913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34932,31 +34921,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7237378
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.667416
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.15355301
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.08474125
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 82.79
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 60.42
       objectReference: {fileID: 0}
     - target: {fileID: 6721092324547233634, guid: 6eee7306fe377634f9645a176df43265, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 40.98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35405,6 +35394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -35657,6 +35650,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
@@ -36297,6 +36294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -36578,6 +36579,10 @@ PrefabInstance:
     - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
       propertyPath: m_Name
       value: FloorTIle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021926822154840307, guid: 0d780173c250d334f80c9061373c8e4f, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37390,6 +37395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -38026,7 +38035,7 @@ GameObject:
   - component: {fileID: 1764381245}
   m_Layer: 0
   m_Name: Terrain_(-140.00, 13.00, -110.00)
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -38382,6 +38391,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -39219,7 +39232,6 @@ Transform:
   - {fileID: 454409517}
   - {fileID: 4291837}
   - {fileID: 2024268377}
-  - {fileID: 240022296}
   - {fileID: 1964117273}
   - {fileID: 390345920}
   - {fileID: 1528740968}
@@ -39304,7 +39316,6 @@ Transform:
   - {fileID: 637220017}
   - {fileID: 1428203846}
   - {fileID: 1954006599}
-  - {fileID: 1613504840}
   - {fileID: 2074238804}
   - {fileID: 2092633405}
   - {fileID: 75363267}
@@ -39430,6 +39441,7 @@ Transform:
   - {fileID: 1685540456}
   - {fileID: 969110393}
   - {fileID: 1051161022}
+  - {fileID: 833776494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818566891
@@ -39445,7 +39457,7 @@ GameObject:
   - component: {fileID: 1818566892}
   m_Layer: 0
   m_Name: JailIslandLand
-  m_TagString: Untagged
+  m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -39536,6 +39548,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.x
@@ -40437,7 +40453,7 @@ Transform:
   m_GameObject: {fileID: 1849398726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.8088117, z: 0, w: 0.5880677}
-  m_LocalPosition: {x: 56.8, y: 62.775, z: -134.3}
+  m_LocalPosition: {x: 56.8, y: 66.07, z: -134.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40547,7 +40563,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1342955439}
   inventoryComponent: {fileID: 1849398728}
   SuperjumpSound: {fileID: 1169334472}
-  walkSpeed: 6
+  walkSpeed: 20
   climbSpeed: 6
   jumpPower: 8
   superJumpPower: 20
@@ -40938,6 +40954,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
@@ -42540,6 +42560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -42605,6 +42629,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
@@ -43833,6 +43861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 3 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
@@ -43902,6 +43934,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
@@ -44376,7 +44412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.43
+      value: 20.962
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44384,23 +44420,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8363819
+      value: 0.83923906
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5481472
+      value: -0.49949315
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.10991209
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.18467225
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -66.48
+      value: -61.52
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -44408,7 +44444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807982636234, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 24.82
       objectReference: {fileID: 0}
     - target: {fileID: 9074594807983055082, guid: 15745f8b70e5d524183539fa272d90a3, type: 3}
       propertyPath: m_Name
@@ -44513,6 +44549,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 2 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.x
@@ -45364,6 +45404,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0bfec1f76234f43b0f098f4827b98b, type: 3}
       propertyPath: m_LocalScale.y
@@ -46343,6 +46387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Clifftile Straight 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b171fd32029e058429beaee55853e11e, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b171fd32029e058429beaee55853e11e, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
@@ -46408,6 +46456,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_Name
       value: Clifftile Straight 1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42ec1b33cc0ff1045a10129f1ed046f4, type: 3}
       propertyPath: m_LocalScale.y
@@ -47695,4 +47747,3 @@ SceneRoots:
   - {fileID: 782802572}
   - {fileID: 1722722374}
   - {fileID: 1209603872}
-  - {fileID: 1541967589}
