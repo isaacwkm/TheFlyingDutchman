@@ -37,6 +37,12 @@ public class PlayerCharacterController : MonoBehaviour
     private InputSystem_Actions inputActions;
     private Vector2 movementInput;
     private Vector2 lookInput;
+    private Action<InputAction.CallbackContext> onJumpPerformed;
+    private Action<InputAction.CallbackContext> onJumpCancelled;
+    private Action<InputAction.CallbackContext> onSuperJumpPerformed;
+    private Action<InputAction.CallbackContext> onSuperJumpCancelled;
+    private Action<InputAction.CallbackContext> onCrouchPerformed;
+    private Action<InputAction.CallbackContext> onCrouchCancelled;
     private bool isJumping = false;
     private bool isCrouching = false;
     private bool isChargingSuperJump = false;
@@ -57,6 +63,14 @@ public class PlayerCharacterController : MonoBehaviour
     {
         inputActions.Player.Enable();
 
+        // Store Delegates
+        onJumpPerformed = ctx => isJumping = true;
+        onJumpCancelled = ctx => isJumping = false;
+        onSuperJumpPerformed = ctx => SuperJumpCharging();
+        onSuperJumpCancelled = ctx => SuperJumpReleased();
+        onCrouchPerformed = ctx => isCrouching = true;
+        onCrouchCancelled = ctx => isCrouching = false;
+
         // Bind actions to methods
         inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
@@ -64,13 +78,10 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
 
-        inputActions.Player.Jump.performed += ctx => isJumping = true;
-        inputActions.Player.Jump.canceled += ctx => isJumping = false;
-        inputActions.Player.SuperJump.performed += ctx => SuperJumpCharging();
-        inputActions.Player.SuperJump.canceled += ctx => SuperJumpReleased();
+        enableJumping(true); // Eventually the goal is to replace all the other event listeners with something like this, but only when that needs comes.
+        enableSuperJumping(true);
 
-        inputActions.Player.Crouch.performed += ctx => isCrouching = true;
-        inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
+        enableCrouching(true);
 
         inputActions.Player.Interact.performed += ctx => HandleInteractInput();
         inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
@@ -96,13 +107,10 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Look.performed -= ctx => lookInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Look.canceled -= ctx => lookInput = Vector2.zero;
 
-        inputActions.Player.Jump.performed -= ctx => isJumping = true;
-        inputActions.Player.Jump.canceled -= ctx => isJumping = false;
-        inputActions.Player.SuperJump.performed -= ctx => SuperJumpCharging();
-        inputActions.Player.SuperJump.canceled -= ctx => SuperJumpReleased();
+        enableJumping(false);
+        enableSuperJumping(false);
 
-        inputActions.Player.Crouch.performed -= ctx => isCrouching = true;
-        inputActions.Player.Crouch.canceled -= ctx => isCrouching = false;
+        enableCrouching(false);
 
         inputActions.Player.Interact.performed -= ctx => HandleInteractInput();
         inputActions.Player.Previous.performed -= ctx => HandleItemPrevInput();
@@ -337,8 +345,7 @@ public class PlayerCharacterController : MonoBehaviour
         // Disable jumping and crouching while charging SuperJump
         inputActions.Player.Crouch.performed -= ctx => isCrouching = true;
         inputActions.Player.Crouch.canceled -= ctx => isCrouching = false;
-        inputActions.Player.Jump.performed -= ctx => isJumping = true;
-        inputActions.Player.Jump.canceled -= ctx => isJumping = false;
+        enableJumping(false);
         isCrouching = true;
         isChargingSuperJump = true;
         superJumpCharge += Time.deltaTime;
@@ -352,8 +359,7 @@ public class PlayerCharacterController : MonoBehaviour
         // Re-enable jumping and crouching while charging SuperJump
         inputActions.Player.Crouch.performed += ctx => isCrouching = true;
         inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
-        inputActions.Player.Jump.performed += ctx => isJumping = true;
-        inputActions.Player.Jump.canceled += ctx => isJumping = false;
+        enableJumping(true);
 
         if (superJumpCharge > 3f) // Cap charge at 3 seconds
         {
@@ -371,14 +377,55 @@ public class PlayerCharacterController : MonoBehaviour
         superJumpCharge = 0;
     }
 
-    public void enableJumping(bool active){
-        if (active){
-            inputActions.Player.Crouch.performed += ctx => isCrouching = true;
-            inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
+    // Event Listener Enablers (and Disablers)
+    public void enableJumping(bool active)
+    {
+        if (active)
+        {
+            enableJumping(false); // unsub first to avoid duplicate event listeners.
+
+            inputActions.Player.Jump.performed += onJumpPerformed;
+            inputActions.Player.Jump.canceled += onJumpCancelled;
         }
-        else{
-            inputActions.Player.Jump.performed -= ctx => isJumping = true;
-            inputActions.Player.Jump.canceled -= ctx => isJumping = false;
+        else
+        {
+            inputActions.Player.Jump.performed -= onJumpPerformed;
+            inputActions.Player.Jump.canceled -= onJumpCancelled;
+            isJumping = false;
+        }
+    }
+
+    public void enableSuperJumping(bool active)
+    {
+        if (active)
+        {
+            enableSuperJumping(false); // unsub first to avoid duplicate event listeners.
+
+            inputActions.Player.SuperJump.performed += onSuperJumpPerformed;
+            inputActions.Player.SuperJump.canceled += onSuperJumpCancelled;
+        }
+        else
+        {
+            inputActions.Player.SuperJump.performed -= onSuperJumpPerformed;
+            inputActions.Player.SuperJump.canceled -= onSuperJumpCancelled;
+            isChargingSuperJump = false;
+        }
+    }
+
+    public void enableCrouching(bool active)
+    {
+        if (active)
+        {
+            enableCrouching(false); // unsub first to avoid duplicate event listeners.
+
+            inputActions.Player.Crouch.performed += onCrouchPerformed;
+            inputActions.Player.Crouch.canceled += onCrouchCancelled;
+        }
+        else
+        {
+            inputActions.Player.Crouch.performed -= onCrouchPerformed;
+            inputActions.Player.Crouch.canceled -= onCrouchCancelled;
+            isCrouching = false;
         }
     }
 
