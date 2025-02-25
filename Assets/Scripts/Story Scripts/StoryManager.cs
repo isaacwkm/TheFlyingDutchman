@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
+    public int i;
     private int currentStoryScene = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +21,6 @@ public class StoryManager : MonoBehaviour
     }
 
     void playNextStoryScene(){
-
+        currentStoryScene++;
     }
 }
