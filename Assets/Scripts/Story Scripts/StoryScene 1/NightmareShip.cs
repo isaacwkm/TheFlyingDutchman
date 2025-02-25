@@ -9,6 +9,9 @@ public class NightmareShip : MonoBehaviour
     [SerializeField] private Interactable rudderInteractTarget;
     [SerializeField] private Animator wheelPopsOffAnimation;
     [SerializeField] private ParticleSystem fallParticleEffect;
+    [SerializeField] private GameObject syncTransformer;
+    [SerializeField] private GameObject[] deleteOnFall;
+    [SerializeField] private Animator shipFallAnimation;
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobRange = 1.0f;
     [SerializeField] private float linearAcceleration = 3.0f;
@@ -16,17 +19,13 @@ public class NightmareShip : MonoBehaviour
     [SerializeField] private float angularAcceleration = 12.0f;
     [SerializeField] private float traction = 0.01f;
     [SerializeField] private float stabilizeStrength = 1.0f;
-    private Vector3 cameraInitialDisplacement;
-    private Transform sceneCore; // return the player here after un-parenting
-    private Vector2 xzMovementInput = Vector2.zero;
-    private float yMovementInput = 0.0f;
-    private Vector2 lookInput = Vector2.zero;
     private Vector3 impetus = Vector3.zero;
     private float baseY;
     private float bobDirection = -1.0f;
     private float targetY;
     private Rigidbody rbody;
-    private GameObject currentPlayer = null;
+    private bool nightmareFalling = false;
+    private GameObject playerObj;
 
     void Awake()
     {
@@ -52,26 +51,31 @@ public class NightmareShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // bobbing
-        if (impetus.y == 0.0f)
+        if (nightmareFalling == true) return;
+
+
+        impetus = Vector3.zero;
+
+        // Bobbing
+        targetY += bobDirection * bobSpeed * Time.deltaTime;
+        if ((targetY - baseY) / bobDirection > bobRange)
         {
-            // Bobbing
-            targetY += bobDirection*bobSpeed*Time.deltaTime;
-            if ((targetY - baseY) / bobDirection > bobRange)
-            {
-                bobDirection = -bobDirection;
-            }
+            bobDirection = -bobDirection;
         }
+
         // Apply Forces
+        rbody.AddTorque(transform.up * impetus.x * rbody.mass * angularAcceleration * Time.deltaTime, ForceMode.Impulse);
+        rbody.AddForce(transform.forward * impetus.z * rbody.mass * linearAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(Vector3.up * rbody.mass * (targetY - transform.position.y) * bobSpeed * Time.deltaTime, ForceMode.Impulse);
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime * 60.0f)
         );
+
         // Stabilize
         rbody.AddTorque(
-            rbody.mass*angularAcceleration*Time.deltaTime *
+            rbody.mass * angularAcceleration * Time.deltaTime *
                 stabilizeStrength *
                 Vector3.Cross(transform.up, Vector3.up),
             ForceMode.Impulse
@@ -97,28 +101,51 @@ public class NightmareShip : MonoBehaviour
                 {
                     mc.enabled = false;
                 }
-
+                pcm.enableJumping(false);
+                pcm.enableSuperJumping(false);
                 wheelPopsOffAnimation.Play("NightmareRudder", -1, 0);
-                StartCoroutine(playParticleEffect());
+                StartCoroutine(playParticleEffect(player));
             }
 
         }
     }
 
-    private System.Collections.IEnumerator playParticleEffect()
+    private System.Collections.IEnumerator playParticleEffect(GameObject player)
     {
         // Wait for the duration
         yield return new WaitForSeconds(0.5f);
         fallParticleEffect.Play();
-        StartCoroutine(makeShipFall());
+        StartCoroutine(makeShipFall(player));
     }
 
-     private System.Collections.IEnumerator makeShipFall()
+    private System.Collections.IEnumerator makeShipFall(GameObject player)
     {
         // Wait for the duration
-        yield return new WaitForSeconds(0.5f);
-        fallParticleEffect.Play();
-        
+        yield return new WaitForSeconds(2f);
+
+        // Disable player collision
+        CapsuleCollider col = player.GetComponent<CapsuleCollider>();
+        col.enabled = false;
+
+        // Disable Character Controller
+        // TODO!!!
+
+        // Disable Sync Transformer on ship
+        syncTransformer.SetActive(false);
+        // Set script flag
+        nightmareFalling = true;
+
+        // Prevent physics interactions while animating
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        // Hide/Remove objects that don't fall with the ship
+        foreach (GameObject objectToBeHidden in deleteOnFall)
+        {
+            objectToBeHidden.SetActive(false);
+        }
+
+        shipFallAnimation.Play("NightmareFallingShip", -1, 0);
+
     }
 
 
