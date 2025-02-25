@@ -107,12 +107,9 @@ public class NightmareShip : MonoBehaviour
 
     private System.Collections.IEnumerator playParticleEffect()
     {
-        D.Log("played fall particle effect 1", gameObject, "Any");
         // Wait for the duration
         yield return new WaitForSeconds(0.5f);
-        D.Log("played fall particle effect 2", gameObject, "Any");
         fallParticleEffect.Play();
-        D.Log("played fall particle effect 3", gameObject, "Any");
     }
 
 
