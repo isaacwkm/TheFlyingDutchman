@@ -371,6 +371,17 @@ public class PlayerCharacterController : MonoBehaviour
         superJumpCharge = 0;
     }
 
+    public void enableJumping(bool active){
+        if (active){
+            inputActions.Player.Crouch.performed += ctx => isCrouching = true;
+            inputActions.Player.Crouch.canceled += ctx => isCrouching = false;
+        }
+        else{
+            inputActions.Player.Jump.performed -= ctx => isJumping = true;
+            inputActions.Player.Jump.canceled -= ctx => isJumping = false;
+        }
+    }
+
 
     // Getters & Setters
 
