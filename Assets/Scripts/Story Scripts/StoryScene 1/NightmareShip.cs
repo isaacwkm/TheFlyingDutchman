@@ -15,6 +15,7 @@ public class NightmareShip : MonoBehaviour
     [SerializeField] private float verticalAcceleration = 1.0f;
     [SerializeField] private float angularAcceleration = 12.0f;
     [SerializeField] private float traction = 0.01f;
+    [SerializeField] private float stabilizeStrength = 1.0f;
     private Vector3 cameraInitialDisplacement;
     private Transform sceneCore; // return the player here after un-parenting
     private Vector2 xzMovementInput = Vector2.zero;
@@ -51,29 +52,29 @@ public class NightmareShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move altitude targets if ascending/descending
+        // bobbing
         if (impetus.y == 0.0f)
         {
             // Bobbing
-            targetY += bobDirection * bobSpeed * Time.deltaTime;
+            targetY += bobDirection*bobSpeed*Time.deltaTime;
             if ((targetY - baseY) / bobDirection > bobRange)
             {
                 bobDirection = -bobDirection;
             }
         }
-        else
-        {
-            targetY = transform.position.y;
-            baseY = transform.position.y;
-        }
         // Apply Forces
-        rbody.AddTorque(transform.up * impetus.x * rbody.mass * angularAcceleration * Time.deltaTime, ForceMode.Impulse);
-        rbody.AddForce(transform.forward * impetus.z * rbody.mass * linearAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(Vector3.up * rbody.mass * (targetY - transform.position.y) * bobSpeed * Time.deltaTime, ForceMode.Impulse);
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime * 60.0f)
+        );
+        // Stabilize
+        rbody.AddTorque(
+            rbody.mass*angularAcceleration*Time.deltaTime *
+                stabilizeStrength *
+                Vector3.Cross(transform.up, Vector3.up),
+            ForceMode.Impulse
         );
     }
 
@@ -98,7 +99,7 @@ public class NightmareShip : MonoBehaviour
                 }
 
                 wheelPopsOffAnimation.Play("NightmareRudder", -1, 0);
-                playParticleEffect();
+                StartCoroutine(playParticleEffect());
             }
 
         }
