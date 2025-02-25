@@ -110,6 +110,15 @@ public class NightmareShip : MonoBehaviour
         // Wait for the duration
         yield return new WaitForSeconds(0.5f);
         fallParticleEffect.Play();
+        StartCoroutine(makeShipFall());
+    }
+
+     private System.Collections.IEnumerator makeShipFall()
+    {
+        // Wait for the duration
+        yield return new WaitForSeconds(0.5f);
+        fallParticleEffect.Play();
+        
     }
 
 
