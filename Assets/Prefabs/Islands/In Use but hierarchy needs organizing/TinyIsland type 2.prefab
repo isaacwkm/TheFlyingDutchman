@@ -1097,7 +1097,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5406821838063687417}
-  - screenRelativeHeight: 0.045200285
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6883549029155037806}
@@ -1315,9 +1315,9 @@ Transform:
   - {fileID: 1099289731601619051}
   - {fileID: 4545680988342812371}
   - {fileID: 4008591085562921590}
-  - {fileID: 1358891056319632105}
   - {fileID: 6909543372227811036}
   - {fileID: 6624902020467639035}
+  - {fileID: 4441095984526966002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8951849329520403874
@@ -1948,7 +1948,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
   m_PrefabInstance: {fileID: 5139033057178958533}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6284460132106561175
+--- !u!1001 &5304263251627310728
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1956,63 +1956,65 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7187406496674489471}
     m_Modifications:
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 6542334212645520676, guid: c15ac440e577e754f81209749264a08c, type: 3}
+      propertyPath: text
+      value: I've finished resting... I need to move on now. The others were lost
+        to the pursuers, but I can't think about that now. With the another key put
+        away, I can keep running without a trace.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.096
+      value: -2.3739624
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.950001
+      value: 16.29
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.309
+      value: 0.85998535
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7229675
+      value: 0.9923104
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.x
+      value: 0.12377466
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
+      propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6908821
-      objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+      value: 14.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 87.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5200468073539598910, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
-      propertyPath: itemToInstantiate
-      value: 
-      objectReference: {fileID: 6647226472413488857, guid: a693a2f748a7a2f42aa80de0dd93bfc2, type: 3}
-    - target: {fileID: 5457120945397595550, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
+    - target: {fileID: 8769516608619176687, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_Name
-      value: DigSite
+      value: AlienLog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
---- !u!4 &1358891056319632105 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: c15ac440e577e754f81209749264a08c, type: 3}
+--- !u!4 &4441095984526966002 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5038722070518953086, guid: ee1ca149dc3edca40935f79bc6c03885, type: 3}
-  m_PrefabInstance: {fileID: 6284460132106561175}
+  m_CorrespondingSourceObject: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
+  m_PrefabInstance: {fileID: 5304263251627310728}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6453965115019568072
 PrefabInstance:
