@@ -51,7 +51,10 @@ public class NightmareShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nightmareFalling == true) return;
+        if (nightmareFalling == true){
+            spinPlayerBackwards();
+            return;
+        };
 
 
         impetus = Vector3.zero;
@@ -82,8 +85,17 @@ public class NightmareShip : MonoBehaviour
         );
     }
 
+    void spinPlayerBackwards() // Make the player go fkin crazy
+    {
+        const float spinSpeed = 20f; // Degrees per second
+        Transform playerTransform = playerObj.transform; // Assign the head transform in the Inspector
+        playerTransform.Rotate(Vector3.back * spinSpeed * Time.deltaTime, Space.Self);
+    }
+
+
     void doRudderInteraction(GameObject player)
     {
+        playerObj = player;
         var pcm = player.GetComponent<PlayerCharacterController>();
         if (pcm)
         {
@@ -123,20 +135,13 @@ public class NightmareShip : MonoBehaviour
         // Wait for the duration
         yield return new WaitForSeconds(2f);
 
-        // Disable player collision
-        CapsuleCollider col = player.GetComponent<CapsuleCollider>();
-        col.enabled = false;
-
-        // Disable Character Controller
-        // TODO!!!
-
         // Disable Sync Transformer on ship
         syncTransformer.SetActive(false);
+        // Disable Rigidbody on ship
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
         // Set script flag
         nightmareFalling = true;
-
-        // Prevent physics interactions while animating
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
         // Hide/Remove objects that don't fall with the ship
         foreach (GameObject objectToBeHidden in deleteOnFall)
