@@ -666,7 +666,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
@@ -1093,9 +1093,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901261449784692824, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3689131172617890069, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_Name
       value: Jail_Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051060971343611717, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4983350648162324293, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1137,9 +1145,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6203053987545242218, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681218050217286440, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3257626706104892815, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3574264450383128851, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+    - {fileID: 3763967024517934943, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+    - {fileID: 4771256087172898770, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
