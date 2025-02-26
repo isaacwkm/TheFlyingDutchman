@@ -39,6 +39,7 @@ Transform:
   - {fileID: 2403738008017104169}
   - {fileID: 6755405046831105069}
   - {fileID: 1881919220018665762}
+  - {fileID: 4891241401151333727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2181200693687760175
@@ -549,6 +550,37 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 30d3f96eb371bde43bc3308352ab52d0, type: 2}
   m_EnableTreeColliders: 1
+--- !u!1 &6603432301529345289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4891241401151333727}
+  m_Layer: 0
+  m_Name: PineIslandSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4891241401151333727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603432301529345289}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.130127, y: 17.280457, z: -2.4899902}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4438343348441103050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6755109077330013676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1193,7 @@ GameObject:
   - component: {fileID: 778701800186804962}
   - component: {fileID: 599802232147549784}
   m_Layer: 0
-  m_Name: Cloud_Cumulus (5)
+  m_Name: Cloud_Cumulus LOD
   m_TagString: Sand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
