@@ -7,7 +7,6 @@ public class ActiveItemEditor : Editor
     private SerializedProperty itemIDPleaseDoNotChange;
     private SerializedProperty heldPositionOffset;
     private SerializedProperty heldRotationOffset;
-    private SerializedProperty handAnim;
     private SerializedProperty hasAttack;
     private SerializedProperty attackAnimName;
 
@@ -17,7 +16,6 @@ public class ActiveItemEditor : Editor
         itemIDPleaseDoNotChange = serializedObject.FindProperty("itemIDPleaseDoNotChange");
         heldPositionOffset = serializedObject.FindProperty("heldPositionOffset");
         heldRotationOffset = serializedObject.FindProperty("heldRotationOffset");
-        handAnim = serializedObject.FindProperty("handAnim");
         hasAttack = serializedObject.FindProperty("hasAttack");
         attackAnimName = serializedObject.FindProperty("attackAnimName");
     }
@@ -31,7 +29,6 @@ public class ActiveItemEditor : Editor
         EditorGUILayout.PropertyField(itemIDPleaseDoNotChange, new GUIContent("Item ID (Please do not change)"));
         EditorGUILayout.PropertyField(heldPositionOffset, new GUIContent("Held Position Offset"));
         EditorGUILayout.PropertyField(heldRotationOffset, new GUIContent("Held Rotation Offset"));
-        EditorGUILayout.PropertyField(handAnim, new GUIContent("Hand Animator"), true);
 
         EditorGUILayout.PropertyField(hasAttack, new GUIContent("Has Attack"));
         if (hasAttack.boolValue)
