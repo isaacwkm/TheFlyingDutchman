@@ -80,6 +80,13 @@ public class Inventory : MonoBehaviour
         int itemID = item.GetComponent<DroppedItem>().itemID; // Used to obtain Texture data from catalog
         D.Log($"{itemID} is the item ID being added to slot ${slotNum}.", gameObject, "Inv");
 
+        // Set hand anim field for use in animations used by the ActiveItem methods
+        GameObject handEquipObj = handPosition.gameObject;
+        Animator handAnim = handEquipObj.GetComponent<Animator>();
+        ActiveItem activeItemComponent = item.GetComponent<ActiveItem>();
+        activeItemComponent.setPlayerHandAnim(handAnim);
+
+        // Create an item icon as a visual indicator for the item that was picked up
         GameObject newIcon = new GameObject("ItemIcon", typeof(RectTransform), typeof(RawImage)); // Create object to hold rawimage
         newIcon.transform.SetParent(iconPositionTransforms[slotNum], false); // Set parent while preserving UI layout
         RawImage rawImage = newIcon.GetComponent<RawImage>(); // Get the RawImage component
