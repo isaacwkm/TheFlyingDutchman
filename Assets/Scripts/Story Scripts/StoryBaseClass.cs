@@ -1,13 +1,42 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryClass : MonoBehaviour
+public abstract class StoryClass : MonoBehaviour
 {
-    public virtual void startStoryScene(GameObject sceneCore, GameObject player){
+    protected StoryManager storyManagerReference;
+    protected int storySceneID = 0;
+    public virtual int[] receiveDataFrom { get; } // Array of Scene IDs of scenes to receive data from
+    protected StoryData storyData = new StoryData();
+    protected Dictionary<int, StoryData> foreignStoryData;
 
+
+    void Awake()
+    {
+        storyManagerReference = SceneCore.storyManager;
+    }
+    public abstract void startStoryScene(); // Operations to do when starting the scene
+    public abstract void cleanupStoryScene(); // Operations to do to clean up what was done in the playthrough of the scene
+    public abstract void finalizeData(); // Publish data to be read by other scenes
+    protected void endStoryScene() // Called to jump to next scene
+    {
+        finalizeData();
+        cleanupStoryScene();
+        storyManagerReference.playNextStoryScene();
     }
 
-    public virtual void endStoryScene(GameObject sceneCore, GameObject player, int currSceneNumber){
+    public int getStorySceneID()
+    {
+        return storySceneID;
+    }
 
+    public StoryData GetStoryData()
+    {
+        return storyData;
+    }
+
+    public void setForeignStoryData(Dictionary<int, StoryData> data)
+    {
+        foreignStoryData = data;
     }
 }
