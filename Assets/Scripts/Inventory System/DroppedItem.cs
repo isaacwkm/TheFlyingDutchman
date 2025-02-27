@@ -118,6 +118,7 @@ public class DroppedItem : MonoBehaviour
     }
 
     private void tryPickUpItem(GameObject player){
+        // don't try to add the item to inventory if it doesn't have any behavior defined for when it is held in inventory
         if (gameObject.GetComponent<ActiveItem>() == null) return;
         
         Inventory inventory = player.GetComponent<Inventory>();
