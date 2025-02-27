@@ -210,7 +210,8 @@ public class PlayerCharacterController : MonoBehaviour
             // climb ladder
             Vector3 movement = Time.deltaTime * movementMedium.transform.up * climbSpeed;
             // if it is a rope
-            if (movementMedium.GetComponent<Rope>())
+            bool isRope = !!movementMedium.GetComponent<Rope>();
+            if (isRope)
             {
                 // climbing direction does not depend on rope facing (rope has radial symmetry)
                 movement *= movementInput.y;
@@ -232,6 +233,22 @@ public class PlayerCharacterController : MonoBehaviour
             if ((collFlags & CollisionFlags.Below) != 0)
             {
                 RestoreMovementMode();
+            }
+            else if (isJumping)
+            {
+                // handle jumping off
+                // first, displace away from ladder to prevent jump from landing right back onto it instantly
+                if (isRope)
+                {
+                    characterController.Move(0.5f*transform.forward);
+                }
+                else
+                {
+                    characterController.Move(0.5f*movementMedium.transform.forward);
+                }
+                // then, jump
+                RestoreMovementMode();
+                moveDirection.y = jumpPower;
             }
         }
     }
