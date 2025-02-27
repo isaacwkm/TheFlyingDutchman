@@ -4,16 +4,17 @@ using UnityEngine;
 
 public abstract class StoryClass : MonoBehaviour
 {
-    protected StoryManager storyManagerReference;
-    protected int storySceneID = 0;
+    protected StoryManager storyManager;
+    public abstract int storySceneID { get; }
     public virtual int[] receiveDataFrom { get; } // Array of Scene IDs of scenes to receive data from
     protected StoryData storyData = new StoryData();
     protected Dictionary<int, StoryData> foreignStoryData;
 
 
-    void Awake()
-    {
-        storyManagerReference = SceneCore.storyManager;
+    public void initStoryScene(){
+        storyManager = SceneCore.storyManager;
+        foreignStoryData = storyManager.requestDataFromScenes(receiveDataFrom);
+        startStoryScene();
     }
     public abstract void startStoryScene(); // Operations to do when starting the scene
     public abstract void cleanupStoryScene(); // Operations to do to clean up what was done in the playthrough of the scene
@@ -22,7 +23,7 @@ public abstract class StoryClass : MonoBehaviour
     {
         finalizeData();
         cleanupStoryScene();
-        storyManagerReference.playNextStoryScene();
+        storyManager.playNextStoryScene();
     }
 
     public int getStorySceneID()

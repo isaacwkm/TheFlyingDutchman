@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class LevelBounds : MonoBehaviour
 {
-    void OnTriggerExit(Collider playerCollider)
+    void OnTriggerExit(Collider other)
     {
-        if (playerCollider.GetComponent<PlayerCharacterController>())
+        if (other.CompareTag("Player"))
         {
             Checkpoint.Respawn();
         }

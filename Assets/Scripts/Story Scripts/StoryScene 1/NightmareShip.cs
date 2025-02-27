@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class NightmareShip : MonoBehaviour
 {
+    [SerializeField] private GameObject entireObjectToDestroy;
     [SerializeField] private Interactable rudderInteractTarget;
     [SerializeField] private Animator wheelPopsOffAnimation;
     [SerializeField] private ParticleSystem fallParticleEffect;
@@ -26,6 +27,7 @@ public class NightmareShip : MonoBehaviour
     private Rigidbody rbody;
     private bool nightmareFalling = false;
     private GameObject playerObj;
+    private PlayerCharacterController pcm;
 
     void Awake()
     {
@@ -51,10 +53,12 @@ public class NightmareShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nightmareFalling == true){
+        if (nightmareFalling == true)
+        {
             spinPlayerBackwards();
             return;
-        };
+        }
+        ;
 
 
         impetus = Vector3.zero;
@@ -96,7 +100,7 @@ public class NightmareShip : MonoBehaviour
     void doRudderInteraction(GameObject player)
     {
         playerObj = player;
-        var pcm = player.GetComponent<PlayerCharacterController>();
+        pcm = player.GetComponent<PlayerCharacterController>();
         if (pcm)
         {
             // Trigger nightmare sequence here
@@ -117,6 +121,7 @@ public class NightmareShip : MonoBehaviour
                 pcm.enableSuperJumping(false);
                 wheelPopsOffAnimation.Play("NightmareRudder", -1, 0);
                 StartCoroutine(playParticleEffect(player));
+                StartCoroutine(makeShipFall(player));
             }
 
         }
@@ -127,13 +132,12 @@ public class NightmareShip : MonoBehaviour
         // Wait for the duration
         yield return new WaitForSeconds(0.5f);
         fallParticleEffect.Play();
-        StartCoroutine(makeShipFall(player));
     }
 
     private System.Collections.IEnumerator makeShipFall(GameObject player)
     {
         // Wait for the duration
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         // Disable Sync Transformer on ship
         syncTransformer.SetActive(false);
@@ -151,6 +155,17 @@ public class NightmareShip : MonoBehaviour
 
         shipFallAnimation.Play("NightmareFallingShip", -1, 0);
 
+    }
+
+    public void cleanUp()
+    {
+        nightmareFalling = false;
+        pcm.enableJumping(true);
+        pcm.enableSuperJumping(true);
+        if (transform.parent != null)
+        {
+            Destroy(entireObjectToDestroy, 0.1f);
+        }
     }
 
 

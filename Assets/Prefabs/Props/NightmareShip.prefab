@@ -70,7 +70,6 @@ MonoBehaviour:
   linearOffset: {x: 0, y: 0, z: 0}
   angularOffset: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   initialBodiesInfluenced:
-  - {fileID: 0}
   - {fileID: 8106540645105971687}
   - {fileID: 179410714392294935}
 --- !u!1 &1249415779071665957
@@ -172,9 +171,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078fc6d97ef8153469f9a51ddfbdf7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entireObjectToDestroy: {fileID: 5690498334602005386}
   rudderInteractTarget: {fileID: 562176261401278593}
   wheelPopsOffAnimation: {fileID: 201462795206709391}
   fallParticleEffect: {fileID: 3114544968862538183}
+  syncTransformer: {fileID: 192760523537509080}
+  deleteOnFall:
+  - {fileID: 8106540645105971687}
+  - {fileID: 179410714392294935}
   shipFallAnimation: {fileID: 1676351007462081825}
   bobSpeed: 1
   bobRange: 1
@@ -1077,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012078544766830, guid: dc1d5ca3304bfa943859960d5d1bb9b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.59
+      value: 6.185
       objectReference: {fileID: 0}
     - target: {fileID: 4012078544766830, guid: dc1d5ca3304bfa943859960d5d1bb9b3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1085,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012078544766830, guid: dc1d5ca3304bfa943859960d5d1bb9b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4012078544766830, guid: dc1d5ca3304bfa943859960d5d1bb9b3, type: 3}
       propertyPath: m_LocalRotation.w
