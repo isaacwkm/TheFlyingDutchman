@@ -1912,6 +1912,9 @@ MonoBehaviour:
   anchorMaxDropDistance: 30
   controlWheelHingeJoint: {fileID: 2576431790455104364}
   controlWheelSpinFactor: 10
+  shipPhysicsController: {fileID: 2848870048513271243}
+  shipDecelerationWhenAnchored: 0.05
+  shipStabilizationWhenAnchored: 120
 --- !u!4 &2154978175016270491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6279715398053272823, guid: b0ffba4681f354e489300e1e84fcd62e, type: 3}
