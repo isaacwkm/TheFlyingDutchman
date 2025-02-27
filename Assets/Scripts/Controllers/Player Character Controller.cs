@@ -207,12 +207,28 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (movementMedium)
         {
-            var collFlags = characterController.Move(
-                Time.deltaTime * transform.up * climbSpeed * Vector3.Dot(
+            // climb ladder
+            Vector3 movement = Time.deltaTime * movementMedium.transform.up * climbSpeed;
+            // if it is a rope
+            if (movementMedium.GetComponent<Rope>())
+            {
+                // climbing direction does not depend on rope facing (rope has radial symmetry)
+                movement *= movementInput.y;
+                // snap to rope
+                movement += Vector3.ProjectOnPlane(
+                    movementMedium.transform.position - transform.position,
+                    movementMedium.transform.up
+                );
+            }
+            else
+            {
+                // if it isn't a rope, then climbing direction depends on ladder facing
+                movement *= Vector3.Dot(
                     -(transform.forward * movementInput.y).normalized,
                     movementMedium.transform.forward
-                )
-            );
+                );
+            }
+            var collFlags = characterController.Move(movement);
             if ((collFlags & CollisionFlags.Below) != 0)
             {
                 RestoreMovementMode();
