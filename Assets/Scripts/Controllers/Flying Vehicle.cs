@@ -10,6 +10,7 @@ public class FlyingVehicle : MonoBehaviour
     [SerializeField] private float linearAcceleration = 3.0f;
     [SerializeField] private float verticalAcceleration = 1.0f;
     [SerializeField] private float angularAcceleration = 12.0f;
+    [SerializeField] private float brake = 0.01f;
     [SerializeField] private float tiltStrength = 2.0f;
     [SerializeField] private float stabilizeStrength = 1.0f;
     [SerializeField] private float traction = 0.01f;
@@ -134,11 +135,21 @@ public class FlyingVehicle : MonoBehaviour
         rbody.AddTorque(transform.up * impetus.x * rbody.mass * angularAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(transform.forward * impetus.z * rbody.mass * linearAcceleration * Time.deltaTime, ForceMode.Impulse);
         rbody.AddForce(Vector3.up * rbody.mass * (targetY - transform.position.y) * bobSpeed * Time.deltaTime, ForceMode.Impulse);
+        // Steer
         rbody.linearVelocity = Vector3.Lerp(
             rbody.linearVelocity,
             Vector3.ProjectOnPlane(rbody.linearVelocity, transform.right),
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime * 60.0f)
         );
+        // Brake
+        if (Vector3.Dot(transform.forward*impetus.z, rbody.linearVelocity) < 0.0f)
+        {
+            rbody.linearVelocity = Vector3.Lerp(
+                rbody.linearVelocity,
+                -rbody.linearVelocity.normalized,
+                1.0f - Mathf.Pow(1.0f - brake, Time.deltaTime * 60.0f)
+            );
+        }
         // Steering Wheel Animation
         if (rudder)
         {

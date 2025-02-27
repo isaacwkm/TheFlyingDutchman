@@ -41,12 +41,15 @@ public class InputModeManager : MonoBehaviour
 
     private void OnEnable()
     {
-        inputActions.Disable();
         SwitchToPlayerControls();
-        inputMode = InputMode.Player;
     }
 
     private void OnDisable()
+    {
+        DisableAllControls();
+    }
+
+    public void DisableAllControls()
     {
         inputActions.Disable();
         inputMode = InputMode.None;
@@ -54,24 +57,21 @@ public class InputModeManager : MonoBehaviour
 
     public void SwitchToPlayerControls()
     {
+        inputActions.Disable();
         inputActions.Player.Enable();   // Enable Player action map
-        inputActions.Flying.Disable();  // Disable Flying action map
-        inputActions.UI.Disable();
         inputMode = InputMode.Player;
     }
 
     public void SwitchToShipControls()
     {
-        inputActions.Player.Disable();  // Disable Player action map
+        inputActions.Disable();
         inputActions.Flying.Enable();   // Enable Flying action map
-        inputActions.UI.Disable();
         inputMode = InputMode.Flying;
     }
 
     public void SwitchToUIControls()
     {
-        inputActions.Player.Disable();
-        inputActions.Flying.Disable();
+        inputActions.Disable();
         inputActions.UI.Enable();
         inputMode = InputMode.UI;
     }
