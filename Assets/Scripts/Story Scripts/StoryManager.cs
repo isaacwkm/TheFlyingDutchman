@@ -65,16 +65,19 @@ public class StoryManager : MonoBehaviour
         }
 
         Vector3 targetPosition;
+        Quaternion targetRotation;
 
         if (referenceObject != null)
         {
             // Calculate position relative to the reference object
             targetPosition = referenceObject.position + relativeCoordinates;
+            targetRotation = referenceObject.rotation;
         }
         else
         {
-            // Use the offset directly from the scene's origin
+            // Use the offset directly as the global coordinates
             targetPosition = relativeCoordinates;
+            targetRotation = Quaternion.identity;
         }
 
         CharacterController controller = player.GetComponent<CharacterController>();
@@ -82,6 +85,7 @@ public class StoryManager : MonoBehaviour
         {
             controller.enabled = false; // Disable to prevent physics issues
             controller.transform.position = targetPosition; // Teleport the player
+            controller.transform.rotation = targetRotation; // Use the rotation of the target teleport transform
             controller.enabled = true; // Re-enable the controller
             Debug.Log($"{player.name} teleported to {targetPosition}.");
         }
