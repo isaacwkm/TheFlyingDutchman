@@ -291,19 +291,19 @@ public class PlayerCharacterController : MonoBehaviour
     }
     private void HandleItemPrevInput()
     {
-        D.Log("Prev item selected", null, "Inv");
+        D.Log("Prev item pressed", null, "Inv");
         inventoryComponent.switchToPrev();
     }
 
     private void HandleItemNextInput()
     {
-        D.Log("Next item selected", null, "Inv");
+        D.Log("Next item pressed", null, "Inv");
         inventoryComponent.switchToNext();
     }
 
     private void HandleDropInput()
     {
-        D.Log("Drop selected", null, "Inv");
+        D.Log("Drop pressed", null, "Inv");
         inventoryComponent.dropItem();
     }
 
@@ -329,8 +329,8 @@ public class PlayerCharacterController : MonoBehaviour
             }
             else if (superJumpCharge > 0.2f && !characterController.isGrounded) // Release charge if player falls of a ledge. Accounts for small delay where the player is airborne while in their crouching animation.
             {
-                D.Log("Releasing Superjump due to player falling off!", gameObject, "Any");
-                D.Log($"isGrounded: {characterController.isGrounded}", gameObject, "Any");
+                D.Log("Releasing Superjump due to player falling off!", gameObject, "Move");
+                D.Log($"isGrounded: {characterController.isGrounded}", gameObject, "Move");
                 SuperJumpReleased();
                 return;
             }
@@ -371,7 +371,7 @@ public class PlayerCharacterController : MonoBehaviour
         SuperjumpSound.PlaySingleRandom(); //play sound effect
         moveDirection.y = superJumpPower * superJumpPowerMultiplier;
 
-        D.Log($"SuperJumped! Charge time: {superJumpCharge}", gameObject, "Any");
+        D.Log($"SuperJumped! Charge time: {superJumpCharge}", gameObject, "Move");
         isCrouching = false;
         isChargingSuperJump = false;
         superJumpCharge = 0;
