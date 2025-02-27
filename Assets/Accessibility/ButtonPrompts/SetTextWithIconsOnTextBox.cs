@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class SetTextWithIconsOnTextBox : MonoBehaviour
 {
     [TextArea(2, 3)]
-    [SerializeField] private string message = "Press BUTTONPROMPT to interact.";
+    public string message = "Press BUTTONPROMPT to interact.";
 
     // References to TMP_SpriteAssets for gamepad and keyboard
     [SerializeField] private TMP_SpriteAsset gamepadSpriteAsset;
