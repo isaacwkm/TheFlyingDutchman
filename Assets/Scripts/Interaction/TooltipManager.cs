@@ -8,6 +8,7 @@ public class TooltipManager : MonoBehaviour
     [SerializeField] private PlayerCharacterController playerController; // reference to player controller script
     [SerializeField] private GameObject cameraObj; // reference to camera obj
     [SerializeField] private TextMeshProUGUI tooltipUiComponent; // Reference to the tooltip UI Text component
+    [SerializeField] private TextMeshProUGUI secondTooltipComponent; // Reference to the second tooltip UI Text component
     [SerializeField] private Image crosshair; // Reference to crosshair
     private InputSystem_Actions inputActions; // Reference to the input actions
 
@@ -18,6 +19,7 @@ public class TooltipManager : MonoBehaviour
 
     // Class variables
     private string tooltipText = "Interact: [Key]"; // Tooltip action text
+    private string secondTooltipText = "Interact: [Key]"; // Tooltip action text
 
     private void Awake()
     {
@@ -42,9 +44,10 @@ public class TooltipManager : MonoBehaviour
         interactionRange = playerController.getMaxInteractDistance();
 
         // Disable tooltip text at start
-        if (tooltipUiComponent != null)
+        if (tooltipUiComponent != null && secondTooltipComponent != null)
         {
             tooltipUiComponent.gameObject.SetActive(false);
+            secondTooltipComponent.gameObject.SetActive(false);
         }
 
     }
@@ -71,6 +74,23 @@ public class TooltipManager : MonoBehaviour
         {
             crosshair.gameObject.SetActive(true);
             tooltipUiComponent.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowSecondTooltip()
+    {
+        if (secondTooltipComponent != null)
+        {
+            secondTooltipComponent.gameObject.SetActive(true);
+            secondTooltipComponent.text = secondTooltipText;
+        }
+    }
+
+    private void HideSecondTooltip()
+    {
+        if (secondTooltipComponent != null)
+        {
+            secondTooltipComponent.gameObject.SetActive(false);
         }
     }
 

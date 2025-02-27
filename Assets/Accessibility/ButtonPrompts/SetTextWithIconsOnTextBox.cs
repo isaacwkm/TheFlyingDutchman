@@ -1,8 +1,6 @@
-// Credit - Christina Creates Games (Youtube tutorial for setting button prompts)
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-using Needle.Console;
 
 [RequireComponent(typeof(TMP_Text))]
 public class SetTextWithIconsOnTextBox : MonoBehaviour
@@ -10,65 +8,80 @@ public class SetTextWithIconsOnTextBox : MonoBehaviour
     [TextArea(2, 3)]
     [SerializeField] private string message = "Press BUTTONPROMPT to interact.";
 
-    [Header("Setup for sprites")]
-    [SerializeField] private ListOfTMProSpriteAssets listOfTMProSpriteAssets;
-    [SerializeField] private DeviceType deviceType;
+    // References to TMP_SpriteAssets for gamepad and keyboard
+    [SerializeField] private TMP_SpriteAsset gamepadSpriteAsset;
+    [SerializeField] private TMP_SpriteAsset keyboardSpriteAsset;
 
-    private InputSystem_Actions inputActions;
     private TMP_Text textbox;
+    private InputSystem_Actions inputActions;
 
     private void Awake()
     {
-        inputActions = InputModeManager.Instance.inputActions;
         textbox = GetComponent<TMP_Text>();
     }
 
     private void Start()
     {
-        SetText();
+        inputActions = InputModeManager.Instance.inputActions;
+        SetText("space");
     }
 
     [ContextMenu("Set Text")]
-    private void SetText()
+    public void SetText(string key)
     {
-        if ((int)deviceType >= listOfTMProSpriteAssets.SpriteAssets.Count)
+        // Dynamically select the sprite asset based on the device
+        TMP_SpriteAsset selectedSpriteAsset = SelectSpriteAssetBasedOnDevice();
+
+        // Ensure a sprite asset is set
+        if (selectedSpriteAsset == null)
         {
-            D.Log($"Missing Sprite Asset for {deviceType}");
+            Debug.LogError("No sprite asset selected.");
             return;
         }
 
-        // Get the correct input binding
-        InputBinding binding = GetBindingForDevice(deviceType);
-        if (binding == default)
-        {
-            D.Log($"No valid binding found for {deviceType}");
-            return;
-        }
+        // Dynamically set the sprite asset for the TMP_Text
+        textbox.spriteAsset = selectedSpriteAsset;
 
-        // Replace BUTTONPROMPT with actual button sprite
-        textbox.text = CompleteTextWithButtonPromptSprite.ReadAndReplaceBinding(
-            message,
-            binding,
-            listOfTMProSpriteAssets.SpriteAssets[(int)deviceType]
-        );
+        // Replace BUTTONPROMPT with the actual sprite (e.g., "Gamepad_buttonWest")
+        string formattedText = message.Replace("BUTTONPROMPT", $"<sprite name=\"{GetSpriteNameForDevice(key)}\">");
+
+        // Set the final formatted text
+        textbox.text = formattedText;
     }
 
-    private InputBinding GetBindingForDevice(DeviceType device)
+    // Dynamically select which sprite asset to use based on the device
+    private TMP_SpriteAsset SelectSpriteAssetBasedOnDevice()
     {
-        var bindings = inputActions.Player.Interact.bindings;
-        foreach (var binding in bindings)
-        {
-            if (device == DeviceType.Gamepad && binding.path.Contains("Gamepad"))
-                return binding;
-            if (device == DeviceType.Keyboard && binding.path.Contains("Keyboard"))
-                return binding;
-        }
-        return default; // Return default if no valid binding is found
+        return keyboardSpriteAsset;
+
+        // // Choose the sprite asset based on the device being used
+        // if (Gamepad.current != null) // If a gamepad is being used
+        // {
+        //     return gamepadSpriteAsset;
+        // }
+        // else if (Keyboard.current != null) // If a keyboard is being used
+        // {
+        //     return keyboardSpriteAsset;
+        // }
+
+        // return null; // If no device is found, return null
     }
 
-    private enum DeviceType
+    // Get the sprite name based on the device
+    private string GetSpriteNameForDevice(string actionNeeded)
     {
-        Gamepad = 0,
-        Keyboard = 1
+        return "Keyboard_" + actionNeeded;
+
+        return "Keyboard_space";
+        // if (Gamepad.current != null)
+        // {
+        //     return "Gamepad_buttonWest"; // Example for gamepad
+        // }
+        // else if (Keyboard.current != null)
+        // {
+        //     return "Keyboard_space"; // Example for keyboard
+        // }
+
+        // return string.Empty; // Default return if no device is detected
     }
 }
