@@ -14,7 +14,7 @@ public class LevelBounds : MonoBehaviour
         
     }
 
-    void OnTriggerExit(GameObject player)
+    void OnTriggerExit(Collider playerCollider)
     {
         //respawn here
     }
