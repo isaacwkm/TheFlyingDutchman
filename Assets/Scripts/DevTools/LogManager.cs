@@ -6,20 +6,32 @@ using UnityEngine;
 [ExecuteAlways] // Allows updating logs in Editor mode
 public class LogManager : MonoBehaviour
 {
-    [Header("Log Categories")]
+    [Header("General Settings")]
     public bool enableLogs = true;
     [Tooltip("Log Any and Uncategorized messages")]
-    public bool logAny = true; // Any = uncategorized. Any can be disabled and still have other categories show up.
+    public bool logAny = true;
+
+    [Header("UI Logs")]
     public bool logUI = true;
+
+    [Header("Audio Logs")]
     [Tooltip("Log Audio")]
     public bool logAud = true;
+
+    [Header("Inventory/Item Logs")]
     [Tooltip("Log Inventory System")]
-    public bool logInv = true; // inventory system
-    [Tooltip("Log Interactions")]
-    public bool logInt = true; // interaction system
-    public bool logDig = true;
+    public bool logInv = true;
     public bool logItem = true;
 
+    [Header("Interaction Logs")]
+    public bool logInt = true;
+
+    [Tooltip("Shovel Digging Logs (Part of Interactions)")]
+    public bool logDig = true;
+
+    [Header("Player Movement Logs")]
+    public bool logMove = true;
+    
     private static LogManager instance;
 
     private Dictionary<string, bool> categoryStates = new Dictionary<string, bool>();
@@ -52,6 +64,7 @@ public class LogManager : MonoBehaviour
         categoryStates["Int"] = logInt; // interaction system
         categoryStates["Dig"] = logDig; // Shovel dig feature logs
         categoryStates["Item"] = logItem; // interaction system
+        categoryStates["Move"] = logMove; // player character movement and abilities
     }
 
     public static bool ShouldLog(string category)
