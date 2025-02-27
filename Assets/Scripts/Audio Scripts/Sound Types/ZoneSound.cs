@@ -38,7 +38,7 @@ public class ZoneSound : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!other.CompareTag("Player")) return; // if it's not a player entering it, ignore
+        if (!other.CompareTag("Player")) return; // if it's not a player entering it, ignore
 
         D.Log("Entered zonesound!", gameObject, "Aud");
 
