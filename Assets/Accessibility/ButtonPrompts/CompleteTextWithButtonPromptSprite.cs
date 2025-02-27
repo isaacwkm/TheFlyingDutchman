@@ -8,20 +8,29 @@ public static class CompleteTextWithButtonPromptSprite
 {
     public static string ReadAndReplaceBinding(string textToDisplay, InputBinding actionNeeded, TMP_SpriteAsset spriteAsset)
     {
-        string stringButtonName = actionNeeded.ToString();
-        stringButtonName = RenameInput(stringButtonName);
-
-        textToDisplay = textToDisplay.Replace("BUTTONPROMPT", $"<sprite=\"{spriteAsset.name}\" name \"{stringButtonName}\">");
+        string stringButtonName = GetReadableBindingName(actionNeeded);
+        
+        if (string.IsNullOrEmpty(stringButtonName))
+            return textToDisplay; // Return unchanged if binding is invalid
+        
+        textToDisplay = textToDisplay.Replace("BUTTONPROMPT", 
+        $"<sprite=\"{spriteAsset.name}\" name=\"{stringButtonName}\">");
 
         return textToDisplay;
     }
 
-    private static string RenameInput(string stringButtonName){
-        stringButtonName = stringButtonName.Replace("Interact", String.Empty);
+    private static string GetReadableBindingName(InputBinding binding)
+    {
+        string path = binding.effectivePath ?? binding.path; // Use effective binding if available
+        
+        if (string.IsNullOrEmpty(path))
+            return string.Empty; // Invalid binding
 
-        stringButtonName = stringButtonName.Replace("<Keyboard>/", "Keyboard_");
-        stringButtonName = stringButtonName.Replace("<Gamepad>/", "Gamepad_");
+        path = path.Replace("<Keyboard>/", "Keyboard_")
+                   .Replace("<Gamepad>/", "Gamepad_")
+                   .Replace("<Mouse>/", "Mouse_");
 
-        return stringButtonName;
+        return path;
     }
 }
+

@@ -159,6 +159,15 @@ public class NightmareShip : MonoBehaviour
 
     public void cleanUp()
     {
+        if (nightmareFalling == false)
+        {
+            if (transform.parent != null)
+            {
+                Destroy(entireObjectToDestroy, 0.1f);
+            }
+            return;
+        }
+
         nightmareFalling = false;
         pcm.enableJumping(true);
         pcm.enableSuperJumping(true);
