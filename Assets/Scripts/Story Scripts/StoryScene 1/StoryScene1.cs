@@ -1,17 +1,23 @@
+using Needle.Console;
 using UnityEngine;
 
 public class StoryScene1 : StoryClass
 {
+    public override int storySceneID {get; } = 1; // IMPORTANT! Set story scene ID!
+    public TriggerZoneHandler NightmareBoundary;
+    public Transform sceneStartSpawn;
 
     // Start of: "Data to be sent out as story data":
     private int jumpCount = 0;
     private int objectsInteractedWith = 0;
     // End
-    
-    // Other class variables:
     public override int[] receiveDataFrom { get; } = { }; // List of scenes to receive data from
+
+
     public override void startStoryScene() // Operations to do when starting the scene
     {
+        storyManager.teleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
+        NightmareBoundary.OnExit += endStoryScene; // End the scene when player leaves the boundary (they fall off the island to move onto the next scene)
     }
 
     public override void cleanupStoryScene() // Operations to do to clean up what was done in the playthrough of the scene

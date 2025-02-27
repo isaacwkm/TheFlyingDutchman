@@ -4,7 +4,7 @@ using UnityEngine;
 public class Teleporter: ButtonTask
 {
     [SerializeField] private Vector3 relativeCoordinates = Vector3.zero; // The offset from the referenceObject or scene origin
-    [SerializeField] private Transform referenceObject; // The GameObject to use as a reference (e.g., the player's ship)
+    [SerializeField] private Transform referenceObject; // The Transform of the gameobject to use as a reference (e.g., the player's ship)
 
     public override void DoTasks(GameObject player) {
 
