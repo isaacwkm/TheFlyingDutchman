@@ -207,15 +207,48 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (movementMedium)
         {
-            var collFlags = characterController.Move(
-                Time.deltaTime * transform.up * climbSpeed * Vector3.Dot(
+            // climb ladder
+            Vector3 movement = Time.deltaTime * movementMedium.transform.up * climbSpeed;
+            // if it is a rope
+            bool isRope = !!movementMedium.GetComponent<Rope>();
+            if (isRope)
+            {
+                // climbing direction does not depend on rope facing (rope has radial symmetry)
+                movement *= movementInput.y;
+                // snap to rope
+                movement += Vector3.ProjectOnPlane(
+                    movementMedium.transform.position - transform.position,
+                    movementMedium.transform.up
+                );
+            }
+            else
+            {
+                // if it isn't a rope, then climbing direction depends on ladder facing
+                movement *= Vector3.Dot(
                     -(transform.forward * movementInput.y).normalized,
                     movementMedium.transform.forward
-                )
-            );
+                );
+            }
+            var collFlags = characterController.Move(movement);
             if ((collFlags & CollisionFlags.Below) != 0)
             {
                 RestoreMovementMode();
+            }
+            else if (isJumping)
+            {
+                // handle jumping off
+                // first, displace away from ladder to prevent jump from landing right back onto it instantly
+                if (isRope)
+                {
+                    characterController.Move(0.5f*transform.forward);
+                }
+                else
+                {
+                    characterController.Move(0.5f*movementMedium.transform.forward);
+                }
+                // then, jump
+                RestoreMovementMode();
+                moveDirection.y = jumpPower;
             }
         }
     }
