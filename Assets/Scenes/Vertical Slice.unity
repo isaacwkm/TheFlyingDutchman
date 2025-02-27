@@ -1645,14 +1645,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973219074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4144249d253735478f9af5a35975ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Press BUTTONPROMPT to interact.
-  listOfTMProSpriteAssets: {fileID: 11400000, guid: ee0566241d901d94498e337fdf669300, type: 2}
-  deviceType: 0
+  message: BUTTONPROMPT
+  gamepadSpriteAsset: {fileID: 11400000, guid: cf3b117d613b6fe42931b120ab11f8b9, type: 2}
+  keyboardSpriteAsset: {fileID: 11400000, guid: 5a6b3afcd8941eb4d810f88297f9d019, type: 2}
 --- !u!1 &2066888184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,8 +1742,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979899685594681750, guid: 68e75fdf6bae8b040998477dead1cd72, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979899685594681750, guid: 68e75fdf6bae8b040998477dead1cd72, type: 3}
       propertyPath: m_LocalScale.y
       value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979899685594681750, guid: 68e75fdf6bae8b040998477dead1cd72, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
