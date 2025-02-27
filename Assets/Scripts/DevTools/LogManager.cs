@@ -31,6 +31,9 @@ public class LogManager : MonoBehaviour
 
     [Header("Player Movement Logs")]
     public bool logMove = true;
+
+    [Header("Story Manager Logs")]
+    public bool logStory = true;
     
     private static LogManager instance;
 
@@ -65,6 +68,8 @@ public class LogManager : MonoBehaviour
         categoryStates["Dig"] = logDig; // Shovel dig feature logs
         categoryStates["Item"] = logItem; // interaction system
         categoryStates["Move"] = logMove; // player character movement and abilities
+        categoryStates["Story"] = logMove; // story manager
+        
     }
 
     public static bool ShouldLog(string category)

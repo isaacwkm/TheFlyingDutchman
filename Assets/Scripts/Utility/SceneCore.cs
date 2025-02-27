@@ -6,11 +6,21 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private Camera m_camera;
     [SerializeField] private AudioManager m_audioManager;
     [SerializeField] private ItemCatalog m_itemCatalog;
+    [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
 
+    private static SceneCore cachedInstance = null;
+    // and then replace instance property with
     private static SceneCore instance
     {
-        get { return GameObject.FindWithTag("SceneCore").GetComponent<SceneCore>(); }
+        get
+        {
+            if (!cachedInstance)
+            {
+                cachedInstance = GameObject.FindWithTag("SceneCore").GetComponent<SceneCore>();
+            }
+            return cachedInstance;
+        }
     }
 
     public static PlayerCharacterController playerCharacter
@@ -31,6 +41,11 @@ public class SceneCore : MonoBehaviour
     public static ItemCatalog itemCatalog
     {
         get { return instance.m_itemCatalog; }
+    }
+
+    public static StoryManager storyManager
+    {
+        get { return instance.m_storyManager; }
     }
 
     public static Canvas canvas
