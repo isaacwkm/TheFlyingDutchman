@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class MainMenu : MonoBehaviour
+{
+    [SerializeField] private Toggle fullScreenToggle;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private TMP_Dropdown languageDropdown;
+    [SerializeField] private Toggle highContrastToggle;
+    [SerializeField] private Slider mouseSensitivitySlider;
+    [SerializeField] private Slider rightStickSensitivitySlider;
+    [SerializeField] private Button bindForwardButton;
+    [SerializeField] private Button bindForwardResetButton;
+    [SerializeField] private Button bindForwardClearButton;
+    [SerializeField] private Button bindBackwardButton;
+    [SerializeField] private Button bindBackwardResetButton;
+    [SerializeField] private Button bindBackwardClearButton;
+    [SerializeField] private Button bindLeftButton;
+    [SerializeField] private Button bindLeftResetButton;
+    [SerializeField] private Button bindLeftClearButton;
+    [SerializeField] private Button bindRightButton;
+    [SerializeField] private Button bindRightResetButton;
+    [SerializeField] private Button bindRightClearButton;
+    [SerializeField] private Button bindJumpButton;
+    [SerializeField] private Button bindJumpResetButton;
+    [SerializeField] private Button bindJumpClearButton;
+    [SerializeField] private Button bindInteractButton;
+    [SerializeField] private Button bindInteractResetButton;
+    [SerializeField] private Button bindInteractClearButton;
+    [SerializeField] private Button bindMenuButton;
+    [SerializeField] private Button bindMenuResetButton;
+    [SerializeField] private Button bindMenuClearButton;
+    [SerializeField] private Button bindSprintButton;
+    [SerializeField] private Button bindSprintResetButton;
+    [SerializeField] private Button bindSprintClearButton;
+    [SerializeField] private Button bindCrouchButton;
+    [SerializeField] private Button bindCrouchResetButton;
+    [SerializeField] private Button bindCrouchClearButton;
+    [SerializeField] private Button bindShipRiseButton;
+    [SerializeField] private Button bindShipRiseResetButton;
+    [SerializeField] private Button bindShipRiseClearButton;
+    [SerializeField] private Button bindShipDropButton;
+    [SerializeField] private Button bindShipDropResetButton;
+    [SerializeField] private Button bindShipDropClearButton;
+    [SerializeField] private Button bindSuperJumpButton;
+    [SerializeField] private Button bindSuperJumpResetButton;
+    [SerializeField] private Button bindSuperJumpClearButton;
+    [SerializeField] private Button backToGameButton;
+    [SerializeField] private Button backToOSButton;
+}
