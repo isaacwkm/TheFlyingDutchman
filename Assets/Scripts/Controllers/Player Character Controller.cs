@@ -28,6 +28,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchSpeed = 3f;
+    [SerializeField] private float sprintMultiplier = 2f; // How much the walkspeed is multiplied by while sprinting.
     [SerializeField] private float maxInteractDistance = 2f;
 
     private Vector3 moveDirection = Vector3.zero;
@@ -43,10 +44,13 @@ public class PlayerCharacterController : MonoBehaviour
     private Action<InputAction.CallbackContext> onSuperJumpCancelled;
     private Action<InputAction.CallbackContext> onCrouchPerformed;
     private Action<InputAction.CallbackContext> onCrouchCancelled;
+    private Action<InputAction.CallbackContext> onSprintPerformed;
+    private Action<InputAction.CallbackContext> onSprintCancelled;
     private bool isJumping = false;
-    private bool isCrouching = false;
     private bool isChargingSuperJump = false;
     private float superJumpCharge = 0;
+    private bool isCrouching = false;
+    private bool isSprinting = false;
     private bool wasGrounded = false;
     private bool justLanded = false;
 
@@ -70,6 +74,8 @@ public class PlayerCharacterController : MonoBehaviour
         onSuperJumpCancelled = ctx => SuperJumpReleased();
         onCrouchPerformed = ctx => isCrouching = true;
         onCrouchCancelled = ctx => isCrouching = false;
+        onSprintPerformed = ctx => isSprinting = true;
+        onSprintCancelled = ctx => isSprinting = false;
 
         // Bind actions to methods
         inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
@@ -82,6 +88,7 @@ public class PlayerCharacterController : MonoBehaviour
         enableSuperJumping(true);
 
         enableCrouching(true);
+        enableSprinting(true);
 
         inputActions.Player.Interact.performed += ctx => HandleInteractInput();
         inputActions.Player.Previous.performed += ctx => HandleItemPrevInput();
@@ -113,6 +120,7 @@ public class PlayerCharacterController : MonoBehaviour
         enableSuperJumping(false);
 
         enableCrouching(false);
+        enableSprinting(false);
 
         inputActions.Player.Interact.performed -= ctx => HandleInteractInput();
         inputActions.Player.Previous.performed -= ctx => HandleItemPrevInput();
@@ -175,12 +183,18 @@ public class PlayerCharacterController : MonoBehaviour
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
+        float sprintSpeed = walkSpeed * sprintMultiplier;
 
-        float curSpeedX = movementInput.x * (isCrouching ? crouchSpeed : walkSpeed);
-        float curSpeedY = movementInput.y * (isCrouching ? crouchSpeed : walkSpeed);
+        float currSpeedX = (isSprinting ? sprintSpeed : walkSpeed); // (result ? TRUE result : FALSE result)
+        float currSpeedY = (isSprinting ? sprintSpeed : walkSpeed);
+
+        // Replaces sprint/walk speed with crouch speed, as crouch takes precedence over sprinting.
+        // Ignores crouch speed and remains with sprint/walk speed if not crouching.
+        currSpeedX = movementInput.x * (isCrouching ? crouchSpeed : currSpeedX);
+        currSpeedY = movementInput.y * (isCrouching ? crouchSpeed : currSpeedY);
 
         float movementDirectionY = moveDirection.y;
-        moveDirection = (right * curSpeedX) + (forward * curSpeedY);
+        moveDirection = (right * currSpeedX) + (forward * currSpeedY);
 
         if (isJumping && characterController.isGrounded)
         {
@@ -461,6 +475,23 @@ public class PlayerCharacterController : MonoBehaviour
             inputActions.Player.Crouch.performed -= onCrouchPerformed;
             inputActions.Player.Crouch.canceled -= onCrouchCancelled;
             isCrouching = false;
+        }
+    }
+
+    public void enableSprinting(bool active)
+    {
+        if (active)
+        {
+            enableSprinting(false); // unsub first to avoid duplicate event listeners.
+
+            inputActions.Player.Sprint.performed += onSprintPerformed;
+            inputActions.Player.Sprint.canceled += onSprintCancelled;
+        }
+        else
+        {
+            inputActions.Player.Sprint.performed -= onSprintPerformed;
+            inputActions.Player.Sprint.canceled -= onSprintCancelled;
+            isSprinting = false;
         }
     }
 

@@ -14153,6 +14153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!114 &670756320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25083,6 +25088,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clips: []
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!114 &1145547912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48889,17 +48899,21 @@ PrefabInstance:
       propertyPath: 'woodFootsteps.Array.data[2]'
       value: 
       objectReference: {fileID: 8300000, guid: d510b2af88282f84e9e1e848582a85e2, type: 3}
+    - target: {fileID: 8180881311552960351, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -345.33
+      value: -285.94
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 63.22
+      value: 74.47
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -174.23
+      value: -182.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
