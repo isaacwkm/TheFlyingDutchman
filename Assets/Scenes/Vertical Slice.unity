@@ -965,6 +965,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
   m_PrefabInstance: {fileID: 3048535494678519133}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1164191951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3523552429505074313, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
+  m_PrefabInstance: {fileID: 1702390724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1302832266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8862708717018029776, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
@@ -1424,6 +1429,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6542334212645520676, guid: c15ac440e577e754f81209749264a08c, type: 3}
+      propertyPath: text
+      value: 'This island''s heat is killing me -- and I think another bug just bit
+        me. I''d started digging a hole to bury this treasure but I can''t stay on
+        this island for another minute. I''m setting sail to another island to bury
+        somewhere else.
+
+
+        TIP: If you''re stranded, jumping off the island
+        will respawn you back on the ship.'
+      objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -67.65
@@ -1438,11 +1454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9896765
       objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.14331986
       objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1454,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 16.48
       objectReference: {fileID: 0}
     - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1562,7 +1578,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3523552429505074313, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1799813076}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
 --- !u!1001 &1716236098
@@ -1772,6 +1791,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1302832266}
   m_LocalEulerAnglesHint: {x: 90, y: 137.64, z: 0}
+--- !u!1 &1799813075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799813076}
+  - component: {fileID: 1799813077}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1799813076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799813075}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 7.68, z: -3.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164191951}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1799813077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799813075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f170bf43fd59b75cda3635fbe2b3a1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAsDefaultCheckpoint: 1
 --- !u!1 &1826049422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 555195995804173519, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
@@ -2126,7 +2190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6979899685594681750, guid: 68e75fdf6bae8b040998477dead1cd72, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1600
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6979899685594681750, guid: 68e75fdf6bae8b040998477dead1cd72, type: 3}
       propertyPath: m_LocalScale.z
@@ -2160,6 +2224,18 @@ PrefabInstance:
       propertyPath: playerCameraHere
       value: 
       objectReference: {fileID: 1964635082}
+    - target: {fileID: 6909543372227811036, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909543372227811036, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909543372227811036, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.59
+      objectReference: {fileID: 0}
     - target: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -76.6
@@ -2199,6 +2275,11 @@ PrefabInstance:
     - target: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148662425325392258, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
+      propertyPath: text
+      value: The flowing of the pond makes me feel at peace. The treasure is buried
+        by the mushrooms of this island at last, and I can rest now.
       objectReference: {fileID: 0}
     - target: {fileID: 8702987800229284092, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
       propertyPath: m_Name
@@ -2330,6 +2411,11 @@ PrefabInstance:
     - target: {fileID: 2087827562880995215, guid: 055d5e16ff130ab44a90c66fc05d5d39, type: 3}
       propertyPath: m_TagString
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194280761237574276, guid: 055d5e16ff130ab44a90c66fc05d5d39, type: 3}
+      propertyPath: text
+      value: The solid rock of this island makes it impossible to dig... I'll have
+        to move onto the next island, where I'll hide the treasure.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2483,7 +2569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180881311552960351, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2491,11 +2577,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.94
+      value: 124.3
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1008.09
+      value: -857.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
