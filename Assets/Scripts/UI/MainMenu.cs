@@ -68,6 +68,7 @@ public class MainMenu : MonoBehaviour
             mainMenu.currentRebindingOperation =
                 action.PerformInteractiveRebinding()
                     .OnComplete(_ => UpdateText())
+                    .OnCancel(_ => UpdateText())
                     .Start();
         }
 
