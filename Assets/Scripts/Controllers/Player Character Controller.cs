@@ -96,6 +96,8 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.SwitchScroll.performed += ctx => HandleScrollInput(ctx);
 
         inputActions.Player.Attack.performed += ctx => HandleAttackInput();
+
+        inputActions.Player.Menu.canceled += ctx => HandleMenuInput();
     }
 
     private void OnDisable()
@@ -126,14 +128,9 @@ public class PlayerCharacterController : MonoBehaviour
 
         inputActions.Player.Attack.performed -= ctx => HandleAttackInput();
 
+        inputActions.Player.Menu.canceled -= ctx => HandleMenuInput();
+
         inputActions.Player.Disable();
-    }
-
-
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()
@@ -408,6 +405,11 @@ public class PlayerCharacterController : MonoBehaviour
         isCrouching = false;
         isChargingSuperJump = false;
         superJumpCharge = 0;
+    }
+
+    private void HandleMenuInput()
+    {
+        SceneCore.MainMenu();
     }
 
     // Event Listener Enablers (and Disablers)
