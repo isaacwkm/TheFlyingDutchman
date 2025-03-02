@@ -60,6 +60,8 @@ public class InputModeManager : MonoBehaviour
         inputActions.Disable();
         inputActions.Player.Enable();   // Enable Player action map
         inputMode = InputMode.Player;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void SwitchToShipControls()
@@ -67,6 +69,8 @@ public class InputModeManager : MonoBehaviour
         inputActions.Disable();
         inputActions.Flying.Enable();   // Enable Flying action map
         inputMode = InputMode.Flying;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void SwitchToUIControls()
@@ -74,5 +78,7 @@ public class InputModeManager : MonoBehaviour
         inputActions.Disable();
         inputActions.UI.Enable();
         inputMode = InputMode.UI;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

@@ -8,6 +8,7 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private ItemCatalog m_itemCatalog;
     [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
+    [SerializeField] private MainMenu m_mainMenu;
 
     private static SceneCore cachedInstance = null;
     // and then replace instance property with
@@ -51,5 +52,10 @@ public class SceneCore : MonoBehaviour
     public static Canvas canvas
     {
         get { return instance.m_canvas; }
+    }
+
+    public static void MainMenu()
+    {
+        Instantiate(instance.m_mainMenu.gameObject);
     }
 }
