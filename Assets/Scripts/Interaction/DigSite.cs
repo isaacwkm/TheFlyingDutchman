@@ -83,7 +83,10 @@ public class DigSite : MonoBehaviour
 
     void revealItem(){
         GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
-        item.GetComponent<DroppedItem>().enableSilentDrop(true);
+        if (item.GetComponent<DroppedItem>()){
+            item.GetComponent<DroppedItem>().enableSilentDrop(true);
+        }
+        
     }
 
     void createFirstDig(){
