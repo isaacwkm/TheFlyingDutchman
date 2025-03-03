@@ -16,7 +16,7 @@ public enum InputMode {
         UI
     }
     public InputSystem_Actions inputActions;
-    public InputActionMap currentActionMap;
+    private InputActionMap currentActionMap;
     public InputMode inputMode {get; protected set;}
 
     private static InputModeManager _instance;
