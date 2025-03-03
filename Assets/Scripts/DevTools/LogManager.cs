@@ -8,11 +8,13 @@ public class LogManager : MonoBehaviour
 {
     [Header("General Settings")]
     public bool enableLogs = true;
-    [Tooltip("Log Any and Uncategorized messages")]
+    [Tooltip("Log Uncategorized and General messages. Keep enabled to receive error logs. If the [Any] channel is overflowing with messages, try to categorize the source of what's causing all the messages.")]
     public bool logAny = true;
 
     [Header("UI Logs")]
     public bool logUI = true;
+    [Tooltip("Log Accessibility Systems Logs")]
+    public bool logAble = true;
 
     [Header("Audio Logs")]
     [Tooltip("Log Audio")]
@@ -62,6 +64,7 @@ public class LogManager : MonoBehaviour
     {
         categoryStates["Any"] = logAny; // Any = uncategorized. Any can be disabled and still have other categories show up.
         categoryStates["UI"] = logUI;
+        categoryStates["Able"] = logAble; // Accessibility systems
         categoryStates["Aud"] = logAud;
         categoryStates["Inv"] = logInv; // inventory system
         categoryStates["Int"] = logInt; // interaction system

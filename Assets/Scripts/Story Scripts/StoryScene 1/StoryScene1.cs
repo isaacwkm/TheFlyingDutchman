@@ -7,7 +7,7 @@ public class StoryScene1 : StoryClass
     public Transform sceneStartSpawn;
     public TriggerZoneHandler nightmareBoundary;
     public NightmareShip nightmareShipScript;
-    public GameObject wakeUpMusic;
+    public GameObject wakeUpMusicZone;
 
     // Start of: "Data to be sent out as story data":
     private int jumpCount = 0;
@@ -29,7 +29,7 @@ public class StoryScene1 : StoryClass
     public override void cleanupStoryScene() // Operations to do to clean up what was done in the playthrough of the scene
     {
         nightmareShipScript.cleanUp();
-        nightmareBoundary.enabled = false;
+        nightmareBoundary.OnExit -= endStoryScene; // Remove Listener
     }
 
     public override void finalizeData() // Publish data to be read by other scenes
