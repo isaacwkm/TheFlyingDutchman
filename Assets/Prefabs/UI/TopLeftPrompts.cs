@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Needle.Console;
-using Mono.Cecil.Cil;
 
 public class TopLeftTooltipManager : MonoBehaviour
 {
@@ -10,6 +9,9 @@ public class TopLeftTooltipManager : MonoBehaviour
     public Transform messageContainer; // Parent GameObject with Vertical Layout Group
 
     private readonly Queue<GameObject> messages = new(); // FIFO structure
+    private InputModeManager.InputMode previousInputMode = InputModeManager.InputMode.None;
+    private InputModeManager.InputMode currentInputMode = InputModeManager.InputMode.None;
+    private List<GameObject> currentInputModeMessages = new List<GameObject>();
 
     void OnEnable()
     {
@@ -50,24 +52,35 @@ public class TopLeftTooltipManager : MonoBehaviour
 
     private void HandleInputModeSwitch()
     {
-        InputModeManager.InputMode inputMode = InputModeManager.Instance.inputMode;
+        previousInputMode = currentInputMode;
+        InputModeManager.InputMode nextInputMode = InputModeManager.Instance.inputMode;
+        currentInputMode = nextInputMode;
 
-        switch (inputMode)
+        switch (currentInputMode)
         {
             case InputModeManager.InputMode.Player:
-                RemoveAllMessages();
+                HideAllMessagesFromPreviousMode();
                 return;
             case InputModeManager.InputMode.Flying:
                 HandleShipModeMessages();
                 return;
             case InputModeManager.InputMode.UI:
-                RemoveAllMessages();
+                HideAllMessagesFromPreviousMode();
                 return;
             default:
                 D.Log("TopLeftPrompts.cs: Did you add a new input mode?!", gameObject, "Any");
                 return;
         }
 
+    }
+
+    private void HideAllMessagesFromPreviousMode()
+    {
+        for (int i = 0; i < currentInputModeMessages.Count; i++)
+        {
+            RemoveMessage(currentInputModeMessages[i]);
+        }
+        currentInputModeMessages.Clear();
     }
 
     public GameObject AddMessageWithConversion(InputPromptReplacer inputPromptReplacer) // Parameter demands an InputPromptReplacer script in order to enforce proper text conversion, as opposed to asking for a string.
@@ -77,7 +90,7 @@ public class TopLeftTooltipManager : MonoBehaviour
 
     public void HandleShipModeMessages()
     {
-        RemoveAllMessages();
+        HideAllMessagesFromPreviousMode();
         ShowAllShipControlsTopLeft();
     }
 
@@ -97,6 +110,7 @@ public class TopLeftTooltipManager : MonoBehaviour
     {
         // Instantiate message and fetch components
         GameObject message = AddMessage(messageText);
+        currentInputModeMessages.Add(message); // add to list of current messages generated from current input mode
         MessageComponents messageComponents = GetMessageComponents(message);
 
         // Hide text initially

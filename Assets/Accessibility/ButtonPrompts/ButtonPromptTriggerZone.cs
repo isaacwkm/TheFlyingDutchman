@@ -35,7 +35,7 @@ public class ButtonPromptTriggerZone : MonoBehaviour
         triggerZoneHandler.OnExit -= HideTooltip;
     }
 
-    private void ShowTooltip()
+    private void ShowTooltip(Collider playerCol = null)
     {
         switch (whereToShowTooltip)
         {
@@ -50,7 +50,7 @@ public class ButtonPromptTriggerZone : MonoBehaviour
         }
     }
 
-    private void HideTooltip()
+    private void HideTooltip(Collider playerCol = null)
     {
         switch (whereToShowTooltip)
         {

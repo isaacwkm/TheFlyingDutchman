@@ -184,6 +184,7 @@ public class FlyingVehicle : MonoBehaviour
     void doRudderInteraction(GameObject player)
     {
         inputMan.SwitchToShipControls();
+        rudderInteractTarget.DisableInteractions();
         var pcm = player.GetComponent<PlayerCharacterController>();
         if (pcm)
         {
@@ -216,6 +217,7 @@ public class FlyingVehicle : MonoBehaviour
         player.transform.eulerAngles = new Vector3(
             0.0f, player.transform.eulerAngles.y, 0.0f
         );
+        rudderInteractTarget.EnableInteractions();
         inputMan.SwitchToPlayerControls();
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Needle.Console;
+using Unity.VisualScripting;
 
 public class FootstepSound : MonoBehaviour
 {
@@ -30,9 +31,29 @@ public class FootstepSound : MonoBehaviour
     private CharacterController characterController;
     private int lastFootstepIndex = -1;  // Track the last played footstep index
     private int repeatCount = 0;         // Count how many times the same footstep has been played consecutively
-    //private int lastWoodFootstepIndex = -1; // Track last played wood footstep index // Un-comment if you go back to fixed alternating footstep as opposed to random cycling
+    private bool footstepsEnabled = true;
 
+    private void OnEnable()
+    {
+        InputModeManager.Instance.OnInputModeSwitch += HandleInputModeSwitch;
+    }
 
+    private void OnDisable()
+    {
+        InputModeManager.Instance.OnInputModeSwitch -= HandleInputModeSwitch;
+    }
+
+    private void HandleInputModeSwitch()
+    {
+        if (InputModeManager.Instance.inputMode == InputModeManager.InputMode.Flying)
+        {
+            SetFootstepsAllowed(false); // Removes spurrious footsteps while sailing
+        }
+        else
+        {
+            SetFootstepsAllowed(true);
+        }
+    }
     private void Start()
     {
         audioSource = footTransform.GetComponent<AudioSource>(); // Get AudioSource on foot
@@ -47,12 +68,14 @@ public class FootstepSound : MonoBehaviour
         // Check if the character is walking and grounded (not in mid-air)
         if ((
             movementMedium && magnitudeSufficient
-        ) || (characterController.isGrounded && (
+        ) || (characterController.isGrounded && ( // Refactoring may be needed here.
             (pcc && pcc.AnyMovementInput()) ||
             (pcc && pcc.JustLanded()) ||
             (!pcc && magnitudeSufficient)
         )))
         {
+            if (footstepsEnabled == false) return;
+
             PlayFootstepSound(movementMedium);
         }
     }
@@ -104,6 +127,8 @@ public class FootstepSound : MonoBehaviour
         }
     }
 
+    // The most horrendous footstep script by me (Isaac). This was like the very first script I ever wrote in this project. Not sure why I was allowed to keep this.
+    // //   +1 it works tho
     private AudioClip GetFootstepSoundBasedOnSurface(GameObject surface)
     {
         // Get the surface material or tag
@@ -212,6 +237,16 @@ public class FootstepSound : MonoBehaviour
         return footstepArray[randomIndex];
     }
 
+    public bool GetFootstepsAllowed()
+    {
+        return footstepsEnabled;
+    }
+
+    public void SetFootstepsAllowed(bool isActive)
+    {
+        footstepsEnabled = isActive;
+    }
+
 
     // PerformanceTestLoop() - Read something interesting if you're having a boring day...
     //
@@ -234,8 +269,9 @@ public class FootstepSound : MonoBehaviour
     // Conclusion:
     // On average though, you would be looking at 2-3 repeats, maybe up to 10 as extreme outliers. That would lie around 10-100 nanoseconds.
     // Our worst-case scenario is 1,000,000 and it's at most 12 ms.
-    public void PerformanceTestLoop()
+    private void PerformanceTestLoop()
     {
+        D.LogError("PerformanceTestLoop should not be called if you value your computer's resources.", gameObject, "Any");
         int lastIndex = -1;
         int count = 0;
         System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();

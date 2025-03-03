@@ -44,12 +44,15 @@ public class TooltipManager : MonoBehaviour
     {
         // Enable the input actions (make sure they're enabled)
         inputActions.Enable();
+        InputModeManager.Instance.OnInputModeSwitch += DoModeSwitchCleanup;
     }
 
     private void OnDisable()
     {
         inputActions.Disable();
+        InputModeManager.Instance.OnInputModeSwitch -= DoModeSwitchCleanup;
     }
+
     private void Start()
     {
         playerCamera = cameraObj.GetComponent<Camera>();
@@ -179,6 +182,11 @@ public class TooltipManager : MonoBehaviour
         string fullText = $"{relevantInteractAction}: {interactActionKey}"; // Display the action key
 
         return fullText;
+    }
+
+    private void DoModeSwitchCleanup()
+    {
+        tooltipUiComponent.text = "";
     }
 
     // Getter Setter

@@ -14,7 +14,7 @@ public class StoryScene2 : StoryClass
 
     public override void startStoryScene() // Operations to do when starting the scene
     {
-        storyManager.teleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
+        UsefulPlayerOperations.Instance.TeleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
     }
 
     public override void cleanupStoryScene() // Operations to do to clean up what was done in the playthrough of the scene
