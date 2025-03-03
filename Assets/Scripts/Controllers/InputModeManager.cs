@@ -1,4 +1,5 @@
 using System;
+using Needle.Console;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -72,21 +73,22 @@ public class InputModeManager : MonoBehaviour
         inputActions.Disable();
         inputActions.Player.Enable();   // Enable Player action map
         inputMode = InputMode.Player;
-        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.Player;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        OnInputModeSwitch?.Invoke();
     }
 
     public void SwitchToShipControls()
     {
+        D.Log($"Switched to Ship Controls.", gameObject, "Able");
         inputActions.Disable();
         inputActions.Flying.Enable();   // Enable Flying action map
         inputMode = InputMode.Flying;
-        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.Flying;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        OnInputModeSwitch?.Invoke();
     }
 
     public void SwitchToUIControls()
@@ -94,10 +96,10 @@ public class InputModeManager : MonoBehaviour
         inputActions.Disable();
         inputActions.UI.Enable();
         inputMode = InputMode.UI;
-        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.UI;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        OnInputModeSwitch?.Invoke();
     }
 
     // Getters Setters
@@ -112,6 +114,7 @@ public class InputModeManager : MonoBehaviour
 
         InputActionMap actionMap = GetCurrentActionMap();
         InputAction action = actionMap.FindAction(actionName);
+        D.Log($"GetBinding() - Action: {action.name}, ActionMap: {actionMap.name}", gameObject, "Able");
 
         InputBinding deviceBinding = action.bindings[(int)deviceType];
         return deviceBinding;

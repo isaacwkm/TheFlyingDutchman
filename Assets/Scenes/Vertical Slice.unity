@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperJumpPromptTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 2271497213476880240, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: repeatable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2420622692331431644, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_Motor.force
       value: 0
@@ -977,6 +981,10 @@ PrefabInstance:
     - target: {fileID: 3689131172617890069, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_Name
       value: Edelweiss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251235523106619129, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: soundVolume
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4251235523106619129, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: playerCameraHere
@@ -1036,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 9166617664817866795}
     - target: {fileID: 9174134278512328691, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: whereToShowTooltip
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2615,11 +2623,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2162.45
+      value: -2234.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 103.21
       objectReference: {fileID: 0}
     - target: {fileID: 8951693862962133624, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -981.47
+      value: -869
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
