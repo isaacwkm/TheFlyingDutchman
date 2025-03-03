@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public string actionTooltip = "Interact";
+    [SerializeField] private string actionTooltip = "Interact";
     public ActionSound interactSound = null;
     public bool doCooldown = true;
     public float interactCooldownSeconds = 1;
@@ -15,17 +15,11 @@ public class Interactable : MonoBehaviour
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
     private Coroutine cooldownCoroutine;
+    private Collider interactCollider; // Collider that the player has to interact with
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        interactCollider = gameObject.GetComponent<Collider>();
     }
 
     public string peekActionText()
@@ -50,6 +44,7 @@ public class Interactable : MonoBehaviour
         if (doCooldown)
         {
             onCooldown = true; // Prevent interaction for a cooldown
+            DisableInteractions();
             cooldownCoroutine = StartCoroutine(InteractCooldown(whom)); // Start cooldown
         }
     }
@@ -76,20 +71,31 @@ public class Interactable : MonoBehaviour
 
         // Allow object to be interacted with again
         onCooldown = false;
+        EnableInteractions();
     }
 
-    public bool canInteract(GameObject player)
+    public bool canInteract(GameObject player) // Asks whether the player can interact
     {
-        if (requirements == null) return true;
+        if (requirements == null) return true; // Defaults to true if no requirements were given
 
         else
         {
-            return requirements.getInteractAllowed(player);
+            return requirements.getInteractAllowed(player); // Loops through requirement conditions if requirements were provided.
         }
     }
 
     public void stopInteractCooldown()
     {
         StopCoroutine(cooldownCoroutine);
+    }
+
+    public void DisableInteractions() // Useful for when interacting with an object should hide the interact tooltip. Also used during cooldowns.
+    {
+        interactCollider.enabled = false;
+    }
+
+    public void EnableInteractions()
+    {
+        interactCollider.enabled = true;
     }
 }

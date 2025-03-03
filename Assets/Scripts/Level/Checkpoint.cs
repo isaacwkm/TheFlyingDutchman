@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Checkpoint : MonoBehaviour
 {
@@ -8,9 +9,17 @@ public class Checkpoint : MonoBehaviour
 
     public static event Action<Checkpoint> OnSet;
     public static event Action<Checkpoint> OnRespawn;
-
+    public TriggerZoneHandler levelBounds;
     private static Checkpoint current = null;
 
+    void OnEnable()
+    {
+        levelBounds.OnExit += Respawn;
+    }
+    void OnDisable()
+    {
+        levelBounds.OnExit -= Respawn;
+    }
     public void Start()
     {
         /* If any checkpoint is marked default,
@@ -21,7 +30,7 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // If you touch it, it becomes a new checkpoint.
     {
         if (other.GetComponent<PlayerCharacterController>())
         {
@@ -29,25 +38,14 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    public static void Set(Checkpoint which)
+    public void Set(Checkpoint which)
     {
         current = which;
         OnSet?.Invoke(current);
     }
 
-    public static void Respawn(Checkpoint which = null)
+    public void Respawn(Collider playerCol)
     {
-        (which ? which : current)?.StartCoroutine("RespawnCoro");
-    }
-
-    private IEnumerator RespawnCoro()
-    {
-        InputModeManager.Instance.DisableAllControls();
-        SceneCore.playerCharacter.enabled = false;
-        SceneCore.playerCharacter.transform.position = transform.position;
-        OnRespawn?.Invoke(this);
-        yield return new WaitForSeconds(0.02f);
-        SceneCore.playerCharacter.enabled = true;
-        InputModeManager.Instance.SwitchToPlayerControls();
+        UsefulPlayerOperations.Instance.TeleportPlayer(playerCol.gameObject, gameObject.transform);
     }
 }

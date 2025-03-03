@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using TMPro;
 using Needle.Console;
 using System;
+using UnityEngine.UI;
 
 // Apply component to a ButtonPromptZone (Game Object with a trigger collider)
 
@@ -111,5 +112,11 @@ public class InputPromptReplacer : MonoBehaviour
         string convertedText = DynamicConvert();
         TMProTextToReplace.SetText(convertedText); // Updates the asset according to the current device type.
         return convertedText;
+    }
+
+    // Getter Setter
+
+    public void SetOriginalInputText(string text){
+        originalInputText = text;
     }
 }

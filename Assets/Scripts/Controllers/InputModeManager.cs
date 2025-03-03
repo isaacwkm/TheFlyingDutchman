@@ -1,3 +1,5 @@
+using System;
+using Needle.Console;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,15 +11,17 @@ public class InputModeManager : MonoBehaviour
         Keyboard = 1
     }
 
-public enum InputMode {
+    public enum InputMode
+    {
         None,
         Player,
         Flying,
         UI
     }
+    public event Action OnInputModeSwitch;
     public InputSystem_Actions inputActions;
     private InputActionMap currentActionMap;
-    public InputMode inputMode {get; protected set;}
+    public InputMode inputMode { get; protected set; }
 
     private static InputModeManager _instance;
     public static InputModeManager Instance // Singleton Pattern
@@ -72,16 +76,19 @@ public enum InputMode {
         currentActionMap = inputActions.Player;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        OnInputModeSwitch?.Invoke();
     }
 
     public void SwitchToShipControls()
     {
+        D.Log($"Switched to Ship Controls.", gameObject, "Able");
         inputActions.Disable();
         inputActions.Flying.Enable();   // Enable Flying action map
         inputMode = InputMode.Flying;
         currentActionMap = inputActions.Flying;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        OnInputModeSwitch?.Invoke();
     }
 
     public void SwitchToUIControls()
@@ -92,18 +99,22 @@ public enum InputMode {
         currentActionMap = inputActions.UI;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        OnInputModeSwitch?.Invoke();
     }
 
     // Getters Setters
 
-    public PlayerInput GetPlayerInput(){
+    public PlayerInput GetPlayerInput()
+    {
         return playerInput;
     }
 
-    public InputBinding GetBinding(string actionName, ControlDeviceType deviceType){
+    public InputBinding GetBinding(string actionName, ControlDeviceType deviceType)
+    {
 
         InputActionMap actionMap = GetCurrentActionMap();
         InputAction action = actionMap.FindAction(actionName);
+        D.Log($"GetBinding() - Action: {action.name}, ActionMap: {actionMap.name}", gameObject, "Able");
 
         InputBinding deviceBinding = action.bindings[(int)deviceType];
         return deviceBinding;
@@ -114,9 +125,10 @@ public enum InputMode {
         return currentActionMap;
     }
 
-    public ControlDeviceType GetCurrentDeviceType(){
+    public ControlDeviceType GetCurrentDeviceType()
+    {
         return ControlDeviceType.Keyboard;
     }
 
-    
+
 }

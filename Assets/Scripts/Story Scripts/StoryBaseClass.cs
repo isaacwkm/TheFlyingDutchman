@@ -19,7 +19,7 @@ public abstract class StoryClass : MonoBehaviour
     public abstract void startStoryScene(); // Operations to do when starting the scene
     public abstract void cleanupStoryScene(); // Operations to do to clean up what was done in the playthrough of the scene
     public abstract void finalizeData(); // Publish data to be read by other scenes
-    protected void endStoryScene() // Called to jump to next scene
+    protected void endStoryScene(Collider playerCol = null) // Called to jump to next scene
     {
         finalizeData();
         cleanupStoryScene();

@@ -1152,18 +1152,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""Ascend"",
                     ""type"": ""Button"",
-                    ""id"": ""5143c2f2-1648-45e2-8d28-cf2ef5776f87"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""4c6e4eec-cc74-4996-9408-a6bac0c2e11f"",
+                    ""id"": ""36cb8092-d742-484a-b2f8-0c096052e103"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1188,6 +1179,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c6e4eec-cc74-4996-9408-a6bac0c2e11f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""5143c2f2-1648-45e2-8d28-cf2ef5776f87"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Previous"",
                     ""type"": ""Button"",
                     ""id"": ""3664ee84-30e1-4b99-85d7-d82232875bd7"",
@@ -1200,24 +1209,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Next"",
                     ""type"": ""Button"",
                     ""id"": ""c9030063-fa25-4e67-bc51-103dbd53044a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Ascend"",
-                    ""type"": ""Button"",
-                    ""id"": ""36cb8092-d742-484a-b2f8-0c096052e103"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Drop"",
-                    ""type"": ""Button"",
-                    ""id"": ""db542cf7-8cbf-4d9f-b683-65b1b32ee871"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1348,17 +1339,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""93e3568c-c632-4767-b012-9e26b7628596"",
-                    ""path"": ""<Joystick>/stick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""6ba74cde-3448-4ec6-92a6-293c95f56ef2"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
@@ -1381,19 +1361,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b30e9b33-44a3-4d3a-b0f4-02ead496940b"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""b4becccf-488b-45c8-bc3c-4c84e7084088"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -1414,45 +1383,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""76310e74-bca5-453d-b2e0-75f13fc9915f"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""id"": ""18e2e6a2-31e7-4e19-9bbe-62d44d7d9d6e"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e58fa42e-0da1-46e0-b712-61e1ba84c590"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""32501d2f-4e0e-4390-b940-2d88abd0bdbe"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5403e5c9-a241-4ba6-8ed7-a9e51eccedde"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Attack"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Next"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1469,23 +1405,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""18e2e6a2-31e7-4e19-9bbe-62d44d7d9d6e"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""id"": ""838fcf2e-4702-4a30-8dac-ca1ad4dffdad"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Next"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64a5f70b-0fb5-4a33-9e8c-22fa1a7de53f"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Drop"",
+                    ""action"": ""Ascend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1502,39 +1427,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""838fcf2e-4702-4a30-8dac-ca1ad4dffdad"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Ascend"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d5af1b03-a08e-4de5-9d2f-b24c402a51f6"",
-                    ""path"": ""<XRController>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Ascend"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""92b07af0-0ab9-44fc-b476-57343cf1ec04"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Jump_Off"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""458e794b-be0b-4f47-a3d0-b59b7a737f29"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
@@ -1546,11 +1438,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9a2f9cc7-5564-4bd6-9031-e49040db9547"",
-                    ""path"": ""<XRController>/secondaryButton"",
+                    ""id"": ""92b07af0-0ab9-44fc-b476-57343cf1ec04"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""XR"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump_Off"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -1568,17 +1460,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""547adf50-eeaf-4730-8886-e71081bbfbd4"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ec3e0f33-0708-4f8e-acdd-646637f863f4"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
@@ -1590,8 +1471,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""547adf50-eeaf-4730-8886-e71081bbfbd4"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8eb42a38-a458-4bcb-a8f3-27f6a213dd3c"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -1711,14 +1603,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Flying = asset.FindActionMap("Flying", throwIfNotFound: true);
         m_Flying_Move = m_Flying.FindAction("Move", throwIfNotFound: true);
         m_Flying_Look = m_Flying.FindAction("Look", throwIfNotFound: true);
-        m_Flying_Attack = m_Flying.FindAction("Attack", throwIfNotFound: true);
-        m_Flying_Interact = m_Flying.FindAction("Interact", throwIfNotFound: true);
+        m_Flying_Ascend = m_Flying.FindAction("Ascend", throwIfNotFound: true);
         m_Flying_Descend = m_Flying.FindAction("Descend", throwIfNotFound: true);
         m_Flying_Jump_Off = m_Flying.FindAction("Jump_Off", throwIfNotFound: true);
+        m_Flying_Interact = m_Flying.FindAction("Interact", throwIfNotFound: true);
+        m_Flying_Attack = m_Flying.FindAction("Attack", throwIfNotFound: true);
         m_Flying_Previous = m_Flying.FindAction("Previous", throwIfNotFound: true);
         m_Flying_Next = m_Flying.FindAction("Next", throwIfNotFound: true);
-        m_Flying_Ascend = m_Flying.FindAction("Ascend", throwIfNotFound: true);
-        m_Flying_Drop = m_Flying.FindAction("Drop", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -2081,28 +1972,26 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IFlyingActions> m_FlyingActionsCallbackInterfaces = new List<IFlyingActions>();
     private readonly InputAction m_Flying_Move;
     private readonly InputAction m_Flying_Look;
-    private readonly InputAction m_Flying_Attack;
-    private readonly InputAction m_Flying_Interact;
+    private readonly InputAction m_Flying_Ascend;
     private readonly InputAction m_Flying_Descend;
     private readonly InputAction m_Flying_Jump_Off;
+    private readonly InputAction m_Flying_Interact;
+    private readonly InputAction m_Flying_Attack;
     private readonly InputAction m_Flying_Previous;
     private readonly InputAction m_Flying_Next;
-    private readonly InputAction m_Flying_Ascend;
-    private readonly InputAction m_Flying_Drop;
     public struct FlyingActions
     {
         private @InputSystem_Actions m_Wrapper;
         public FlyingActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Flying_Move;
         public InputAction @Look => m_Wrapper.m_Flying_Look;
-        public InputAction @Attack => m_Wrapper.m_Flying_Attack;
-        public InputAction @Interact => m_Wrapper.m_Flying_Interact;
+        public InputAction @Ascend => m_Wrapper.m_Flying_Ascend;
         public InputAction @Descend => m_Wrapper.m_Flying_Descend;
         public InputAction @Jump_Off => m_Wrapper.m_Flying_Jump_Off;
+        public InputAction @Interact => m_Wrapper.m_Flying_Interact;
+        public InputAction @Attack => m_Wrapper.m_Flying_Attack;
         public InputAction @Previous => m_Wrapper.m_Flying_Previous;
         public InputAction @Next => m_Wrapper.m_Flying_Next;
-        public InputAction @Ascend => m_Wrapper.m_Flying_Ascend;
-        public InputAction @Drop => m_Wrapper.m_Flying_Drop;
         public InputActionMap Get() { return m_Wrapper.m_Flying; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2118,30 +2007,27 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Ascend.started += instance.OnAscend;
+            @Ascend.performed += instance.OnAscend;
+            @Ascend.canceled += instance.OnAscend;
             @Descend.started += instance.OnDescend;
             @Descend.performed += instance.OnDescend;
             @Descend.canceled += instance.OnDescend;
             @Jump_Off.started += instance.OnJump_Off;
             @Jump_Off.performed += instance.OnJump_Off;
             @Jump_Off.canceled += instance.OnJump_Off;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
             @Previous.started += instance.OnPrevious;
             @Previous.performed += instance.OnPrevious;
             @Previous.canceled += instance.OnPrevious;
             @Next.started += instance.OnNext;
             @Next.performed += instance.OnNext;
             @Next.canceled += instance.OnNext;
-            @Ascend.started += instance.OnAscend;
-            @Ascend.performed += instance.OnAscend;
-            @Ascend.canceled += instance.OnAscend;
-            @Drop.started += instance.OnDrop;
-            @Drop.performed += instance.OnDrop;
-            @Drop.canceled += instance.OnDrop;
         }
 
         private void UnregisterCallbacks(IFlyingActions instance)
@@ -2152,30 +2038,27 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Ascend.started -= instance.OnAscend;
+            @Ascend.performed -= instance.OnAscend;
+            @Ascend.canceled -= instance.OnAscend;
             @Descend.started -= instance.OnDescend;
             @Descend.performed -= instance.OnDescend;
             @Descend.canceled -= instance.OnDescend;
             @Jump_Off.started -= instance.OnJump_Off;
             @Jump_Off.performed -= instance.OnJump_Off;
             @Jump_Off.canceled -= instance.OnJump_Off;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
             @Previous.started -= instance.OnPrevious;
             @Previous.performed -= instance.OnPrevious;
             @Previous.canceled -= instance.OnPrevious;
             @Next.started -= instance.OnNext;
             @Next.performed -= instance.OnNext;
             @Next.canceled -= instance.OnNext;
-            @Ascend.started -= instance.OnAscend;
-            @Ascend.performed -= instance.OnAscend;
-            @Ascend.canceled -= instance.OnAscend;
-            @Drop.started -= instance.OnDrop;
-            @Drop.performed -= instance.OnDrop;
-            @Drop.canceled -= instance.OnDrop;
         }
 
         public void RemoveCallbacks(IFlyingActions instance)
@@ -2275,13 +2158,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnAscend(InputAction.CallbackContext context);
         void OnDescend(InputAction.CallbackContext context);
         void OnJump_Off(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
         void OnPrevious(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
-        void OnAscend(InputAction.CallbackContext context);
-        void OnDrop(InputAction.CallbackContext context);
     }
 }

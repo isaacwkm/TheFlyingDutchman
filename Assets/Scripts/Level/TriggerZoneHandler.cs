@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class TriggerZoneHandler : MonoBehaviour
 {
-    public event Action OnExit;
-    public event Action OnEnter;
+    public event Action<Collider> OnExit;
+    public event Action<Collider> OnEnter;
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            OnExit?.Invoke();
+            OnExit?.Invoke(other);
         }
     }
 
@@ -17,7 +17,7 @@ public class TriggerZoneHandler : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            OnEnter?.Invoke();
+            OnEnter?.Invoke(other);
         }
     }
 }
