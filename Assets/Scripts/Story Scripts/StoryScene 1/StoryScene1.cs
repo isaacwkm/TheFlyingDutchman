@@ -7,6 +7,7 @@ public class StoryScene1 : StoryClass
     public Transform sceneStartSpawn;
     public TriggerZoneHandler nightmareBoundary;
     public NightmareShip nightmareShipScript;
+    public GameObject wakeUpMusic;
 
     // Start of: "Data to be sent out as story data":
     private int jumpCount = 0;
@@ -14,11 +15,15 @@ public class StoryScene1 : StoryClass
     // End
     public override int[] receiveDataFrom { get; } = { }; // List of scenes to receive data from
 
-
+    void Start()
+    {
+        //wakeUpMusic.SetActive = false;
+    }
     public override void startStoryScene() // Operations to do when starting the scene
     {
         storyManager.teleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
         nightmareBoundary.OnExit += endStoryScene; // End the scene when player leaves the boundary (they fall off the island to move onto the next scene)
+
     }
 
     public override void cleanupStoryScene() // Operations to do to clean up what was done in the playthrough of the scene

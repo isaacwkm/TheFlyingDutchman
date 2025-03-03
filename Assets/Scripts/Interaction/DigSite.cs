@@ -82,9 +82,10 @@ public class DigSite : MonoBehaviour
     }
 
     void revealItem(){
-        GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
-        if (item.GetComponent<DroppedItem>()){
-            item.GetComponent<DroppedItem>().enableSilentDrop(true);
+        itemToInstantiate.SetActive(true);
+        // GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
+        if (itemToInstantiate.GetComponent<DroppedItem>()){
+            itemToInstantiate.GetComponent<DroppedItem>().enableSilentDrop(true);
         }
         
     }

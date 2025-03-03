@@ -9,7 +9,7 @@ public class StoryManager : MonoBehaviour
 {
     private StoryClass currentStoryScene;
     private Transform playerTransform;
-    public GameObject levelObjects;
+    public GameObject gameplayBoundary;
     public StoryClass[] StoryScenesList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
