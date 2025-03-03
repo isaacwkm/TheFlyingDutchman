@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,15 +10,17 @@ public class InputModeManager : MonoBehaviour
         Keyboard = 1
     }
 
-public enum InputMode {
+    public enum InputMode
+    {
         None,
         Player,
         Flying,
         UI
     }
+    public event Action OnInputModeSwitch;
     public InputSystem_Actions inputActions;
     private InputActionMap currentActionMap;
-    public InputMode inputMode {get; protected set;}
+    public InputMode inputMode { get; protected set; }
 
     private static InputModeManager _instance;
     public static InputModeManager Instance // Singleton Pattern
@@ -69,6 +72,7 @@ public enum InputMode {
         inputActions.Disable();
         inputActions.Player.Enable();   // Enable Player action map
         inputMode = InputMode.Player;
+        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.Player;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -79,6 +83,7 @@ public enum InputMode {
         inputActions.Disable();
         inputActions.Flying.Enable();   // Enable Flying action map
         inputMode = InputMode.Flying;
+        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.Flying;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -89,6 +94,7 @@ public enum InputMode {
         inputActions.Disable();
         inputActions.UI.Enable();
         inputMode = InputMode.UI;
+        OnInputModeSwitch?.Invoke();
         currentActionMap = inputActions.UI;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -96,11 +102,13 @@ public enum InputMode {
 
     // Getters Setters
 
-    public PlayerInput GetPlayerInput(){
+    public PlayerInput GetPlayerInput()
+    {
         return playerInput;
     }
 
-    public InputBinding GetBinding(string actionName, ControlDeviceType deviceType){
+    public InputBinding GetBinding(string actionName, ControlDeviceType deviceType)
+    {
 
         InputActionMap actionMap = GetCurrentActionMap();
         InputAction action = actionMap.FindAction(actionName);
@@ -114,9 +122,10 @@ public enum InputMode {
         return currentActionMap;
     }
 
-    public ControlDeviceType GetCurrentDeviceType(){
+    public ControlDeviceType GetCurrentDeviceType()
+    {
         return ControlDeviceType.Keyboard;
     }
 
-    
+
 }

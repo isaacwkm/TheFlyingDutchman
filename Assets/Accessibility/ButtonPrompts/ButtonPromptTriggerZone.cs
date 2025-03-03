@@ -7,6 +7,11 @@ public class ButtonPromptTriggerZone : MonoBehaviour
     private InputPromptReplacer inputPromptReplacer;
     private TriggerZoneHandler triggerZoneHandler;
     public TooltipManager tooltipManager;
+    public enum WhereToShowInputPrompt
+    {
+        TopLeftTooltips = 1,
+        SecondaryTooltip = 2
+    }
 
     void Awake()
     {
