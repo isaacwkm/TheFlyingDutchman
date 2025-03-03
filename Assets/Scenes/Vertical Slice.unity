@@ -353,19 +353,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 979915664}
     m_Modifications:
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 293.9997
+      value: -1.3650589
       objectReference: {fileID: 0}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.826
+      value: 15.074005
       objectReference: {fileID: 0}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1714.41
+      value: 2.5533447
       objectReference: {fileID: 0}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -404,6 +404,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+--- !u!4 &204603884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
+  m_PrefabInstance: {fileID: 204603883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &234065885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,6 +718,7 @@ GameObject:
   - component: {fileID: 586033992}
   - component: {fileID: 586033994}
   - component: {fileID: 586033993}
+  - component: {fileID: 586033995}
   m_Layer: 0
   m_Name: ButtonPromptTrigger
   m_TagString: Untagged
@@ -768,6 +774,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &586033995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586033991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f6e62f0c735c24792a027b49bcd030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explicitInputMode: 1
+  originalInputText: Press BUTTONPROMPT.SuperJump to jump!
+  tooltipManager: {fileID: 9166617664817866795}
 --- !u!1001 &616222728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2750,6 +2771,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 891559064}
+    - targetCorrespondingSourceObject: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 204603884}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
 --- !u!1001 &4264075471004712937
@@ -3068,6 +3092,17 @@ PrefabInstance:
       addedObject: {fileID: 1973219075}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+--- !u!114 &9166617664817866795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 321776310737373905, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187abbff88a806c4d93b88b307520efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3077,4 +3112,3 @@ SceneRoots:
   - {fileID: 1702390724}
   - {fileID: 1966737130}
   - {fileID: 198033005}
-  - {fileID: 204603883}

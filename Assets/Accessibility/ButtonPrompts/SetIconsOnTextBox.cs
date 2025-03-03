@@ -1,16 +1,14 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using Needle.Console;
 
 [RequireComponent(typeof(TMP_Text))]
 public class SetIconsOnTextBox : MonoBehaviour
 {
-    private string tmproMessage = "Current tooltip text is set here.";
-
     // References to TMP_SpriteAssets for gamepad and keyboard
     [SerializeField] private TMP_SpriteAsset gamepadSpriteAsset;
     [SerializeField] private TMP_SpriteAsset keyboardSpriteAsset;
-
     private TMP_Text textbox;
     private InputSystem_Actions inputActions;
 
@@ -22,11 +20,9 @@ public class SetIconsOnTextBox : MonoBehaviour
     private void Start()
     {
         inputActions = InputModeManager.Instance.inputActions;
-        SetText("space");
     }
 
-    [ContextMenu("Set Text")]
-    public void SetText(string key)
+    public void SetText(string formattedText)
     {
         // Dynamically select the sprite asset based on the device
         TMP_SpriteAsset selectedSpriteAsset = SelectSpriteAssetBasedOnDevice();
@@ -41,9 +37,6 @@ public class SetIconsOnTextBox : MonoBehaviour
         // Dynamically set the sprite asset for the TMP_Text
         textbox.spriteAsset = selectedSpriteAsset;
 
-        // Replace BUTTONPROMPT with the actual sprite (e.g., "Gamepad_buttonWest")
-        string formattedText = tmproMessage.Replace("BUTTONPROMPT", $"<sprite name=\"{GetSpriteNameForDevice(key)}\">");
-
         // Set the final formatted text
         textbox.text = formattedText;
     }
@@ -51,36 +44,18 @@ public class SetIconsOnTextBox : MonoBehaviour
     // Dynamically select which sprite asset to use based on the device
     private TMP_SpriteAsset SelectSpriteAssetBasedOnDevice()
     {
-        return keyboardSpriteAsset;
+        InputModeManager.ControlDeviceType deviceType = InputModeManager.Instance.GetCurrentDeviceType();
 
-        // // Choose the sprite asset based on the device being used
-        // if (Gamepad.current != null) // If a gamepad is being used
-        // {
-        //     return gamepadSpriteAsset;
-        // }
-        // else if (Keyboard.current != null) // If a keyboard is being used
-        // {
-        //     return keyboardSpriteAsset;
-        // }
-
-        // return null; // If no device is found, return null
+        switch (deviceType)
+        {
+            case InputModeManager.ControlDeviceType.Gamepad:
+                return gamepadSpriteAsset;
+            case InputModeManager.ControlDeviceType.Keyboard:
+                return keyboardSpriteAsset;
+            default:
+                D.LogError("DeviceType doesn't exist in SelectSpriteAssetBasedOnDevice()!", gameObject, "Able");
+                return null;
+        }
     }
 
-    // Get the sprite name based on the device
-    private string GetSpriteNameForDevice(string actionNeeded)
-    {
-        return "Keyboard_" + actionNeeded;
-
-        return "Keyboard_space";
-        // if (Gamepad.current != null)
-        // {
-        //     return "Gamepad_buttonWest"; // Example for gamepad
-        // }
-        // else if (Keyboard.current != null)
-        // {
-        //     return "Keyboard_space"; // Example for keyboard
-        // }
-
-        // return string.Empty; // Default return if no device is detected
-    }
 }

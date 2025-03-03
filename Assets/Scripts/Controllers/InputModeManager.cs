@@ -114,8 +114,8 @@ public enum InputMode {
         return currentActionMap;
     }
 
-    public int GetCurrentDeviceType(){
-        return (int)ControlDeviceType.Gamepad;
+    public ControlDeviceType GetCurrentDeviceType(){
+        return ControlDeviceType.Keyboard;
     }
 
     

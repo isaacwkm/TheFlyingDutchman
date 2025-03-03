@@ -9,19 +9,19 @@ using System;
 
 public class InputPromptReplacer : MonoBehaviour
 {
-    public InputModeManager inputManager;
-    public InputSystem_Actions inputActions;
-    private TMP_SpriteAsset currentSpriteAsset;
     [Tooltip("Set this so that the tooltip only shows up when the player is in the defined input mode. Leave as \"None\" to show always. WARNING: Not recommended for most use cases.")]
     public InputModeManager.InputMode explicitInputMode = InputModeManager.InputMode.None; // Leave as "None" to show always. WARNING: Not recommended.
 
     [TextArea(3, 5)]
-    public string inputText = "Press BUTTONPROMPT.Jump to jump!";
-    [SerializeField] private string inputTextConverted = "Converted inputText will result here. Modifying in inspector has no effect.";
+    public string originalInputText = "Press BUTTONPROMPT.Jump to jump!"; // example, to be replaced for whatever your uses are
+    public TooltipManager tooltipManager;
+    private string inputTextConverted = "Converted inputText will result here. Manually modifying in this value in the inspector or in code has no effect.";
 
     private static readonly Regex buttonPromptRegex = new Regex(@"BUTTONPROMPT\.(\w+)", RegexOptions.Compiled);
     // effectivePathRegex parses UnityEngine InputBinding's .effectivePath property that returns control path strings that look like, for example, \"<Gamepad>/buttonSouth\".")
     private static readonly Regex effectivePathRegex = new Regex(@"^<(?<device>[^>]+)>\/(?<input>.+)$");
+    private InputModeManager inputManager;
+    private InputSystem_Actions inputActions;
 
     void Awake()
     {
@@ -29,15 +29,18 @@ public class InputPromptReplacer : MonoBehaviour
         inputActions = inputManager.inputActions;
     }
 
-    [ContextMenu("Convert Text")]
-    public void DynamicConvert(InputModeManager.ControlDeviceType controlDeviceType) // The parameter controlDeviceType is an enum defined in InputModeManager. It contains all supported controller types.
+    private string DynamicConvert()
     {
-        inputText = buttonPromptRegex.Replace(inputText, match =>
+        // The variable below, controlDeviceType, is an enum defined in InputModeManager. It contains all supported controller types.
+        InputModeManager.ControlDeviceType controlDeviceType = inputManager.GetCurrentDeviceType();
+        inputTextConverted = originalInputText;
+        inputTextConverted = buttonPromptRegex.Replace(originalInputText, match =>
         {
             string actionName = match.Groups[1].Value; // ACTION name e.g., Jump, Sprint, etc. Automatically assumes actionMap context.
 
             return GetSpriteTag(actionName, controlDeviceType) ?? "UNBOUND";
         });
+        return inputTextConverted;
     }
 
     public void ShowAtSecondaryTooltip() // Show at the center of the screen where the primary tooltip is. Automatically hides when a primary tooltip is active.
