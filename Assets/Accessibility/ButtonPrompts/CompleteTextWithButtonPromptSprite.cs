@@ -1,36 +1,38 @@
-// Credit - Christina Creates Games (Youtube tutorial for setting button prompts)
-using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Text.RegularExpressions;
 
-public static class CompleteTextWithButtonPromptSprite
+public class InputPromptReplacer : MonoBehaviour
 {
-    public static string ReadAndReplaceBinding(string textToDisplay, InputBinding actionNeeded, TMP_SpriteAsset spriteAsset)
-    {
-        string stringButtonName = GetReadableBindingName(actionNeeded);
-        
-        if (string.IsNullOrEmpty(stringButtonName))
-            return textToDisplay; // Return unchanged if binding is invalid
-        
-        textToDisplay = textToDisplay.Replace("BUTTONPROMPT", 
-        $"<sprite=\"{spriteAsset.name}\" name=\"{stringButtonName}\">");
+    public InputActionAsset inputActions; // Assign in Inspector
 
-        return textToDisplay;
+    [TextArea(3, 5)]
+    public string inputText = "Press BUTTONPROMPT.Player.Jump to jump!";
+
+    private static readonly Regex buttonPromptRegex = new Regex(@"BUTTONPROMPT\.(\w+)\.(\w+)", RegexOptions.Compiled);
+
+    [ContextMenu("Replace Button Prompts")]
+    public void ReplaceButtonPrompts()
+    {
+        inputText = buttonPromptRegex.Replace(inputText, match =>
+        {
+            string controlMode = match.Groups[1].Value; // e.g., Player, Vehicle, UI
+            string actionName = match.Groups[2].Value;  // e.g., Jump, Accelerate
+
+            return GetBindingString(controlMode, actionName) ?? "UNBOUND";
+        });
+
+        Debug.Log($"Updated Text: {inputText}");
     }
 
-    private static string GetReadableBindingName(InputBinding binding)
+    private string GetBindingString(string controlMode, string actionName)
     {
-        string path = binding.effectivePath ?? binding.path; // Use effective binding if available
-        
-        if (string.IsNullOrEmpty(path))
-            return string.Empty; // Invalid binding
+        var actionMap = inputActions.FindActionMap(controlMode);
+        if (actionMap == null) return null;
 
-        path = path.Replace("<Keyboard>/", "Keyboard_")
-                   .Replace("<Gamepad>/", "Gamepad_")
-                   .Replace("<Mouse>/", "Mouse_");
+        var action = actionMap.FindAction(actionName);
+        if (action == null) return null;
 
-        return path;
+        return action.GetBindingDisplayString() ?? "???";
     }
 }
-
