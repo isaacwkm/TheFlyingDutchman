@@ -716,9 +716,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 586033992}
+  - component: {fileID: 586033995}
+  - component: {fileID: 586033996}
   - component: {fileID: 586033994}
   - component: {fileID: 586033993}
-  - component: {fileID: 586033995}
   m_Layer: 0
   m_Name: ButtonPromptTrigger
   m_TagString: Untagged
@@ -789,6 +790,20 @@ MonoBehaviour:
   explicitInputMode: 1
   originalInputText: Press BUTTONPROMPT.SuperJump to jump!
   tooltipManager: {fileID: 9166617664817866795}
+--- !u!114 &586033996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586033991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ab3467e4c4be7489e9c837e839c6b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputPromptReplacer: {fileID: 586033995}
+  triggerZoneHandler: {fileID: 586033993}
 --- !u!1001 &616222728
 PrefabInstance:
   m_ObjectHideFlags: 0
