@@ -3,10 +3,9 @@ using TMPro;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(TMP_Text))]
-public class SetTextWithIconsOnTextBox : MonoBehaviour
+public class SetIconsOnTextBox : MonoBehaviour
 {
-    [TextArea(2, 3)]
-    [SerializeField] private string message = "Press BUTTONPROMPT to interact.";
+    private string tmproMessage = "Current tooltip text is set here.";
 
     // References to TMP_SpriteAssets for gamepad and keyboard
     [SerializeField] private TMP_SpriteAsset gamepadSpriteAsset;
@@ -43,7 +42,7 @@ public class SetTextWithIconsOnTextBox : MonoBehaviour
         textbox.spriteAsset = selectedSpriteAsset;
 
         // Replace BUTTONPROMPT with the actual sprite (e.g., "Gamepad_buttonWest")
-        string formattedText = message.Replace("BUTTONPROMPT", $"<sprite name=\"{GetSpriteNameForDevice(key)}\">");
+        string formattedText = tmproMessage.Replace("BUTTONPROMPT", $"<sprite name=\"{GetSpriteNameForDevice(key)}\">");
 
         // Set the final formatted text
         textbox.text = formattedText;

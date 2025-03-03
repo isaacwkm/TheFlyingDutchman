@@ -1,5 +1,1 @@
-public enum ControlDeviceType
-    {
-        Keyboard = 0,
-        Gamepad = 1
-    }
+// Strongly coupled with InputModeManager, and is referenced in other scripts as well.

@@ -3,16 +3,20 @@ using UnityEngine.InputSystem;
 
 public class InputModeManager : MonoBehaviour
 {
-    public InputSystem_Actions inputActions;
-    public InputActionMap currentActionMap;
+    public enum ControlDeviceType
+    {
+        Keyboard = 0,
+        Gamepad = 1
+    }
 
-    public enum InputMode {
+public enum InputMode {
         None,
         Player,
         Flying,
         UI
     }
-
+    public InputSystem_Actions inputActions;
+    public InputActionMap currentActionMap;
     public InputMode inputMode {get; protected set;}
 
     private static InputModeManager _instance;

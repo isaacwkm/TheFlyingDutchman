@@ -1831,6 +1831,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 605244852076820385, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
       propertyPath: soundVolume
       value: 0.2
@@ -2407,7 +2411,7 @@ GameObject:
   - component: {fileID: 1973219077}
   - component: {fileID: 1973219076}
   m_Layer: 5
-  m_Name: SituationalTooltip
+  m_Name: SecondaryTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2545,7 +2549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4144249d253735478f9af5a35975ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: BUTTONPROMPT
   gamepadSpriteAsset: {fileID: 11400000, guid: cf3b117d613b6fe42931b120ab11f8b9, type: 2}
   keyboardSpriteAsset: {fileID: 11400000, guid: 5a6b3afcd8941eb4d810f88297f9d019, type: 2}
 --- !u!1 &2066888184
