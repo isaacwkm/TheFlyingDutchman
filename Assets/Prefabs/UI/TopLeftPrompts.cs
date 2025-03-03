@@ -21,7 +21,7 @@ public class TopLeftTooltipManager : MonoBehaviour
         InputModeManager.Instance.OnInputModeSwitch -= HandleInputModeSwitch;
     }
 
-    public GameObject AddMessage(string message)
+    private GameObject AddMessage(string message)
     {
         GameObject newMessage = Instantiate(messagePrefab, messageContainer);
         newMessage.GetComponent<TMP_Text>().text = message;
@@ -70,13 +70,18 @@ public class TopLeftTooltipManager : MonoBehaviour
 
     }
 
+    public GameObject AddMessageWithConversion(InputPromptReplacer inputPromptReplacer) // Parameter demands an InputPromptReplacer script in order to enforce proper text conversion, as opposed to asking for a string.
+    {
+        return AddMessage(inputPromptReplacer.SetConvertedText_SlowPerformance());
+    }
+
     public void HandleShipModeMessages()
     {
         RemoveAllMessages();
         ShowAllShipControlsTopLeft();
     }
 
-    public void ShowAllShipControlsTopLeft()
+    private void ShowAllShipControlsTopLeft()
     {
         const string ascendMessageText = "Ascend: BUTTONPROMPT.Ascend";
         const string descendMessageText = "Descend: BUTTONPROMPT.Descend";
@@ -100,8 +105,8 @@ public class TopLeftTooltipManager : MonoBehaviour
         // Set up class variables within each component
         ConfigureInputPromptReplacer(messageComponents, explicitInputMode);
 
-        // Perform slow text conversion for button prompts
-        messageComponents.InputPromptReplacer.SetConvertedText_SlowPerformance();
+        // Perform slow text conversion for button prompts and set it to the original message's text
+        messageComponents.TMProComponent.text = messageComponents.InputPromptReplacer.SetConvertedText_SlowPerformance();
 
         // Show text afterewards
         messageComponents.TMProComponent.enabled = true;

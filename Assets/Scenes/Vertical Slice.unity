@@ -400,6 +400,10 @@ PrefabInstance:
       propertyPath: tooltipManager
       value: 
       objectReference: {fileID: 9166617664817866795}
+    - target: {fileID: 2353588338612160988, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
+      propertyPath: whereToShowTooltip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5385553102641779777, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
       propertyPath: m_Name
       value: JumpPromptTrigger
@@ -725,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 752350434201343491, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
       propertyPath: originalInputText
-      value: 'Pick up an item: BUTTONPROMPT.Interact'
+      value: 'Pick up an item: BUTTONPROMPT.Interact (while looking at item)'
       objectReference: {fileID: 0}
     - target: {fileID: 752350434201343491, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
       propertyPath: TMProTextToReplace
@@ -735,6 +739,10 @@ PrefabInstance:
       propertyPath: tooltipManager
       value: 
       objectReference: {fileID: 9166617664817866795}
+    - target: {fileID: 2353588338612160988, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
+      propertyPath: whereToShowTooltip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5385553102641779777, guid: 50367d9b1cbf9864e9ba080491ac98eb, type: 3}
       propertyPath: m_Name
       value: ButtonPromptTrigger
@@ -1026,6 +1034,10 @@ PrefabInstance:
       propertyPath: tooltipManager
       value: 
       objectReference: {fileID: 9166617664817866795}
+    - target: {fileID: 9174134278512328691, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: whereToShowTooltip
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
