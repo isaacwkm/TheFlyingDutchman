@@ -19,6 +19,7 @@ public class TooltipManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tooltipUiComponent; // Reference to the tooltip UI Text component
     [SerializeField] private TextMeshProUGUI secondTooltipComponent; // Reference to the second tooltip UI Text component
     [SerializeField] private Image crosshair; // Reference to crosshair
+    [SerializeField] private InputPromptReplacer interactButtonIconReplacer;
     private InputSystem_Actions inputActions; // Reference to the input actions
 
     // Below need to be initialized in Start()
@@ -27,9 +28,10 @@ public class TooltipManager : MonoBehaviour
     private float interactionRange; // Range within which interaction is allowed
 
     // Class variables
-    private string tooltipText = "Interact: [Key]"; // Tooltip action text
-    private string secondTooltipText = "Interact: [Key]"; // Tooltip action text
+    private bool secondTooltipActive = false; // Set from external classes depending on situational game elements this class does not handle. "Active" in this context means if it *should* be drawn, but will not necessarily show unless TooltipManager allows it.
     private CenterScreenWidgets currentCenterScreenWidget = CenterScreenWidgets.Crosshair;
+    private bool inputDeviceChanged = true; // Tracks if the center screen widget changes. Flips to true then back to false on the next update frame.
+    private string cachedInteractButtonText = ""; // To save on slow_performance calls, uses this cached value if changes weren't made.
 
     private void Awake()
     {
@@ -37,7 +39,8 @@ public class TooltipManager : MonoBehaviour
         inputActions = new InputSystem_Actions();
     }
 
-    private void OnEnable()
+    private void OnEnable() // TODO: Create event in InputModeManager that dispatches upon device being changed. Have this script subscribe to it and flip inputDeviceChanged.
+    // Potentially, have the subscribe method perform everything needed to cache the input text and get rid of unnecessasry logic.
     {
         // Enable the input actions (make sure they're enabled)
         inputActions.Enable();
@@ -91,7 +94,6 @@ public class TooltipManager : MonoBehaviour
         {
             HideCenterScreenWidgets();
             tooltipUiComponent.gameObject.SetActive(true);
-            tooltipUiComponent.text = tooltipText;
             currentCenterScreenWidget = CenterScreenWidgets.PrimaryTooltip;
         }
     }
@@ -102,7 +104,6 @@ public class TooltipManager : MonoBehaviour
         {
             HideCenterScreenWidgets();
             secondTooltipComponent.gameObject.SetActive(true);
-            secondTooltipComponent.text = secondTooltipText;
             currentCenterScreenWidget = CenterScreenWidgets.SecondaryTooltip;
         }
     }
@@ -124,6 +125,7 @@ public class TooltipManager : MonoBehaviour
             Interactable whom = hit.collider.GetComponent<Interactable>();
             if (whom && whom.isActiveAndEnabled)
             {
+                string tooltipText = "";
                 // if (interaction requirements are not met)
                 if (!whom.canInteract(gameObject)) // Game object is player here
                 {
@@ -132,8 +134,9 @@ public class TooltipManager : MonoBehaviour
                 else
                 { // if (interaction requirements are met)
                     tooltipText = whom.peekActionText();
-                    tooltipText = appendActionKey(tooltipText); // Append the action key for interact to the tooltip message
+                    tooltipText = appendInteractActionKey(tooltipText); // Append the action key for interact to the tooltip message
                 }
+                tooltipUiComponent.text = tooltipText;
                 ShowTooltip();
                 return;
             }
@@ -143,6 +146,7 @@ public class TooltipManager : MonoBehaviour
     private void SecondaryPeek()
     {
         if (currentCenterScreenWidget == CenterScreenWidgets.PrimaryTooltip) return; // Do nothing if the primary tooltip is on-screen.
+        if (secondTooltipActive == false) return; // Don't show the secondary tooltip if it's not flagged to show.
 
         ShowSecondTooltip();
     }
@@ -155,9 +159,39 @@ public class TooltipManager : MonoBehaviour
         ShowCrosshair();
     }
 
-    private string appendActionKey(string toolTipText)
+    private string appendInteractActionKey(string baseString) // Takes a relevant interact action string like "Dig" or "Pick up" and appends the interact action button binding to it.
     {
-        return $"{tooltipText}: [{inputActions.Player.Interact.bindings[0].ToDisplayString()}]"; // Display the action key
+        string interactActionKey;
+
+        if (inputDeviceChanged == false) // If the center screen widget hasn't changed, then continue using the cached string.
+        {
+            interactActionKey = cachedInteractButtonText;
+        }
+        else // if statement above prevents below branch from being called in successive loops, to save on performance. Below branch calls a potentially expensive text parsing operation.
+        {
+            interactActionKey = interactButtonIconReplacer.SetConvertedText_SlowPerformance(); // Try to avoid calling this in a loop
+            cachedInteractButtonText = interactActionKey;
+            inputDeviceChanged = false; // Set to false after applying changes to prevent future loops from running back into here.
+        }
+
+        string relevantInteractAction = baseString;
+
+        string fullText = $"{relevantInteractAction}: {interactActionKey}"; // Display the action key
+
+        return fullText;
     }
+
+    // Getter Setter
+
+    public bool GetSecondTooltipActive()
+    {
+        return secondTooltipActive;
+    }
+
+    public void SetSecondTooltipActive(bool isActive)
+    {
+        secondTooltipActive = isActive;
+    }
+
 
 }

@@ -1,44 +1,34 @@
+// Attach this script to same gameObject with TMPro text component on it: e.g. your tooltip component.
+
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
 using Needle.Console;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(TMP_Text))]
-public class SetIconsOnTextBox : MonoBehaviour
+public class TMProSpriteAssetTextSetter : MonoBehaviour
 {
     // References to TMP_SpriteAssets for gamepad and keyboard
     [SerializeField] private TMP_SpriteAsset gamepadSpriteAsset;
     [SerializeField] private TMP_SpriteAsset keyboardSpriteAsset;
     private TMP_Text textbox;
-    private InputSystem_Actions inputActions;
 
     private void Awake()
     {
         textbox = GetComponent<TMP_Text>();
     }
 
-    private void Start()
-    {
-        inputActions = InputModeManager.Instance.inputActions;
+    public void SetText(string formattedText){
+        UpdateSpriteAsset();
+        textbox.text = formattedText;
     }
-
-    public void SetText(string formattedText)
+    private void UpdateSpriteAsset()
     {
         // Dynamically select the sprite asset based on the device
         TMP_SpriteAsset selectedSpriteAsset = SelectSpriteAssetBasedOnDevice();
 
-        // Ensure a sprite asset is set
-        if (selectedSpriteAsset == null)
-        {
-            Debug.LogError("No sprite asset selected.");
-            return;
-        }
-
         // Dynamically set the sprite asset for the TMP_Text
         textbox.spriteAsset = selectedSpriteAsset;
-
-        // Set the final formatted text
-        textbox.text = formattedText;
     }
 
     // Dynamically select which sprite asset to use based on the device

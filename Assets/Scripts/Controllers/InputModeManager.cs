@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class InputModeManager : MonoBehaviour
 {
-    public enum ControlDeviceType
+    public enum ControlDeviceType // Arrange in order they are bound in the new Unity Inputsystem InputAction asset.
     {
-        Keyboard = 0,
-        Gamepad = 1
+        Gamepad = 0,
+        Keyboard = 1
     }
 
 public enum InputMode {
