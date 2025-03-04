@@ -17,11 +17,10 @@ public class StoryScene1 : StoryClass
     public override int[] receiveDataFrom { get; } = { }; // List of scenes to receive data from
     void Start()
     {
-        commands = UsefulPlayerOperations.Instance;
     }
     public override void startStoryScene() // Operations to do when starting the scene
     {
-        commands.TeleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
+        UsefulPlayerOperations.Instance.TeleportPlayer(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
         nightmareBoundary.OnExit += endStoryScene; // End the scene when player leaves the boundary (they fall off the island to move onto the next scene)
 
     }
