@@ -44,14 +44,16 @@ public class AnchorControl : MonoBehaviour
 
     private void Update()
     {
+        // spin control wheel according to vertical motion of anchor relative to ship
         var motor = controlWheelHingeJoint.motor;
+        var velDiff = anchorRbody.linearVelocity - shipPhysicsController.linearVelocity;
         motor.targetVelocity = controlWheelSpinFactor *
-            Vector3.Project(anchorRbody.linearVelocity, transform.up).magnitude *
-            Mathf.Sign(Vector3.Dot(anchorRbody.linearVelocity, transform.up));
+            Vector3.Project(velDiff, transform.up).magnitude *
+            Mathf.Sign(Vector3.Dot(velDiff, transform.up));
         controlWheelHingeJoint.motor = motor;
+        // if the anchor is out, make the ship behave itself
         if (extended)
         {
-            // if the anchor is out, make the ship behave itself
             shipPhysicsController.linearVelocity =
                 Vector3.Lerp(
                     shipPhysicsController.linearVelocity,

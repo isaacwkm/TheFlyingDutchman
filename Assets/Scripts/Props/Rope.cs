@@ -8,14 +8,14 @@ public class Rope : MonoBehaviour
     private Vector3 initialScale;
     private Vector3 pointBOffset;
 
-    private Vector3 GetPointA()
+    public Vector3 GetPointA()
     {
         return springJoint.connectedBody.transform.TransformPoint(
             springJoint.connectedAnchor
         );
     }
 
-    private Vector3 GetPointB()
+    public Vector3 GetPointB()
     {
         return springJoint.transform.TransformPoint(pointBOffset);
     }
