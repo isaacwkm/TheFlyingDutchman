@@ -1502,13 +1502,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 448360251407028195, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1799813078}
-    - targetCorrespondingSourceObject: {fileID: 448360251407028195, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1799813079}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
 --- !u!1001 &1716236098
 PrefabInstance:
@@ -1726,59 +1720,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
   m_PrefabInstance: {fileID: 109377433}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1799813075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 448360251407028195, guid: 8fa91bf7803da4275b6b88aa407fbe14, type: 3}
-  m_PrefabInstance: {fileID: 1702390724}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1799813078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799813075}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1799813079
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799813075}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1826049422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 555195995804173519, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
