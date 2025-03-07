@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Toggle fullScreenToggle;
     [SerializeField] private Slider volumeSlider;
-    [SerializeField] private TMP_Dropdown languageDropdown;
     [SerializeField] private Toggle highContrastToggle;
     [SerializeField] private Slider mouseSensitivitySlider;
     [SerializeField] private Slider rightStickSensitivitySlider;
