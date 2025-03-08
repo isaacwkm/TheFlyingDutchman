@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZoneSound : MonoBehaviour
 {
+    public GameObject globalVolumeSetting;
+    public bool isMusic;
     public AudioClip envMusicClip;
 
     // Volume multipliers for each surface type (adjust these values based on the loudness of your recordings)
@@ -14,7 +16,7 @@ public class ZoneSound : MonoBehaviour
     public float secondsToStayInZoneBeforePlaying = 1;
     [HideInInspector]
     public AudioSource audioSource;
-    private float musicVolumeMultiplier = 0.8f; // Bring all music volume towards this value.
+    private float ambientAndMusicMultiplier = 0.8f; // Private multiplier (decided by developer) to all music volume towards this value.
     private float targetVolume; // Final target volume after formulas and multipliers
     private bool staying = false;
     private float currentStayTime = 0;
@@ -27,7 +29,13 @@ public class ZoneSound : MonoBehaviour
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        targetVolume = soundVolume * musicVolumeMultiplier;
+
+        float userMusicVolumeMultiplier = 1.0f;
+
+        if (isMusic && globalVolumeSetting != null){
+            // GET GLOBAL VOLUME FLOAT VALUE HERE, AND SET IT TO MUSIC VOLUME MULTIPLIER
+        }
+        targetVolume = soundVolume * ambientAndMusicMultiplier * userMusicVolumeMultiplier;
 
     }
 
