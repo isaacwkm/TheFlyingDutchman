@@ -254,7 +254,7 @@ public class FlyingVehicle : MonoBehaviour
             float pitch = playerCamera.transform.eulerAngles.x;
             float pitchCos = Mathf.Cos(pitch*Mathf.PI/180.0f);
             playerCamera.transform.Rotate(
-                transform.up,
+                Vector3.up,
                 pitchCos*yx.x*lookSens*lookSpeedMult
             );
             float dx = -yx.y*lookSens*lookSpeedMult;
@@ -265,7 +265,7 @@ public class FlyingVehicle : MonoBehaviour
             }
             if (dx != 0.0f && checkx/Mathf.Sign(dx) <= lookXLimit)
             {
-                playerCamera.transform.Rotate(transform.right, dx);
+                playerCamera.transform.Rotate(Vector3.right, dx);
             }
             playerCamera.transform.eulerAngles =
                 Vector3.ProjectOnPlane(playerCamera.transform.eulerAngles, Vector3.forward);
