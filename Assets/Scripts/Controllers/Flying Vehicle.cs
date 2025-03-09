@@ -54,6 +54,7 @@ public class FlyingVehicle : MonoBehaviour
     private System.Action<InputAction.CallbackContext> ascendCanceledAction;
     private System.Action<InputAction.CallbackContext> descendPerformedAction;
     private System.Action<InputAction.CallbackContext> descendCanceledAction;
+    private System.Action<InputAction.CallbackContext> menuCanceledAction;
 
     void Awake()
     {
@@ -77,6 +78,7 @@ public class FlyingVehicle : MonoBehaviour
         ascendCanceledAction = ctx => yMovementInput = 0.0f;
         descendPerformedAction = ctx => yMovementInput = -1.0f;
         descendCanceledAction = ctx => yMovementInput = 0.0f;
+        menuCanceledAction = ctx => SceneCore.MainMenu();
 
         inputActions.Flying.Move.performed += movePerformedAction;
         inputActions.Flying.Move.canceled += moveCanceledAction;
@@ -90,6 +92,7 @@ public class FlyingVehicle : MonoBehaviour
         inputActions.Flying.Ascend.canceled += ascendCanceledAction;
         inputActions.Flying.Descend.performed += descendPerformedAction;
         inputActions.Flying.Descend.canceled += descendCanceledAction;
+        inputActions.Flying.Menu.canceled += menuCanceledAction;
     }
 
     void OnDisable()
@@ -107,6 +110,7 @@ public class FlyingVehicle : MonoBehaviour
         inputActions.Flying.Ascend.canceled -= ascendCanceledAction;
         inputActions.Flying.Descend.performed -= descendPerformedAction;
         inputActions.Flying.Descend.canceled -= descendCanceledAction;
+        inputActions.Flying.Menu.canceled -= menuCanceledAction;
 
         inputActions.Flying.Disable();
         rudderInteractTarget.OnInteract -= doRudderInteraction;
@@ -237,7 +241,7 @@ public class FlyingVehicle : MonoBehaviour
 
     public bool Operating()
     {
-        return inputActions.Flying.enabled;
+        return inputMan.gameplayControlMode == InputModeManager.InputMode.Flying;
     }
 
     private void HandleMovementInput(Vector2 xz, float y)

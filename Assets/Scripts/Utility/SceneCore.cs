@@ -8,6 +8,7 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private ItemCatalog m_itemCatalog;
     [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
+    [SerializeField] private UIStack m_uiStack;
     [SerializeField] private MainMenu m_mainMenu;
 
     private static SceneCore cachedInstance = null;
@@ -54,8 +55,13 @@ public class SceneCore : MonoBehaviour
         get { return instance.m_canvas; }
     }
 
-    public static void MainMenu()
+    public static UIStack uiStack
     {
-        Instantiate(instance.m_mainMenu.gameObject);
+        get { return instance.m_uiStack; }
+    }
+
+    public static MainMenu MainMenu()
+    {
+        return uiStack.Call(instance.m_mainMenu);
     }
 }

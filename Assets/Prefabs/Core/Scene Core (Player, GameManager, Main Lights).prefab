@@ -875,6 +875,7 @@ MonoBehaviour:
   m_itemCatalog: {fileID: 5714826499939119375}
   m_storyManager: {fileID: 2548651717931835099}
   m_canvas: {fileID: 7349530578359876276}
+  m_uiStack: {fileID: 7629034800730762720}
   m_mainMenu: {fileID: 4687696481469608357, guid: 221a75538baea3d79b17adcdc716708a, type: 3}
 --- !u!1 &3349699302217261728
 GameObject:
@@ -1829,6 +1830,7 @@ GameObject:
   - component: {fileID: 3777797758668305512}
   - component: {fileID: 6248393192118654990}
   - component: {fileID: 383950143697167701}
+  - component: {fileID: 7629034800730762720}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1970,6 +1972,18 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!114 &7629034800730762720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931345728164179249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56524d0bdbf4fab7af03a4b69e97d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7430450122235974846
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -102,6 +102,17 @@ public class InputModeManager : MonoBehaviour
         OnInputModeSwitch?.Invoke();
     }
 
+    public void SwitchControls(InputMode mode)
+    {
+        switch (mode)
+        {
+            case InputMode.None: DisableAllControls(); break;
+            case InputMode.Player: SwitchToPlayerControls(); break;
+            case InputMode.Flying: SwitchToShipControls(); break;
+            case InputMode.UI: SwitchToUIControls(); break;
+        }
+    }
+
     // Getters Setters
 
     public PlayerInput GetPlayerInput()
@@ -130,5 +141,18 @@ public class InputModeManager : MonoBehaviour
         return ControlDeviceType.Keyboard;
     }
 
-
+    public InputModeManager.InputMode gameplayControlMode
+    {
+        get
+        {
+            if (SceneCore.uiStack.context)
+            {
+                return SceneCore.uiStack.inputModeBeforeUI;
+            }
+            else
+            {
+                return inputMode;
+            }
+        }
+    }
 }
