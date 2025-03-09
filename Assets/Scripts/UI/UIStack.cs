@@ -77,7 +77,7 @@ public class UIStack : MonoBehaviour
     }
 
     private InputModeManager inputMan;
-    private InputModeManager.InputMode inputModeBeforeUI = InputModeManager.InputMode.None;
+    public InputModeManager.InputMode inputModeBeforeUI { get; private set; }
     private Stack<Context> stack;
 
     public Context context { get { return stack.Count <= 0 ? null : stack.Peek(); } }
@@ -87,6 +87,7 @@ public class UIStack : MonoBehaviour
     void Start()
     {
         inputMan = InputModeManager.Instance;
+        inputModeBeforeUI = inputMan.inputMode;
         stack = new();
     }
 
