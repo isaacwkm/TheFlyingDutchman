@@ -12,6 +12,15 @@ public class AnchorControl : MonoBehaviour
     [SerializeField] private float shipStabilizationWhenAnchored = 120.0f;
     private bool extended = false;
     private Rigidbody anchorRbody;
+    private CollisionReporter anchorCollisions;
+
+    public bool anchored
+    {
+        get
+        {
+            return extended && anchorCollisions.collisions.Count > 0;
+        }
+    }
 
     private void OnEnable()
     {
@@ -40,6 +49,7 @@ public class AnchorControl : MonoBehaviour
     private void Start()
     {
         anchorRbody = anchorSpringJoint.GetComponent<Rigidbody>();
+        anchorCollisions = anchorSpringJoint.GetComponent<CollisionReporter>();
     }
 
     private void Update()
@@ -51,8 +61,8 @@ public class AnchorControl : MonoBehaviour
             Vector3.Project(velDiff, transform.up).magnitude *
             Mathf.Sign(Vector3.Dot(velDiff, transform.up));
         controlWheelHingeJoint.motor = motor;
-        // if the anchor is out, make the ship behave itself
-        if (extended)
+        // if the anchor is out and anchored, make the ship behave itself
+        if (anchored)
         {
             shipPhysicsController.linearVelocity =
                 Vector3.Lerp(

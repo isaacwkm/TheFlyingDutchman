@@ -698,11 +698,14 @@ MonoBehaviour:
   traction: 0.01
   bobSpeed: 1
   bobRange: 1
-  vantage: {x: 0, y: 20, z: -20}
   rudder: {fileID: 6982291689904399655}
   rudderSpin: 2000
   lookSens: 1
   lookXLimit: 75
+  lookVantage: {x: 0, y: 20, z: -35}
+  lookVantageMaxZ: -35
+  lookVantageMinZ: -70
+  lookVantageZoomSens: 1
 --- !u!136 &80247806842157409
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1362,6 +1365,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4310725568372231468, guid: f39173d0820eb854084c03d872bb8676, type: 3}
       insertIndex: -1
       addedObject: {fileID: 945938567101985459}
+    - targetCorrespondingSourceObject: {fileID: 4310725568372231468, guid: f39173d0820eb854084c03d872bb8676, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5347729628470538504}
   m_SourcePrefab: {fileID: 100100000, guid: f39173d0820eb854084c03d872bb8676, type: 3}
 --- !u!4 &144069562711891081 stripped
 Transform:
@@ -1425,6 +1431,20 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5347729628470538504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771248229195122227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bad1f6f5eb1e4c14bf8abe5d6dbcafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheCollisions: 1
+  cacheTriggers: 0
 --- !u!1001 &3918850233114506890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1956,7 +1976,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTarget: {fileID: 7660544972396113937}
   anchorSpringJoint: {fileID: 945938567101985459}
-  anchorRope: {fileID: 4256640279756259049}
   anchorMaxDropDistance: 30
   controlWheelHingeJoint: {fileID: 2576431790455104364}
   controlWheelSpinFactor: 10
@@ -2049,6 +2068,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2299638097208331545, guid: 37ad98a8d28f9a740969722fe002838a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6982291689904399655}
+    - targetCorrespondingSourceObject: {fileID: 2299638097208331545, guid: 37ad98a8d28f9a740969722fe002838a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4849673560621238013}
+    - targetCorrespondingSourceObject: {fileID: 2299638097208331545, guid: 37ad98a8d28f9a740969722fe002838a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3240726236725805642}
   m_SourcePrefab: {fileID: 100100000, guid: 37ad98a8d28f9a740969722fe002838a, type: 3}
 --- !u!1 &4997168774402306535 stripped
 GameObject:
@@ -2072,8 +2097,8 @@ MonoBehaviour:
   doCooldown: 1
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
-  requirements: {fileID: 0}
-  requirementTooltipText: Need key
+  requirements: {fileID: 4849673560621238013}
+  requirementTooltipText: Raise the anchor before shovin' off
 --- !u!54 &2390350788359516047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2140,6 +2165,34 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4849673560621238013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997168774402306535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5249cd373782e4abd41cbadb2bb93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requirements:
+  - unanchor
+  activeItemIdsNeeded: 
+--- !u!114 &3240726236725805642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4997168774402306535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb0c805236c9c9a899e02c40a841ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchorControl: {fileID: 1151062339542245403}
 --- !u!4 &5625649227739442013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1486790438441359267, guid: 37ad98a8d28f9a740969722fe002838a, type: 3}
