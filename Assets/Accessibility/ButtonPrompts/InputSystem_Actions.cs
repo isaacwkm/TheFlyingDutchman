@@ -1213,6 +1213,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""e8238ac7-f8ed-4224-b4f2-d2967baee528"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -1501,6 +1510,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Descend"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7a93ded-712d-4876-bb06-10da3513d666"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9bf9dfc0-4ba3-4abb-aad2-fdf5959fd3c3"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e0794ace-f3e6-4fc3-9727-560644fc1845"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b28b1907-320d-48a8-9009-21d43032d3d4"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -1610,6 +1663,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Flying_Attack = m_Flying.FindAction("Attack", throwIfNotFound: true);
         m_Flying_Previous = m_Flying.FindAction("Previous", throwIfNotFound: true);
         m_Flying_Next = m_Flying.FindAction("Next", throwIfNotFound: true);
+        m_Flying_Zoom = m_Flying.FindAction("Zoom", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1979,6 +2033,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Flying_Attack;
     private readonly InputAction m_Flying_Previous;
     private readonly InputAction m_Flying_Next;
+    private readonly InputAction m_Flying_Zoom;
     public struct FlyingActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1992,6 +2047,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Flying_Attack;
         public InputAction @Previous => m_Wrapper.m_Flying_Previous;
         public InputAction @Next => m_Wrapper.m_Flying_Next;
+        public InputAction @Zoom => m_Wrapper.m_Flying_Zoom;
         public InputActionMap Get() { return m_Wrapper.m_Flying; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2028,6 +2084,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Next.started += instance.OnNext;
             @Next.performed += instance.OnNext;
             @Next.canceled += instance.OnNext;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
         }
 
         private void UnregisterCallbacks(IFlyingActions instance)
@@ -2059,6 +2118,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Next.started -= instance.OnNext;
             @Next.performed -= instance.OnNext;
             @Next.canceled -= instance.OnNext;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
         }
 
         public void RemoveCallbacks(IFlyingActions instance)
@@ -2165,5 +2227,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnPrevious(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
     }
 }
