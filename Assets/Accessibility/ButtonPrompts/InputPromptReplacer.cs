@@ -52,24 +52,6 @@ public class InputPromptReplacer : MonoBehaviour
         return GetSpriteTag(actionName, controlDeviceType) ?? "UNBOUND";
     }
 
-    // TODO: Implement each of these in external classes. This class is not fully equipped to handle these operations. This class will stick to input parsing.
-
-
-    // public void ShowAtTopLeftTooltip() // Show at top left of the screen. Calling this method repeatedly appends a new tooltip below the last tip.
-    // {
-
-    // }
-
-    // public void HideAtTopLeftTooltip() // Remove an element from the list of tooltips in the top left.
-    // {
-
-    // }
-
-    // public void HideAllAtTopLeftTooltip() // Remove all elements from the top left screen tooltip.
-    // {
-
-    // }
-
     private string GetSpriteTag(string actionName, InputModeManager.ControlDeviceType deviceType)
     {
         InputBinding dynamicBinding = inputManager.GetBinding(actionName, deviceType); // Finds the binding using only a name and current device type
