@@ -26,10 +26,11 @@ public class MainMenu : UIStack.Context
 
     private void Start()
     {
-        // TODO: implement functionality for everything except buttons:
-        //      fullScreenToggle
+        // TODO: implement functionality:
         //      highContrastToggle
         //      volumeSlider
+        fullScreenToggle.isOn = FullScreenPref.LoadPref();
+        fullScreenToggle.onValueChanged.AddListener((state) => FullScreenPref.SavePref(state));
         rebindControlsButton.onClick.AddListener(() => Call(controlsMenuPrefab));
         backToGameButton.onClick.AddListener(() => Return());
         // TODO: implement backToOSButton listener
