@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class ControlsMenu : MonoBehaviour
+public class ControlsMenu : UIStack.Context
 {
     private class ActionBindUI
     {
@@ -102,18 +102,10 @@ public class ControlsMenu : MonoBehaviour
         CleanupRebindOperation();
     }
 
-    private void Close()
-    {
-        Instantiate(mainMenuPrefab);
-        Destroy(this.gameObject);
-    }
-
     private void Start()
     {
-        transform.SetParent(SceneCore.canvas.transform, false);
-        transform.SetLocalPositionAndRotation(3*Vector3.back, Quaternion.identity);
         Populate();
-        backButton.onClick.AddListener(() => Close());
+        backButton.onClick.AddListener(() => Return());
     }
 
     private void CleanupRebindOperation()
