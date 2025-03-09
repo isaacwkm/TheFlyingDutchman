@@ -16,11 +16,14 @@ public class FlyingVehicle : MonoBehaviour
     [SerializeField] private float traction = 0.01f;
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobRange = 1.0f;
-    [SerializeField] private Vector3 vantage = new Vector3(0.0f, 20.0f, -20.0f);
     [SerializeField] private HingeJoint rudder;
     [SerializeField] private float rudderSpin = 2000.0f;
     [SerializeField] private float lookSens = 1.0f;
     [SerializeField] private float lookXLimit = 75.0f;
+    [SerializeField] private Vector3 lookVantage = new Vector3(0.0f, 20.0f, -35.0f);
+    [SerializeField] private float lookVantageMaxZ = -35.0f;
+    [SerializeField] private float lookVantageMinZ = -70.0f;
+    [SerializeField] private float lookVantageZoomSens = 1.0f;
     private const float lookSpeedMult = 0.1f;
     private InputModeManager inputMan;
     private InputSystem_Actions inputActions;
@@ -30,6 +33,7 @@ public class FlyingVehicle : MonoBehaviour
     private Vector2 xzMovementInput = Vector2.zero;
     private float yMovementInput = 0.0f;
     private Vector2 lookInput = Vector2.zero;
+    private float zoomInput = 0.0f;
     private Vector3 impetus = Vector3.zero;
     private float baseY;
     private float bobDirection = -1.0f;
@@ -42,6 +46,8 @@ public class FlyingVehicle : MonoBehaviour
     private System.Action<InputAction.CallbackContext> moveCanceledAction;
     private System.Action<InputAction.CallbackContext> lookPerformedAction;
     private System.Action<InputAction.CallbackContext> lookCanceledAction;
+    private System.Action<InputAction.CallbackContext> zoomPerformedAction;
+    private System.Action<InputAction.CallbackContext> zoomCanceledAction;
     private System.Action<InputAction.CallbackContext> interactPerformedAction;
     private System.Action<InputAction.CallbackContext> jumpOffPerformedAction;
     private System.Action<InputAction.CallbackContext> ascendPerformedAction;
@@ -63,6 +69,8 @@ public class FlyingVehicle : MonoBehaviour
         moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
         lookPerformedAction = ctx => lookInput = ctx.ReadValue<Vector2>();
         lookCanceledAction = ctx => lookInput = Vector2.zero;
+        zoomPerformedAction = ctx => zoomInput = ctx.ReadValue<float>();
+        zoomCanceledAction = ctx => zoomInput = 0.0f;
         interactPerformedAction = ctx => RelinquishFocus(currentPlayer);
         jumpOffPerformedAction = ctx => RelinquishFocus(currentPlayer);
         ascendPerformedAction = ctx => yMovementInput = 1.0f;
@@ -74,6 +82,8 @@ public class FlyingVehicle : MonoBehaviour
         inputActions.Flying.Move.canceled += moveCanceledAction;
         inputActions.Flying.Look.performed += lookPerformedAction;
         inputActions.Flying.Look.canceled += lookCanceledAction;
+        inputActions.Flying.Zoom.performed += zoomPerformedAction;
+        inputActions.Flying.Zoom.canceled += zoomCanceledAction;
         inputActions.Flying.Interact.performed += interactPerformedAction;
         inputActions.Flying.Jump_Off.performed += jumpOffPerformedAction;
         inputActions.Flying.Ascend.performed += ascendPerformedAction;
@@ -87,6 +97,10 @@ public class FlyingVehicle : MonoBehaviour
         // Unbind actions using stored lambdas
         inputActions.Flying.Move.performed -= movePerformedAction;
         inputActions.Flying.Move.canceled -= moveCanceledAction;
+        inputActions.Flying.Look.performed -= lookPerformedAction;
+        inputActions.Flying.Look.canceled -= lookCanceledAction;
+        inputActions.Flying.Zoom.performed -= zoomPerformedAction;
+        inputActions.Flying.Zoom.canceled -= zoomCanceledAction;
         inputActions.Flying.Interact.performed -= interactPerformedAction;
         inputActions.Flying.Jump_Off.performed -= jumpOffPerformedAction;
         inputActions.Flying.Ascend.performed -= ascendPerformedAction;
@@ -255,10 +269,19 @@ public class FlyingVehicle : MonoBehaviour
             }
             playerCamera.transform.eulerAngles =
                 Vector3.ProjectOnPlane(playerCamera.transform.eulerAngles, Vector3.forward);
+            lookVantage.z += zoomInput*lookVantageZoomSens;
+            if (lookVantage.z > lookVantageMaxZ)
+            {
+                lookVantage.z = lookVantageMaxZ;
+            }
+            else if (lookVantage.z < lookVantageMinZ)
+            {
+                lookVantage.z = lookVantageMinZ;
+            }
             playerCamera.transform.position = transform.position +
-                vantage.x*playerCamera.transform.right +
-                vantage.y*transform.up +
-                vantage.z*playerCamera.transform.forward;
+                lookVantage.x*playerCamera.transform.right +
+                lookVantage.y*transform.up +
+                lookVantage.z*playerCamera.transform.forward;
         }
     }
 }
