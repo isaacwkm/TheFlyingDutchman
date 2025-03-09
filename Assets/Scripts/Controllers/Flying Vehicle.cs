@@ -237,12 +237,14 @@ public class FlyingVehicle : MonoBehaviour
     {
         if (playerCamera)
         {
+            float pitch = playerCamera.transform.eulerAngles.x;
+            float pitchCos = Mathf.Cos(pitch*Mathf.PI/180.0f);
             playerCamera.transform.Rotate(
                 transform.up,
-                yx.x*lookSens*lookSpeedMult
+                pitchCos*yx.x*lookSens*lookSpeedMult
             );
             float dx = -yx.y*lookSens*lookSpeedMult;
-            float checkx = ((playerCamera.transform.eulerAngles.x%360.0f) + 360.0f)%360.0f;
+            float checkx = ((pitch%360.0f) + 360.0f)%360.0f;
             if (checkx >= 180.0f)
             {
                 checkx -= 360.0f;
