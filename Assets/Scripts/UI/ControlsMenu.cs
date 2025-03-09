@@ -100,6 +100,7 @@ public class ControlsMenu : UIStack.Context
     private void OnDisable()
     {
         CleanupRebindOperation();
+        ControlRebindPrefs.SaveRebinds();
     }
 
     private void Start()
