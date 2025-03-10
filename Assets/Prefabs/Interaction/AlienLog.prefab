@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 1663213813125007005}
   - component: {fileID: 2498666076691780793}
   - component: {fileID: 6435046224083888104}
+  - component: {fileID: 8095873276433287172}
   m_Layer: 0
   m_Name: AlienLog
   m_TagString: Stone
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTooltip: Read
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 8095873276433287172}
   doCooldown: 1
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
@@ -233,3 +234,21 @@ MonoBehaviour:
     One of our mindless bretheren which
     dwell on this planet is keeping me company here. I''ll hide it under this one''s
     watch.'
+--- !u!114 &8095873276433287172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802539032549942839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 6711e9c5e40ce41739798ba7c0973bbd, type: 3}
+  volume: 0.5
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
