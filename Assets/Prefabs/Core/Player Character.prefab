@@ -529,7 +529,9 @@ MonoBehaviour:
   playerController: {fileID: 143753307886917586}
   cameraObj: {fileID: 245861518349417841}
   tooltipUiComponent: {fileID: 0}
+  secondTooltipComponent: {fileID: 0}
   crosshair: {fileID: 0}
+  interactButtonIconReplacer: {fileID: 0}
 --- !u!114 &143753307886917586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +557,7 @@ MonoBehaviour:
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
+  sprintMultiplier: 2
   maxInteractDistance: 2
 --- !u!143 &8105257823859936009
 CharacterController:
