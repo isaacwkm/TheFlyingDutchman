@@ -1,33 +1,33 @@
 using UnityEngine;
 
-public class UsefulPlayerOperations : MonoBehaviour
+public class UsefulCommands : MonoBehaviour
 {
     // Static reference to the instance
-    private static UsefulPlayerOperations _instance;
+    private static UsefulCommands _instance;
 
     // Property to access the singleton instance
-    public static UsefulPlayerOperations Instance
+    public static UsefulCommands Instance
     {
         get
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<UsefulPlayerOperations>();
+                _instance = FindObjectOfType<UsefulCommands>();
                 if (_instance == null)
                 {
                     GameObject obj = new GameObject("UsefulPlayerOperations");
-                    _instance = obj.AddComponent<UsefulPlayerOperations>();
+                    _instance = obj.AddComponent<UsefulCommands>();
                 }
             }
             return _instance;
         }
     }
 
-    public void TeleportPlayer(GameObject player, Transform referenceObject, Vector3 relativeCoordinates = default)
+    public void Teleport(GameObject subject, Transform referenceObject, Vector3 relativeCoordinates = default)
     {
-        if (player == null)
+        if (subject == null)
         {
-            Debug.LogError("No player reference provided for teleportation!");
+            Debug.LogError("No subject provided for teleportation!");
             return;
         }
 
@@ -45,18 +45,20 @@ public class UsefulPlayerOperations : MonoBehaviour
             targetRotation = Quaternion.identity;
         }
 
-        CharacterController controller = player.GetComponent<CharacterController>();
+        CharacterController controller = subject.GetComponent<CharacterController>();
         if (controller != null)
         {
             controller.enabled = false;
             controller.transform.position = targetPosition;
             controller.transform.rotation = targetRotation;
             controller.enabled = true;
-            Debug.Log($"{player.name} teleported to {targetPosition}.");
+            Debug.Log($"{subject.name} teleported to {targetPosition}.");
         }
         else
         {
             Debug.LogError("CharacterController not found on player.");
+            subject.transform.position = targetPosition;
+            subject.transform.rotation = targetRotation;
         }
     }
 }

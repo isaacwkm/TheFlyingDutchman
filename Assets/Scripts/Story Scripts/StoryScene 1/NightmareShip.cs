@@ -9,6 +9,8 @@ public class NightmareShip : MonoBehaviour
     [SerializeField] private GameObject entireObjectToDestroy;
     [SerializeField] private Interactable rudderInteractTarget;
     [SerializeField] private Animator wheelPopsOffAnimation;
+    [SerializeField] private ActionSound WheelThud;
+    [SerializeField] private ActionSound ShipCreak;
     [SerializeField] private ParticleSystem fallParticleEffect;
     [SerializeField] private GameObject syncTransformer;
     [SerializeField] private GameObject[] deleteOnFall;
@@ -120,18 +122,20 @@ public class NightmareShip : MonoBehaviour
                 pcm.enableJumping(false);
                 pcm.enableSuperJumping(false);
                 wheelPopsOffAnimation.Play("NightmareRudder", -1, 0);
-                StartCoroutine(playParticleEffect(player));
+                StartCoroutine(WheelHitsFloor(player));
                 StartCoroutine(makeShipFall(player));
             }
 
         }
     }
 
-    private System.Collections.IEnumerator playParticleEffect(GameObject player)
+    private System.Collections.IEnumerator WheelHitsFloor(GameObject player)
     {
         // Wait for the duration
         yield return new WaitForSeconds(0.5f);
         fallParticleEffect.Play();
+        WheelThud.PlaySingleRandom();
+        ShipCreak.PlaySingleRandom();
     }
 
     private System.Collections.IEnumerator makeShipFall(GameObject player)
