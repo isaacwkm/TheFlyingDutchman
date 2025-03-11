@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class MainMenu : UIStack.Context
 {
@@ -11,6 +12,9 @@ public class MainMenu : UIStack.Context
     [SerializeField] private Button backToOSButton;
     [SerializeField] private ControlsMenu controlsMenuPrefab;
 
+    public event Action<bool> MainMenuActive;
+    public event Action<float> OnVolumeChanged; // Event for volume updates
+
     private InputModeManager inputMan;
 
     private void Awake()
@@ -20,8 +24,14 @@ public class MainMenu : UIStack.Context
 
     private void OnEnable()
     {
+        AudioManager.Instance.MainMenuSoundSettings = this;
         // TODO: certain UI input actions should navigate or close menu
         // w/o requiring use of on-screen buttons
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.MainMenuSoundSettings = null;
     }
 
     private void Start()
@@ -33,6 +43,13 @@ public class MainMenu : UIStack.Context
         fullScreenToggle.onValueChanged.AddListener((state) => FullScreenPref.SavePref(state));
         rebindControlsButton.onClick.AddListener(() => Call(controlsMenuPrefab));
         backToGameButton.onClick.AddListener(() => Return());
+        volumeSlider.onValueChanged.AddListener(HandleVolumeChanged);
         // TODO: implement backToOSButton listener
     }
+
+    private void HandleVolumeChanged(float sliderValue)
+    {
+        OnVolumeChanged?.Invoke(sliderValue); // Broadcast event
+    }
+
 }
