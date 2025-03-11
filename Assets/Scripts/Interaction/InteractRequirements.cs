@@ -25,7 +25,7 @@ public class InteractRequirements : MonoBehaviour
 
     public bool getInteractAllowed(GameObject player)
     {
-        if (requirementsLeft != 0) return false; // unused - planned to be used for event systems (Progress gates until a condition is fulfilled).
+        if (requirementsLeft != 0) return false; // unused - planned to be used for event systems (Progress is gated until a condition is fulfilled).
 
         if (!checkHeldItem(player)) return false; // if The required item is not held, return false
 
@@ -53,20 +53,22 @@ public class InteractRequirements : MonoBehaviour
 
         if (status == true){
             setRequirementTrue(requirement);
-            requirementsLeft--; // decrement the amount of requirements needed, in order to eliminate need for any search algorithm
+            
         }
         else{
             setRequirementFalse(requirement);
-            requirementsLeft++;
+            
         }
     }
 
     private void setRequirementTrue(string requirement){
         requirementsMap[requirement] = true;
+        requirementsLeft--; // decrement the amount of requirements needed, in order to eliminate need for any search algorithm
     }
 
     private void setRequirementFalse(string requirement){
         requirementsMap[requirement] = false;
+        requirementsLeft++;
     }
 
     public void printAllRequirements()

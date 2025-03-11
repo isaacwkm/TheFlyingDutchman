@@ -46,6 +46,6 @@ public class Checkpoint : MonoBehaviour
 
     public void Respawn(Collider playerCol)
     {
-        UsefulPlayerOperations.Instance.TeleportPlayer(playerCol.gameObject, gameObject.transform);
+        UsefulCommands.Instance.Teleport(playerCol.gameObject, gameObject.transform);
     }
 }
