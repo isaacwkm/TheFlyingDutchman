@@ -179,6 +179,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CustomAction1"",
+                    ""type"": ""Button"",
+                    ""id"": ""466a9afc-20d6-45be-a042-a19b63082b8a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CustomAction2"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a6ca231-ea6b-45ec-b0cb-0cc420104748"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -542,6 +560,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""227a1c7d-1681-465f-8047-e1ab4317368f"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CustomAction1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fbcd42e-150b-4c8c-96c4-33c0e6f84395"",
+                    ""path"": ""<Keyboard>/period"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CustomAction2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1693,6 +1733,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_SwitchScroll = m_Player.FindAction("SwitchScroll", throwIfNotFound: true);
         m_Player_SuperJump = m_Player.FindAction("SuperJump", throwIfNotFound: true);
         m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
+        m_Player_CustomAction1 = m_Player.FindAction("CustomAction1", throwIfNotFound: true);
+        m_Player_CustomAction2 = m_Player.FindAction("CustomAction2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1803,6 +1845,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchScroll;
     private readonly InputAction m_Player_SuperJump;
     private readonly InputAction m_Player_Menu;
+    private readonly InputAction m_Player_CustomAction1;
+    private readonly InputAction m_Player_CustomAction2;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1824,6 +1868,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @SwitchScroll => m_Wrapper.m_Player_SwitchScroll;
         public InputAction @SuperJump => m_Wrapper.m_Player_SuperJump;
         public InputAction @Menu => m_Wrapper.m_Player_Menu;
+        public InputAction @CustomAction1 => m_Wrapper.m_Player_CustomAction1;
+        public InputAction @CustomAction2 => m_Wrapper.m_Player_CustomAction2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1884,6 +1930,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @CustomAction1.started += instance.OnCustomAction1;
+            @CustomAction1.performed += instance.OnCustomAction1;
+            @CustomAction1.canceled += instance.OnCustomAction1;
+            @CustomAction2.started += instance.OnCustomAction2;
+            @CustomAction2.performed += instance.OnCustomAction2;
+            @CustomAction2.canceled += instance.OnCustomAction2;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1939,6 +1991,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @CustomAction1.started -= instance.OnCustomAction1;
+            @CustomAction1.performed -= instance.OnCustomAction1;
+            @CustomAction1.canceled -= instance.OnCustomAction1;
+            @CustomAction2.started -= instance.OnCustomAction2;
+            @CustomAction2.performed -= instance.OnCustomAction2;
+            @CustomAction2.canceled -= instance.OnCustomAction2;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -2264,6 +2322,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnSwitchScroll(InputAction.CallbackContext context);
         void OnSuperJump(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
+        void OnCustomAction1(InputAction.CallbackContext context);
+        void OnCustomAction2(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
