@@ -29,22 +29,22 @@ public class ZoneSound : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged += ChangeMusicVolume;
+        AddEventListeners();
     }
 
     private void OnDisable()
     {
-        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged -= ChangeMusicVolume;
+        RemoveEventListeners();
     }
 
-    public void AddMainMenuSoundSettingListeners()
+    public void AddEventListeners()
     {
-        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged += ChangeMusicVolume;
+        VolumePrefs.OnMusicVolumeChanged += ChangeMusicVolume;
     }
 
-    public void RemoveMainMenuSoundSettingListeners()
+    public void RemoveEventListeners()
     {
-        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged -= ChangeMusicVolume;
+        VolumePrefs.OnMusicVolumeChanged -= ChangeMusicVolume;
     }
     private void Start()
     {
