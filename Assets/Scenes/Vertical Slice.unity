@@ -124,6 +124,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7816693138705118247, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
   m_PrefabInstance: {fileID: 675576123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &96331274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -239.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1651.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Stair Access
+
+
+        [GUARD] Do you normally find yourself
+        crawling in between tight spaces?
+
+
+        [UNKNOWN Z] What?! Wait!
+
+
+        [GUARD]
+        You''ve got nowhere to crawl to now.
+
+
+        [GUARD] Hmph.
+
+
+        [GUARD]
+        I took care of one trying to escape through this way!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_Name
+      value: AlienLog (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
 --- !u!1001 &109377433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,9 +253,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: text
-      value: This island is so peaceful... this is where I'll rest. The dirt near
-        the patch of mushrooms looked like a good spot to dig. After I'm done, I'll
-        bury this treasure deep into the earth.
+      value: 'Moss Sanctuary
+
+
+        [UNKOWN X] This island is so peaceful... this
+        is where I''ll rest. The dirt near the patch of mushrooms looked like a good
+        spot to dig. I''ll bury this treasure deep into the earth.
+
+
+        [UNKOWN
+        Y] The guards have stopped coming after us. I suspect we won''t have enough
+        time here though, we must keep moving.
+
+
+        [UNKOWN X] That small island
+        is close enough to us. We''ll bury the last of what we have when we get there.'
       objectReference: {fileID: 0}
     - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: m_Name
@@ -545,6 +636,101 @@ Transform:
   m_Children: []
   m_Father: {fileID: 198033005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &319034035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1062531039}
+    m_Modifications:
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.647616
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.544989
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.972488
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238796
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268322
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Fischer''s Folly
+
+
+        [HERMIT] Heheheh! Those fools have been
+        running in circles going mad!
+
+
+        [HERMIT] The clueless little warden
+        must be frantic now, wondering where his treasures went.
+
+
+        [HERMIT]
+        The escaped prisoner took one, looks like to the sanctuary. Good luck getting
+        that back.
+
+
+        [HERMIT] Another, in my sweet little home. What''s in
+        it? Who knows. It serves nicely as a chair to be sure.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_Name
+      value: AlienLog
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+--- !u!4 &319034036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+  m_PrefabInstance: {fileID: 319034035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &369061066 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5636283333885857815, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
@@ -561,6 +747,86 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5291324415283522930, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
   m_PrefabInstance: {fileID: 9166617664817866794}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &421942521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -246.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1636.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Armory
+
+
+        [WARDEN] They''ve ransacked the place!
+
+
+        [GUARD]
+        Do you think they''re after the other treasures?
+
+
+        [WARDEN] We must
+        move the rest to the dungeons beneath this place and lock ourselves away.
+
+
+        [GUARD]
+        What about the escaped prisoners?
+
+
+        [WARDEN] We''ll have that angry
+        Admiral take care of it. Come meet me in the depths of this dungeon by sundown.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_Name
+      value: AlienLog
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
 --- !u!1001 &424451502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +1145,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8873706682188717120, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: text
+      value: 'Cicadia
+
+
+        [WARDEN] We''ll camp out here until we wait for the
+        prisoners leave the mossy island.
+
+
+        [ADMIRAL] Can''t we just magic-bomb
+        the whole island?
+
+
+        [WARDEN] It''s protected under bureaucracy. We
+        can still wait them out.
+
+
+        TIP: If you''re stranded, jumping off
+        the island will respawn you back on the ship.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1003,8 +1289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: text
-      value: There's no use digging here. This ground is solid stone. I'll have to
-        move on to the next island.
+      value: 'Canyon Lookout
+
+
+        [UNKNOWN] There''s no use digging here. This
+        ground is solid stone. I''ll have to move on to another island.'
       objectReference: {fileID: 0}
     - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: m_Name
@@ -1062,6 +1351,23 @@ PrefabInstance:
     - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Lower Dungeon Quarters
+
+
+        [WARDEN] Well, if that
+        mad Admiral finds us down here, we''re done for.
+
+
+        [GUARD] We''d
+        be cooked, like a hog on a spit.
+
+
+        [WARDEN] I could hear him going
+        mad at the gate upstairs, trying to find a way in. As long as that crazy
+        Hermit doesn''t tell him of any of the other ways to get in, we shall survive.'
       objectReference: {fileID: 0}
     - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: m_Name
@@ -1161,6 +1467,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7187406496674489471, guid: 8e3e63142058b9d43a53f5f9ece0c80e, type: 3}
   m_PrefabInstance: {fileID: 3048535494678519133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1062531039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8862708717018029776, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
+  m_PrefabInstance: {fileID: 1527476987}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1150062085
 PrefabInstance:
@@ -1331,6 +1642,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Dirt
       objectReference: {fileID: 0}
+    - target: {fileID: 71727143245604540, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Armory
+
+
+        [WARDEN] They''ve ransacked the place!
+
+
+        [GUARD]
+        Do you think they''re after the other treasures?
+
+
+        [WARDEN] We must
+        move the rest to the dungeons beneath this place and lock ourselves away.
+
+
+        [GUARD]
+        What about the escaped prisoners?
+
+
+        [WARDEN] We''ll have that angry
+        Admiral take care of it. Come meet me in the depths of this dungeon by sundown.'
+      objectReference: {fileID: 0}
     - target: {fileID: 177804649530058078, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
       value: Stone
@@ -1358,6 +1692,26 @@ PrefabInstance:
     - target: {fileID: 1235415767161719846, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: interactCooldownSeconds
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905245529245160724, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Main Foyer
+
+
+        [UNKNOWN X] Come quick! We must take
+        our artifacts home with us before we leave!
+
+
+        [UNKNOWN Y] Forget
+        the treasures! I only want to escape.
+
+
+        [UNKNOWN X] This will only
+        take a second. I''ll grab some weapons for us too.
+
+
+        [UNKNOWN Y]
+        Alright, Alright. I''ll be down the hall trying to break that door open.'
       objectReference: {fileID: 0}
     - target: {fileID: 2380832904610226315, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
@@ -1391,9 +1745,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Edelweiss
       objectReference: {fileID: 0}
+    - target: {fileID: 3897002831843396521, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Cells
+
+
+        [SOLDIER] That half-wit prison warden has
+        locked himself away with the rest of the treasure in the dungeon.
+
+
+        [ADMIRAL]
+        Find a way to open the gate! Now!
+
+
+        [SOLDIER] We can''t. The gate
+        is sealed shut.
+
+
+        [ADMIRAL] Then find another way!
+
+
+        [SOLDIER]
+        Yes, sir.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3928412162025729209, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934552019347650760, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 4251235523106619129, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: playerCameraHere
@@ -1455,6 +1836,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4993099161483970937, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993099161483970937, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.87
+      objectReference: {fileID: 0}
     - target: {fileID: 5263658695872226773, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
       value: Stone
@@ -1503,6 +1892,14 @@ PrefabInstance:
       propertyPath: TMProTextToReplace
       value: 
       objectReference: {fileID: 1973219078}
+    - target: {fileID: 6247639430145469436, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -73.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247639430145469436, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6260267552546793813, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: tooltipManager
       value: 
@@ -1523,6 +1920,42 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Dirt
       objectReference: {fileID: 0}
+    - target: {fileID: 7234207424211668001, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Breakroom
+
+
+        [UNKNOWN Y] We don''t have time to
+        mope around, let''s get out of here.
+
+
+        [UNKNOWN X] Look up, there''s
+        a way out. We can hopefully try to bust open that exit and see where it goes.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329885887615646422, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+      propertyPath: text
+      value: 'Edelweiss Island
+
+
+        [ADMIRAL]: Again? Where are you?
+
+
+        [WARDEN]:
+        I''m on the other side of the island. By my ship. One of them has treasure
+        from the armory. We can''t let them get away with it.
+
+
+        [WARDEN]:
+        We must find them in *one piece*.
+
+
+        [ADMIRAL]: I''m taking care of
+        the wizard right now. We will meet back here in the prison at sundown.
+
+
+        END
+        TRANSMISSION'
+      objectReference: {fileID: 0}
     - target: {fileID: 7591435556024703062, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
       value: Dirt
@@ -1541,7 +1974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849633941086532929, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.37
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 8867945018729243300, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       propertyPath: m_TagString
@@ -1569,6 +2002,7 @@ PrefabInstance:
     - {fileID: 2589667984196366487, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1253253471544108915, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
+    - {fileID: 2565879270571452259, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4983350648162324293, guid: f0bd7e92f31af8c4f95d0a6cced6008b, type: 3}
       insertIndex: -1
@@ -1606,6 +2040,10 @@ PrefabInstance:
     - target: {fileID: 4053085559899138088, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998470720437180898, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[7].renderer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7061209530339116083, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
       propertyPath: m_Name
@@ -1654,9 +2092,240 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3192403561083832424, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8862708717018029776, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 319034036}
+    - targetCorrespondingSourceObject: {fileID: 8862708717018029776, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634035}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1a1959f2d541c428c63f8e8e2d8f92, type: 3}
+--- !u!1001 &1568634034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1062531039}
+    m_Modifications:
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.013089582
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99991435
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 181.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_Name
+      value: Chest (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634042}
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634041}
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634040}
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634039}
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634038}
+    - targetCorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634037}
+  m_SourcePrefab: {fileID: 100100000, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+--- !u!4 &1568634035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1002039313208531687, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+  m_PrefabInstance: {fileID: 1568634034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1568634036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8929589423702217963, guid: 944bff624466e4242a3377fba75ddaf3, type: 3}
+  m_PrefabInstance: {fileID: 1568634034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568634037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e727dc1a18b645d6a56e51c8a8a6064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTarget: {fileID: 1568634041}
+  objectToSpawn: {fileID: 4521462654246050277, guid: 239f4675ce467864c8c9d5b410f76041, type: 3}
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  parent: {fileID: 0}
+  initializer: {fileID: 1568634042}
+  repeatable: 1
+--- !u!65 &1568634038
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.74}
+  m_Center: {x: 0, y: 0.24, z: 0}
+--- !u!114 &1568634039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 085c1d5d4ff4dc44db5ac3be0a3e894e, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
+--- !u!114 &1568634040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: dd3c6e17ec74c2b498d6bf1e30c8410f, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
+--- !u!114 &1568634041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionTooltip: Interact
+  interactSound: {fileID: 1568634040}
+  doCooldown: 1
+  interactCooldownSeconds: 1
+  CooldownReturnSound: {fileID: 1568634039}
+  requirements: {fileID: 0}
+  requirementTooltipText: Need key
+--- !u!114 &1568634042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e047c2e78b74e6512b365ec75d29c605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Congratulations, you''ve found my treasure. If you''re reading this... I
+    guess I should have done a better job hiding it.
+
+
+    - TREASURE FOUND -
+
+
+    There''s
+    three to be found in the archipelago...'
 --- !u!1001 &1702390724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2068,7 +2737,11 @@ MonoBehaviour:
     guess I should have done a better job hiding it.
 
 
-    - END OF PLAYTEST -'
+    - TREASURE FOUND -
+
+
+    There''s
+    three to be found in the archipelago...'
 --- !u!65 &1874360457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2266,6 +2939,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Edelweiss - Lower Dungeon
+
+
+        [GUARD A] Watch it! You''re on
+        the wrong floor.
+
+
+        [GUARD B] Where''s the waste pit?
+
+
+        [GUARD
+        A] It''s on the floor below us. And mind your step will you? We just chuck
+        our scite down the cloud so you won''t meet any solid ground for a ways down
+        there.'
+      objectReference: {fileID: 0}
     - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
       propertyPath: m_Name
       value: AlienLog (1)
@@ -2363,6 +3053,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1966737130}
     m_Modifications:
+    - target: {fileID: 1726958353948525285, guid: 600e3afe66cf5b045a65d88cb2d52e99, type: 3}
+      propertyPath: text
+      value: 'Fischer''s Lookout - Cabin
+
+
+        [HERMIT] Hahah! Such young soldiers
+        could never catch a great wizard like me.
+
+
+        [HERMIT] They miss their
+        great treasure which I found on a walk around the place! Kept safely under
+        my roof.
+
+
+        [HERMIT] I see them running to their ships with haste,
+        like little ants smelling bread.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848912342349435189, guid: 600e3afe66cf5b045a65d88cb2d52e99, type: 3}
+      propertyPath: text
+      value: 'Fischer''s Lookout
+
+
+        [ADMIRAL] That damned wizard!
+
+
+        [SOLDIER]
+        It''s obvious to be some conjuration. An illusion perhaps?
+
+
+        [WARDEN]
+        He knows what he''s doing. He''s been astral-projecting his island around
+        us for the past couple months and no doubt has been plotting something.
+
+
+        [ADMIRAL]
+        I won''t have any wizards astral-projecting islands on my watch. You can
+        return to your wardening duties, Molesworth. I''m taking my soldiers to hunt
+        this hermit down.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3016237019025494517, guid: 600e3afe66cf5b045a65d88cb2d52e99, type: 3}
       propertyPath: m_Name
       value: Fischer's Folly (Illusion)
@@ -2919,3 +3648,5 @@ SceneRoots:
   - {fileID: 198033005}
   - {fileID: 424451502}
   - {fileID: 426367594}
+  - {fileID: 421942521}
+  - {fileID: 96331274}
