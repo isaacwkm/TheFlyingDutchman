@@ -26,17 +26,43 @@ public class ZoneSound : MonoBehaviour
         // Register this sound with the AudioManager
         AudioManager.Instance.RegisterSound(this);
     }
+
+    private void OnEnable()
+    {
+        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged += ChangeMusicVolume;
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged -= ChangeMusicVolume;
+    }
+
+    public void AddMainMenuSoundSettingListeners()
+    {
+        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged += ChangeMusicVolume;
+    }
+
+    public void RemoveMainMenuSoundSettingListeners()
+    {
+        AudioManager.Instance.MainMenuSoundSettings.OnVolumeChanged -= ChangeMusicVolume;
+    }
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        targetVolume = soundVolume * ambientAndMusicMultiplier;
+    }
 
-        float userMusicVolumeMultiplier = 1.0f;
+    private void ChangeMusicVolume(float musicMultiplier){
+        if (!isMusic) return; // Don't do anything if this zone sound was not marked as music.
 
-        if (isMusic && globalVolumeSetting != null){
-            // GET GLOBAL VOLUME FLOAT VALUE HERE, AND SET IT TO MUSIC VOLUME MULTIPLIER
+
+        if (musicMultiplier > 1 || musicMultiplier < 0){
+            D.LogError("Attempted to set music volume out of bounds!", gameObject, "Any");
+            return;
         }
-        targetVolume = soundVolume * ambientAndMusicMultiplier * userMusicVolumeMultiplier;
-
+        D.Log($"Music Multiplier changed to: {musicMultiplier}", gameObject, "Aud");
+        targetVolume = soundVolume * ambientAndMusicMultiplier * musicMultiplier;
+        audioSource.volume = targetVolume;
     }
 
     private void Update()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+    [HideInInspector] public MainMenu MainMenuSoundSettings;
 
     private void Awake()
     {
