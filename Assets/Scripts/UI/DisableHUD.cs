@@ -5,7 +5,18 @@ public class DisableHUD : MonoBehaviour
     public CanvasGroup[] HUDElementsToToggles;
     private bool hudToggle = true;
 
-    public void toggleHUD(bool isActive)
+    public void ToggleHUD()
+    {
+        if (hudToggle == true)
+        {
+            SetActive(false);
+        }
+        else
+        {
+            SetActive(true);
+        }
+    }
+    public void SetActive(bool isActive)
     {
         hudToggle = isActive;
         float alphaOwl = 0; // Alpha value for the HUD element. Setting the CanvasGroup component of a HUD element enables an alpha value to be modified, which can be set to 0 to hide it (without disabling it).
@@ -19,7 +30,8 @@ public class DisableHUD : MonoBehaviour
             alphaOwl = 0;
         }
 
-        foreach (CanvasGroup HUDElement in HUDElementsToToggles){
+        foreach (CanvasGroup HUDElement in HUDElementsToToggles)
+        {
             HUDElement.alpha = alphaOwl;
         }
     }

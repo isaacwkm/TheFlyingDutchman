@@ -17,6 +17,7 @@ public class PlayerCharacterController : MonoBehaviour
     public Camera playerCamera;
     public Inventory inventoryComponent;
     public ActionSound SuperjumpSound;
+    public DisableHUD disableAndOrToggleHUD;
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float climbSpeed = 6f;
     [SerializeField] private float jumpPower = 7f;
@@ -105,6 +106,8 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Attack.performed += ctx => HandleAttackInput();
 
         inputActions.Player.Menu.canceled += ctx => HandleMenuInput();
+        inputActions.Player.CustomAction1.performed += ctx => HandleToggleHUD();
+        inputActions.Player.CustomAction2.performed += ctx => HandleToggleNOCLIP();
     }
 
     private void OnDisable()
@@ -137,6 +140,8 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Attack.performed -= ctx => HandleAttackInput();
 
         inputActions.Player.Menu.canceled -= ctx => HandleMenuInput();
+        inputActions.Player.CustomAction1.performed -= ctx => HandleToggleHUD();
+        inputActions.Player.CustomAction2.performed -= ctx => HandleToggleNOCLIP();
 
         inputActions.Player.Disable();
     }
@@ -493,6 +498,13 @@ public class PlayerCharacterController : MonoBehaviour
             inputActions.Player.Sprint.canceled -= onSprintCancelled;
             isSprinting = false;
         }
+    }
+
+    private void HandleToggleHUD(){
+        disableAndOrToggleHUD.ToggleHUD();
+    }
+    private void HandleToggleNOCLIP(){
+
     }
 
 
