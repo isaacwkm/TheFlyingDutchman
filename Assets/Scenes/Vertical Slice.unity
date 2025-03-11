@@ -413,6 +413,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
   m_PrefabInstance: {fileID: 204603883}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &205940956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 171596702667157013, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e05e22ffe0bc3745bdd988c676f1915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &250644755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2868,6 +2879,10 @@ PrefabInstance:
       propertyPath: sceneStartSpawn
       value: 
       objectReference: {fileID: 2066888185}
+    - target: {fileID: 7413195310463255404, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: disableAndOrToggleHUD
+      value: 
+      objectReference: {fileID: 205940956}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
