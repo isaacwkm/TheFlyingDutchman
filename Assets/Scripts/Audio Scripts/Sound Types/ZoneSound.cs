@@ -49,7 +49,7 @@ public class ZoneSound : MonoBehaviour
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        targetVolume = soundVolume * ambientAndMusicMultiplier;
+        ChangeMusicVolume(VolumePrefs.musicVolume);
     }
 
     private void ChangeMusicVolume(float musicMultiplier){
