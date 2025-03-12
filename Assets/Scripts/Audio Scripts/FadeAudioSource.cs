@@ -22,9 +22,9 @@ public static class FadeAudioSource {
             audioSource.volume = Mathf.Lerp(startVolume, targetVolume, currentTime / duration);
             yield return null;
         }
-        /*if (audioSource.volume == 0){
+        if (audioSource.volume == 0){
             audioSource.Stop();
-        }*/
+        }
         /* ^ If we do this, music won't start when muted in settings, and therefore will remain muted even if the setting changes.
          * We can find a more elegant solution than just always playing the music at zero volume
          * when we're under less time crunch */
