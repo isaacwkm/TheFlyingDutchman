@@ -11,7 +11,8 @@ public class PlayerCharacterController : MonoBehaviour
     private enum MovementMode
     {
         Normal,
-        Ladder
+        Ladder,
+        Noclip
     }
 
     public Camera playerCamera;
@@ -31,6 +32,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField] private float crouchSpeed = 3f;
     [SerializeField] private float sprintMultiplier = 2f; // How much the walkspeed is multiplied by while sprinting.
     [SerializeField] private float maxInteractDistance = 2f;
+    [SerializeField] private float noclipSpeed = 10f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -156,7 +158,12 @@ public class PlayerCharacterController : MonoBehaviour
         {
             UpdateOnLadder();
         }
+        else if (movementMode == MovementMode.Noclip)
+        {
+            UpdateNoClip();
+        }
     }
+
 
     void UpdateNormal()
     {
@@ -183,6 +190,30 @@ public class PlayerCharacterController : MonoBehaviour
         justLanded = false;
         wasGrounded = true;
     }
+
+    void UpdateNoClip()
+    {
+        // Camera (mouse) movement handling
+        if (InputModeManager.Instance?.inputMode == InputModeManager.InputMode.Player)
+        {
+            HandleCameraRotation();
+        }
+
+        // Movement handling below
+        float speed = isSprinting ? noclipSpeed * 4 : noclipSpeed; // Sprinting increases speed
+        Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
+
+        // Handle vertical movement using Jump and Crouch inputs
+        if (isJumping) move.y = 1f;
+        if (isCrouching) move.y = -1f;
+
+        // Convert to world space
+        move = transform.TransformDirection(move) * speed;
+
+        // Move the player
+        transform.position += move * Time.deltaTime;
+    }
+
 
     private void MovePlayer()
     {
@@ -256,11 +287,11 @@ public class PlayerCharacterController : MonoBehaviour
                 // first, displace away from ladder to prevent jump from landing right back onto it instantly
                 if (isRope)
                 {
-                    characterController.Move(0.5f*transform.forward);
+                    characterController.Move(0.5f * transform.forward);
                 }
                 else
                 {
-                    characterController.Move(0.5f*movementMedium.transform.forward);
+                    characterController.Move(0.5f * movementMedium.transform.forward);
                 }
                 // then, jump
                 RestoreMovementMode();
@@ -500,13 +531,23 @@ public class PlayerCharacterController : MonoBehaviour
         }
     }
 
-    private void HandleToggleHUD(){
+    private void HandleToggleHUD()
+    {
         disableAndOrToggleHUD.ToggleHUD();
     }
-    private void HandleToggleNOCLIP(){
-
+    private void HandleToggleNOCLIP()
+    {
+        if (movementMode == MovementMode.Noclip)
+        {
+            movementMode = MovementMode.Normal;
+            characterController.enabled = true; // Re-enable collisions
+        }
+        else
+        {
+            movementMode = MovementMode.Noclip;
+            characterController.enabled = false; // Disable collisions
+        }
     }
-
 
     // Getters & Setters
 
