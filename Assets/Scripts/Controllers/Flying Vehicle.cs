@@ -68,7 +68,8 @@ public class FlyingVehicle : MonoBehaviour
         // Bind actions to methods and store them
         movePerformedAction = ctx => xzMovementInput = ctx.ReadValue<Vector2>();
         moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
-        lookPerformedAction = ctx => lookInput = ctx.ReadValue<Vector2>();
+        lookPerformedAction = ctx =>
+            lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
         lookCanceledAction = ctx => lookInput = Vector2.zero;
         zoomPerformedAction = ctx => zoomInput = ctx.ReadValue<float>();
         zoomCanceledAction = ctx => zoomInput = 0.0f;

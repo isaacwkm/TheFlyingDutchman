@@ -84,7 +84,8 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Move.performed += ctx => movementInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
 
-        inputActions.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
+        inputActions.Player.Look.performed +=
+            ctx => lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
         inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
 
         enableJumping(true); // Eventually the goal is to replace all the other event listeners with something like this, but only when that needs comes.
@@ -118,7 +119,8 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Move.performed -= ctx => movementInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled -= ctx => movementInput = Vector2.zero;
 
-        inputActions.Player.Look.performed -= ctx => lookInput = ctx.ReadValue<Vector2>();
+        inputActions.Player.Look.performed -=
+            ctx => lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
         inputActions.Player.Look.canceled -= ctx => lookInput = Vector2.zero;
 
         enableJumping(false);
