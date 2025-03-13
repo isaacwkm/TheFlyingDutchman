@@ -2078,6 +2078,7 @@ GameObject:
   - component: {fileID: 3785976297486030495}
   - component: {fileID: 657047850420250706}
   - component: {fileID: 5719383148682877584}
+  - component: {fileID: 1236712728745597573}
   m_Layer: 0
   m_Name: Settings - (Persistent Data Only)
   m_TagString: Untagged
@@ -2160,6 +2161,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95737441f689b428a5206dc9ed8d913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1236712728745597573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086418614636497552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7837100ecf59f35b6846a684fce11668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indoorCheckStart: {fileID: 8951693862962133624}
+  indoorCheckDistance: 30
+  renderVolume: {fileID: 2835726503704994609}
+  defaultProfile: {fileID: 11400000, guid: ab09877e2e707104187f6f83e2f62510, type: 2}
+  highContrastIndoorProfile: {fileID: 11400000, guid: fd53910d0878190ad99b08341ffbcde5, type: 2}
+  highContrastOutdoorProfile: {fileID: 11400000, guid: e909c1ef97b9c064aaab1928e05c80b3, type: 2}
 --- !u!1001 &7430450122235974846
 PrefabInstance:
   m_ObjectHideFlags: 0
