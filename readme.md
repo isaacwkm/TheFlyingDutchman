@@ -76,7 +76,7 @@
 
 The Flying Dutchman is an immersive puzzle exploration game, where you can explore a variety of long-forgotten floating islands. Set sail to the skies and visit a variety of unique islands each with their own secrets to uncover.
 
-The Flying Dutchman was developed at UC: Santa Cruz over the course of 10 weeks as part of the CS: Game Design capstone course. The main objective of this project was to deliver a vertical slice of an original game concept.
+This project was developed at UC: Santa Cruz over the course of 10 weeks as part of the CS: Game Design capstone course. The main objective of this project was to deliver a vertical slice of an original game concept.
 
 <a href="https://github.com/isaacwkm/TheFlyingDutchman">View Trailer</a>
 
