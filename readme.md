@@ -73,6 +73,9 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+The Flying Dutchman is an immersive puzzle exploration game, where you can explore a variety of long-forgotten floating islands. Set sail to the skies and visit a variety of unique islands each with their own secrets to uncover.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -106,30 +109,11 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] CMPM 172 (Spring 2025)
+    - [ ] Project is planned to continue into Spring 2025.
+    - [ ] Currently proposing features with our TA (Jawad).
 
 See the [open issues](https://github.com/isaacwkm/TheFlyingDutchman/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,11 +122,17 @@ Don't forget to give the project a star! Thanks again!
 ## Contact
 
 Join our Discord: [Discord Link](https://discord.gg/kFq6dWcs9c)
+
 Contact for questions and feedback:
+
 @saxxie - Isaac
+
 @alphaowl - Garrett
+
 @blujai831 - Jaime
+
 @sushisuwa - Jalen
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,9 +141,9 @@ Contact for questions and feedback:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Graeme Devine and Tyler Coleman, our instructors at UCSC who made this project possible
+* Our playtesters from CMPM 171: James Milestone, Ezra Frary, Lo Weislak, Brady Lin, Jacky Chen, Kellum Inglin, Brendan Tsang, and more. Let us know if we missed you!
+* And everyone else who provided support and encouragement <3
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
