@@ -118,6 +118,7 @@ public class ControlsMenu : UIStack.Context
     {
         base.OnDisable();
         CleanupRebindOperation();
+        LookSensPrefs.SavePrefs();
         ControlRebindPrefs.SaveRebinds();
     }
 
@@ -129,6 +130,13 @@ public class ControlsMenu : UIStack.Context
     void Start()
     {
         Populate();
+        LookSensPrefs.LoadPrefs();
+        mouseSensitivitySlider.value = LookSensPrefs.mouseSensitivity;
+        mouseSensitivitySlider.onValueChanged.AddListener(value =>
+            LookSensPrefs.mouseSensitivity = value);
+        rightStickSensitivitySlider.value = LookSensPrefs.rightStickSensitivity;
+        rightStickSensitivitySlider.onValueChanged.AddListener(value =>
+            LookSensPrefs.rightStickSensitivity = value);
         backButton.onClick.AddListener(() => Return());
     }
 
