@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(EventSystem))]
 public class UIStack : MonoBehaviour
 {
     public class WrongContextException : ApplicationException
@@ -27,6 +31,7 @@ public class UIStack : MonoBehaviour
     public abstract class Context : MonoBehaviour
     {
         private UIStack owner = null;
+        private Action<InputAction.CallbackContext> uiCancelAction;
 
         public void SetOwner(UIStack owner)
         {
@@ -74,11 +79,39 @@ public class UIStack : MonoBehaviour
                 return owner.returned;
             }
         }
+
+        protected EventSystem GetEventSystem()
+        {
+            return owner?.eventSystem;
+        }
+
+        virtual protected bool CanDismiss()
+        {
+            return true;
+        }
+
+        virtual protected void Awake()
+        {
+            uiCancelAction = _ => { if (CanDismiss()) Return(); };
+        }
+
+        virtual protected void OnEnable()
+        {
+            var inputActions = InputModeManager.Instance.inputActions;
+            inputActions.UI.Cancel.canceled += uiCancelAction;
+        }
+
+        virtual protected void OnDisable()
+        {
+            var inputActions = InputModeManager.Instance.inputActions;
+            inputActions.UI.Cancel.canceled -= uiCancelAction;
+        }
     }
 
     private InputModeManager inputMan;
     public InputModeManager.InputMode inputModeBeforeUI { get; private set; }
     private Stack<Context> stack;
+    private EventSystem eventSystem;
 
     public Context context { get { return stack.Count <= 0 ? null : stack.Peek(); } }
     public object returned { get; private set; }
@@ -89,6 +122,7 @@ public class UIStack : MonoBehaviour
         inputMan = InputModeManager.Instance;
         inputModeBeforeUI = inputMan.inputMode;
         stack = new();
+        eventSystem = GetComponent<EventSystem>();
     }
 
     public GameObject Call(GameObject uiPrefab)
