@@ -15,21 +15,28 @@ public class MainMenu : UIStack.Context
 
     private InputModeManager inputMan;
 
-    private void Awake()
+    override protected void Awake()
     {
+        base.Awake();
         inputMan = InputModeManager.Instance;
     }
 
-    private void OnEnable()
+    override protected void OnEnable()
     {
-        // TODO: certain UI input actions should navigate or close menu
-        // w/o requiring use of on-screen buttons
+        base.OnEnable();
+        // If we're enabling and start doesn't run afterward,
+        // that means we're enabling from being disabled,
+        // which means we're coming back from a submenu.
+        // The only submenu is the controls rebind submenu.
+        // If start does run afterward, it will override this selection operation
+        GetEventSystem()?.SetSelectedGameObject(rebindControlsButton.gameObject);
     }
 
-    private void Start()
+    void Start()
     {
         // TODO: implement functionality:
         //      highContrastToggle
+        GetEventSystem().SetSelectedGameObject(fullScreenToggle.gameObject);
         fullScreenToggle.isOn = FullScreenPref.LoadPref();
         fullScreenToggle.onValueChanged.AddListener((state) => FullScreenPref.SavePref(state));
         VolumePrefs.LoadPrefs();

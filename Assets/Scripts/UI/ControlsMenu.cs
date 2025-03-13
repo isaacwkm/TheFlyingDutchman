@@ -51,14 +51,21 @@ public class ControlsMenu : UIStack.Context
             SetControlLabel(binding.ToDisplayString());
         }
 
+        private void AfterRebind()
+        {
+            menu.CleanupRebindOperation();
+            UpdateControlLabel();
+        }
+
         private void Rebind()
         {
             menu.CleanupRebindOperation();
+            menu.inputMan.DisableAllControls(); // so that UI controls can be rebound
             SetControlLabel("Listening...");
             menu.currentRebindingOperation =
                 action.PerformInteractiveRebinding(index)
-                    .OnComplete(_ => UpdateControlLabel())
-                    .OnCancel(_ => UpdateControlLabel())
+                    .OnComplete(_ => AfterRebind())
+                    .OnCancel(_ => AfterRebind())
                     .Start();
         }
 
@@ -95,25 +102,31 @@ public class ControlsMenu : UIStack.Context
     private InputActionRebindingExtensions.RebindingOperation currentRebindingOperation = null;
     private List<ActionBindUI> actionBindUIs;
 
-    private void Awake()
+    override protected void Awake()
     {
+        base.Awake();
         inputMan = InputModeManager.Instance;
         inputActions = inputMan.inputActions;
     }
 
-    private void OnEnable()
+    override protected void OnEnable()
     {
-        // TODO: certain UI input actions should navigate or close menu
-        // w/o requiring use of on-screen buttons
+        base.OnEnable();
     }
 
-    private void OnDisable()
+    override protected void OnDisable()
     {
+        base.OnDisable();
         CleanupRebindOperation();
         ControlRebindPrefs.SaveRebinds();
     }
 
-    private void Start()
+    override protected bool CanDismiss()
+    {
+        return currentRebindingOperation == null;
+    }
+
+    void Start()
     {
         Populate();
         backButton.onClick.AddListener(() => Return());
@@ -121,6 +134,7 @@ public class ControlsMenu : UIStack.Context
 
     private void CleanupRebindOperation()
     {
+        inputMan.SwitchToUIControls();
         if (
             currentRebindingOperation != null &&
             !currentRebindingOperation.completed &&
@@ -168,6 +182,31 @@ public class ControlsMenu : UIStack.Context
             y + 48.0f
         );
         mainArea.ForceUpdateRectTransforms();
+        for (int i = 0; i < actionBindUIs.Count; i++)
+        {
+            ControlsMenuEntry menuEntryPrev = null, menuEntryCurr, menuEntryNext = null;
+            if (i > 0) menuEntryPrev = actionBindUIs[i - 1].menuEntry;
+            menuEntryCurr = actionBindUIs[i].menuEntry;
+            if (i < actionBindUIs.Count - 1) menuEntryNext = actionBindUIs[i + 1].menuEntry;
+            if (menuEntryPrev == null)
+            {
+                ControlsMenuEntry.ConnectNavigation(rightStickSensitivitySlider, menuEntryCurr);
+            }
+            else
+            {
+                ControlsMenuEntry.ConnectNavigation(menuEntryPrev, menuEntryCurr);
+            }
+            if (menuEntryNext == null)
+            {
+                ControlsMenuEntry.ConnectNavigation(menuEntryCurr, backButton);
+            }
+            else
+            {
+                ControlsMenuEntry.ConnectNavigation(menuEntryCurr, menuEntryNext);
+            }
+
+        }
+        GetEventSystem().SetSelectedGameObject(mouseSensitivitySlider.gameObject);
     }
 
     void Update()
