@@ -2,6 +2,7 @@ using Needle.Console;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
+[RequireComponent(typeof(FloatPropertyInterpolator))]
 public class ZoneSound : MonoBehaviour
 {
     public GameObject globalVolumeSetting;
@@ -16,6 +17,7 @@ public class ZoneSound : MonoBehaviour
     public float secondsToStayInZoneBeforePlaying = 1;
     [HideInInspector]
     public AudioSource audioSource;
+    private FloatPropertyInterpolator fader;
     private float ambientAndMusicMultiplier = 0.8f; // Private multiplier (decided by developer) to all music volume towards this value.
     private float targetVolume; // Final target volume after formulas and multipliers
     private bool staying = false;
@@ -49,6 +51,8 @@ public class ZoneSound : MonoBehaviour
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        fader = GetComponent<FloatPropertyInterpolator>();
+        fader.SetTarget(audioSource, "volume");
         ChangeMusicVolume(VolumePrefs.musicVolume);
     }
 
@@ -68,6 +72,10 @@ public class ZoneSound : MonoBehaviour
     private void Update()
     {
         checkStaying();
+        if (!staying && audioSource.volume < 0.001f)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -88,7 +96,7 @@ public class ZoneSound : MonoBehaviour
     {
         staying = false;
         currentStayTime = 0;
-        StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, 0));
+        fader.SetWithDuration(0.0f, fadeDuration);
     }
 
     private void playSound()
@@ -97,11 +105,11 @@ public class ZoneSound : MonoBehaviour
         audioSource.clip = envMusicClip;
         audioSource.volume = 0;
         audioSource.Play();
-        StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeDuration, targetVolume));
+        fader.SetWithDuration(targetVolume, fadeDuration);
     }
     private float getCurrentPlayingVolume()
     {
-        return FadeAudioSource.GetCurrentVolume();
+        return audioSource.volume;
     }
 
     private void checkStaying()
