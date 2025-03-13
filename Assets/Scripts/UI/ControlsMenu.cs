@@ -47,6 +47,7 @@ public class ControlsMenu : UIStack.Context
 
         private void UpdateControlLabel()
         {
+            binding = action.bindings[index];
             SetControlLabel(binding.ToDisplayString());
         }
 
@@ -72,6 +73,14 @@ public class ControlsMenu : UIStack.Context
             action.RemoveBindingOverride(index);
             UpdateControlLabel();
         }
+
+        public void Update()
+        {
+            if (menu.currentRebindingOperation == null)
+            {
+                UpdateControlLabel();
+            }
+        }
     }
 
     [SerializeField] private RectTransform mainArea;
@@ -84,6 +93,7 @@ public class ControlsMenu : UIStack.Context
     private InputModeManager inputMan;
     private InputSystem_Actions inputActions;
     private InputActionRebindingExtensions.RebindingOperation currentRebindingOperation = null;
+    private List<ActionBindUI> actionBindUIs;
 
     private void Awake()
     {
@@ -125,6 +135,7 @@ public class ControlsMenu : UIStack.Context
 
     private void Populate()
     {
+        actionBindUIs = new();
         float y = 96.0f;
         foreach (var actionMap in inputActions.asset.actionMaps)
         {
@@ -135,6 +146,7 @@ public class ControlsMenu : UIStack.Context
                     if (!binding.isComposite)
                     {
                         var abui = new ActionBindUI();
+                        actionBindUIs.Add(abui);
                         abui.menu = this;
                         abui.menuEntry = Instantiate(menuEntryPrefab);
                         var rt = abui.menuEntry.GetComponent<RectTransform>();
@@ -156,5 +168,13 @@ public class ControlsMenu : UIStack.Context
             y + 48.0f
         );
         mainArea.ForceUpdateRectTransforms();
+    }
+
+    void Update()
+    {
+        foreach (var abui in actionBindUIs)
+        {
+            abui.Update();
+        }
     }
 }
