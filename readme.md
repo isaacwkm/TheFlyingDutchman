@@ -216,11 +216,11 @@ Project Link: [https://github.com/isaacwkm/TheFlyingDutchma](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
-[contributors-url]: https://github.com/isaacwkm/TheFlyingDutchma/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
+[contributors-url]: https://github.com/isaacwkm/TheFlyingDutchman/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
 [forks-url]: https://github.com/isaacwkm/TheFlyingDutchma/network/members
-[stars-shield]: https://img.shields.io/github/stars/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
 [stars-url]: https://github.com/isaacwkm/TheFlyingDutchma/stargazers
 [issues-shield]: https://img.shields.io/github/issues/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
 [issues-url]: https://github.com/isaacwkm/TheFlyingDutchma/issues
