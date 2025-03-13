@@ -27,12 +27,15 @@ public class FloatPropertyInterpolator : MonoBehaviour
 
     void Start()
     {
-        SetTarget(targetComponent, targetProperty);
+        if (targetComponent != null)
+        {
+            SetTarget(targetComponent, targetProperty);
+        }
     }
 
     void Update()
     {
-        if (currentValue != targetValue)
+        if (propRef != null && currentValue != targetValue)
         {
             float diffSignBefore = Mathf.Sign(targetValue - currentValue);
             currentValue += speed*Time.deltaTime*diffSignBefore;
