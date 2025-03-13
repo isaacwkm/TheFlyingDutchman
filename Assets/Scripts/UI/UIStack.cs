@@ -56,18 +56,33 @@ public class UIStack : MonoBehaviour
         public GameObject Call(GameObject uiPrefab)
         {
             AssertIsContext();
-            return owner.Call(uiPrefab);
+            return ForceCall(uiPrefab);
         }
 
         public T Call<T>(T uiPrefab) where T : Component
         {
             AssertIsContext();
-            return owner.Call(uiPrefab);
+            return ForceCall(uiPrefab);
         }
 
         public void Return(object returned = null)
         {
             AssertIsContext();
+            ForceReturn(returned);
+        }
+
+        public GameObject ForceCall(GameObject uiPrefab)
+        {
+            return owner.Call(uiPrefab);
+        }
+
+        public T ForceCall<T>(T uiPrefab) where T : Component
+        {
+            return owner.Call(uiPrefab);
+        }
+
+        public void ForceReturn(object returned = null)
+        {
             owner.Return(returned);
         }
 
@@ -78,11 +93,6 @@ public class UIStack : MonoBehaviour
                 AssertIsContext();
                 return owner.returned;
             }
-        }
-
-        protected EventSystem GetEventSystem()
-        {
-            return owner?.eventSystem;
         }
 
         virtual protected bool CanDismiss()

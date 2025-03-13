@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
 
@@ -12,6 +13,7 @@ public class MainMenu : UIStack.Context
     [SerializeField] private Button backToGameButton;
     [SerializeField] private Button backToOSButton;
     [SerializeField] private ControlsMenu controlsMenuPrefab;
+    [SerializeField] private UIStack.Context confirmQuitPrefab;
 
     private InputModeManager inputMan;
 
@@ -29,14 +31,14 @@ public class MainMenu : UIStack.Context
         // which means we're coming back from a submenu.
         // The only submenu is the controls rebind submenu.
         // If start does run afterward, it will override this selection operation
-        GetEventSystem()?.SetSelectedGameObject(rebindControlsButton.gameObject);
+        EventSystem.current?.SetSelectedGameObject(rebindControlsButton.gameObject);
     }
 
     void Start()
     {
         // TODO: implement functionality:
         //      highContrastToggle
-        GetEventSystem().SetSelectedGameObject(fullScreenToggle.gameObject);
+        EventSystem.current?.SetSelectedGameObject(fullScreenToggle.gameObject);
         fullScreenToggle.isOn = FullScreenPref.LoadPref();
         fullScreenToggle.onValueChanged.AddListener((state) => FullScreenPref.SavePref(state));
         VolumePrefs.LoadPrefs();
@@ -52,7 +54,7 @@ public class MainMenu : UIStack.Context
         });
         rebindControlsButton.onClick.AddListener(() => Call(controlsMenuPrefab));
         backToGameButton.onClick.AddListener(() => Return());
-        // TODO: implement backToOSButton listener
+        backToOSButton.onClick.AddListener(() => Call(confirmQuitPrefab));
     }
 
 }

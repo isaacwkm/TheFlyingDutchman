@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -228,7 +229,7 @@ public class ControlsMenu : UIStack.Context
             }
 
         }
-        GetEventSystem().SetSelectedGameObject(mouseSensitivitySlider.gameObject);
+        EventSystem.current?.SetSelectedGameObject(mouseSensitivitySlider.gameObject);
     }
 
     void Update()
