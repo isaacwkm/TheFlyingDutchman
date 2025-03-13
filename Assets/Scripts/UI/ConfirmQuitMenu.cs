@@ -18,7 +18,7 @@ public class ConfirmQuitMenu : UIStack.Context
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(backButton.gameObject);
-        // TODO: implement saveAndQuitButton
+        saveAndQuitButton.onClick.AddListener(() => { ProgressPref.SavePref(); Misc.Quit(); });
         quitWithoutSavingButton.onClick.AddListener(() => Misc.Quit());
         backButton.onClick.AddListener(() => Return());
     }
