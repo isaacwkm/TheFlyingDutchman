@@ -96,6 +96,13 @@
 **Garrett Yu:** (Level Design, Art Direction)
 
 **Jalen Suwa:** (Audio, Programming, Writing)
+
+### Contributor Github Links:
+
+<a href="https://github.com/isaacwkm/TheFlyingDutchma/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=isaacwkm/TheFlyingDutchman" alt="contrib.rocks image" />
+</a>
+
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -169,22 +176,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Top contributors:
-
-<a href="https://github.com/isaacwkm/TheFlyingDutchma/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=isaacwkm/TheFlyingDutchman" alt="contrib.rocks image" />
-</a>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the project_license. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
