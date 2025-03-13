@@ -160,7 +160,7 @@ Contact for questions and feedback:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Graeme Devine and Tyler Coleman, our instructors at UCSC who made this project possible
+* Graeme Devine and Tyler Coleman, our instructors at UCSC who made this project possible,
 * Our playtesters from CMPM 171: James Milestone, Ezra Frary, Lo Weislak, Brady Lin, Jacky Chen, Kellum Inglin, Brendan Tsang, and more. Let us know if we missed you!
 * And everyone else who provided support and encouragement <3
 
