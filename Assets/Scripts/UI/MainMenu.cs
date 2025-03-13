@@ -41,6 +41,11 @@ public class MainMenu : UIStack.Context
         EventSystem.current?.SetSelectedGameObject(fullScreenToggle.gameObject);
         fullScreenToggle.isOn = FullScreenPref.LoadPref();
         fullScreenToggle.onValueChanged.AddListener((state) => FullScreenPref.SavePref(state));
+        highContrastToggle.isOn = HighContrastPref.LoadPref();
+        highContrastToggle.onValueChanged.AddListener((state) => {
+            HighContrastPref.highContrast = state;
+            HighContrastPref.SavePref();
+        });
         VolumePrefs.LoadPrefs();
         masterVolumeSlider.value = VolumePrefs.masterVolume;
         masterVolumeSlider.onValueChanged.AddListener((value) => {
