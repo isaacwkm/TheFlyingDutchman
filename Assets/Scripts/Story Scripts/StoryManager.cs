@@ -16,7 +16,12 @@ public class StoryManager : MonoBehaviour
     void Start()
     {
         playerTransform = SceneCore.playerCharacter.transform;
-        playStoryScene(1);
+        //playStoryScene(1);
+    }
+
+    public int currentStorySceneID
+    {
+        get { return currentStoryScene.getStorySceneID(); }
     }
 
     public void playNextStoryScene()
