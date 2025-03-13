@@ -18,10 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -33,8 +29,6 @@
 
   <p align="center">
     UC: Santa Cruz - CMPM 171 - A 10-week game design studio
-    <br />
-    <a href="https://github.com/isaacwkm/TheFlyingDutchman"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/isaacwkm/TheFlyingDutchman">View Trailer</a>
@@ -93,6 +87,7 @@
 
 <!-- GETTING STARTED -->
 ## Collaborators
+[![Contributors][contributors-shield]][contributors-url]
 
 **Isaac Kim:** (Programming, Production)
 
