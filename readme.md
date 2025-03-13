@@ -133,7 +133,7 @@ You can play the game by downloading the files on itch.io. [Download page](https
 1. Unzip the downloaded file
 2. Open the unzipped folder and find "The Flying Dutchman.exe" within it
 3. Launch the file and the game should start.
-4. If you encounter any bugs or issues, contact us below.
+4. If you encounter any bugs or issues, you can contact us below.
 
 <!-- CONTACT -->
 ## Contact
