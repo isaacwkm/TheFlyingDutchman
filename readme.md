@@ -109,7 +109,7 @@ The Flying Dutchman is an immersive puzzle exploration game, where you can explo
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] CMPM 172 (Spring 2025)
+- [X] CMPM 172 (Spring 2025)
     - [ ] Project is planned to continue into Spring 2025.
     - [ ] Currently proposing features with our TA (Jawad).
 
