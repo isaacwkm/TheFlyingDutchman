@@ -135,6 +135,8 @@ You can play the game by downloading the files on itch.io. [Download page](https
 3. Launch the file and the game should start.
 4. If you encounter any bugs or issues, you can contact us below.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTACT -->
 ## Contact
 
