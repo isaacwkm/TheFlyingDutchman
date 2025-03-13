@@ -99,53 +99,9 @@
 
 ### Contributor Github Links:
 
-<a href="https://github.com/isaacwkm/TheFlyingDutchma/graphs/contributors">
+<a href="https://github.com/isaacwkm/TheFlyingDutchman/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=isaacwkm/TheFlyingDutchman" alt="contrib.rocks image" />
 </a>
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/isaacwkm/TheFlyingDutchman.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin isaacwkm/TheFlyingDutchman
-   git remote -v # confirm the changes
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -155,7 +111,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/isaacwkm/TheFlyingDutchma/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/isaacwkm/TheFlyingDutchman/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,9 +137,12 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/isaacwkm/TheFlyingDutchma](https://github.com/isaacwkm/TheFlyingDutchma)
+Join our Discord: [Discord Link](https://discord.gg/kFq6dWcs9c)
+Contact for questions and feedback:
+@saxxie - Isaac
+@alphaowl - Garrett
+@blujai831 - Jaime
+@sushisuwa - Jalen
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,13 +164,13 @@ Project Link: [https://github.com/isaacwkm/TheFlyingDutchma](https://github.com/
 [contributors-shield]: https://img.shields.io/github/contributors/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
 [contributors-url]: https://github.com/isaacwkm/TheFlyingDutchman/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
-[forks-url]: https://github.com/isaacwkm/TheFlyingDutchma/network/members
+[forks-url]: https://github.com/isaacwkm/TheFlyingDutchman/network/members
 [stars-shield]: https://img.shields.io/github/stars/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
-[stars-url]: https://github.com/isaacwkm/TheFlyingDutchma/stargazers
-[issues-shield]: https://img.shields.io/github/issues/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
-[issues-url]: https://github.com/isaacwkm/TheFlyingDutchma/issues
-[license-shield]: https://img.shields.io/github/license/isaacwkm/TheFlyingDutchma.svg?style=for-the-badge
-[license-url]: https://github.com/isaacwkm/TheFlyingDutchma/blob/master/LICENSE.txt
+[stars-url]: https://github.com/isaacwkm/TheFlyingDutchman/stargazers
+[issues-shield]: https://img.shields.io/github/issues/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
+[issues-url]: https://github.com/isaacwkm/TheFlyingDutchman/issues
+[license-shield]: https://img.shields.io/github/license/isaacwkm/TheFlyingDutchman.svg?style=for-the-badge
+[license-url]: https://github.com/isaacwkm/TheFlyingDutchman/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/Screenshot_140.png
