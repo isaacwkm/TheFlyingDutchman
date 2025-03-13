@@ -121,6 +121,19 @@ See the [open issues](https://github.com/isaacwkm/TheFlyingDutchman/issues) for 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- WHERE TO PLAY -->
+## Where to play
+
+You can play the game by downloading the files on itch.io. [Download page](https://saxxiefone.itch.io/flydutch-playtest)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- INSTALLATION -->
+## After Downloading
+
+1. Unzip the downloaded file
+2. Open the unzipped folder and find "The Flying Dutchman.exe" within it
+3. Launch the file and the game should start.
+4. If you encounter any bugs or issues, contact us below.
 
 <!-- CONTACT -->
 ## Contact
