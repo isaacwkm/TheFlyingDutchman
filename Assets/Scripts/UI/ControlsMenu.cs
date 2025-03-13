@@ -28,15 +28,27 @@ public class ControlsMenu : UIStack.Context
 
         private void SetBindingLabel()
         {
+            string deviceTypes;
+            if (binding.groups == null)
+            {
+                deviceTypes = "";
+            }
+            else
+            {
+                deviceTypes = " (" +
+                    String.Join(", ", binding.groups.Split(";",
+                        StringSplitOptions.RemoveEmptyEntries
+                    )) + ")";
+            }
             if (binding.isPartOfComposite)
             {
                 menuEntry.inputActionLabel.text =
-                    $"{actionMap.name} {action.name} {binding.name}";
+                    $"{actionMap.name} {action.name} {binding.name}{deviceTypes}";
             }
             else
             {
                 menuEntry.inputActionLabel.text =
-                    $"{actionMap.name} {action.name}";
+                    $"{actionMap.name} {action.name}{deviceTypes}";
             }
         }
 
@@ -48,7 +60,9 @@ public class ControlsMenu : UIStack.Context
         private void UpdateControlLabel()
         {
             binding = action.bindings[index];
-            SetControlLabel(binding.ToDisplayString());
+            SetControlLabel(binding.ToDisplayString(
+                InputBinding.DisplayStringOptions.DontOmitDevice
+            ));
         }
 
         private void AfterRebind()
