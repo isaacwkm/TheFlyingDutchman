@@ -102,7 +102,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 **Garrett Yu:** (Level Design, Art Direction)
 
-**Jalen Suwa:** (Audio, Programming, Writing)
+**Jalen Suwa:** (Audio, Programming, QA and Playtest Coordinator)
 
 ### Contributor Github Links:
 
