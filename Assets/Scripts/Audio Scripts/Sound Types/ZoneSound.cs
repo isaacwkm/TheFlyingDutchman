@@ -53,20 +53,23 @@ public class ZoneSound : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         fader = GetComponent<FloatPropertyInterpolator>();
         fader.SetTarget(audioSource, "volume");
-        ChangeMusicVolume(VolumePrefs.musicVolume);
+        ChangeVolume(isMusic ? VolumePrefs.musicVolume : 1.0f);
+    }
+
+    private void ChangeVolume(float multiplier)
+    {
+        if (multiplier > 1 || multiplier < 0){
+            D.LogError("Attempted to set volume multiplier out of bounds!", gameObject, "Any");
+            return;
+        }
+        D.Log($"Multiplier changed to: {multiplier}", gameObject, "Aud");
+        targetVolume = soundVolume * ambientAndMusicMultiplier * multiplier;
+        audioSource.volume = targetVolume;
     }
 
     private void ChangeMusicVolume(float musicMultiplier){
         if (!isMusic) return; // Don't do anything if this zone sound was not marked as music.
-
-
-        if (musicMultiplier > 1 || musicMultiplier < 0){
-            D.LogError("Attempted to set music volume out of bounds!", gameObject, "Any");
-            return;
-        }
-        D.Log($"Music Multiplier changed to: {musicMultiplier}", gameObject, "Aud");
-        targetVolume = soundVolume * ambientAndMusicMultiplier * musicMultiplier;
-        audioSource.volume = targetVolume;
+        ChangeVolume(musicMultiplier);
     }
 
     private void Update()
