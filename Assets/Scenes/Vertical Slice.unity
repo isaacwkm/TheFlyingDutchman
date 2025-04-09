@@ -764,6 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a309d1ace1e8444b920d821031368b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameplayHUD: {fileID: 0}
 --- !u!1 &356062901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,6 +3619,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 68050117179590513, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8816dfa1a5615ac458fd9bc91b288e27, type: 2}
     - target: {fileID: 562176261401278593, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
       propertyPath: doCooldown
       value: 1
@@ -3682,6 +3687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3785178697070871507, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f0d4647bc78f94d4b86eecdc356ae6ac, type: 2}
     - target: {fileID: 5636283333885857815, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
       propertyPath: ShipCreak
       value: 
@@ -3698,6 +3707,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6736253285338589837, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f13d1c6a7f282240bc4c07342736b64, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4023527520652493237, guid: 3a8a6ca3c328d614097dc549431ea707, type: 3}
