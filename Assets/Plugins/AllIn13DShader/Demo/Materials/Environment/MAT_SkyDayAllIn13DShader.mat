@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_SkyDayAllIn13DShader
   m_Shader: {fileID: 4800000, guid: a7ddfe7ba2a3b7e40b00cea3ed9584ba, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ENABLECLOUDS_ON
   - _ENABLEGRADIENT_ON
@@ -20,6 +22,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -66,7 +69,7 @@ Material:
     - _CloudMovement: {r: 0.1, g: 0.05, b: 0.5, a: 0.3}
     - _CloudParams: {r: 0.5, g: 2, b: 0.5, a: 1}
     - _CloudScales: {r: 8, g: 12, b: 0.3, a: 0.1}
-    - _CloudSpeed: {r: 0.15, g: 0, b: 0.07, a: 0}
+    - _CloudSpeed: {r: 0.02, g: 0, b: 0.01, a: 0}
     - _GlowColor: {r: 1, g: 0.95, b: 0.8, a: 1}
     - _MiddleColor: {r: 0.76, g: 0.85, b: 0.95, a: 1}
     - _SkyColor: {r: 0.5, g: 0.7, b: 1, a: 1}
@@ -74,3 +77,4 @@ Material:
     - _SunParams: {r: 0.05, g: 4, b: 3, a: 0}
     - _TopColor: {r: 0.33999997, g: 0.52, b: 0.87, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
