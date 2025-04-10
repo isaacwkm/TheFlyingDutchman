@@ -26,15 +26,15 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALBEDOVERTEXCOLORMODE_REPLACE
-  - _ALPHA_CUTOFF_ON
   - _CAST_SHADOWS_ON
   - _COLORRAMPLIGHTINGSTAGE_AFTERLIGHTING
   - _GREYSCALESTAGE_BEFORELIGHTING
   - _HEIGHTGRADIENTPOSITIONSPACE_LOCAL
-  - _LIGHTMODEL_CLASSIC
+  - _LIGHTMODEL_TOON
   - _MATCAPBLENDMODE_MULTIPLY
   - _NORMAL_MAP_ON
   - _OUTLINETYPE_NONE
+  - _POSTERIZE_ON
   - _REFLECTIONS_NONE
   - _RIMLIGHTINGSTAGE_BEFORELIGHTING
   - _SHADINGMODEL_BASIC
@@ -152,7 +152,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 120df76dc2d17ed4cb2d4b8b08292ed9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TexBlendingMask:
@@ -198,7 +198,7 @@ Material:
     - _AlbedoVertexColorMode: 1
     - _AlbedoVertexColorOn: 0
     - _AlphaClip: 0
-    - _AlphaCutoffOn: 1
+    - _AlphaCutoffOn: 0
     - _AlphaCutoffValue: 0.25
     - _AlphaRoundOn: 0
     - _AlphaToMask: 0
@@ -301,7 +301,7 @@ Material:
     - _IntersectionFadeFactor: 1
     - _IntersectionFadeOn: 0
     - _IntersectionGlowOn: 0
-    - _LightModel: 1
+    - _LightModel: 2
     - _Matcap: 0
     - _MatcapBlend: 1
     - _MatcapBlendMode: 0
@@ -317,7 +317,7 @@ Material:
     - _MinRim: 0
     - _NormalInfluence: 0.5
     - _NormalMapEnabled: 1
-    - _NormalStrength: 1
+    - _NormalStrength: 0.15
     - _OcclusionStrength: 1
     - _OutlineMode: 6
     - _OutlineThickness: 3
@@ -325,9 +325,9 @@ Material:
     - _Parallax: 0.005
     - _Pixelate: 0
     - _PixelateSize: 32
-    - _Posterize: 0
+    - _Posterize: 1
     - _PosterizeGamma: 0.75
-    - _PosterizeNumColors: 3
+    - _PosterizeNumColors: 4
     - _QueueOffset: 0
     - _RecalculateNormals: 0
     - _ReceiveShadows: 1
@@ -355,7 +355,7 @@ Material:
     - _SpecularAtten: 0.5
     - _SpecularHighlights: 1
     - _SpecularModel: 2
-    - _SpecularToonCutoff: 0.35
+    - _SpecularToonCutoff: 1
     - _SpecularToonSmoothness: 0
     - _SpherizeNormals: 0
     - _SrcBlend: 1
