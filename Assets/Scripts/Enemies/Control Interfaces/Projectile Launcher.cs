@@ -11,6 +11,12 @@ public class ProjectileLauncher : MonoBehaviour
      * (Alternatively, for one-time overrides,
      * an alternative projectile to instantiate can be passed to Launch.) */
     [SerializeField] public Rigidbody projectile = null;
+    /* Game object to try to hit.
+     * Note that this property is public: other scripts can change it.
+     * Depending on how the script using this control interface is implemented,
+     * it may or may not make sense to leave this null
+     * (as the caller script might be responsible for setting it). */
+    [SerializeField] public Transform aimTargetObject = null;
 
     // Visual effects object to spawn alongside projectile. May be null.
     [SerializeField] private GameObject vfx = null;
@@ -47,7 +53,12 @@ public class ProjectileLauncher : MonoBehaviour
      * there are two caveats in its use:
      * -    you can assign null to it even though it's a Vector3;
      * -    when you read it back, you have to check for null,
-     *      and/or cast to a pure Vector3 if you're sure. */
+     *      and/or cast to a pure Vector3 if you're sure.
+     * Directly setting this property while aimTargetObject is not null
+     * will appear to have little to no effect,
+     * because this property will immediately be overwritten
+     * with aimTargetObject's position.
+     * Instead, use the Aim methods. */
     public Vector3? aimTarget
     {
         get => _aimTarget;
@@ -97,6 +108,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (aimTargetObject) aimTarget = aimTargetObject.position;
         TurnToAim(Time.deltaTime);
         if (cooldownTimer > 0.0f) cooldownTimer -= Time.deltaTime;
     }
@@ -376,22 +388,40 @@ public class ProjectileLauncher : MonoBehaviour
         }
     }
 
-    // Various clarity wrappers for setting aimTarget.
+    /* Targets the given point.
+     * If we were targeting a dynamic object,
+     * it is no longer targeted.
+     * If snap is true, immediately turns to aim at the point. */
     public void Aim(Vector3 target, bool snap = false)
     {
+        aimTargetObject = null;
         aimTarget = target;
         if (snap) TurnToAim();
     }
+
+    /* Targets the given object.
+     * If snap is true, immediately turns to aim at the object. */
     public void Aim(GameObject target, bool snap = false)
     {
-        Aim(target.transform.position, snap);
+        aimTargetObject = target.transform;
+        if (snap)
+        {
+            aimTarget = aimTargetObject.position;
+            TurnToAim();
+        }
     }
+
+    /* Targets the object to which the given component is attached.
+     * If snap is true, immediately turns to aim at the object. */
     public void Aim<T>(T target, bool snap = false) where T : Component
     {
         Aim(target.gameObject, snap);
     }
+    // Ceases targeting any object or point.
+
     public void Disarm()
     {
+        aimTargetObject = null;
         aimTarget = null;
     }
 }
