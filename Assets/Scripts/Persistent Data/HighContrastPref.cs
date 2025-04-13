@@ -9,6 +9,7 @@ public class HighContrastPref : MonoBehaviour
     [SerializeField] private VolumeProfile defaultProfile;
     [SerializeField] private VolumeProfile highContrastIndoorProfile;
     [SerializeField] private VolumeProfile highContrastOutdoorProfile;
+    private bool hasChangedVolumeProfile;
 
     public static bool highContrast;
 
