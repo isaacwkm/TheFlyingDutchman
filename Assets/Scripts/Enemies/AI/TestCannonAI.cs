@@ -4,10 +4,14 @@ public class TestCannonAI : MonoBehaviour
 {
     [SerializeField] ProjectileLauncher launcher;
 
+    void Start()
+    {
+        launcher.Aim(SceneCore.playerCharacter);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        launcher.Aim(SceneCore.playerCharacter);
         if (launcher.aimTargetInLineOfFire) launcher.Launch();
     }
 }
