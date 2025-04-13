@@ -10,6 +10,8 @@ public class HighContrastPref : MonoBehaviour
     [SerializeField] private VolumeProfile highContrastIndoorProfile;
     [SerializeField] private VolumeProfile highContrastOutdoorProfile;
 
+    private bool hasChangedVolumeProfile;
+
     public static bool highContrast;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

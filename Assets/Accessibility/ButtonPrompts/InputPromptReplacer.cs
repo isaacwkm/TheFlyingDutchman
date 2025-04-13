@@ -5,6 +5,7 @@ using TMPro;
 using Needle.Console;
 using System;
 using UnityEngine.UI;
+using NUnit.Framework.Constraints;
 
 // Apply component to a ButtonPromptZone (Game Object with a trigger collider)
 
@@ -23,6 +24,8 @@ public class InputPromptReplacer : MonoBehaviour
     private static readonly Regex effectivePathRegex = new Regex(@"^<(?<device>[^>]+)>\/(?<input>.+)$");
     private InputModeManager inputManager;
     private InputSystem_Actions inputActions;
+
+    private string[] validKeysForIconDisplay = {"space", "e"};
 
     void Awake()
     {
@@ -61,7 +64,38 @@ public class InputPromptReplacer : MonoBehaviour
         D.Log($"GetSpriteTag() - Device: {effectivePath.device} and Input: {effectivePath.input}", gameObject, "Able");
 
         string spriteTagName = $"<sprite name=\"{effectivePath.device}_{effectivePath.input}\">"; // Sprite tag follow a naming convention outlined in this expression
+        
+        if (!isInValidKeys(effectivePath.input))
+        {
+            spriteTagName = MakeFallbackInputString(effectivePath.input);
+        }
+
+        D.Log(spriteTagName);
+
         return spriteTagName;
+    }
+
+    private bool isInValidKeys(string inputKey)
+    {
+        inputKey.ToLower();
+
+        foreach(string key in validKeysForIconDisplay)
+        {
+            if (inputKey == key)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private string MakeFallbackInputString(string inputKey)
+    {
+        string str = inputKey;
+
+        str = "[" + str + "]";
+
+        return str;
     }
 
     private (string device, string input) parseEffectivePath(string effectivePath)
