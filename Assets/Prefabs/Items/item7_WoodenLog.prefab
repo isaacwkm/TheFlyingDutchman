@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1967206285100293678
+--- !u!1 &2324030988356910140
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4647867110646986095}
-  - component: {fileID: 124086583083898592}
-  - component: {fileID: 5047366107596714968}
-  - component: {fileID: 5844257775548942638}
-  - component: {fileID: 1674800819011853428}
-  - component: {fileID: 2948725232661390451}
-  - component: {fileID: 461940007531757816}
-  - component: {fileID: 4551974014849976149}
-  - component: {fileID: 777050005863779452}
-  m_Layer: 0
-  m_Name: Log Meshes and Scripts
+  - component: {fileID: 5802274359778651317}
+  - component: {fileID: 8357684718868694311}
+  - component: {fileID: 8220343564016885528}
+  - component: {fileID: 10972340140252759}
+  - component: {fileID: 5953727851981847419}
+  - component: {fileID: 6769308082913500313}
+  - component: {fileID: 2634683615942459584}
+  - component: {fileID: 5306266438034125071}
+  - component: {fileID: 907832119745337619}
+  m_Layer: 11
+  m_Name: item7_WoodenLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4647867110646986095
+--- !u!4 &5802274359778651317
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0.4859787, y: -0.4859787, z: 0.5136387, w: 0.5136387}
+  m_LocalPosition: {x: -328.21, y: 12.69, z: 1725.82}
+  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 5476504542978858802}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!33 &124086583083898592
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -86.83, z: 90}
+--- !u!33 &8357684718868694311
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5047366107596714968
+--- !u!23 &8220343564016885528
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,13 +92,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5844257775548942638
+--- !u!114 &10972340140252759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
@@ -111,13 +111,13 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
---- !u!54 &1674800819011853428
+--- !u!54 &5953727851981847419
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -138,13 +138,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2948725232661390451
+--- !u!65 &6769308082913500313
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -159,28 +159,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &461940007531757816
+--- !u!114 &2634683615942459584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00974eea802affd448409ba5ac47e0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultRotation: {x: 0, y: 0, z: 0, w: 1}
-  dropSound: {fileID: 777050005863779452}
+  dropSound: {fileID: 907832119745337619}
   itemID: 1
---- !u!114 &4551974014849976149
+--- !u!114 &5306266438034125071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 561f26b04e946f24c9f87b9e680246bf, type: 3}
@@ -191,13 +191,13 @@ MonoBehaviour:
   heldRotationOffset: {x: 0, y: 0, z: 0}
   hasAttack: 0
   attackAnimName: 
---- !u!114 &777050005863779452
+--- !u!114 &907832119745337619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967206285100293678}
+  m_GameObject: {fileID: 2324030988356910140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
@@ -209,35 +209,3 @@ MonoBehaviour:
   pitch: 1
   spatialBlend: 1
   audioSource: {fileID: 0}
---- !u!1 &5650966067333670809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5476504542978858802}
-  m_Layer: 0
-  m_Name: item7_WoodenLog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5476504542978858802
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5650966067333670809}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.6872777, z: 0, w: 0.72639483}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4647867110646986095}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -86.83, z: 0}
