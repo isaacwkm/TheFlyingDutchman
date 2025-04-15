@@ -6,7 +6,7 @@ public class ProgressPref : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LoadPref();
+        //LoadPref();
     }
 
     public static int progress
