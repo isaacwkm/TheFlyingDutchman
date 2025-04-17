@@ -36,6 +36,9 @@ public class LogManager : MonoBehaviour
 
     [Header("Story Manager Logs")]
     public bool logStory = true;
+
+    [Header("Combat Logs")]
+    public bool logCombat = true;
     
     private static LogManager instance;
 
@@ -72,7 +75,7 @@ public class LogManager : MonoBehaviour
         categoryStates["Item"] = logItem; // interaction system
         categoryStates["Move"] = logMove; // player character movement and abilities
         categoryStates["Story"] = logMove; // story manager
-        
+        categoryStates["Combat"] = logCombat;
     }
 
     public static bool ShouldLog(string category)
