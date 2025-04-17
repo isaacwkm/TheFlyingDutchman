@@ -25,10 +25,10 @@ public class SailFlap : MonoBehaviour
         float wobble = Mathf.PerlinNoise(Time.time * 0.3f,     seed + 50f);
         float n      = Mathf.Clamp01(baseN * wobble);
 
-        // ----- Intensity → min / max range around 1.0 -----
-        float delta = flapIntensity * 0.1f;      // 5   → 0.5
-        float minY  = 1f - delta;                // 0.5
-        float maxY  = 1f + delta;                // 1.5
+        // ----- Intensity → range centered around 1.0 -----
+        float delta = flapIntensity * 0.1f;      // 1 intensity = 10% scale transform ... 10 intenstiy = 100% scale transform
+        float minY  = 1f - delta;                // lower range
+        float maxY  = 1f + delta;                // upper range
         // --------------------------------------------------
 
         float y = Mathf.Lerp(minY, maxY, n);
