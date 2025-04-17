@@ -22,7 +22,7 @@ public class SyncTransform : MonoBehaviour
             if (characterController) characterController.enabled = whether;
         }
         public void setPosition(Vector3 where) {
-            transform.position = where;
+            if (transform) transform.position = where;
             if (rigidbody) rigidbody.position = where;
         }
     }
@@ -46,7 +46,10 @@ public class SyncTransform : MonoBehaviour
     void Update()
     {
         foreach (var body in bodiesInfluenced) {
-            body.relPosn = target.InverseTransformPoint(body.transform.position);
+            if (body.transform)
+            {
+                body.relPosn = target.InverseTransformPoint(body.transform.position);
+            }
         }
         target.rotation = transform.rotation*angularOffset;
         target.position = transform.position + (
@@ -65,12 +68,14 @@ public class SyncTransform : MonoBehaviour
         if (other.gameObject != this.gameObject && (
             other.GetComponent<Rigidbody>() ||
             other.GetComponent<CharacterController>()
-        )) {
+        ) && !other.GetComponent<Projectile>()) {
             bodiesInfluenced.Add(new BodyInfluenced(other.gameObject));
         }
     }
 
     void OnTriggerExit(Collider other) {
-        bodiesInfluenced.RemoveAll((body) => (body.transform.gameObject == other.gameObject));
+        bodiesInfluenced.RemoveAll((body) =>
+            body.transform &&
+            (body.transform.gameObject == other.gameObject));
     }
 }

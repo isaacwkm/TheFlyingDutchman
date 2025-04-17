@@ -18,10 +18,8 @@ public class ProjectileLauncher : MonoBehaviour
      * (as the caller script might be responsible for setting it). */
     [SerializeField] public Transform aimTargetObject = null;
 
-    // Visual effects object to spawn alongside projectile. May be null.
-    [SerializeField] private GameObject vfx = null;
-    // Audio source that should play a sound effect on launch. May be null.
-    [SerializeField] private AudioSource sfx = null;
+    // Effects object to spawn alongside projectile. May be null.
+    [SerializeField] private TemporaryGameObject effectOnLaunch = null;
     // Point where the projectile spawns from, relative to the launcher.
     [SerializeField] private Vector3 projectileSpawnOffset = Vector3.zero;
     // Initial speed of projectile when launched.
@@ -372,15 +370,15 @@ public class ProjectileLauncher : MonoBehaviour
                 launchSpeed*rbody.transform.forward*rbody.mass,
                 ForceMode.Impulse
             );
-            // instantiate vfx
-            if (vfx != null)
+            var cProjectile = rbody.GetComponent<Projectile>();
+            if (cProjectile != null)
             {
-                Instantiate(vfx, spawnPosition, spawnRotation);
+                cProjectile.source = this.gameObject;
             }
-            // play launch sound
-            if (sfx != null && sfx.clip != null)
+            // instantiate fx
+            if (effectOnLaunch != null)
             {
-                sfx.Play();
+                Instantiate(effectOnLaunch, spawnPosition, spawnRotation);
             }
             // raise event
             launch?.Invoke(rbody);
