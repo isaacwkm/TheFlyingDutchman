@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8809821045258752791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bdb6dd14f6f00478b0543e3f8446e7, type: 3}
+  m_Name: '[SCPE] ColorizeRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-4337898287697947633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb63c1c7a70fdec43bce754fd048e801, type: 3}
+  m_Name: '[SCPE] EdgeDetectionRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+    reconstructDepthNormals: 1
+    skipTransparents: 0
 --- !u!114 &-3451721532299398937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,6 +54,23 @@ MonoBehaviour:
     alwaysEnable: 0
     cameraTypes: 5
     skipTransparents: 1
+--- !u!114 &-1405768562527492761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eced444a8188a4f94851928211fd41, type: 3}
+  m_Name: '[SCPE] SharpenRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +101,11 @@ MonoBehaviour:
   - {fileID: -3451721532299398937}
   - {fileID: 3423753515752851953}
   - {fileID: 8285339557445146148}
+  - {fileID: -1405768562527492761}
+  - {fileID: 73955211992035688}
+  - {fileID: 7280638287315072592}
+  - {fileID: -8809821045258752791}
+  - {fileID: -4337898287697947633}
   m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
@@ -74,6 +132,23 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &73955211992035688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bfa6474aabeb14da9963ae803e9607, type: 3}
+  m_Name: '[SCPE] LUTRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &3423753515752851953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +223,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   posterizeDitherMaterial: {fileID: 0}
+--- !u!114 &7280638287315072592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb509713f3bc55438a47e05ae9adb8c, type: 3}
+  m_Name: '[SCPE] TiltShiftRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &7833122117494664109
 MonoBehaviour:
   m_ObjectHideFlags: 0
