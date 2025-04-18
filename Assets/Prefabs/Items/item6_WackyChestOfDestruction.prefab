@@ -258,8 +258,10 @@ MonoBehaviour:
   itemIDPleaseDoNotChange: 6
   heldPositionOffset: {x: 0, y: 0, z: 0}
   heldRotationOffset: {x: 0, y: 0, z: 0}
+  hasInteractAnim: 0
+  interactAnimNames: []
   hasAttack: 0
-  attackAnimName: 
+  attackAnimNames: []
 --- !u!114 &354358330794339219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 58a7040bc929f4784af9200bf8cde0f4, type: 3}
-  volume: 0.05
+  volume: 0.1
   pitch: 1
   spatialBlend: 1
   audioSource: {fileID: 0}

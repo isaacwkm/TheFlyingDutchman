@@ -254,6 +254,6 @@ public class Inventory : MonoBehaviour
         if (nothingEquipped()) return;
 
         ActiveItem activeItemComponent = currentItem().GetComponent<ActiveItem>();
-        activeItemComponent.doAttack();
+        activeItemComponent.doAttackAnim();
     }
 }

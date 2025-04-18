@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -337.45462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1711.061
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       propertyPath: m_LocalRotation.w
@@ -182,6 +182,9 @@ MonoBehaviour:
   itemIDPleaseDoNotChange: 5
   heldPositionOffset: {x: 0.1, y: -0.5, z: 0.2}
   heldRotationOffset: {x: 0, y: -10, z: 0}
-  handAnim: {fileID: 0}
+  hasInteractAnim: 1
+  interactAnimNames:
+  - Dig
   hasAttack: 1
-  attackAnimName: Dig
+  attackAnimNames:
+  - Right Swing

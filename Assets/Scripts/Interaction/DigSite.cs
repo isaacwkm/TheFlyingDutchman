@@ -49,7 +49,7 @@ public class DigSite : MonoBehaviour
         GameObject currItem = playerInv.currentItem();
         ActiveItem activeItem = currItem.GetComponent<ActiveItem>();
 
-        activeItem.doAttack(forcePlayAnim: true); // Performs dig animation and interrupts any ongoing hand animation.
+        activeItem.doInteractionAnim(forcePlayAnim: true); // Performs dig animation and interrupts any ongoing hand animation.
 
         StartCoroutine(updateDigProgress());
     }

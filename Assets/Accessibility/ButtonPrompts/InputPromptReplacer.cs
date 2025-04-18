@@ -25,7 +25,7 @@ public class InputPromptReplacer : MonoBehaviour
     private InputModeManager inputManager;
     private InputSystem_Actions inputActions;
 
-    private string[] validKeysForIconDisplay = {"space", "e"};
+    private string[] validKeysForIconDisplay = {"w", "a", "s", "d", "space", "e", "f", "t", "shift", "leftControl", "escape", "q"};
 
     void Awake()
     {
@@ -61,7 +61,7 @@ public class InputPromptReplacer : MonoBehaviour
 
         (string device, string input) effectivePath = parseEffectivePath(dynamicBinding.effectivePath); // Grabs the effective path using Unity's API, then parses it into two separate strings, excluding all the weird symbols by using Regex.
 
-        D.Log($"GetSpriteTag() - Device: {effectivePath.device} and Input: {effectivePath.input}", gameObject, "Able");
+        //D.Log($"GetSpriteTag() - Device: {effectivePath.device} and Input: {effectivePath.input}", gameObject, "Able");
 
         string spriteTagName = $"<sprite name=\"{effectivePath.device}_{effectivePath.input}\">"; // Sprite tag follow a naming convention outlined in this expression
         
@@ -69,8 +69,6 @@ public class InputPromptReplacer : MonoBehaviour
         {
             spriteTagName = MakeFallbackInputString(effectivePath.input);
         }
-
-        D.Log(spriteTagName);
 
         return spriteTagName;
     }
