@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8062821858163414663
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ce1611ace1a9a4a8284d45a924bdcd, type: 3}
+  m_Name: Dithering
+  m_EditorClassIdentifier: 
+  active: 1
+  lut:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 7a95f13299f9b0948aff699c1881bfc6, type: 3}
+    dimension: 1
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+  luminanceThreshold:
+    m_OverrideState: 0
+    m_Value: 0.5
+  tiling:
+    m_OverrideState: 0
+    m_Value: 1
+  shader: {fileID: 4800000, guid: 9dfd4d129fd660d43a2fb5c40d119ca4, type: 3}
 --- !u!114 &-7893295128165547882
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -685,6 +712,8 @@ MonoBehaviour:
   - {fileID: 6955723609883834674}
   - {fileID: -4998621929713613478}
   - {fileID: 7074093590456825322}
+  - {fileID: 8943082094178954260}
+  - {fileID: -8062821858163414663}
 --- !u!114 &347059751725081726
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -910,7 +939,7 @@ MonoBehaviour:
     m_Value: 1
   edgeOpacity:
     m_OverrideState: 1
-    m_Value: 0.254
+    m_Value: 0.4
   sobelThin:
     m_OverrideState: 1
     m_Value: 0
@@ -941,3 +970,38 @@ MonoBehaviour:
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
+--- !u!114 &8943082094178954260
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c209da0407915e4cb0f4fcd7b31a446, type: 3}
+  m_Name: AmbientOcclusion2D
+  m_EditorClassIdentifier: 
+  active: 1
+  aoOnly:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+  luminanceThreshold:
+    m_OverrideState: 0
+    m_Value: 0.05
+  distance:
+    m_OverrideState: 0
+    m_Value: 0.3
+  blurAmount:
+    m_OverrideState: 1
+    m_Value: 2
+  iterations:
+    m_OverrideState: 0
+    m_Value: 4
+  downscaling:
+    m_OverrideState: 0
+    m_Value: 2
+  shader: {fileID: 4800000, guid: e6dfd97d0036974448658a80b2ae413b, type: 3}
