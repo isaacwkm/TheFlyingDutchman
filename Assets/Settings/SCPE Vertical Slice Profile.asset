@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5851524771983187666
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e1b3a3f18dad1429c9ecc7e1db2274, type: 3}
+  m_Name: Sunshafts
+  m_EditorClassIdentifier: 
+  active: 1
+  useCasterColor:
+    m_OverrideState: 1
+    m_Value: 1
+  useCasterIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+  blendMode:
+    m_OverrideState: 1
+    m_Value: 0
+  resolution:
+    m_OverrideState: 1
+    m_Value: 4
+  highQuality:
+    m_OverrideState: 1
+    m_Value: 1
+  sunThreshold:
+    m_OverrideState: 1
+    m_Value: {r: 0.5345911, g: 0.5345911, b: 0.5345911, a: 1}
+  sunColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  sunShaftIntensity:
+    m_OverrideState: 1
+    m_Value: 0.3
+  falloff:
+    m_OverrideState: 1
+    m_Value: 0.5
+  length:
+    m_OverrideState: 1
+    m_Value: 6.01
+  noiseStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  shader: {fileID: 4800000, guid: d21c9f9666e2f7e4eb9e6fc9dc414999, type: 3}
+--- !u!114 &-5079818015307450881
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74483714bbf784b45b0c9c7c76035dd8, type: 3}
+  m_Name: Fog
+  m_EditorClassIdentifier: 
+  active: 1
+  useSceneSettings:
+    m_OverrideState: 1
+    m_Value: 0
+  fogMode:
+    m_OverrideState: 1
+    m_Value: 3
+  globalDensity:
+    m_OverrideState: 1
+    m_Value: 0.21
+  fogStartDistance:
+    m_OverrideState: 1
+    m_Value: 100
+  fogEndDistance:
+    m_OverrideState: 0
+    m_Value: 600
+  colorSource:
+    m_OverrideState: 1
+    m_Value: 2
+  fogColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.76, g: 0.94, b: 1, a: 1}
+  fogColorGradient:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  gradientDistance:
+    m_OverrideState: 0
+    m_Value: 1000
+  gradientUseFarClipPlane:
+    m_OverrideState: 0
+    m_Value: 1
+  distanceFog:
+    m_OverrideState: 1
+    m_Value: 1
+  distanceDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  useRadialDistance:
+    m_OverrideState: 1
+    m_Value: 1
+  horizonMinMax:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0.536842}
+  skyboxInfluence:
+    m_OverrideState: 0
+    m_Value: 1
+  enableDirectionalLight:
+    m_OverrideState: 0
+    m_Value: 1
+  useLightDirection:
+    m_OverrideState: 0
+    m_Value: 1
+  useLightColor:
+    m_OverrideState: 0
+    m_Value: 1
+  useLightIntensity:
+    m_OverrideState: 0
+    m_Value: 1
+  lightColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0.89, b: 0.55, a: 1}
+  lightDirection:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0.5, z: -1}
+  lightIntensity:
+    m_OverrideState: 0
+    m_Value: 1
+  lightExponent:
+    m_OverrideState: 0
+    m_Value: 8
+  heightFog:
+    m_OverrideState: 1
+    m_Value: 1
+  height:
+    m_OverrideState: 1
+    m_Value: 1.1
+  heightDensity:
+    m_OverrideState: 1
+    m_Value: 0.75
+  heightFogNoise:
+    m_OverrideState: 1
+    m_Value: 1
+  heightNoiseTex:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 82a8d5f38e2ccf44c86362214b2d3e5e, type: 3}
+    dimension: 1
+  heightNoiseSize:
+    m_OverrideState: 0
+    m_Value: 0.25
+  heightNoiseStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  heightNoiseSpeed:
+    m_OverrideState: 0
+    m_Value: 2
+  lightScattering:
+    m_OverrideState: 0
+    m_Value: 0
+  scatterIntensity:
+    m_OverrideState: 0
+    m_Value: 10
+  scatterThreshold:
+    m_OverrideState: 0
+    m_Value: 1
+  scatterDiffusion:
+    m_OverrideState: 0
+    m_Value: 10
+  scatterSoftKnee:
+    m_OverrideState: 0
+    m_Value: 0.5
+  shader: {fileID: 4800000, guid: 8080b34b2281e8945a5ddfe687d717fb, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: SCPE Vertical Slice Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -5079818015307450881}
+  - {fileID: -5851524771983187666}

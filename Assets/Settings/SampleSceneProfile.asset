@@ -47,6 +47,130 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-6782934023637365714
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74483714bbf784b45b0c9c7c76035dd8, type: 3}
+  m_Name: Fog
+  m_EditorClassIdentifier: 
+  active: 1
+  useSceneSettings:
+    m_OverrideState: 0
+    m_Value: 0
+  fogMode:
+    m_OverrideState: 1
+    m_Value: 3
+  globalDensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+  fogStartDistance:
+    m_OverrideState: 1
+    m_Value: 0
+  fogEndDistance:
+    m_OverrideState: 0
+    m_Value: 600
+  colorSource:
+    m_OverrideState: 1
+    m_Value: 2
+  fogColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.76, g: 0.94, b: 1, a: 1}
+  fogColorGradient:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  gradientDistance:
+    m_OverrideState: 0
+    m_Value: 1000
+  gradientUseFarClipPlane:
+    m_OverrideState: 0
+    m_Value: 1
+  distanceFog:
+    m_OverrideState: 0
+    m_Value: 1
+  distanceDensity:
+    m_OverrideState: 0
+    m_Value: 1
+  useRadialDistance:
+    m_OverrideState: 0
+    m_Value: 1
+  horizonMinMax:
+    m_OverrideState: 1
+    m_Value: {x: 0.47967494, y: 1}
+  skyboxInfluence:
+    m_OverrideState: 1
+    m_Value: 0.4
+  enableDirectionalLight:
+    m_OverrideState: 0
+    m_Value: 0
+  useLightDirection:
+    m_OverrideState: 1
+    m_Value: 1
+  useLightColor:
+    m_OverrideState: 1
+    m_Value: 1
+  useLightIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  lightColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0.89, b: 0.55, a: 1}
+  lightDirection:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0.5, z: -1}
+  lightIntensity:
+    m_OverrideState: 0
+    m_Value: 1
+  lightExponent:
+    m_OverrideState: 1
+    m_Value: 8
+  heightFog:
+    m_OverrideState: 1
+    m_Value: 1
+  height:
+    m_OverrideState: 1
+    m_Value: 0
+  heightDensity:
+    m_OverrideState: 1
+    m_Value: 0.3
+  heightFogNoise:
+    m_OverrideState: 1
+    m_Value: 1
+  heightNoiseTex:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 82a8d5f38e2ccf44c86362214b2d3e5e, type: 3}
+    dimension: 1
+  heightNoiseSize:
+    m_OverrideState: 1
+    m_Value: 0.25
+  heightNoiseStrength:
+    m_OverrideState: 1
+    m_Value: 1
+  heightNoiseSpeed:
+    m_OverrideState: 1
+    m_Value: 2
+  lightScattering:
+    m_OverrideState: 0
+    m_Value: 0
+  scatterIntensity:
+    m_OverrideState: 0
+    m_Value: 10
+  scatterThreshold:
+    m_OverrideState: 0
+    m_Value: 1
+  scatterDiffusion:
+    m_OverrideState: 0
+    m_Value: 10
+  scatterSoftKnee:
+    m_OverrideState: 0
+    m_Value: 0.5
+  shader: {fileID: 4800000, guid: 8080b34b2281e8945a5ddfe687d717fb, type: 3}
 --- !u!114 &-6672245872332769721
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -95,6 +219,49 @@ MonoBehaviour:
   contribution:
     m_OverrideState: 1
     m_Value: 0.381
+--- !u!114 &-4998621929713613478
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b72aa2546c25764e8eb85a8bbfc41e4, type: 3}
+  m_Name: LUT
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
+  startFadeDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  endFadeDistance:
+    m_OverrideState: 0
+    m_Value: 1000
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.6
+  lutNear:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 846791e1f1182df42b11bee82bb53a56, type: 3}
+    dimension: 1
+  lutFar:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  invert:
+    m_OverrideState: 0
+    m_Value: 0
+  vibrance:
+    m_OverrideState: 1
+    m_Value: 0
+  vibranceRGBBalance:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  shader: {fileID: 4800000, guid: 92f2bf48777049e46b3a89219297c3dd, type: 3}
 --- !u!114 &-3357603926938260329
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -415,6 +582,45 @@ MonoBehaviour:
   chromaticAbberationIntensity:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-1160103533295918955
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74b981ab35fcb1468c7aaf9752b24e1, type: 3}
+  m_Name: CloudShadows
+  m_EditorClassIdentifier: 
+  active: 1
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 5169c93c178dd854baf6808e4a1750c5, type: 3}
+    dimension: 1
+  size:
+    m_OverrideState: 1
+    m_Value: 0.5
+  density:
+    m_OverrideState: 1
+    m_Value: 0.5
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.2
+  direction:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 1}
+  projectFromSun:
+    m_OverrideState: 0
+    m_Value: 0
+  startFadeDistance:
+    m_OverrideState: 1
+    m_Value: 0
+  endFadeDistance:
+    m_OverrideState: 1
+    m_Value: 0
+  shader: {fileID: 4800000, guid: b778580ec166f424e8c4d41504e3e93a, type: 3}
 --- !u!114 &-1064715620828253820
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -430,7 +636,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.06285095, y: 0, z: 1, w: 0.36624968}
+    m_Value: {x: 0.98484486, y: 0.9819521, z: 1, w: 0.36624968}
   midtones:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.76624894, z: 0.58499295, w: 0.22716752}
@@ -474,6 +680,11 @@ MonoBehaviour:
   - {fileID: -5774048011241693232}
   - {fileID: -6672245872332769721}
   - {fileID: 3868834338017206507}
+  - {fileID: -1160103533295918955}
+  - {fileID: -6782934023637365714}
+  - {fileID: 6955723609883834674}
+  - {fileID: -4998621929713613478}
+  - {fileID: 7074093590456825322}
 --- !u!114 &347059751725081726
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -489,10 +700,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.6789698, z: 0.4536174, w: 0}
+    m_Value: {x: 1, y: 0.9620072, z: 0.9413775, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.54098344, y: 0.85079783, z: 1, w: -0.013605529}
+    m_Value: {x: 0.9262043, y: 0.96377605, z: 1, w: -0.013605529}
   gain:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -601,6 +812,110 @@ MonoBehaviour:
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+--- !u!114 &6955723609883834674
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e1b3a3f18dad1429c9ecc7e1db2274, type: 3}
+  m_Name: Sunshafts
+  m_EditorClassIdentifier: 
+  active: 1
+  useCasterColor:
+    m_OverrideState: 0
+    m_Value: 1
+  useCasterIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+  blendMode:
+    m_OverrideState: 0
+    m_Value: 0
+  resolution:
+    m_OverrideState: 1
+    m_Value: 4
+  highQuality:
+    m_OverrideState: 0
+    m_Value: 0
+  sunThreshold:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  sunColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  sunShaftIntensity:
+    m_OverrideState: 1
+    m_Value: 0.3
+  falloff:
+    m_OverrideState: 0
+    m_Value: 0.5
+  length:
+    m_OverrideState: 0
+    m_Value: 5
+  noiseStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  shader: {fileID: 4800000, guid: d21c9f9666e2f7e4eb9e6fc9dc414999, type: 3}
+--- !u!114 &7074093590456825322
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ca37f13bb89c144a71832585b7a6ac, type: 3}
+  m_Name: EdgeDetection
+  m_EditorClassIdentifier: 
+  active: 1
+  debug:
+    m_OverrideState: 0
+    m_Value: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
+  invertFadeDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  distanceFade:
+    m_OverrideState: 0
+    m_Value: 0
+  startFadeDistance:
+    m_OverrideState: 0
+    m_Value: 0
+  endFadeDistance:
+    m_OverrideState: 0
+    m_Value: 1000
+  sensitivityDepth:
+    m_OverrideState: 0
+    m_Value: 0
+  sensitivityNormals:
+    m_OverrideState: 0
+    m_Value: 1
+  lumThreshold:
+    m_OverrideState: 0
+    m_Value: 0.01
+  edgeColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  edgeExp:
+    m_OverrideState: 0
+    m_Value: 1
+  edgeSize:
+    m_OverrideState: 0
+    m_Value: 1
+  edgeOpacity:
+    m_OverrideState: 1
+    m_Value: 0.254
+  sobelThin:
+    m_OverrideState: 1
+    m_Value: 0
+  DepthNormalsShader: {fileID: 4800000, guid: 516d67fad41db074ca871164dfde9e71, type: 3}
+  shader: {fileID: 4800000, guid: 3d6327a8c88b3714793200af974474fc, type: 3}
 --- !u!114 &7391319092446245454
 MonoBehaviour:
   m_ObjectHideFlags: 3
