@@ -1,3 +1,6 @@
+using Needle.Console;
+using NUnit.Framework;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(DroppedItem))]
@@ -7,8 +10,10 @@ public class ActiveItem : MonoBehaviour
     public int itemIDPleaseDoNotChange = 1; // Do not re-assign during runtime. The weird variable naming is only to discourage ID re-assignment after it has been correctly set to the right item id.
     public Vector3 heldPositionOffset;
     public Vector3 heldRotationOffset;
+    public bool hasInteractAnim = false;
+    public string[] interactAnimNames;
     public bool hasAttack = false;
-    public string attackAnimName;
+    public string[] attackAnimNames;
     private Animator handAnim;
     private Quaternion defaultRotation;
 
@@ -19,12 +24,12 @@ public class ActiveItem : MonoBehaviour
 
     void OnEnable()
     {
-        
+
     }
 
     void OnDisable()
     {
-        
+
     }
     public void setPlayerHandAnim(Animator animator)
     {
@@ -43,16 +48,68 @@ public class ActiveItem : MonoBehaviour
 
     public void doAttack(bool forcePlayAnim = false)
     {
+        doAttackAnim(forcePlayAnim);
+    }
+
+    public void doAttackAnim(bool forcePlayAnim = false)
+    {
         if (!hasAttack) return;
+        Debug.Assert(attackAnimNames.Length > 0, $"Add attack animation names to item ID {itemIDPleaseDoNotChange} !");
+
+        string atkName;
+        int randomAtkIndex = 0;
+
+        if (attackAnimNames.Length == 1)
+        {
+            atkName = attackAnimNames[0];
+        }
+        else
+        {
+            randomAtkIndex = UnityEngine.Random.Range(0, attackAnimNames.Length);
+            atkName = attackAnimNames[randomAtkIndex];
+        }
+
 
         if (forcePlayAnim == true)
         {
-            handAnim.Play(attackAnimName, -1, 0);
+            handAnim.Play(atkName, -1, 0);
         }
 
         if (handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !handAnim.IsInTransition(0))
         {
-            handAnim.Play(attackAnimName, -1, 0);
+            handAnim.Play(atkName, -1, 0);
+            D.Log($"Attacked with animation #{randomAtkIndex}! Name: {attackAnimNames[randomAtkIndex]}", this, "Item");
+        }
+    }
+
+    public void doInteractionAnim(bool forcePlayAnim = false)
+    {
+        if (!hasInteractAnim) return;
+        Debug.Assert(interactAnimNames.Length > 0, $"Add interaction animation names to item ID {itemIDPleaseDoNotChange} !");
+
+        string interactName;
+        int randominteractIndex = 0;
+
+        if (interactAnimNames.Length == 1)
+        {
+            interactName = interactAnimNames[0];
+        }
+        else
+        {
+            randominteractIndex = UnityEngine.Random.Range(0, interactAnimNames.Length);
+            interactName = interactAnimNames[randominteractIndex];
+        }
+
+
+        if (forcePlayAnim == true)
+        {
+            handAnim.Play(interactName, -1, 0);
+        }
+
+        if (handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !handAnim.IsInTransition(0))
+        {
+            handAnim.Play(interactName, -1, 0);
+            D.Log($"Interacted with animation #{randominteractIndex}! Name: {interactAnimNames[randominteractIndex]}", this, "Item");
         }
     }
 

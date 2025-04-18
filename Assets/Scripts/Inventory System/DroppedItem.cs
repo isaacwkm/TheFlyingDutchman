@@ -88,7 +88,7 @@ public class DroppedItem : MonoBehaviour
 
     private void LandOnSurface(GameObject surface)
     {
-        D.Log($"Item landed on {surface.name}!", gameObject, "Item");
+        //D.Log($"Item landed on {surface.name}!", gameObject, "Item");
         hasLanded = true;
 
         // Play drop sound

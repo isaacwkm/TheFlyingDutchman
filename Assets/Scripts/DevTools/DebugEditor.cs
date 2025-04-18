@@ -1,6 +1,7 @@
 // Author: Needle-tools, expanded upon by Isaac Kim
 // https://github.com/needle-tools/needle-console/blob/ac8bb15f84c8df319422f2274fd84cc2255b16a7/package/Runtime/Extensions/DebugEditor.cs#L11
 using System.Diagnostics;
+using NUnit.Framework;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 

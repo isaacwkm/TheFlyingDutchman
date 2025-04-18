@@ -125,7 +125,7 @@ public class InputModeManager : MonoBehaviour
 
         InputActionMap actionMap = GetCurrentActionMap();
         InputAction action = actionMap.FindAction(actionName);
-        D.Log($"GetBinding() - Action: {action.name}, ActionMap: {actionMap.name}", gameObject, "Able");
+        //D.Log($"GetBinding() - Action: {action.name}, ActionMap: {actionMap.name}", gameObject, "Able");
 
         InputBinding deviceBinding = action.bindings[(int)deviceType];
         return deviceBinding;
