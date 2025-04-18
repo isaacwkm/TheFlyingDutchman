@@ -4,6 +4,23 @@ using System.Collections.ObjectModel;
 
 public class DestructibleMesh : MonoBehaviour
 {
+    private struct Impact
+    {
+        public DestructibleMeshPiece piece;
+        public Vector3 impulse;
+        public Impact(
+            DestructibleMeshPiece piece,
+            Vector3 impulse
+        ) {
+            this.piece = piece;
+            this.impulse = impulse;
+        }
+        public void Apply()
+        {
+            piece.TakeDamage(impulse);
+        }
+    }
+
     [SerializeField] public Material commonMaterialOverride = null;
     [SerializeField] public Material repairSiteMaterial = null;
     /* The radius of the spherecast used to determine which parts are affected
@@ -21,6 +38,8 @@ public class DestructibleMesh : MonoBehaviour
     {
         get => _pieces.AsReadOnly();
     }
+
+    private Queue<Impact> queuedImpacts = new();
 
     public void RegisterPiece(DestructibleMeshPiece piece)
     {
@@ -54,14 +73,14 @@ public class DestructibleMesh : MonoBehaviour
                     else
                     {
                         float lerpWeight = disp.magnitude/radius;
-                        piece.TakeDamage(Vector3.Slerp(
+                        queuedImpacts.Enqueue(new Impact(piece, Vector3.Slerp(
                             impulse.normalized,
                             disp.normalized,
                             lerpWeight
                         ).normalized*Mathf.Lerp(
                             impulse.magnitude, 0.0f,
                             lerpWeight
-                        ));
+                        )));
                     }
                 }
             }
@@ -71,6 +90,14 @@ public class DestructibleMesh : MonoBehaviour
                     -impulse, source, ForceMode.Impulse
                 );
             }
+        }
+    }
+
+    public void Update()
+    {
+        if (queuedImpacts.Count > 0)
+        {
+            queuedImpacts.Dequeue().Apply();
         }
     }
 
