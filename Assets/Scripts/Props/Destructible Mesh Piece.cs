@@ -7,7 +7,7 @@ public class DestructibleMeshPiece : MonoBehaviour
     public event Action broken;
     public event Action repaired;
 
-    [SerializeField] public DestructibleMesh ownerDestructibleMesh = null;
+    [SerializeField] private DestructibleMesh _ownerDestructibleMesh = null;
     [SerializeField] public TemporaryGameObject effectOnHit = null;
     [SerializeField] public TemporaryGameObject effectOnBreak = null;
     /* If a piece has a destructibility parent, the piece will always break
@@ -17,14 +17,22 @@ public class DestructibleMeshPiece : MonoBehaviour
      * across multiple projectile collisions
      * before it will break off. */
     [SerializeField] public float maxHealth = 1.0f;
+    [SerializeField] public bool reparable = true;
     [SerializeField] public int repairCost = 1;
+    [SerializeField] public bool spawnsDebris = true;
     [SerializeField] public float mass = 1.0f;
     [SerializeField] public float collisionFalsePositivePreventionTimeout = 0.25f;
 
+    public DestructibleMesh ownerDestructibleMesh {get => _ownerDestructibleMesh;}
     public float health {get; private set;}
     public bool attached {get; private set;}
 
     private float collisionFalsePositivePreventionTimer = 0.0f;
+
+    void Awake()
+    {
+        ownerDestructibleMesh.RegisterPiece(this);
+    }
 
     void Start()
     {
@@ -101,8 +109,8 @@ public class DestructibleMeshPiece : MonoBehaviour
             broken?.Invoke();
             health = 0.0f;
             attached = false;
-            CreateRepairSite();
-            CreateDebris(impulse);
+            if (reparable) CreateRepairSite();
+            if (spawnsDebris) CreateDebris(impulse);
             if (effectOnBreak != null)
             {
                 Instantiate(
@@ -173,7 +181,7 @@ public class DestructibleMeshPiece : MonoBehaviour
         var temp = debris.gameObject.AddComponent<TemporaryGameObject>();
         temp.destroyAfterTimeout = true;
         temp.destroyAtKillPlane = true;
-        temp.destroyWhenNotVisible = false;
+        temp.destroyWhenNotVisible = true;
         var srcRend = GetComponent<MeshRenderer>();
         var dstRend = debris.GetComponent<MeshRenderer>();
         if (srcRend && dstRend)
