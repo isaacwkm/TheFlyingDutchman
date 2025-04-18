@@ -21,35 +21,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cloud_cumulus
-  m_Shader: {fileID: 4800000, guid: 0dde7f0097aeb2541aea684ca0ad0e3c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALBEDOVERTEXCOLORMODE_REPLACE
-  - _ALPHA_CUTOFF_ON
-  - _CAST_SHADOWS_ON
-  - _COLORRAMPLIGHTINGSTAGE_BEFORELIGHTING
-  - _GREYSCALESTAGE_BEFORELIGHTING
-  - _HEIGHTGRADIENTPOSITIONSPACE_LOCAL
-  - _LIGHTMODEL_TOON
-  - _MATCAPBLENDMODE_MULTIPLY
-  - _NORMAL_MAP_ON
-  - _OUTLINETYPE_NONE
-  - _REFLECTIONS_NONE
-  - _RIMLIGHTINGSTAGE_BEFORELIGHTING
-  - _SHADINGMODEL_BASIC
-  - _SPECULARMODEL_NONE
-  - _TEXTUREBLENDINGMODE_RGB
-  - _TEXTUREBLENDINGSOURCE_VERTEXCOLOR
-  - _TRIPLANARNORMALSPACE_WORLD
-  m_InvalidKeywords:
   - _EMISSION
-  - _GLITCHWORLDSPACE_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -264,6 +247,7 @@ Material:
     - _GlitchWorldSpace: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _GreyScaleStage: 0
     - _Greyscale: 0
@@ -349,7 +333,9 @@ Material:
     - _ShakeSpeedMult: 1
     - _Shininess: 16
     - _Smoothness: 0
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _SpecularAtten: 0.5
     - _SpecularHighlights: 1
     - _SpecularModel: 0

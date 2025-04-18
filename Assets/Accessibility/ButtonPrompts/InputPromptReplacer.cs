@@ -25,7 +25,7 @@ public class InputPromptReplacer : MonoBehaviour
     private InputModeManager inputManager;
     private InputSystem_Actions inputActions;
 
-    private string[] validKeysForIconDisplay = {"w", "a", "s", "d", "space", "e", "f", "t", "shift", "leftControl", "escape", "q"};
+    private string[] validKeysForIconDisplay = {"w", "a", "s", "d", "space", "e", "f", "t", "leftShift", "leftCtrl", "escape", "q"};
 
     void Awake()
     {
@@ -68,6 +68,7 @@ public class InputPromptReplacer : MonoBehaviour
         if (!isInValidKeys(effectivePath.input))
         {
             spriteTagName = MakeFallbackInputString(effectivePath.input);
+            D.Log($"Non-default keybind sprite detected, displaying: {spriteTagName}", this, "Able");
         }
 
         return spriteTagName;
