@@ -93,7 +93,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 
 <!-- GETTING STARTED -->
-## Collaborators
+## Contriubtors
 [![Contributors][contributors-shield]][contributors-url]
 
 **Isaac Kim:** (Programming, Production)
@@ -104,7 +104,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 **Jalen Suwa:** (Audio, Programming, QA and Playtest Coordinator)
 
-### Contributor Github Links:
+### Top Contributor Github Links:
 
 <a href="https://github.com/isaacwkm/TheFlyingDutchman/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=isaacwkm/TheFlyingDutchman" alt="contrib.rocks image" />
