@@ -93,7 +93,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 
 <!-- GETTING STARTED -->
-## Contriubtors
+## Contributors
 [![Contributors][contributors-shield]][contributors-url]
 
 **Isaac Kim:** (Programming, Production)
