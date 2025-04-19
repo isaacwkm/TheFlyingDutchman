@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,15 +10,15 @@ public class Enemy : MonoBehaviour
         hitSound.PlaySingleRandom(); // Plays a sound effect
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void TakeHit()
     {
-        
+        makeHitSound();
+        Die();
+        Debug.Log(gameObject.name + " took a hit");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        //call death animation
     }
 }
