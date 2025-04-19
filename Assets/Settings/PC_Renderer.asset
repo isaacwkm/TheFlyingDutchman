@@ -17,6 +17,57 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 5
+--- !u!114 &-4928893955353416602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de805ffa8db69e8499306de22402dca3, type: 3}
+  m_Name: '[SCPE] AmbientOcclusion2DRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-4524143615658343972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400dc2baa0a22054cb259512e4ce8907, type: 3}
+  m_Name: '[SCPE] KuwaharaRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &-4444416178665706254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856792627b7ad87479de639d23b34329, type: 3}
+  m_Name: '[SCPE] PosterizeRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &-4337898287697947633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +122,23 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 5
+--- !u!114 &-66475253101824344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8173f089832511149b44a215bb4a2f39, type: 3}
+  m_Name: '[SCPE] DitheringRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +174,12 @@ MonoBehaviour:
   - {fileID: 7280638287315072592}
   - {fileID: -8809821045258752791}
   - {fileID: -4337898287697947633}
+  - {fileID: -4928893955353416602}
+  - {fileID: -66475253101824344}
+  - {fileID: 3022630452273802663}
+  - {fileID: 3210659813413195780}
+  - {fileID: -4444416178665706254}
+  - {fileID: -4524143615658343972}
   m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
@@ -143,6 +217,40 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7bfa6474aabeb14da9963ae803e9607, type: 3}
   m_Name: '[SCPE] LUTRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &3022630452273802663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f847b2f420ea54ba779e55bdc277ad, type: 3}
+  m_Name: '[SCPE] PixelizeRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &3210659813413195780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da344ce563de5ee4a9266dc0a74eabd0, type: 3}
+  m_Name: '[SCPE] SketchRenderer'
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
