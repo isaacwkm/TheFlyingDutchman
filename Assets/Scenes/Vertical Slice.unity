@@ -600,7 +600,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8027871, g: 0.8027871, b: 0.8027871, a: 1}
+      maxColor: {r: 0.80262876, g: 0.80262876, b: 0.80262876, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4405,7 +4405,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8027871, g: 0.8027871, b: 0.8027871, a: 1}
+      maxColor: {r: 0.80262876, g: 0.80262876, b: 0.80262876, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11617,7 +11617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078504057}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38047913, y: -0.30773616, z: -0.13592209, w: 0.8614286}
+  m_LocalRotation: {x: -0.38078296, y: -0.30834818, z: -0.13636824, w: 0.8610049}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11923,7 +11923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159743824}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38943174, y: 0, z: 0, w: 0.9210554}
+  m_LocalRotation: {x: 0.38879803, y: 0, z: 0, w: 0.921323}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12702,10 +12702,10 @@ MonoBehaviour:
   usePhysicalSunHeight: 1
   sunDirection: 0
   sunPitch: 0
-  moonDirection: {x: 0.42675442, y: -0.73916745, z: -0.5210682}
-  skyZenithColor: {r: 0.109866306, g: 0.16086617, b: 0.27446085, a: 1}
-  skyHorizonColor: {r: 0.47427735, g: 0.6921082, b: 0.8253524, a: 1}
-  cloudColor: {r: 0.8027871, g: 0.8027871, b: 0.8027871, a: 1}
+  moonDirection: {x: 0.42712516, y: -0.7398098, z: -0.51985145}
+  skyZenithColor: {r: 0.10986543, g: 0.16086502, b: 0.27446154, a: 1}
+  skyHorizonColor: {r: 0.4743392, g: 0.6921206, b: 0.8253314, a: 1}
+  cloudColor: {r: 0.80262876, g: 0.80262876, b: 0.80262876, a: 1}
   cloudHighlightColor: {r: 4.9193516, g: 4.204114, b: 3.5502865, a: 1}
   highAltitudeCloudColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
   sunlightColor: {r: 1.375392, g: 1.3476623, b: 1.1535546, a: 1}
@@ -12715,10 +12715,10 @@ MonoBehaviour:
   ambientLightMultiplier: 1.5
   galaxyIntensity: 0
   fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
-  fogColor2: {r: 0.031341903, g: 0.24311791, b: 0.38811114, a: 0.13725491}
+  fogColor2: {r: 0.03134215, g: 0.24311806, b: 0.38811216, a: 0.13725491}
   fogColor3: {r: 0, g: 0, b: 0, a: 0.5019608}
-  fogColor4: {r: 0.37624523, g: 0.37624523, b: 0.37624523, a: 0.75686276}
-  fogColor5: {r: 0.42305917, g: 0.73178315, b: 0.9246103, a: 1}
+  fogColor4: {r: 0.37625414, g: 0.37625414, b: 0.37625414, a: 0.75686276}
+  fogColor5: {r: 0.4230588, g: 0.731782, b: 0.92460966, a: 1}
   fogFlareColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
   fogMoonFlareColor: {r: 0, g: 0, b: 0, a: 1}
   fogShadowColor: {r: 0, g: 0, b: 0, a: 0}
@@ -12726,7 +12726,7 @@ MonoBehaviour:
   gradientExponent: 1
   sunSize: 1.21
   sunColor: {r: 10.432951, g: 10.432951, b: 10.432951, a: 1}
-  moonColor: {r: 2, g: 2, b: 2, a: 0.24923679}
+  moonColor: {r: 2, g: 2, b: 2, a: 0.24924052}
   sunFalloff: 0.48
   sunFlareColor: {r: 2.7294118, g: 2.7137256, b: 2.0705884, a: 1}
   moonFalloff: 0.752
@@ -12923,7 +12923,7 @@ MonoBehaviour:
   atmosphereModule: {fileID: 0}
   windModule: {fileID: 2129205543}
   events:
-    timeToCheckFor: 0.875
+    timeToCheckFor: 0.5416667
     currentMinute: 585
     currentHour: 9
   cozyTriggerTag: Player
@@ -12960,7 +12960,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.254486, y: 109.8147, z: 1221.954}
+  m_LocalPosition: {x: 27.296753, y: 109.69861, z: 1221.3289}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19457,7 +19457,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.3094586
+      time: 0.30979812
       value: 90
       inSlope: 0
       outSlope: 0
@@ -19475,7 +19475,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6905414
+      time: 0.6902019
       value: 270
       inSlope: 0
       outSlope: 0
@@ -19528,7 +19528,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.3094586
+      time: 0.30979812
       value: 90
       inSlope: 0
       outSlope: 0
@@ -19546,7 +19546,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6905414
+      time: 0.6902019
       value: 90
       inSlope: 0
       outSlope: 0
@@ -19917,8 +19917,8 @@ MonoBehaviour:
   controlMethod: 1
   localTemperatureFilter: 0
   localPrecipitationFilter: 0
-  currentTemperature: 6.1968074
-  currentPrecipitation: 49.993916
+  currentTemperature: 6.196653
+  currentPrecipitation: 49.99744
   snowAmount: 0
   snowMeltSpeed: 0.35
   groundwaterAmount: 0
