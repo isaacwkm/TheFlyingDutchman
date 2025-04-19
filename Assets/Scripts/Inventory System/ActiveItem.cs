@@ -1,5 +1,6 @@
 using Needle.Console;
 using NUnit.Framework;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -80,7 +81,37 @@ public class ActiveItem : MonoBehaviour
             handAnim.Play(atkName, -1, 0);
             D.Log($"Attacked with animation #{randomAtkIndex}! Name: {attackAnimNames[randomAtkIndex]}", this, "Item");
         }
+
+        StartCoroutine(Hit(attackAnimNames[randomAtkIndex])); //throws out a hitbox, right now animation names are hardcoded
     }
+
+     IEnumerator Hit(string animName)
+    {
+        yield return new WaitForSeconds(0.5f); //sync with animation swing
+
+        var hits = new Collider[10]; //can hold 10 colliders, maybe increase if there is a ton of entities
+        Vector3 boxCenter = Camera.main.transform.position + Camera.main.transform.forward * 1.5f;
+        float swingAngle = 0f;
+        if (animName == "Left Swing")
+        {
+            swingAngle = -45f;
+        }
+        else if (animName == "Right Swing")
+        {
+            swingAngle = 45f;
+        }
+        Physics.OverlapBoxNonAlloc(boxCenter, new Vector3(0.5f, 0.5f, 1.5f), hits, Quaternion.LookRotation(Camera.main.transform.forward) * Quaternion.Euler(0f, 0f, swingAngle)); //throw out a box collider diagonally in front of the camera
+        foreach (var hit in hits)
+        {
+            if (hit.GetComponent<Enemy>())
+            {
+                Enemy enemy = hit.GetComponent<Enemy>();
+                enemy.TakeHit();
+            }
+        }
+    }
+
+
 
     public void doInteractionAnim(bool forcePlayAnim = false)
     {
