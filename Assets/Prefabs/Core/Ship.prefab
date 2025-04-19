@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 448360251407028195}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.6753338, y: 2.2753334, z: 0}
+  m_LocalPosition: {x: 0.6753338, y: 3.146, z: 0}
   m_LocalScale: {x: 0.66666657, y: 0.6666667, z: 0.66666657}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionTooltip: Interact
+  actionTooltip: Open door
   interactSound: {fileID: 0}
   doCooldown: 1
   interactCooldownSeconds: 1
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionTooltip: Interact
+  actionTooltip: Open door
   interactSound: {fileID: 0}
   doCooldown: 1
   interactCooldownSeconds: 1
@@ -2003,6 +2003,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6660216156327265869, guid: b0ffba4681f354e489300e1e84fcd62e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521494870338631687}
+    - targetCorrespondingSourceObject: {fileID: 6660216156327265869, guid: b0ffba4681f354e489300e1e84fcd62e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3308908236492261534}
   m_SourcePrefab: {fileID: 100100000, guid: b0ffba4681f354e489300e1e84fcd62e, type: 3}
 --- !u!1 &1631382334926233633 stripped
 GameObject:
@@ -2088,7 +2091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTooltip: Raise/Lower Anchor
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 3308908236492261534}
   doCooldown: 1
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
@@ -2136,6 +2139,24 @@ MonoBehaviour:
   spawnsDebris: 1
   mass: 1
   collisionFalsePositivePreventionTimeout: 0.25
+--- !u!114 &3308908236492261534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631382334926233633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 070d240594c214bcb9ea85bf29add631, type: 3}
+  volume: 0.5
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
 --- !u!4 &2154978175016270491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6279715398053272823, guid: b0ffba4681f354e489300e1e84fcd62e, type: 3}
@@ -48023,6 +48044,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
+      propertyPath: isMusic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
       propertyPath: soundVolume
       value: 0.05
       objectReference: {fileID: 0}
@@ -48032,7 +48057,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c990ffdd9433a41479472001eb11bf74, type: 3}
     - target: {fileID: 2486883473464848883, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
       propertyPath: secondsToStayInZoneBeforePlaying
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2998604297524247914, guid: 9846598258ee21f449ff1fe55015dfce, type: 3}
       propertyPath: m_LocalScale.x
