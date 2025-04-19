@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.distantlands.cozy.core/Editor/UI/Globals.uss?fileID=7433441132597879392&amp;guid=60b39676bc45100478c0c8a083850788&amp;type=3#Globals" />
+    <ui:VisualElement name="plume-graph-container" class="mb-md" style="flex-grow: 0; height: 200px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" />
+    <ui:Button text="Regenerate Scene Clouds" parse-escape-sequences="true" display-tooltip-when-elided="true" name="regen-clouds" />
+    <ui:Label tabindex="-1" text="Selection" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h1" />
+    <ui:VisualElement name="selection-container" class="section-bg" style="flex-grow: 0;" />
+    <ui:VisualElement name="profile-container" />
+    <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h1" />
+    <ui:VisualElement name="settings-container" class="section-bg" style="flex-grow: 0;">
+        <uie:PropertyField binding-path="coverageIntensityOffset" />
+        <uie:PropertyField binding-path="bendToHorizonMultiplier" class="mb-md" />
+        <uie:PropertyField binding-path="useColliders" />
+        <uie:PropertyField binding-path="useShadows" />
+        <uie:PropertyField binding-path="cullInsideTriggers" class="mb-md" />
+        <uie:PropertyField binding-path="framesBetweenRenders" />
+        <uie:PropertyField binding-path="cloudChunkPrefab" />
+    </ui:VisualElement>
+</ui:UXML>

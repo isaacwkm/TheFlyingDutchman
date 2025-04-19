@@ -19,7 +19,7 @@ MonoBehaviour:
     dimension: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.3
   luminanceThreshold:
     m_OverrideState: 1
     m_Value: 0.4
@@ -94,8 +94,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 3
   globalDensity:
-    m_OverrideState: 1
-    m_Value: 0.1
+    m_OverrideState: 0
+    m_Value: 0
   fogStartDistance:
     m_OverrideState: 1
     m_Value: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.5
   colorRamp:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -633,6 +633,35 @@ MonoBehaviour:
   chromaticAbberationIntensity:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-1926913004935513535
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfc0ecd934e74246bcf9791abe617b0, type: 3}
+  m_Name: Pixelize
+  m_EditorClassIdentifier: 
+  active: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 0.2
+  resolution:
+    m_OverrideState: 1
+    m_Value: 240
+  resolutionPreset:
+    m_OverrideState: 1
+    m_Value: 160
+  preserveAspectRatio:
+    m_OverrideState: 1
+    m_Value: 1
+  centerPixel:
+    m_OverrideState: 1
+    m_Value: 1
+  shader: {fileID: 0}
 --- !u!114 &-1160103533295918955
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -733,7 +762,7 @@ MonoBehaviour:
     m_Value: 256
   value:
     m_OverrideState: 1
-    m_Value: 96
+    m_Value: 64
   shader: {fileID: 4800000, guid: 40279b644fb7ed248b6b89369b5ae060, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -770,6 +799,8 @@ MonoBehaviour:
   - {fileID: -356290714620967029}
   - {fileID: 6856010586863452718}
   - {fileID: -5950323811942529524}
+  - {fileID: 2567221232890639688}
+  - {fileID: -1926913004935513535}
 --- !u!114 &347059751725081726
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -832,6 +863,26 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 1
     m_Value: 647
+--- !u!114 &2567221232890639688
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b7b0942607ccd449f69be2e55a1c17, type: 3}
+  m_Name: Mosaic
+  m_EditorClassIdentifier: 
+  active: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
+  size:
+    m_OverrideState: 1
+    m_Value: 0.023
+  shader: {fileID: 4800000, guid: 4ed46b989a17a264c8265616694641c6, type: 3}
 --- !u!114 &3868834338017206507
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -984,22 +1035,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   debug:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
   invertFadeDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   distanceFade:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   startFadeDistance:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 500
   endFadeDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1000
   sensitivityDepth:
     m_OverrideState: 0
@@ -1011,19 +1062,19 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.01
   edgeColor:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   edgeExp:
     m_OverrideState: 0
     m_Value: 1
   edgeSize:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 2
   edgeOpacity:
     m_OverrideState: 1
     m_Value: 0.4
   sobelThin:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   DepthNormalsShader: {fileID: 4800000, guid: 516d67fad41db074ca871164dfde9e71, type: 3}
   shader: {fileID: 4800000, guid: 3d6327a8c88b3714793200af974474fc, type: 3}

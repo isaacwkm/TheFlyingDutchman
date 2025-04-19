@@ -10444,7 +10444,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 394.8145, y: 394.8145, z: 394.8145}
+  m_LocalScale: {x: 1177.4221, y: 1177.4221, z: 1177.4221}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729361745}
@@ -12625,6 +12625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526086056}
   - component: {fileID: 1526086055}
+  - component: {fileID: 1526086057}
   m_Layer: 0
   m_Name: Cozy Weather Sphere
   m_TagString: Untagged
@@ -12676,14 +12677,14 @@ MonoBehaviour:
   galaxyIntensity: 0
   fogColor1: {r: 0, g: 0, b: 0, a: 0.007843138}
   fogColor2: {r: 0.029693967, g: 0.22941916, b: 0.36600852, a: 0.13725491}
-  fogColor3: {r: 0.07121074, g: 0.295508, b: 0.47905067, a: 0.5019608}
-  fogColor4: {r: 0.015963685, g: 0.277059, b: 0.52698, a: 0.75686276}
+  fogColor3: {r: 0.00018328126, g: 0.00018328126, b: 0.00054984353, a: 0.5019608}
+  fogColor4: {r: 0.35327232, g: 0.36109602, b: 0.3685999, a: 0.75686276}
   fogColor5: {r: 0.41070202, g: 0.70916057, b: 0.89344394, a: 1}
   fogFlareColor: {r: 1.0833969, g: 1.3920008, b: 1.382235, a: 1}
   fogMoonFlareColor: {r: 0, g: 0, b: 0, a: 1}
   fogShadowColor: {r: 0, g: 0, b: 0, a: 0}
   fogLitColor: {r: 0, g: 0, b: 0, a: 0}
-  gradientExponent: 0.549
+  gradientExponent: 1
   sunSize: 1.21
   sunColor: {r: 10.432951, g: 10.432951, b: 10.432951, a: 1}
   moonColor: {r: 2, g: 2, b: 2, a: 0.24981493}
@@ -12698,7 +12699,7 @@ MonoBehaviour:
   lightScatteringColor: {r: 0, g: 0, b: 0, a: 0}
   lightScatteringPosition: -0.144
   lightScatteringHeight: 1
-  constellationIntensity: 0.226
+  constellationIntensity: 0.2
   rainbowPosition: 20
   rainbowWidth: 2.7
   rainbowTexture: {fileID: 2800000, guid: 6761766a51008e44e8deebc9a15ebde0, type: 3}
@@ -12886,7 +12887,7 @@ MonoBehaviour:
     timeToCheckFor: 0.3125
     currentMinute: 438
     currentHour: 7
-  cozyTriggerTag: FX Block Zone
+  cozyTriggerTag: Player
   cozyTriggers:
   - {fileID: 0}
   systems:
@@ -12910,6 +12911,7 @@ MonoBehaviour:
   - {fileID: 2129205546}
   - {fileID: 2129205543}
   - {fileID: 2129205537}
+  - {fileID: 2129205547}
 --- !u!4 &1526086056
 Transform:
   m_ObjectHideFlags: 0
@@ -12919,7 +12921,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -263.33728, y: 105.15141, z: 1822.0315}
+  m_LocalPosition: {x: 3.5294495, y: 27.838036, z: 1236.0063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12928,6 +12930,31 @@ Transform:
   - {fileID: 2129205542}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526086057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526086054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931741ff3d7c72646a627a2efb025680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cachedWeatherSphere: {fileID: 1526086055}
+  cachedSystem: {fileID: 0}
+  volumetricCloudProfile: {fileID: 11400000, guid: af8570cd92dc38a4fb6f28796631d855, type: 2}
+  cloudChunkPrefab: {fileID: 8377891541840844724, guid: 14274e75fd089eb4d8a6f636d963d186, type: 3}
+  coverageIntensityOffset: 0
+  cloudCoverage: 0
+  bendToHorizonMultiplier: 0.1
+  offset: {x: 0, y: 0, z: 0}
+  matrixHolder: {fileID: 0}
+  useColliders: 1
+  useShadows: 0
+  cullInsideTriggers: 0
+  framesBetweenRenders: 10
 --- !u!1001 &1527476987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19231,6 +19258,7 @@ GameObject:
   - component: {fileID: 2129205546}
   - component: {fileID: 2129205543}
   - component: {fileID: 2129205537}
+  - component: {fileID: 2129205547}
   m_Layer: 0
   m_Name: Modules
   m_TagString: Untagged
@@ -19818,6 +19846,31 @@ MonoBehaviour:
   dryingSpeed: 0.5
   snowSpeed: 0
   rainSpeed: 0
+--- !u!114 &2129205547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129205536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931741ff3d7c72646a627a2efb025680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cachedWeatherSphere: {fileID: 1526086055}
+  cachedSystem: {fileID: 0}
+  volumetricCloudProfile: {fileID: 11400000, guid: af8570cd92dc38a4fb6f28796631d855, type: 2}
+  cloudChunkPrefab: {fileID: 8377891541840844724, guid: 14274e75fd089eb4d8a6f636d963d186, type: 3}
+  coverageIntensityOffset: 0
+  cloudCoverage: 0
+  bendToHorizonMultiplier: 0.1
+  offset: {x: 0, y: 0, z: 0}
+  matrixHolder: {fileID: 0}
+  useColliders: 1
+  useShadows: 0
+  cullInsideTriggers: 0
+  framesBetweenRenders: 10
 --- !u!1001 &118262816457264350
 PrefabInstance:
   m_ObjectHideFlags: 0

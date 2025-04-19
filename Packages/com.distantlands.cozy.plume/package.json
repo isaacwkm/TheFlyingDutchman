@@ -1,0 +1,35 @@
+{
+  "name": "com.distantlands.cozy.plume",
+  "displayName": "COZY: Plume - Volumetric Clouds Module",
+  "version": "1.4.0",
+  "author": {
+    "name": "Distant Lands",
+    "email": "contact@distantlands.space",
+    "discord": "https://discord.gg/eZXxGCp9ww",
+    "url": "https://distantlands.space/"
+  },
+  "unity": "2021.3",
+  "description": "Fill your skies with particle-based, fully volumetric clouds with COZY: Plume - Volumetric Clouds Module!\n\nBe sure to import the .unitypackage associated with your current render pipeline!",
+  "keywords": [
+    "Cozy Weather 3",
+    "Weather",
+    "Clouds",
+    "Fog",
+    "Sky",
+    "Distant Lands",
+    "Stylized"
+  ],
+  "dependencies": {
+    "com.distantlands.cozy.core": "3.6.0"
+  },
+  "samples": [
+    {
+      "displayName": "Demo Scene (URP)",
+      "description": "Demo scene that diplays Plume in action",
+      "path": "Samples~/Demo Scene (URP)"
+    }
+  ],
+  "documentationUrl": "https://distant-lands.gitbook.io/cozy-stylized-weather-documentation/how-it-works/modules/plume-module",
+  "changelogUrl": "https://distant-lands.gitbook.io/cozy-stylized-weather-documentation/welcome/changelog",
+  "hideInEditor": false
+}
