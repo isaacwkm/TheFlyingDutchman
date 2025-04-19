@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb441307b439a445a1de4f47a4ed6ef, type: 3}
+  m_Name: Thin Volumetric Clouds
+  m_EditorClassIdentifier: 
+  cloudDensity: 3
+  cloudParticleSize: 90
+  chunkSize: 300
+  minChunkHeight: 5
+  maxChunkHeight: 10
+  renderDistance: 20
+  cloudHeight: -94.4
+  cloudHeightDistrubution: 0
+  noiseScale: 7
+  seed: 1
+  windSpeed: {x: 0.2, y: 0.5, z: 0.5}
+  normalizedDistance: 10
+  normalReferenceHeight: 0.5
+  cloudColorMultiplier: 1.2
+  cloudShadowColorMultiplier: 1.1

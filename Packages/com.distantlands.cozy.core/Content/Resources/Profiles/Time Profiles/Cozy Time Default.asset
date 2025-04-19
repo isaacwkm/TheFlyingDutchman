@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940bc5c08f23e3947a38c262be3e3dfc, type: 3}
   m_Name: Cozy Time Default
   m_EditorClassIdentifier: 
-  dayAndTime: 14.619445
   pauseTime: 0
   realisticYear: 0
   useLeapYear: 1
@@ -22,6 +21,7 @@ MonoBehaviour:
     minutes: 0
     seconds: 0
     milliseconds: 0
+    timeAsPercentage: 0
   timeMovementSpeed: 1
   modulateTimeSpeed: 1
   timeSpeedMultiplier:
@@ -99,5 +99,4 @@ MonoBehaviour:
     days: 30
   - name: December
     days: 31
-  timeCurveSettings: 2
   daysPerYear: 48

@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.distantlands.cozy.core/Editor/UI/Globals.uss?fileID=7433441132597879392&amp;guid=60b39676bc45100478c0c8a083850788&amp;type=3#Globals" />
+    <ui:Label tabindex="-1" text="Volumetric Clouds" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h1" />
+    <ui:VisualElement class="section-bg">
+        <ui:Label tabindex="-1" text="Particle Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h2" />
+        <uie:PropertyField binding-path="cloudDensity" />
+        <uie:PropertyField binding-path="cloudParticleSize" class="mb-md" />
+        <ui:Label tabindex="-1" text="Generation Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h2" />
+        <uie:PropertyField binding-path="chunkSize" />
+        <uie:PropertyField binding-path="minChunkHeight" />
+        <uie:PropertyField binding-path="maxChunkHeight" />
+        <uie:PropertyField binding-path="renderDistance" />
+        <uie:PropertyField binding-path="cloudHeight" />
+        <uie:PropertyField binding-path="cloudHeightDistrubution" class="mb-md" />
+        <ui:Label tabindex="-1" text="Noise Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h2" />
+        <uie:PropertyField binding-path="noiseScale" />
+        <uie:PropertyField binding-path="seed" />
+        <uie:PropertyField binding-path="windSpeed" class="mb-md" />
+        <ui:Label tabindex="-1" text="Color Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h2" />
+        <uie:PropertyField binding-path="cloudColorMultiplier" />
+        <uie:PropertyField binding-path="cloudShadowColorMultiplier" class="mb-md" />
+        <ui:Label tabindex="-1" text="Normal Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="h2" />
+        <uie:PropertyField binding-path="normalizedDistance" />
+        <uie:PropertyField binding-path="normalReferenceHeight" />
+    </ui:VisualElement>
+</ui:UXML>

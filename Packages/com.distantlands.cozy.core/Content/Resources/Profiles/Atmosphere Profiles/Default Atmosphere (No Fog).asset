@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Atmosphere (No Fog)
   m_EditorClassIdentifier: 
   skyZenithColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 0, b: 0, a: 1}
     gradientVal:
@@ -72,7 +72,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   skyHorizonColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -308,7 +308,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   sunlightColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -369,7 +369,7 @@ MonoBehaviour:
   sunlightShadows: 2
   moonlightShadows: 2
   moonlightColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -487,7 +487,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   ambientLightHorizonColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -546,7 +546,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   ambientLightZenithColor:
-    overrideValue: 0
+    overrideValue: 1
     mode: 0
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -605,7 +605,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   ambientLightMultiplier:
-    overrideValue: 0
+    overrideValue: 1
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -1840,7 +1840,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   gradientExponent:
-    overrideValue: 0
+    overrideValue: 1
     mode: 1
     colorVal: {r: 1, g: 1, b: 1, a: 1}
     gradientVal:
@@ -4411,35 +4411,24 @@ MonoBehaviour:
   cloudTexture: {fileID: 2800000, guid: 27248a215d4e5fe449733cb0631f0785, type: 3}
   chemtrailsTexture: {fileID: 2800000, guid: 9b3476b4df9abf8479476bae1bcd8a84, type: 3}
   cirrusCloudTexture: {fileID: 2800000, guid: 302629ebb64a0e345948779662fc2cf3, type: 3}
-  cirrostratusCloudTexture: {fileID: 2800000, guid: bf43c8d7b74e204469465f36dfff7d6a,
-    type: 3}
-  altocumulusCloudTexture: {fileID: 2800000, guid: f33b9a1f2410c8d429fc3d8e4bde2874,
-    type: 3}
+  cirrostratusCloudTexture: {fileID: 2800000, guid: bf43c8d7b74e204469465f36dfff7d6a, type: 3}
+  altocumulusCloudTexture: {fileID: 2800000, guid: f33b9a1f2410c8d429fc3d8e4bde2874, type: 3}
   starMap: {fileID: 2800000, guid: 610adfdc91abe6e49a06f9b16aaeed7e, type: 3}
   starDomeTexture: {fileID: 8900000, guid: b1f42841d2188984abd1c6031f761eb6, type: 3}
   galaxyMap: {fileID: 2800000, guid: 9e328e1f846025e47ad7a9f00ca77f9b, type: 3}
   galaxyDomeTexture: {fileID: 8900000, guid: 8c0915a4637148e4889877c51dc039f6, type: 3}
-  constellationDomeTexture: {fileID: 8900000, guid: 553f4d5edf722524d98275c03e53fd7b,
-    type: 3}
+  constellationDomeTexture: {fileID: 8900000, guid: 553f4d5edf722524d98275c03e53fd7b, type: 3}
   galaxyStarMap: {fileID: 2800000, guid: 831ed62fbc9349041bf2404184ed2461, type: 3}
   galaxyVariationMap: {fileID: 2800000, guid: 638cc442ec8c58c4fa3027cb13d4c95c, type: 3}
   lightScatteringMap: {fileID: 2800000, guid: 1b337126eb3de9e43895711dbf62bc1e, type: 3}
-  partlyCloudyLuxuryClouds: {fileID: 2800000, guid: 4aedeee388f3b8549b4483841794e33d,
-    type: 3}
-  mostlyCloudyLuxuryClouds: {fileID: 2800000, guid: 0134c7641e0c9d74a9f6f685c2896bb9,
-    type: 3}
-  overcastLuxuryClouds: {fileID: 2800000, guid: 46d8a16f4016e1f4a8ac3708aee5235d,
-    type: 3}
-  lowBorderLuxuryClouds: {fileID: 2800000, guid: 9a76ce8f2c182c247834c19603ff2068,
-    type: 3}
-  highBorderLuxuryClouds: {fileID: 2800000, guid: 5054a748d0ecd72408e17cbdc92f07cb,
-    type: 3}
-  lowNimbusLuxuryClouds: {fileID: 2800000, guid: 8b7b5fa7d0504eb4084b8d451bdb4dac,
-    type: 3}
-  midNimbusLuxuryClouds: {fileID: 2800000, guid: aafa15e7fb9760b4d93ef145502eab4b,
-    type: 3}
-  highNimbusLuxuryClouds: {fileID: 2800000, guid: cf1e011d4126f5b45af1e0c5c8162509,
-    type: 3}
+  partlyCloudyLuxuryClouds: {fileID: 2800000, guid: 4aedeee388f3b8549b4483841794e33d, type: 3}
+  mostlyCloudyLuxuryClouds: {fileID: 2800000, guid: 0134c7641e0c9d74a9f6f685c2896bb9, type: 3}
+  overcastLuxuryClouds: {fileID: 2800000, guid: 46d8a16f4016e1f4a8ac3708aee5235d, type: 3}
+  lowBorderLuxuryClouds: {fileID: 2800000, guid: 9a76ce8f2c182c247834c19603ff2068, type: 3}
+  highBorderLuxuryClouds: {fileID: 2800000, guid: 5054a748d0ecd72408e17cbdc92f07cb, type: 3}
+  lowNimbusLuxuryClouds: {fileID: 2800000, guid: 8b7b5fa7d0504eb4084b8d451bdb4dac, type: 3}
+  midNimbusLuxuryClouds: {fileID: 2800000, guid: aafa15e7fb9760b4d93ef145502eab4b, type: 3}
+  highNimbusLuxuryClouds: {fileID: 2800000, guid: cf1e011d4126f5b45af1e0c5c8162509, type: 3}
   luxuryVariation: {fileID: 2800000, guid: c4666b12d12d34d45b89ea8d2fe52b01, type: 3}
   cloudTextureColor:
     overrideValue: 0
