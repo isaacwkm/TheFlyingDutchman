@@ -104,6 +104,10 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 **Jalen Suwa:** (Audio, Programming, QA and Playtest Coordinator)
 
+## Additional Support:
+
+**Aidan Higgins: ** (Hitboxes)
+
 ### All Contributors:
 
 <a href="https://github.com/isaacwkm/TheFlyingDutchman/graphs/contributors">
