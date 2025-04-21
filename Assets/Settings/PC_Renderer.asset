@@ -157,6 +157,23 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 5
+--- !u!114 &-969634032602594156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8fd88d0295034688a2f7fa7b77870, type: 3}
+  m_Name: '[SCPE] BlackBarsRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 3
 --- !u!114 &-66475253101824344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +235,8 @@ MonoBehaviour:
   - {fileID: -7760736066606812613}
   - {fileID: -8006578281913554059}
   - {fileID: 1503757668118532236}
+  - {fileID: 2465426044151072468}
+  - {fileID: -969634032602594156}
   m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
@@ -272,6 +291,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c3aa9cc45b3c6d41931da538b5008f9, type: 3}
   m_Name: '[SCPE] MosaicRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
+--- !u!114 &2465426044151072468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75abc38b4cd3a4d4982e12c466596dad, type: 3}
+  m_Name: '[SCPE] TransitionRenderer'
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
