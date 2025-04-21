@@ -110,6 +110,11 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
   <img src="https://contrib.rocks/image?repo=isaacwkm/TheFlyingDutchman" alt="contrib.rocks image" />
 </a>
 
+## Additional Support:
+
+**Aidan Higgins:** (Hitboxes)
+
+
 <!-- ROADMAP -->
 ## Roadmap
 
