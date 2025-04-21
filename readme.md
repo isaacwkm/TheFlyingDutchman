@@ -106,7 +106,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 ## Additional Support:
 
-**Aidan Higgins: ** (Hitboxes)
+**Aidan Higgins:** (Hitboxes)
 
 ### All Contributors:
 
