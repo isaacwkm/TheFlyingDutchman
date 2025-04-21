@@ -92,11 +92,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4009836826258293133, guid: aff6c526207163755a983e5b39c6b0cf, type: 3}
-  vfx: {fileID: 0}
-  sfx: {fileID: 0}
+  aimTargetObject: {fileID: 0}
+  effectOnLaunch: {fileID: 0}
   projectileSpawnOffset: {x: 0, y: 0.875, z: 1.25}
-  launchSpeed: 20
-  cooldown: 1
+  launchSpeed: 60
+  cooldown: 2
   useAimSpeed: 1
   aimSpeed: 60
   minPitch: -45
