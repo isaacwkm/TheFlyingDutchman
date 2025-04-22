@@ -3,9 +3,8 @@ using static UnityEditor.Progress;
 
 public class ResourceInteraction : MonoBehaviour
 {
-
-    int gold = 0;
-    int log = 0;
+    public int gold = 0;
+    public int log = 0;
     private void OnTriggerEnter(Collider other)
     {
         DroppedItem droppedItem = other.GetComponent<DroppedItem>();
