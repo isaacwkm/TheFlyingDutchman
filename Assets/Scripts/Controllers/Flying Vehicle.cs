@@ -7,6 +7,7 @@ public class FlyingVehicle : MonoBehaviour
 {
     [SerializeField] private Interactable rudderInteractTarget;
     [SerializeField] private Transform rudderHelmSeat; // The seat location for the player
+    [SerializeField] private float seatMaxDistanceFromPlayer = 2.0f;
     [SerializeField] private float linearAcceleration = 3.0f;
     [SerializeField] private float verticalAcceleration = 1.0f;
     [SerializeField] private float angularAcceleration = 12.0f;
@@ -124,9 +125,18 @@ public class FlyingVehicle : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
     }
 
+    private void RelinquishIfOverboard()
+    {
+        if (!Operating()) return;
+        var displacement = currentPlayer.transform.position - rudderHelmSeat.position;
+        if (displacement.magnitude > seatMaxDistanceFromPlayer) RelinquishFocus(currentPlayer);
+        else if (!rudderInteractTarget.gameObject.activeSelf) RelinquishFocus(currentPlayer);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        RelinquishIfOverboard();
         if (!Operating())
         {
             playerCamera = null;
