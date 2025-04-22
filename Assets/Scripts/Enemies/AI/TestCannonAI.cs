@@ -3,15 +3,31 @@ using UnityEngine;
 public class TestCannonAI : MonoBehaviour
 {
     [SerializeField] ProjectileLauncher launcher;
-
-    void Start()
-    {
-        launcher.Aim(SceneCore.playerCharacter);
-    }
+    [SerializeField] float targetMaxDistance = 100.0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (launcher.aimTargetInLineOfFire) launcher.Launch();
+        Transform target;
+        if (
+            SceneCore.ship != null &&
+            SceneCore.ship.physicsObject.Operating()
+        ) {
+            target = SceneCore.ship.transform;
+        }
+        else
+        {
+            target = SceneCore.playerCharacter.transform;
+        }
+        var displacement = target.position - transform.position;
+        if (displacement.magnitude <= targetMaxDistance)
+        {
+            launcher.Aim(target);
+            if (launcher.aimTargetInLineOfFire) launcher.Launch();
+        }
+        else
+        {
+            launcher.Disarm();
+        }
     }
 }

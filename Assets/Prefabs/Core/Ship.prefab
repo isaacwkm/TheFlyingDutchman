@@ -424,6 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3523552429505074313}
+  - component: {fileID: 7766650737243354483}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -449,6 +450,20 @@ Transform:
   - {fileID: 8796295070711132705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &7766650737243354483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5743085064461989245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e24c44a4ce41066bb984f38b8631a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  geometryObject: {fileID: 4418638503769594105}
+  physicsObject: {fileID: 277970663228825012}
 --- !u!1 &5743961389970834085
 GameObject:
   m_ObjectHideFlags: 0
