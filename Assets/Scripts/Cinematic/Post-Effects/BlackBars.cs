@@ -3,9 +3,11 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Volume))]
-public class BlackBarsEffect : MonoBehaviour, SCPEffect
+public class BlackBarsEffect : SCPEffect
 {
+    public override string Name => "BlackBars";
     public Volume volume;
+    public DisableHUD hudDisabler;
     private SCPE.BlackBars blackBarsEffect;
 
     public AnimationCurve intensityCurveUp = new AnimationCurve(new Keyframe[]
@@ -14,7 +16,7 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
         new Keyframe(0f, 0f), new Keyframe(1f, 1f)
     });
 
-    public AnimationCurve intensityCurveDown = new AnimationCurve(new Keyframe[]
+      public AnimationCurve intensityCurveDown = new AnimationCurve(new Keyframe[]
     {
         //Bell curve
         new Keyframe(0f, 1f), new Keyframe(1f, 0f)
@@ -24,7 +26,9 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
 
     [Range(0f, 1f)]
     private float progress;
-    private bool customToggleOn = false;
+    private float cachedProgress = -1;
+    private bool fadeActive = false;
+    private float playingDirection = 1f;
 
     void OnEnable()
     {
@@ -33,7 +37,7 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
 
     void OnDisable()
     {
-
+        
     }
 
     private void Reset()
@@ -54,17 +58,28 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
     void Update()
     {
         if (!blackBarsEffect) return;
+        if (!fadeActive) return;
+
 
         progress += blendInSpeed * Time.deltaTime;
 
         //An kind of parameter that controls the visibility of an effect (eg. intensity) is always between 0 and 1
         progress = Mathf.Clamp01(progress);
+        CheckAnimationState(); // Sets fadeActive to false if the animation has finished.
 
-        //You can use IntelliSense to browse the available parameters (CTRL+Space after the period).        
-        blackBarsEffect.size.value = intensityCurveUp.Evaluate(progress);
+        //You can use IntelliSense to browse the available parameters (CTRL+Space after the period).
+        if (playingDirection == 1)
+        {
+            blackBarsEffect.size.value = intensityCurveUp.Evaluate(progress);
+        }
+        else
+        {
+            blackBarsEffect.size.value = intensityCurveDown.Evaluate(progress);
+        }
+        
     }
 
-    public void PlayForward(float speed = 0f)
+    public override void PlayForward(float speed = 0f)
     {
         if (speed == 0)
         {
@@ -72,11 +87,13 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
+        hudDisabler.SetActive(false);
         progress = 0;
-        // Set flag
+        fadeActive = true;
+        playingDirection = 1f;
     }
 
-    public void PlayBackward(float speed = 0f)
+    public override void PlayBackward(float speed = 0f)
     {
         if (speed == 0)
         {
@@ -84,7 +101,20 @@ public class BlackBarsEffect : MonoBehaviour, SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
+        hudDisabler.SetActive(true);
         progress = 0;
-        // Set flag
+        fadeActive = true;
+        playingDirection = -1f;
+    }
+
+    private void CheckAnimationState()
+    {
+        if (progress == cachedProgress)
+        {
+            fadeActive = false;
+            cachedProgress -= 1;
+            return;
+        }
+        cachedProgress = progress;
     }
 }
