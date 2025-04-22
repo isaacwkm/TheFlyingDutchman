@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private string actionTooltip = "Interact";
+    [SerializeField] public string actionTooltip = "Interact";
     public ActionSound interactSound = null;
     public bool doCooldown = true;
     public float interactCooldownSeconds = 1;

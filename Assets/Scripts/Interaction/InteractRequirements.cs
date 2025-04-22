@@ -5,21 +5,29 @@ using System.Collections.Generic;
 public class InteractRequirements : MonoBehaviour
 {
     [SerializeField] 
-    private string[] requirements; // Array of strings for the user to create requirements in
+    public string[] requirements; // Array of strings for the user to create requirements in
     [SerializeField][Tooltip("Include any items that can be used to allow interaction with object.")]
-    private int[] activeItemIdsNeeded;
+    public int[] activeItemIdsNeeded;
     private Dictionary<string, bool> requirementsMap = null; // Map of requirements and their status for internal data use.
     private int requirementsLeft = 0;
     public event Action<GameObject> OnInteract;
     public event Action<GameObject> OffInteract;
 
-    void Awake()
+    public void Reinitialize()
     {
         requirementsMap = new Dictionary<string, bool>();
         foreach (string requirementStr in requirements)
         {
             requirementsMap[requirementStr] = false; // initialize all requirements to false
             requirementsLeft++;
+        }
+    }
+
+    void Awake()
+    {
+        if (requirements != null)
+        {
+            Reinitialize();
         }
     }
 

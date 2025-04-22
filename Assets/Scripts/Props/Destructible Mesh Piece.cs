@@ -19,6 +19,7 @@ public class DestructibleMeshPiece : MonoBehaviour
     [SerializeField] public float maxHealth = 1.0f;
     [SerializeField] public bool reparable = true;
     [SerializeField] public int repairCost = 1;
+    [SerializeField] public ActionSound repairSound = null;
     [SerializeField] public bool spawnsDebris = true;
     [SerializeField] public float mass = 1.0f;
     [SerializeField] public float collisionFalsePositivePreventionTimeout = 0.25f;
@@ -75,12 +76,12 @@ public class DestructibleMeshPiece : MonoBehaviour
     {
         if (collisionFalsePositivePreventionTimer <= 0.0f) {
             health -= impulse.magnitude;
-            Needle.Console.D.Log(
+            /*Needle.Console.D.Log(
                 $"Destructible mesh piece {this} " +
                 $"took {impulse.magnitude} damage " +
                 $"and has {health} remaining health",
                 this, "Combat"
-            );
+            );*/
             if (health <= 0.0f)
             {
                 BreakOff(impulse);
@@ -149,7 +150,16 @@ public class DestructibleMeshPiece : MonoBehaviour
 
     private void CreateRepairSite()
     {
-        var repairSite = CreateDummy().AddComponent<DestructibleMeshRepairSite>();
+        var repairSiteObject = CreateDummy();
+        var interactable = repairSiteObject.AddComponent<Interactable>();
+        interactable.interactSound = repairSound;
+        interactable.requirements =
+            repairSiteObject.AddComponent<InteractRequirements>();
+        interactable.requirements.requirements = new string[] {"ok"};
+        interactable.requirements.activeItemIdsNeeded = new int[] {};
+        interactable.requirements.Reinitialize();
+        var repairSite =
+            repairSiteObject.AddComponent<DestructibleMeshRepairSite>();
         repairSite.pieceToRepair = this;
         var renderer = repairSite.GetComponent<MeshRenderer>();
         if (renderer != null)

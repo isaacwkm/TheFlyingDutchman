@@ -6,6 +6,8 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private Camera m_camera;
     [SerializeField] private AudioManager m_audioManager;
     [SerializeField] private ItemCatalog m_itemCatalog;
+    [SerializeField] private FlyingVehicle m_ship;
+    [SerializeField] private ResourceInteraction m_resourceInventory;
     [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
     [SerializeField] private UIStack m_uiStack;
@@ -43,6 +45,16 @@ public class SceneCore : MonoBehaviour
     public static ItemCatalog itemCatalog
     {
         get { return instance.m_itemCatalog; }
+    }
+
+    public static FlyingVehicle ship
+    {
+        get { return instance.m_ship; }
+    }
+
+    public static ResourceInteraction resourceInventory
+    {
+        get { return instance.m_resourceInventory; }
     }
 
     public static StoryManager storyManager
