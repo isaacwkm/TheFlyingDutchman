@@ -7,7 +7,6 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private AudioManager m_audioManager;
     [SerializeField] private ItemCatalog m_itemCatalog;
     [SerializeField] private PlayerShip m_ship;
-    [SerializeField] private ResourceInteraction m_resourceInventory;
     [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
     [SerializeField] private UIStack m_uiStack;
@@ -54,7 +53,7 @@ public class SceneCore : MonoBehaviour
 
     public static ResourceInteraction resourceInventory
     {
-        get { return instance.m_resourceInventory; }
+        get { return instance.m_ship.resourceInventory; }
     }
 
     public static StoryManager storyManager
