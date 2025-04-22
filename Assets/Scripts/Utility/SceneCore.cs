@@ -6,7 +6,7 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private Camera m_camera;
     [SerializeField] private AudioManager m_audioManager;
     [SerializeField] private ItemCatalog m_itemCatalog;
-    [SerializeField] private FlyingVehicle m_ship;
+    [SerializeField] private PlayerShip m_ship;
     [SerializeField] private ResourceInteraction m_resourceInventory;
     [SerializeField] private StoryManager m_storyManager;
     [SerializeField] private Canvas m_canvas;
@@ -47,7 +47,7 @@ public class SceneCore : MonoBehaviour
         get { return instance.m_itemCatalog; }
     }
 
-    public static FlyingVehicle ship
+    public static PlayerShip ship
     {
         get { return instance.m_ship; }
     }
@@ -75,5 +75,21 @@ public class SceneCore : MonoBehaviour
     public static MainMenu MainMenu()
     {
         return uiStack.Call(instance.m_mainMenu);
+    }
+
+    void Start()
+    {
+        if (m_ship == null)
+        {
+            Debug.Log(
+                "WARNING: SceneCore now holds a reference to the ship object, " +
+                "but since the ship object is not a child of SceneCore, " +
+                "that reference cannot be set in the SceneCore prefab, " +
+                "and must be set per-scene. In the current scene, " +
+                "it is not set, so, as a fallback, SceneCore will find it " +
+                "with Object.FindAnyObjectByType."
+            );
+            m_ship = Object.FindAnyObjectByType<PlayerShip>();
+        }
     }
 }
