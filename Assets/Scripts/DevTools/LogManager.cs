@@ -11,6 +11,9 @@ public class LogManager : MonoBehaviour
     [Tooltip("Log Uncategorized and General messages. Keep enabled to receive error logs. If the [Any] channel is overflowing with messages, try to categorize the source of what's causing all the messages.")]
     public bool logAny = true;
 
+    [Tooltip("Log dynamic Post-Processing operations")]
+    public bool logPostProc = true;
+
     [Header("UI Logs")]
     public bool logUI = true;
     [Tooltip("Log Accessibility Systems Logs")]
@@ -74,8 +77,9 @@ public class LogManager : MonoBehaviour
         categoryStates["Dig"] = logDig; // Shovel dig feature logs
         categoryStates["Item"] = logItem; // interaction system
         categoryStates["Move"] = logMove; // player character movement and abilities
-        categoryStates["Story"] = logMove; // story manager
+        categoryStates["Story"] = logStory; // story manager
         categoryStates["Combat"] = logCombat;
+        categoryStates["PostProc"] = logPostProc; // Post processing operations (during runtime)
     }
 
     public static bool ShouldLog(string category)

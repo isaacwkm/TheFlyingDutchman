@@ -10444,7 +10444,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 219.61499, y: 219.61499, z: 219.61499}
+  m_LocalScale: {x: 386.58264, y: 386.58264, z: 386.58264}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729361745}
@@ -10949,7 +10949,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 670291963}
-  - component: {fileID: 670291964}
   m_Layer: 0
   m_Name: CinematicsManager
   m_TagString: Untagged
@@ -10972,18 +10971,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1547911953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &670291964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670291962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64c3efea04763748a5215070112d915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &672178828
 GameObject:
   m_ObjectHideFlags: 0
@@ -13004,7 +12991,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -290.285, y: 147.24757, z: 1687.8392}
+  m_LocalPosition: {x: -161.3818, y: 66.895584, z: 1872.5936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13401,6 +13388,69 @@ MonoBehaviour:
 
     There''s
     three to be found in the archipelago...'
+--- !u!1 &1681897287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4060957096926060231, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1681897288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2835726503704994609, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681897287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1681897290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681897287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64c3efea04763748a5215070112d915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 1681897288}
+  intensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blendInSpeed: 4
 --- !u!1 &1686661562
 GameObject:
   m_ObjectHideFlags: 0
@@ -20445,6 +20495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TownPortIsland
       objectReference: {fileID: 0}
+    - target: {fileID: 3290255690501428153, guid: c8fb20beedbe2ac4ca3665414afbaa4e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6713923460323587693, guid: c8fb20beedbe2ac4ca3665414afbaa4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -236.96475
@@ -20646,6 +20700,10 @@ PrefabInstance:
       propertyPath: sceneStartSpawn
       value: 
       objectReference: {fileID: 2066888185}
+    - target: {fileID: 4648498022335368960, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5589599369197525943, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
@@ -20658,6 +20716,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7239319500989245903, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9166617664817866798}
+    - targetCorrespondingSourceObject: {fileID: 4060957096926060231, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1681897290}
   m_SourcePrefab: {fileID: 100100000, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
 --- !u!114 &9166617664817866795 stripped
 MonoBehaviour:

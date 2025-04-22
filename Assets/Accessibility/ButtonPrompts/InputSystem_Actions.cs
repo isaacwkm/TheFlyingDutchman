@@ -197,6 +197,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CustomAction3"",
+                    ""type"": ""Button"",
+                    ""id"": ""00bf1099-e985-49a5-b4c6-619f883621a3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -582,6 +591,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""CustomAction2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60deb9b1-7f79-4126-9ce9-c9ed6d5d08cd"",
+                    ""path"": ""<Keyboard>/slash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""CustomAction3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1735,6 +1755,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         m_Player_CustomAction1 = m_Player.FindAction("CustomAction1", throwIfNotFound: true);
         m_Player_CustomAction2 = m_Player.FindAction("CustomAction2", throwIfNotFound: true);
+        m_Player_CustomAction3 = m_Player.FindAction("CustomAction3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1847,6 +1868,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Menu;
     private readonly InputAction m_Player_CustomAction1;
     private readonly InputAction m_Player_CustomAction2;
+    private readonly InputAction m_Player_CustomAction3;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1870,6 +1892,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Menu => m_Wrapper.m_Player_Menu;
         public InputAction @CustomAction1 => m_Wrapper.m_Player_CustomAction1;
         public InputAction @CustomAction2 => m_Wrapper.m_Player_CustomAction2;
+        public InputAction @CustomAction3 => m_Wrapper.m_Player_CustomAction3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1936,6 +1959,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @CustomAction2.started += instance.OnCustomAction2;
             @CustomAction2.performed += instance.OnCustomAction2;
             @CustomAction2.canceled += instance.OnCustomAction2;
+            @CustomAction3.started += instance.OnCustomAction3;
+            @CustomAction3.performed += instance.OnCustomAction3;
+            @CustomAction3.canceled += instance.OnCustomAction3;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1997,6 +2023,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @CustomAction2.started -= instance.OnCustomAction2;
             @CustomAction2.performed -= instance.OnCustomAction2;
             @CustomAction2.canceled -= instance.OnCustomAction2;
+            @CustomAction3.started -= instance.OnCustomAction3;
+            @CustomAction3.performed -= instance.OnCustomAction3;
+            @CustomAction3.canceled -= instance.OnCustomAction3;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -2324,6 +2353,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnCustomAction1(InputAction.CallbackContext context);
         void OnCustomAction2(InputAction.CallbackContext context);
+        void OnCustomAction3(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

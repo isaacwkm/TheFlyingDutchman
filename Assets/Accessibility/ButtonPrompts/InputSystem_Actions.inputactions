@@ -175,6 +175,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CustomAction3",
+                    "type": "Button",
+                    "id": "00bf1099-e985-49a5-b4c6-619f883621a3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -560,6 +569,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "CustomAction2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60deb9b1-7f79-4126-9ce9-c9ed6d5d08cd",
+                    "path": "<Keyboard>/slash",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "CustomAction3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
