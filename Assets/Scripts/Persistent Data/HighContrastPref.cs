@@ -39,7 +39,7 @@ public class HighContrastPref : MonoBehaviour
         // VolumeProfile targetProfile = GetTargetProfile();
 
         // // Only reassign if the profile actually changes
-        // if (renderVolume.profile != targetProfile)
+        // if (currentProfile != targetProfile)
         // {
         //     D.Log("Reassigning volume profile in HighContrastPref.", this, "PostProc");
         //     renderVolume.profile = targetProfile;
