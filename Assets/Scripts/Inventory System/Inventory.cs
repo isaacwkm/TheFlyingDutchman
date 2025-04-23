@@ -49,8 +49,13 @@ public class Inventory : MonoBehaviour
         // If it's not full, add it to inventory.
         if (!isFull())
         {
-            item.GetComponent<DroppedItem>().disablePickup(gameObject); // passing gameObject (the player this is attached to) as the object to follow for newly gained item
+            DroppedItem droppedItemComponent = item.GetComponent<DroppedItem>();
+            droppedItemComponent.disablePickup(gameObject); // passing gameObject (the player this is attached to) as the object to follow for newly gained item
 
+            // play SFX for pickup up item
+            droppedItemComponent.PlayPickupSound();
+
+            // Add it to inventory
             int slot = findFirstOpenSlotIndex();
             addItem(item, slot);
             return true;

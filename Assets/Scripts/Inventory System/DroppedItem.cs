@@ -9,6 +9,7 @@ public class DroppedItem : MonoBehaviour
 {
     public Quaternion defaultRotation = Quaternion.Euler(0, 0, 0);
     public ActionSound dropSound;
+    public ActionSound pickupSound;
     [HideInInspector] public int itemID = 1;
     private Rigidbody rb;
     private Collider itemCollider;
@@ -131,5 +132,14 @@ public class DroppedItem : MonoBehaviour
         itemCollider.enabled = false;
         this.enabled = false;
         gameObject.SetActive(false);
+    }
+
+    public void PlayPickupSound()
+    {
+        if (dropSound != null)
+        {
+            pickupSound.PlaySingleRandom();
+        }
+        
     }
 }
