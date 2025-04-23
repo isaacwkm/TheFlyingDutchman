@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5311034962114177298}
   - component: {fileID: 3359494945116081138}
   - component: {fileID: 4009836826258293133}
-  - component: {fileID: 3644041231308977920}
   - component: {fileID: 1711411661472480898}
   m_Layer: 0
   m_Name: test cannonball
@@ -138,23 +137,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3644041231308977920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2825221901041224626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b872efa2033018529b1b070512f5973a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyAfterTimeout: 1
-  timeout: 10
-  destroyAtKillPlane: 1
-  killPlane: -1000
-  destroyWhenNotVisible: 1
 --- !u!114 &1711411661472480898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,5 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnContact: 1
-  effectOnDestroy: {fileID: 2295152133284406139, guid: bd38c988031d1205b801409d108109ac, type: 3}
+  effectOnDestroy: {fileID: 2262450238634982241, guid: bd38c988031d1205b801409d108109ac, type: 3}
   source: {fileID: 0}
