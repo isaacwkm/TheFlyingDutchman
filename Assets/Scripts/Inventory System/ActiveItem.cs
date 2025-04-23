@@ -103,9 +103,9 @@ public class ActiveItem : MonoBehaviour
         Physics.OverlapBoxNonAlloc(boxCenter, new Vector3(0.5f, 0.5f, 1.5f), hits, Quaternion.LookRotation(Camera.main.transform.forward) * Quaternion.Euler(0f, 0f, swingAngle)); //throw out a box collider diagonally in front of the camera
         foreach (var hit in hits)
         {
-            if (hit.GetComponent<Enemy>())
+            if (hit.GetComponent<StrikeDummy>())
             {
-                Enemy enemy = hit.GetComponent<Enemy>();
+                StrikeDummy enemy = hit.GetComponent<StrikeDummy>();
                 enemy.TakeHit();
             }
         }
