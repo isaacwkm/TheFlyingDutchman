@@ -100,7 +100,7 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 **Jaime McCann:** (Programming, Gameplay Design)
 
-**Garrett Yu:** (Level Design, Art Direction)
+**Garrett Yu:** (Level & Environment Design)
 
 **Jalen Suwa:** (Audio, Programming, QA and Playtest Coordinator)
 
@@ -112,6 +112,8 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 ## Additional Support:
 
+**Franchesca B.** (Art Direction)
+
 **Aidan Higgins:** (Hitboxes)
 
 **Jimmy Nguyen:** (Programming)
@@ -121,8 +123,10 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 ## Roadmap
 
 - [X] CMPM 172 (Spring 2025)
-    - [ ] Project is planned to continue into Spring 2025.
-    - [ ] Currently proposing features with our TA (Jawad).
+    - [X] New Islands
+    - [ ] Clue tracker menu
+    - [ ] Ship Combat
+    - [ ] NPC's and dialogue
 
 See the [open issues](https://github.com/isaacwkm/TheFlyingDutchman/issues) for a full list of proposed features (and known issues).
 
