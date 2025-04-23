@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] public bool destroyOnContact = false;
     [SerializeField] public TemporaryGameObject effectOnDestroy = null;
+    [SerializeField] public bool useDamageOverride = false;
+    [SerializeField] public float damageOverride = 1.0f;
     [HideInInspector] public GameObject source = null;
 
     void OnCollisionEnter(Collision collision)
@@ -20,7 +22,12 @@ public class Projectile : MonoBehaviour
                     contact += collision.GetContact(i).point;
                 }
                 contact /= collision.contactCount;
-                dmp.ReportHit(contact, collision.impulse);
+                Vector3 damage = collision.impulse;
+                if (useDamageOverride)
+                {
+                    damage = damage.normalized*damageOverride;
+                }
+                dmp.ReportHit(contact, damage);
             }
             if (destroyOnContact)
             {
