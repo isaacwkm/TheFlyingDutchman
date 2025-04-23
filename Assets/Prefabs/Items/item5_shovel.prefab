@@ -79,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458709536193697459}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3851777319972290947}
   m_SourcePrefab: {fileID: 100100000, guid: fe0e965d67104d54ea33f51e03889443, type: 3}
 --- !u!1 &2104486890021761984 stripped
 GameObject:
@@ -98,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTooltip: Pick Up
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 3851777319972290947}
   doCooldown: 0
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
@@ -188,3 +191,21 @@ MonoBehaviour:
   hasAttack: 1
   attackAnimNames:
   - Right Swing
+--- !u!114 &3851777319972290947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104486890021761984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: afe8bbbaf9db3394e825b544be136bb7, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
