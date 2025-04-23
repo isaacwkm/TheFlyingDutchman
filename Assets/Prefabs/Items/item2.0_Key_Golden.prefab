@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8083096118663489815}
   - component: {fileID: 1793879988456566262}
   - component: {fileID: 2552079903015606283}
+  - component: {fileID: -6728641742253607865}
   m_Layer: 11
   m_Name: item2.0_Key_Golden
   m_TagString: Untagged
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTooltip: Pick up
-  interactSound: {fileID: 0}
+  interactSound: {fileID: -6728641742253607865}
   doCooldown: 0
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
@@ -189,8 +190,10 @@ MonoBehaviour:
   itemIDPleaseDoNotChange: 2
   heldPositionOffset: {x: 0, y: 0, z: 0}
   heldRotationOffset: {x: 0, y: 0, z: 0}
+  hasInteractAnim: 0
+  interactAnimNames: []
   hasAttack: 0
-  attackAnimName: 
+  attackAnimNames: []
 --- !u!205 &2552079903015606283
 LODGroup:
   m_ObjectHideFlags: 0
@@ -210,3 +213,21 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1876131233155766188}
   m_Enabled: 1
+--- !u!114 &-6728641742253607865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647226472413488857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 00b8e69eddf7a564494c1a6a6f17cbf5, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}

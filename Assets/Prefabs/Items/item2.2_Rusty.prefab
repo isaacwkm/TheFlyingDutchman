@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4090352464180059504}
   - component: {fileID: -723718612612124065}
   - component: {fileID: -9136100263071108795}
+  - component: {fileID: 6600868092969480634}
   m_Layer: 11
   m_Name: item2.2_Rusty
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionTooltip: Pick Up
-  interactSound: {fileID: 0}
+  interactSound: {fileID: 6600868092969480634}
   doCooldown: 0
   interactCooldownSeconds: 1
   CooldownReturnSound: {fileID: 0}
@@ -188,6 +189,25 @@ MonoBehaviour:
   itemIDPleaseDoNotChange: 4
   heldPositionOffset: {x: 0, y: 0, z: 0}
   heldRotationOffset: {x: 0, y: 0, z: 0}
-  handAnim: {fileID: 0}
+  hasInteractAnim: 0
+  interactAnimNames: []
   hasAttack: 0
-  attackAnimName: 
+  attackAnimNames: []
+--- !u!114 &6600868092969480634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474203028830785264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28c350ef1df6f4892034e65ef12ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 36bfd3f05dfa7554690f33081ed7eada, type: 3}
+  volume: 0.05
+  pitch: 1
+  spatialBlend: 1
+  audioSource: {fileID: 0}
