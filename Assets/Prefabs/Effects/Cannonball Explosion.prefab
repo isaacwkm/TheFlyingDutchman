@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1163451204420696, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
       propertyPath: m_Name
-      value: Explosion02_HighPerformance
+      value: Cannonball Explosion
       objectReference: {fileID: 0}
     - target: {fileID: 4718938953682214, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,8 +52,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 199373370187723780, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199573234948042480, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1163451204420696, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2262450238634982241}
   m_SourcePrefab: {fileID: 100100000, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+--- !u!1 &684525559349282581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1163451204420696, guid: 95175aeab20f4d041860eca89a4ddded, type: 3}
+  m_PrefabInstance: {fileID: 683366789768299341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2262450238634982241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684525559349282581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b872efa2033018529b1b070512f5973a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterTimeout: 0
+  timeout: 10
+  destroyAtKillPlane: 0
+  killPlane: -1000
+  destroyWhenNotVisible: 0
