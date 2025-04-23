@@ -1,9 +1,30 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 public class DestructibleMesh : MonoBehaviour
 {
+    public event Action<DestructibleMeshPiece> hit;
+    public event Action<DestructibleMeshPiece> broken;
+    public event Action<DestructibleMeshPiece> repaired;
+
+    private class PieceActions
+    {
+        public Action hit;
+        public Action broken;
+        public Action repaired;
+        public PieceActions(
+            Action hit,
+            Action broken,
+            Action repaired
+        ) {
+            this.hit = hit;
+            this.broken = broken;
+            this.repaired = repaired;
+        }
+    }
+
     private struct Impact
     {
         public DestructibleMeshPiece piece;
@@ -39,6 +60,7 @@ public class DestructibleMesh : MonoBehaviour
         get => _pieces.AsReadOnly();
     }
 
+    private Dictionary<DestructibleMeshPiece, PieceActions> actionsTable = new();
     private Queue<Impact> queuedImpacts = new();
 
     public void RegisterPiece(DestructibleMeshPiece piece)
@@ -53,6 +75,40 @@ public class DestructibleMesh : MonoBehaviour
         else if (!_pieces.Contains(piece))
         {
             _pieces.Add(piece);
+            var row = new PieceActions(
+                () => hit?.Invoke(piece),
+                () => broken?.Invoke(piece),
+                () => repaired?.Invoke(piece)
+            );
+            actionsTable.Add(piece, row);
+            if (enabled)
+            {
+                piece.hit += row.hit;
+                piece.broken += row.broken;
+                piece.repaired += row.repaired;
+            }
+        }
+    }
+
+    void OnEnable()
+    {
+        foreach (var piece in _pieces)
+        {
+            var row = actionsTable[piece];
+            piece.hit += row.hit;
+            piece.broken += row.broken;
+            piece.repaired += row.repaired;
+        }
+    }
+
+    void OnDisable()
+    {
+        foreach (var piece in _pieces)
+        {
+            var row = actionsTable[piece];
+            piece.hit -= row.hit;
+            piece.broken -= row.broken;
+            piece.repaired -= row.repaired;
         }
     }
 
@@ -93,7 +149,7 @@ public class DestructibleMesh : MonoBehaviour
         }
     }
 
-    public void Update()
+    void Update()
     {
         if (queuedImpacts.Count > 0)
         {
