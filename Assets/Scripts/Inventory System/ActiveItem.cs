@@ -74,15 +74,16 @@ public class ActiveItem : MonoBehaviour
         if (forcePlayAnim == true)
         {
             handAnim.Play(atkName, -1, 0);
+            StartCoroutine(Hit(attackAnimNames[randomAtkIndex])); //throws out a hitbox, right now animation names are hardcoded
         }
 
         if (handAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !handAnim.IsInTransition(0))
         {
             handAnim.Play(atkName, -1, 0);
+            StartCoroutine(Hit(attackAnimNames[randomAtkIndex])); //throws out a hitbox, right now animation names are hardcoded
             D.Log($"Attacked with animation #{randomAtkIndex}! Name: {attackAnimNames[randomAtkIndex]}", this, "Item");
         }
-
-        StartCoroutine(Hit(attackAnimNames[randomAtkIndex])); //throws out a hitbox, right now animation names are hardcoded
+        
     }
 
      IEnumerator Hit(string animName)
