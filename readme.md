@@ -114,6 +114,8 @@ This project was developed at UC: Santa Cruz over the course of 10 weeks as part
 
 **Aidan Higgins:** (Hitboxes)
 
+**Jimmy Nguyen:** (Programming)
+
 
 <!-- ROADMAP -->
 ## Roadmap
