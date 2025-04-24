@@ -23,6 +23,7 @@ public class DestructibleMeshPiece : MonoBehaviour
     [SerializeField] public bool spawnsDebris = true;
     [SerializeField] public float mass = 1.0f;
     [SerializeField] public float collisionFalsePositivePreventionTimeout = 0.25f;
+    [SerializeField] public int aiTargetPriority = 1;
 
     public DestructibleMesh ownerDestructibleMesh {get => _ownerDestructibleMesh;}
     public float health {get; private set;}
@@ -67,9 +68,12 @@ public class DestructibleMeshPiece : MonoBehaviour
             !destructibilityParent.attached;
     }
 
-    public void ReportHit(Vector3 source, Vector3 impulse)
-    {
-        ownerDestructibleMesh.TakeHit(source, impulse);
+    public void ReportHit(
+        Vector3 source,
+        Vector3 impulse,
+        float blastRadius
+    ) {
+        ownerDestructibleMesh.TakeHit(source, impulse, blastRadius);
     }
 
     public void TakeDamage(Vector3 impulse)

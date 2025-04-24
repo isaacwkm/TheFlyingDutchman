@@ -13,7 +13,12 @@ public class TestCannonAI : MonoBehaviour
             SceneCore.ship != null &&
             SceneCore.ship.physicsObject.Operating()
         ) {
-            target = SceneCore.ship.transform;
+            target = SceneCore.ship.geometryObject
+                .GetHighestPriorityTarget()?.transform;
+            if (target == null)
+            {
+                target = SceneCore.ship.transform;
+            }
         }
         else
         {

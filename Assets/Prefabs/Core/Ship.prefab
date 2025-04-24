@@ -410,7 +410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4223772628464214591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e0e5b137c624e4eb17a9f960e7b31d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3288f86a5cba3454e8f7316814918d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
@@ -530,7 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonMaterialOverride: {fileID: 0}
   repairSiteMaterial: {fileID: 2100000, guid: df23005e6eb94ea499e8f78496f8aa20, type: 2}
-  blastRadiusMultiplier: 0.25
   syncedRigidbody: {fileID: 2848870048513271243}
 --- !u!1 &5877273805419995489
 GameObject:
@@ -657,7 +656,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1065,7 +1064,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1175,7 +1174,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 1220810248042170844}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1389,7 +1388,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1676,7 +1675,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1785,7 +1784,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1890,7 +1889,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 1220810248042170844}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -1990,7 +1989,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 1220810248042170844}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -2227,7 +2226,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10067,7 +10066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10117,7 +10116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10167,7 +10166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10217,7 +10216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10267,7 +10266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10317,7 +10316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10367,7 +10366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10417,7 +10416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10467,7 +10466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10517,7 +10516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10567,7 +10566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10617,7 +10616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10667,7 +10666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10717,7 +10716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10767,7 +10766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10817,7 +10816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10867,7 +10866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10917,7 +10916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -10967,7 +10966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11017,7 +11016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11067,7 +11066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11117,7 +11116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11167,7 +11166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11217,7 +11216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11267,7 +11266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11317,7 +11316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11367,7 +11366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11417,7 +11416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11467,7 +11466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11517,7 +11516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11567,7 +11566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11617,7 +11616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11667,7 +11666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11717,7 +11716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11767,7 +11766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11817,7 +11816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11867,7 +11866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11917,7 +11916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -11967,7 +11966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12017,7 +12016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12067,7 +12066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12117,7 +12116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12167,7 +12166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12217,7 +12216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12267,7 +12266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12317,7 +12316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12367,7 +12366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12417,7 +12416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12467,7 +12466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12517,7 +12516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12567,7 +12566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12617,7 +12616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12667,7 +12666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12717,7 +12716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12767,7 +12766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12817,7 +12816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12867,7 +12866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12917,7 +12916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -12967,7 +12966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13017,7 +13016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13067,7 +13066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13117,7 +13116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13167,7 +13166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13217,7 +13216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13267,7 +13266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13317,7 +13316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13367,7 +13366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13417,7 +13416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13467,7 +13466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13517,7 +13516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13567,7 +13566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13617,7 +13616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13667,7 +13666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13717,7 +13716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13767,7 +13766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13817,7 +13816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13867,7 +13866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13917,7 +13916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -13967,7 +13966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14017,7 +14016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14067,7 +14066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14117,7 +14116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14167,7 +14166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14217,7 +14216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14267,7 +14266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14317,7 +14316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14367,7 +14366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14417,7 +14416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14467,7 +14466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14517,7 +14516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14567,7 +14566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14617,7 +14616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14667,7 +14666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14717,7 +14716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14767,7 +14766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14817,7 +14816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14867,7 +14866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14917,7 +14916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -14967,7 +14966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15017,7 +15016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15067,7 +15066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15117,7 +15116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15167,7 +15166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15217,7 +15216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15267,7 +15266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15317,7 +15316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15367,7 +15366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15417,7 +15416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15467,7 +15466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15517,7 +15516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15567,7 +15566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15617,7 +15616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15667,7 +15666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15717,7 +15716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15767,7 +15766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15817,7 +15816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15867,7 +15866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15917,7 +15916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -15967,7 +15966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16017,7 +16016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16067,7 +16066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16117,7 +16116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16167,7 +16166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16217,7 +16216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16267,7 +16266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16317,7 +16316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16367,7 +16366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16417,7 +16416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16467,7 +16466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16517,7 +16516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16567,7 +16566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16617,7 +16616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16667,7 +16666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16717,7 +16716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16767,7 +16766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16817,7 +16816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16867,7 +16866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16917,7 +16916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -16967,7 +16966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17017,7 +17016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17067,7 +17066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17117,7 +17116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17167,7 +17166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17217,7 +17216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17267,7 +17266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17317,7 +17316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17367,7 +17366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17417,7 +17416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17467,7 +17466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17517,7 +17516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17567,7 +17566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17617,7 +17616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17667,7 +17666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17717,7 +17716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17767,7 +17766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17817,7 +17816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17867,7 +17866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17917,7 +17916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -17967,7 +17966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18017,7 +18016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18067,7 +18066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18117,7 +18116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18167,7 +18166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18217,7 +18216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18267,7 +18266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18317,7 +18316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18367,7 +18366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18417,7 +18416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18467,7 +18466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18517,7 +18516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18567,7 +18566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18617,7 +18616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18667,7 +18666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18717,7 +18716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18767,7 +18766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18817,7 +18816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18867,7 +18866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18917,7 +18916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -18967,7 +18966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19017,7 +19016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19067,7 +19066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19117,7 +19116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19167,7 +19166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19217,7 +19216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19267,7 +19266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19317,7 +19316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19367,7 +19366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19417,7 +19416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19467,7 +19466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19517,7 +19516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19567,7 +19566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19617,7 +19616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19667,7 +19666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19717,7 +19716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19767,7 +19766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19817,7 +19816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19867,7 +19866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19917,7 +19916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -19967,7 +19966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20017,7 +20016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20067,7 +20066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20117,7 +20116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20167,7 +20166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20217,7 +20216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20267,7 +20266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20317,7 +20316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20367,7 +20366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20417,7 +20416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20467,7 +20466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20517,7 +20516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20567,7 +20566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20617,7 +20616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20667,7 +20666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20717,7 +20716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20767,7 +20766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20817,7 +20816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20867,7 +20866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20917,7 +20916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -20967,7 +20966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21017,7 +21016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21067,7 +21066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21117,7 +21116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21167,7 +21166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21217,7 +21216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21267,7 +21266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21317,7 +21316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21367,7 +21366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21417,7 +21416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21467,7 +21466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21517,7 +21516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21567,7 +21566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21617,7 +21616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21667,7 +21666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21717,7 +21716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21767,7 +21766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21817,7 +21816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21867,7 +21866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21917,7 +21916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -21967,7 +21966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22017,7 +22016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22067,7 +22066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22117,7 +22116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22167,7 +22166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22217,7 +22216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22267,7 +22266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22317,7 +22316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22367,7 +22366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22417,7 +22416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22467,7 +22466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22517,7 +22516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22567,7 +22566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22617,7 +22616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22667,7 +22666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22717,7 +22716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22767,7 +22766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22817,7 +22816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22867,7 +22866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22917,7 +22916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -22967,7 +22966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23017,7 +23016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23067,7 +23066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23117,7 +23116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23167,7 +23166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23217,7 +23216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23267,7 +23266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23317,7 +23316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23367,7 +23366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23417,7 +23416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23467,7 +23466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23517,7 +23516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23567,7 +23566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23617,7 +23616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23667,7 +23666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23717,7 +23716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23767,7 +23766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23817,7 +23816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23867,7 +23866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23917,7 +23916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -23967,7 +23966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24017,7 +24016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24067,7 +24066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24117,7 +24116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24167,7 +24166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24217,7 +24216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24267,7 +24266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24317,7 +24316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24367,7 +24366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24417,7 +24416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24467,7 +24466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24517,7 +24516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24567,7 +24566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24617,7 +24616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24667,7 +24666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24717,7 +24716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24767,7 +24766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24817,7 +24816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24867,7 +24866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24917,7 +24916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -24967,7 +24966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25017,7 +25016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25067,7 +25066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25117,7 +25116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25167,7 +25166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25217,7 +25216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25267,7 +25266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25317,7 +25316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25367,7 +25366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25417,7 +25416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25467,7 +25466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25517,7 +25516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25567,7 +25566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25617,7 +25616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25667,7 +25666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25717,7 +25716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25767,7 +25766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25817,7 +25816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25867,7 +25866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25917,7 +25916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -25967,7 +25966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26017,7 +26016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26067,7 +26066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26117,7 +26116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26167,7 +26166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26217,7 +26216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26267,7 +26266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26317,7 +26316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26367,7 +26366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26417,7 +26416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26467,7 +26466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26517,7 +26516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26567,7 +26566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26617,7 +26616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26667,7 +26666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26717,7 +26716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26767,7 +26766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26817,7 +26816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26867,7 +26866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26917,7 +26916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -26967,7 +26966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27017,7 +27016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27067,7 +27066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27117,7 +27116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27167,7 +27166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27217,7 +27216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27267,7 +27266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27317,7 +27316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27367,7 +27366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27417,7 +27416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27467,7 +27466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27517,7 +27516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27567,7 +27566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27617,7 +27616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27667,7 +27666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27717,7 +27716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27767,7 +27766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27817,7 +27816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27867,7 +27866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27917,7 +27916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -27967,7 +27966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28017,7 +28016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28067,7 +28066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28117,7 +28116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28167,7 +28166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28217,7 +28216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28267,7 +28266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28317,7 +28316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28367,7 +28366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28417,7 +28416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28467,7 +28466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28517,7 +28516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28567,7 +28566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28617,7 +28616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28667,7 +28666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28717,7 +28716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28767,7 +28766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28817,7 +28816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28867,7 +28866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28917,7 +28916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -28967,7 +28966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29017,7 +29016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29067,7 +29066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29117,7 +29116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29167,7 +29166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29217,7 +29216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29267,7 +29266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29317,7 +29316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29367,7 +29366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29417,7 +29416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29467,7 +29466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29517,7 +29516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29567,7 +29566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29617,7 +29616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29667,7 +29666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29717,7 +29716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29767,7 +29766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29817,7 +29816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29867,7 +29866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29917,7 +29916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -29967,7 +29966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30017,7 +30016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30067,7 +30066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30117,7 +30116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30167,7 +30166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30217,7 +30216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30267,7 +30266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30317,7 +30316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30367,7 +30366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30417,7 +30416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30467,7 +30466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30517,7 +30516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30567,7 +30566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30617,7 +30616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30667,7 +30666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30717,7 +30716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30767,7 +30766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30817,7 +30816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30867,7 +30866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30917,7 +30916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -30967,7 +30966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31017,7 +31016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31067,7 +31066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31117,7 +31116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31167,7 +31166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31217,7 +31216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31267,7 +31266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31317,7 +31316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31367,7 +31366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31417,7 +31416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31467,7 +31466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31517,7 +31516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31567,7 +31566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31617,7 +31616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31667,7 +31666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31717,7 +31716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31767,7 +31766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31817,7 +31816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31867,7 +31866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31917,7 +31916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -31967,7 +31966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32017,7 +32016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32067,7 +32066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32117,7 +32116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32167,7 +32166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32217,7 +32216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32267,7 +32266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32317,7 +32316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32367,7 +32366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32417,7 +32416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32467,7 +32466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32517,7 +32516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32567,7 +32566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32617,7 +32616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32667,7 +32666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32717,7 +32716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32767,7 +32766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32817,7 +32816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32867,7 +32866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32917,7 +32916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -32967,7 +32966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33017,7 +33016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33067,7 +33066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33117,7 +33116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33167,7 +33166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33217,7 +33216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33267,7 +33266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33317,7 +33316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33367,7 +33366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33417,7 +33416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33467,7 +33466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33517,7 +33516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33567,7 +33566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33617,7 +33616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33667,7 +33666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33717,7 +33716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33767,7 +33766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33817,7 +33816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33867,7 +33866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33917,7 +33916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -33967,7 +33966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34017,7 +34016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34067,7 +34066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34117,7 +34116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34167,7 +34166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34217,7 +34216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34267,7 +34266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34317,7 +34316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34367,7 +34366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34417,7 +34416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34467,7 +34466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34517,7 +34516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34567,7 +34566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34617,7 +34616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34667,7 +34666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34717,7 +34716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34767,7 +34766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34817,7 +34816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34867,7 +34866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34917,7 +34916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -34967,7 +34966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35017,7 +35016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35067,7 +35066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35117,7 +35116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35167,7 +35166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35217,7 +35216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35267,7 +35266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35317,7 +35316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35367,7 +35366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35417,7 +35416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35467,7 +35466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35517,7 +35516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35567,7 +35566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35617,7 +35616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35667,7 +35666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35717,7 +35716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35767,7 +35766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35817,7 +35816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35867,7 +35866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35917,7 +35916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -35967,7 +35966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36017,7 +36016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36067,7 +36066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36117,7 +36116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36167,7 +36166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36217,7 +36216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36267,7 +36266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36317,7 +36316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36367,7 +36366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36417,7 +36416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36467,7 +36466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36517,7 +36516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36567,7 +36566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36617,7 +36616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36667,7 +36666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36717,7 +36716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36767,7 +36766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36817,7 +36816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36867,7 +36866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36917,7 +36916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -36967,7 +36966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37017,7 +37016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37067,7 +37066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37117,7 +37116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37167,7 +37166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37217,7 +37216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37267,7 +37266,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37317,7 +37316,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37367,7 +37366,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37417,7 +37416,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37467,7 +37466,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37517,7 +37516,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37567,7 +37566,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37617,7 +37616,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37667,7 +37666,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37717,7 +37716,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37767,7 +37766,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37817,7 +37816,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37867,7 +37866,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37917,7 +37916,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -37967,7 +37966,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38017,7 +38016,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38067,7 +38066,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38117,7 +38116,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38167,7 +38166,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38217,7 +38216,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38272,7 +38271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38322,7 +38321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38372,7 +38371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38422,7 +38421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38472,7 +38471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38522,7 +38521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38572,7 +38571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38622,7 +38621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38672,7 +38671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38722,7 +38721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38772,7 +38771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38822,7 +38821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38872,7 +38871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38922,7 +38921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -38972,7 +38971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39022,7 +39021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39072,7 +39071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39122,7 +39121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39172,7 +39171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39222,7 +39221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39272,7 +39271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39322,7 +39321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39372,7 +39371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39422,7 +39421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39472,7 +39471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39522,7 +39521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39572,7 +39571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39622,7 +39621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39672,7 +39671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39722,7 +39721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39772,7 +39771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39822,7 +39821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39872,7 +39871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39922,7 +39921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -39972,7 +39971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40022,7 +40021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40072,7 +40071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40122,7 +40121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40172,7 +40171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40222,7 +40221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40272,7 +40271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40322,7 +40321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40372,7 +40371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40422,7 +40421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40472,7 +40471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40522,7 +40521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40572,7 +40571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40622,7 +40621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40672,7 +40671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40722,7 +40721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40772,7 +40771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40822,7 +40821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40872,7 +40871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40922,7 +40921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -40972,7 +40971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41022,7 +41021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41072,7 +41071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41122,7 +41121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41172,7 +41171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41222,7 +41221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41272,7 +41271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41322,7 +41321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41372,7 +41371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41422,7 +41421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41472,7 +41471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41522,7 +41521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41572,7 +41571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41622,7 +41621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41672,7 +41671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41722,7 +41721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41772,7 +41771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41822,7 +41821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41872,7 +41871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41922,7 +41921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -41972,7 +41971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42022,7 +42021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42072,7 +42071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42122,7 +42121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42172,7 +42171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42222,7 +42221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42272,7 +42271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42322,7 +42321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42372,7 +42371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42422,7 +42421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42472,7 +42471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42522,7 +42521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42572,7 +42571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42622,7 +42621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42672,7 +42671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42722,7 +42721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42772,7 +42771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42822,7 +42821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42872,7 +42871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42922,7 +42921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -42972,7 +42971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43022,7 +43021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43072,7 +43071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43122,7 +43121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43172,7 +43171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43222,7 +43221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43272,7 +43271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43322,7 +43321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43372,7 +43371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43422,7 +43421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43472,7 +43471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43522,7 +43521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43572,7 +43571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43622,7 +43621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43672,7 +43671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43722,7 +43721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43772,7 +43771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43822,7 +43821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43872,7 +43871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43922,7 +43921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -43972,7 +43971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44022,7 +44021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44072,7 +44071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44122,7 +44121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44172,7 +44171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44222,7 +44221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44272,7 +44271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44322,7 +44321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44372,7 +44371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44422,7 +44421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44472,7 +44471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44522,7 +44521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44572,7 +44571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44622,7 +44621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44672,7 +44671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44722,7 +44721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44772,7 +44771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44822,7 +44821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44872,7 +44871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44922,7 +44921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -44972,7 +44971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45022,7 +45021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45072,7 +45071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45122,7 +45121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45172,7 +45171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45222,7 +45221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45272,7 +45271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45322,7 +45321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45372,7 +45371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45422,7 +45421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45472,7 +45471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45522,7 +45521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45572,7 +45571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45622,7 +45621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45672,7 +45671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45722,7 +45721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45772,7 +45771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45822,7 +45821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45872,7 +45871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45922,7 +45921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -45972,7 +45971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46022,7 +46021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46072,7 +46071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46122,7 +46121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46172,7 +46171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46222,7 +46221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46272,7 +46271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46322,7 +46321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46372,7 +46371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46422,7 +46421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46472,7 +46471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46522,7 +46521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46572,7 +46571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46622,7 +46621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46672,7 +46671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46722,7 +46721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46772,7 +46771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46822,7 +46821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46872,7 +46871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46922,7 +46921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -46972,7 +46971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47022,7 +47021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47072,7 +47071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47122,7 +47121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47172,7 +47171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47222,7 +47221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47272,7 +47271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47322,7 +47321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47372,7 +47371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47422,7 +47421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47472,7 +47471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47522,7 +47521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47572,7 +47571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47622,7 +47621,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47672,7 +47671,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47722,7 +47721,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47772,7 +47771,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47822,7 +47821,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47872,7 +47871,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47922,7 +47921,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -47972,7 +47971,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48022,7 +48021,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48072,7 +48071,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48122,7 +48121,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48172,7 +48171,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48222,7 +48221,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48272,7 +48271,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48322,7 +48321,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48372,7 +48371,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48422,7 +48421,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48472,7 +48471,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48522,7 +48521,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48572,7 +48571,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -48804,7 +48803,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}
@@ -49208,7 +49207,7 @@ MonoBehaviour:
   effectOnHit: {fileID: 0}
   effectOnBreak: {fileID: 0}
   destructibilityParent: {fileID: 8889384663306031710}
-  maxHealth: 200
+  maxHealth: 50
   reparable: 1
   repairCost: 1
   repairSound: {fileID: 0}

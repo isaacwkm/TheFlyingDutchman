@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class ProgressPref : MonoBehaviour
 {
+    public StoryManager storyManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        LoadPref();
+        if (storyManager.isActiveAndEnabled)
+        {
+            LoadPref();
+        }   
     }
 
     public static int progress
