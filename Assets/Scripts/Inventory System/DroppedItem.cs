@@ -136,7 +136,7 @@ public class DroppedItem : MonoBehaviour
 
     public void PlayPickupSound()
     {
-        if (dropSound != null)
+        if (pickupSound != null)
         {
             pickupSound.PlaySingleRandom();
         }

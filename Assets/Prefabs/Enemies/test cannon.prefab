@@ -98,12 +98,12 @@ MonoBehaviour:
   launchSpeed: 80
   cooldown: 2
   useAimSpeed: 0
-  aimSpeed: 60
+  aimSpeed: 120
   minPitch: -45
   maxPitch: 45
   minYaw: -180
   maxYaw: 180
-  aimDistanceThreshold: 0.01
+  aimDistanceThreshold: 0.1
 --- !u!114 &4152238375062317101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launcher: {fileID: 2352028082043857679}
-  targetMaxDistance: 100
+  targetMaxDistance: 300
 --- !u!4 &7721446030278818841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2718933385210839917, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
