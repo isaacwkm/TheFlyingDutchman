@@ -44,10 +44,6 @@ public class DestructibleMesh : MonoBehaviour
 
     [SerializeField] public Material commonMaterialOverride = null;
     [SerializeField] public Material repairSiteMaterial = null;
-    /* The radius of the spherecast used to determine which parts are affected
-     * by a projectile collision equals this value times the impulse.
-     * (The value's units are therefore seconds per kilogram.) */
-    [SerializeField] public float blastRadiusMultiplier = 1.0f;
     /* If a Rigidbody is associated by SyncTransform to this DestructibleMesh
      * but is intangible to Projectiles (so that they can pass through it
      * to get to the DestructibleMesh's pieces), specify that Rigidbody here.
@@ -112,11 +108,10 @@ public class DestructibleMesh : MonoBehaviour
         }
     }
 
-    public void TakeHit(Vector3 source, Vector3 impulse)
+    public void TakeHit(Vector3 source, Vector3 impulse, float radius)
     {
         if (impulse != Vector3.zero)
         {
-            float radius = blastRadiusMultiplier*impulse.magnitude;
             foreach (var collider in Physics.OverlapSphere(source, radius)) {
                 var piece = collider.GetComponent<DestructibleMeshPiece>();
                 if (piece != null && piece.ownerDestructibleMesh == this)

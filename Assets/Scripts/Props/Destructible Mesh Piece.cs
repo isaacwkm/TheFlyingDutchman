@@ -67,9 +67,12 @@ public class DestructibleMeshPiece : MonoBehaviour
             !destructibilityParent.attached;
     }
 
-    public void ReportHit(Vector3 source, Vector3 impulse)
-    {
-        ownerDestructibleMesh.TakeHit(source, impulse);
+    public void ReportHit(
+        Vector3 source,
+        Vector3 impulse,
+        float blastRadius
+    ) {
+        ownerDestructibleMesh.TakeHit(source, impulse, blastRadius);
     }
 
     public void TakeDamage(Vector3 impulse)
