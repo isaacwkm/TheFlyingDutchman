@@ -95,9 +95,9 @@ MonoBehaviour:
   aimTargetObject: {fileID: 0}
   effectOnLaunch: {fileID: 0}
   projectileSpawnOffset: {x: 0, y: 0.875, z: 1.25}
-  launchSpeed: 60
+  launchSpeed: 80
   cooldown: 2
-  useAimSpeed: 1
+  useAimSpeed: 0
   aimSpeed: 60
   minPitch: -45
   maxPitch: 45
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launcher: {fileID: 2352028082043857679}
+  targetMaxDistance: 100
 --- !u!4 &7721446030278818841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2718933385210839917, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
