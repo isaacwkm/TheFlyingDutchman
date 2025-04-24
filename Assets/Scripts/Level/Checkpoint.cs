@@ -11,7 +11,12 @@ public class Checkpoint : MonoBehaviour
     public static event Action<Checkpoint> OnRespawn;
     public TriggerZoneHandler levelBounds;
     private static Checkpoint current = null;
+    public UsefulCommands commands;
 
+    void Awake()
+    {
+        commands = SceneCore.commands;
+    }
     void OnEnable()
     {
         levelBounds.OnExit += Respawn;
@@ -46,6 +51,6 @@ public class Checkpoint : MonoBehaviour
 
     public void Respawn(Collider playerCol)
     {
-        UsefulCommands.Instance.Teleport(playerCol.gameObject, gameObject.transform);
+        commands.Teleport(playerCol.gameObject, gameObject.transform);
     }
 }

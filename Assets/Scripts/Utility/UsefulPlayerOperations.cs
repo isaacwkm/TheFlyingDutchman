@@ -2,27 +2,6 @@ using UnityEngine;
 
 public class UsefulCommands : MonoBehaviour
 {
-    // Static reference to the instance
-    private static UsefulCommands _instance;
-
-    // Property to access the singleton instance
-    public static UsefulCommands Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<UsefulCommands>();
-                if (_instance == null)
-                {
-                    GameObject obj = new GameObject("UsefulPlayerOperations");
-                    _instance = obj.AddComponent<UsefulCommands>();
-                }
-            }
-            return _instance;
-        }
-    }
-
     public void Teleport(GameObject subject, Transform referenceObject, Vector3 relativeCoordinates = default)
     {
         if (subject == null)
