@@ -99,6 +99,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     void Start()
     {
+        transform.rotation = Quaternion.identity;
         aimPitch = 0.0f;
         aimYaw = 0.0f;
     }
