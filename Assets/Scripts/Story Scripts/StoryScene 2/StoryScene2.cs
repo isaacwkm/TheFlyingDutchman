@@ -4,6 +4,7 @@ public class StoryScene2 : StoryClass
 {
     public override int storySceneID {get; } = 2; // IMPORTANT! Set story scene ID!
     public UsefulCommands commands;
+    public Cinematics cinematics;
     public Transform sceneStartSpawn;
 
     // Start of: "Data to be sent out as story data":
@@ -15,10 +16,16 @@ public class StoryScene2 : StoryClass
     void Awake()
     {
         commands = SceneCore.commands;
+        cinematics = SceneCore.cinematics;
     }
     public override void startStoryScene() // Operations to do when starting the scene
     {
         commands.Teleport(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
+    }
+
+    private void cineScene1()
+    {
+        //cinematics.CineTel
     }
 
     public override void cleanupStoryScene() // Operations to do to clean up what was done in the playthrough of the scene

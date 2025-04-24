@@ -7,7 +7,7 @@ public class BlackBarsEffect : SCPEffect
 {
     public override string Name => "BlackBars";
     public Volume volume;
-    public CutsceneEffectsPlayer cinematics;
+    public Cinematics cinematics;
     private SCPE.BlackBars blackBarsEffect;
 
     public AnimationCurve intensityCurveUp = new AnimationCurve(new Keyframe[]
