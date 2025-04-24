@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] public bool destroyOnContact = false;
     [SerializeField] public TemporaryGameObject effectOnDestroy = null;
+    [SerializeField] public float blastRadius = 1.0f;
+    [SerializeField] public bool blastRadiusScalesWithDamage = false;
     [SerializeField] public bool useDamageOverride = false;
     [SerializeField] public float damageOverride = 1.0f;
     [HideInInspector] public GameObject source = null;
@@ -27,7 +29,12 @@ public class Projectile : MonoBehaviour
                 {
                     damage = damage.normalized*damageOverride;
                 }
-                dmp.ReportHit(contact, damage);
+                dmp.ReportHit(
+                    contact, damage,
+                    blastRadiusScalesWithDamage ?
+                        blastRadius*damage.magnitude :
+                        blastRadius
+                );
             }
             if (destroyOnContact)
             {
