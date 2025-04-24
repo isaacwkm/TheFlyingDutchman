@@ -11943,6 +11943,17 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1294587265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2548651717931835099, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+  m_PrefabInstance: {fileID: 9166617664817866794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53e7c1c96a4f2d499868afda1d3d83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1332062672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12682,7 +12693,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -336.385, y: 367.45245, z: 2059.165}
+  m_LocalPosition: {x: -335.91968, y: 365.66333, z: 2059.7905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19836,6 +19847,10 @@ PrefabInstance:
       propertyPath: m_ship
       value: 
       objectReference: {fileID: 1702390725}
+    - target: {fileID: 5719383148682877584, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 1294587265}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6720551392499745853, guid: b6cd8b3d8224b75fea14dbd749a8b8da, type: 3}

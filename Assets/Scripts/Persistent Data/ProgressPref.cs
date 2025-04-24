@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ProgressPref : MonoBehaviour
 {
-    StoryManager storyManager;
+    public StoryManager storyManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
