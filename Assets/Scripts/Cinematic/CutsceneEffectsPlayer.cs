@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 public class CutsceneEffectsPlayer : MonoBehaviour
 {
     public Volume volume;
+    public DisableHUD hudDisabler;
     public SCPEffect[] effectsLibrary;
     private InputSystem_Actions inputActions;
     private System.Action<UnityEngine.InputSystem.InputAction.CallbackContext> onCustomToggle;
@@ -34,6 +35,15 @@ public class CutsceneEffectsPlayer : MonoBehaviour
         {
             CustomAction();
         }
+    }
+
+    public void ToggleHUD()
+    {
+        hudDisabler.ToggleHUD();
+    }
+    public void SetActive(bool isActive)
+    {
+        hudDisabler.SetActive(isActive);
     }
 
     // Returns the SCPEffect object of the effect in the library, given a string name.
