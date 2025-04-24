@@ -6,6 +6,7 @@ public class StoryScene2 : StoryClass
     public UsefulCommands commands;
     public Cinematics cinematics;
     public Transform sceneStartSpawn;
+    public GameObject showMapHint;
 
     // Start of: "Data to be sent out as story data":
     private int jumpCount = 0;
@@ -21,6 +22,7 @@ public class StoryScene2 : StoryClass
     public override void startStoryScene() // Operations to do when starting the scene
     {
         commands.Teleport(SceneCore.playerCharacter.gameObject, sceneStartSpawn);
+        showMapHint.SetActive(true);
     }
 
     private void cineScene1()

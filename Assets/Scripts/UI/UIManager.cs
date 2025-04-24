@@ -3,13 +3,15 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     // Define imported variables here
-
+    public GameObject mainMenuUI;
+    public GameObject resourceCountersUI;
     [SerializeField] private GameObject GameplayHUD;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GameplayHUD.SetActive(false);
+        mainMenuUI.SetActive(true);
+        resourceCountersUI.SetActive(true);
     }
 
     // Update is called once per frame

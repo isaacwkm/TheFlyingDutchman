@@ -8,6 +8,8 @@ public class ToggleMap : MonoBehaviour
 {
     public Camera mainCam;
     public Transform mapVantagePosition;
+    public GameObject openMapPrompt;
+    public GameObject closeMapPrompt;
     private InputSystem_Actions inputActions;
     private int currentCamera = 0;
     private enum Cameras
@@ -62,6 +64,10 @@ public class ToggleMap : MonoBehaviour
             mainCam.transform.position = mapVantagePosition.position;
             mainCam.transform.rotation = mapVantagePosition.rotation;
 
+            // Toggle UI Visibility
+            openMapPrompt.SetActive(false);
+            closeMapPrompt.SetActive(true);
+
         }
         else if (camNumber == (int)Cameras.Player)
         {
@@ -71,6 +77,9 @@ public class ToggleMap : MonoBehaviour
 
             mainCam.transform.localPosition = cameraOriginalPosition;
             mainCam.transform.localRotation = cameraCachedRotation;
+
+            openMapPrompt.SetActive(true);
+            closeMapPrompt.SetActive(false);
         }
         else
         {
