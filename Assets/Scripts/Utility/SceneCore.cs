@@ -11,7 +11,7 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private Canvas m_canvas;
     [SerializeField] private UIStack m_uiStack;
     [SerializeField] private MainMenu m_mainMenu;
-    [SerializeField] private CutsceneEffectsPlayer m_cinematics;
+    [SerializeField] private Cinematics m_cinematics;
     [SerializeField] private UsefulCommands m_commands;
 
     private static SceneCore cachedInstance = null;
@@ -78,7 +78,7 @@ public class SceneCore : MonoBehaviour
         return uiStack.Call(instance.m_mainMenu);
     }
 
-    public static CutsceneEffectsPlayer cinematics
+    public static Cinematics cinematics
     {
         get { return instance.m_cinematics; }
     }

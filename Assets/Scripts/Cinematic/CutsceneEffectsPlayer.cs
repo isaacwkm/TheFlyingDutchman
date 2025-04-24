@@ -1,7 +1,7 @@
 using Needle.Console;
 using UnityEngine;
 using UnityEngine.Rendering;
-public class CutsceneEffectsPlayer : MonoBehaviour
+public class Cinematics : MonoBehaviour
 {
     public Volume volume;
     public DisableHUD hudDisabler;
@@ -41,7 +41,7 @@ public class CutsceneEffectsPlayer : MonoBehaviour
     {
         hudDisabler.ToggleHUD();
     }
-    public void SetActive(bool isActive)
+    public void SetHUDActive(bool isActive)
     {
         hudDisabler.SetActive(isActive);
     }

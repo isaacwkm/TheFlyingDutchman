@@ -16,7 +16,8 @@ public class InputModeManager : MonoBehaviour
         None,
         Player,
         Flying,
-        UI
+        UI,
+        InputDisabled
     }
     public event Action OnInputModeSwitch;
     public InputSystem_Actions inputActions;
@@ -102,6 +103,11 @@ public class InputModeManager : MonoBehaviour
         OnInputModeSwitch?.Invoke();
     }
 
+    public void EnablePlayerControls(bool active)
+    {
+        SceneCore.playerCharacter.enabled = active;
+    }
+
     public void SwitchControls(InputMode mode)
     {
         switch (mode)
@@ -110,6 +116,7 @@ public class InputModeManager : MonoBehaviour
             case InputMode.Player: SwitchToPlayerControls(); break;
             case InputMode.Flying: SwitchToShipControls(); break;
             case InputMode.UI: SwitchToUIControls(); break;
+            case InputMode.InputDisabled: SwitchToUIControls(); break;
         }
     }
 

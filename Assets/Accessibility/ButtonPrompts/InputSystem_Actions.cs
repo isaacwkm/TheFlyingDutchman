@@ -206,6 +206,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""42026502-45d5-4614-be14-ac4ab2e6f552"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -602,6 +611,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""CustomAction3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28c98238-72a3-4c9d-9885-2551ff9c944c"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""OpenMap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1756,6 +1776,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_CustomAction1 = m_Player.FindAction("CustomAction1", throwIfNotFound: true);
         m_Player_CustomAction2 = m_Player.FindAction("CustomAction2", throwIfNotFound: true);
         m_Player_CustomAction3 = m_Player.FindAction("CustomAction3", throwIfNotFound: true);
+        m_Player_OpenMap = m_Player.FindAction("OpenMap", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1869,6 +1890,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CustomAction1;
     private readonly InputAction m_Player_CustomAction2;
     private readonly InputAction m_Player_CustomAction3;
+    private readonly InputAction m_Player_OpenMap;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1893,6 +1915,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @CustomAction1 => m_Wrapper.m_Player_CustomAction1;
         public InputAction @CustomAction2 => m_Wrapper.m_Player_CustomAction2;
         public InputAction @CustomAction3 => m_Wrapper.m_Player_CustomAction3;
+        public InputAction @OpenMap => m_Wrapper.m_Player_OpenMap;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1962,6 +1985,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @CustomAction3.started += instance.OnCustomAction3;
             @CustomAction3.performed += instance.OnCustomAction3;
             @CustomAction3.canceled += instance.OnCustomAction3;
+            @OpenMap.started += instance.OnOpenMap;
+            @OpenMap.performed += instance.OnOpenMap;
+            @OpenMap.canceled += instance.OnOpenMap;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -2026,6 +2052,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @CustomAction3.started -= instance.OnCustomAction3;
             @CustomAction3.performed -= instance.OnCustomAction3;
             @CustomAction3.canceled -= instance.OnCustomAction3;
+            @OpenMap.started -= instance.OnOpenMap;
+            @OpenMap.performed -= instance.OnOpenMap;
+            @OpenMap.canceled -= instance.OnOpenMap;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -2354,6 +2383,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnCustomAction1(InputAction.CallbackContext context);
         void OnCustomAction2(InputAction.CallbackContext context);
         void OnCustomAction3(InputAction.CallbackContext context);
+        void OnOpenMap(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

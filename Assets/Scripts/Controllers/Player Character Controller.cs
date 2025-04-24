@@ -19,6 +19,8 @@ public class PlayerCharacterController : MonoBehaviour
     public Inventory inventoryComponent;
     public ActionSound SuperjumpSound;
     public DisableHUD disableAndOrToggleHUD;
+    public ToggleMap mapToggler;
+
     [SerializeField] private float walkSpeed = 6f;
     [SerializeField] private float climbSpeed = 6f;
     [SerializeField] private float jumpPower = 7f;
@@ -111,6 +113,7 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Menu.canceled += ctx => HandleMenuInput();
         inputActions.Player.CustomAction1.performed += ctx => HandleToggleHUD();
         inputActions.Player.CustomAction2.performed += ctx => HandleToggleNOCLIP();
+        inputActions.Player.OpenMap.performed += ctx => HandleOpenMap();
     }
 
     private void OnDisable()
@@ -146,6 +149,7 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Menu.canceled -= ctx => HandleMenuInput();
         inputActions.Player.CustomAction1.performed -= ctx => HandleToggleHUD();
         inputActions.Player.CustomAction2.performed -= ctx => HandleToggleNOCLIP();
+        inputActions.Player.OpenMap.performed -= ctx => HandleOpenMap();
 
         inputActions.Player.Disable();
     }
@@ -549,6 +553,11 @@ public class PlayerCharacterController : MonoBehaviour
             movementMode = MovementMode.Noclip;
             characterController.enabled = false; // Disable collisions
         }
+    }
+
+    private void HandleOpenMap()
+    {
+        mapToggler.Toggle();
     }
 
     // Getters & Setters
