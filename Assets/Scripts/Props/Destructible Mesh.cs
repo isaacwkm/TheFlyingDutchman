@@ -189,4 +189,21 @@ public class DestructibleMesh : MonoBehaviour
             ));
         }
     }
+
+    public DestructibleMeshPiece GetHighestPriorityTarget()
+    {
+        DestructibleMeshPiece result = null;
+        int priority = 0;
+        foreach (var piece in _pieces)
+        {
+            if (
+                piece.attached &&
+                piece.aiTargetPriority > priority
+            ) {
+                result = piece;
+                priority = piece.aiTargetPriority;
+            }
+        }
+        return result;
+    }
 }
