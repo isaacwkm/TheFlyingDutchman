@@ -11,6 +11,8 @@ public class SceneCore : MonoBehaviour
     [SerializeField] private Canvas m_canvas;
     [SerializeField] private UIStack m_uiStack;
     [SerializeField] private MainMenu m_mainMenu;
+    [SerializeField] private CutsceneEffectsPlayer m_cinematics;
+    [SerializeField] private UsefulCommands m_commands;
 
     private static SceneCore cachedInstance = null;
     // and then replace instance property with
@@ -74,6 +76,16 @@ public class SceneCore : MonoBehaviour
     public static MainMenu MainMenu()
     {
         return uiStack.Call(instance.m_mainMenu);
+    }
+
+    public static CutsceneEffectsPlayer cinematics
+    {
+        get { return instance.m_cinematics; }
+    }
+
+    public static UsefulCommands commands
+    {
+        get { return instance.m_commands; }
     }
 
     void Start()

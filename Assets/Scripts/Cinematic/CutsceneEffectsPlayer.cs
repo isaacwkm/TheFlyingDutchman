@@ -1,21 +1,10 @@
 using Needle.Console;
 using UnityEngine;
 using UnityEngine.Rendering;
-
-[RequireComponent(typeof(Volume))]
 public class CutsceneEffectsPlayer : MonoBehaviour
 {
     public Volume volume;
-    public AnimationCurve intensityCurve = new AnimationCurve(new Keyframe[]
-    {
-        //Bell curve
-        new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f)
-    });
-
     public SCPEffect[] effectsLibrary;
-
-    [Range(0f, 1f)]
-    private float progress;
     private InputSystem_Actions inputActions;
     private System.Action<UnityEngine.InputSystem.InputAction.CallbackContext> onCustomToggle;
     private bool customActionPressed = false;
