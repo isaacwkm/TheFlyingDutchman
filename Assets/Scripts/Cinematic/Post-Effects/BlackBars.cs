@@ -7,7 +7,7 @@ public class BlackBarsEffect : SCPEffect
 {
     public override string Name => "BlackBars";
     public Volume volume;
-    public DisableHUD hudDisabler;
+    public CutsceneEffectsPlayer cinematics;
     private SCPE.BlackBars blackBarsEffect;
 
     public AnimationCurve intensityCurveUp = new AnimationCurve(new Keyframe[]
@@ -32,7 +32,7 @@ public class BlackBarsEffect : SCPEffect
 
     void OnEnable()
     {
-
+        
     }
 
     void OnDisable()
@@ -47,6 +47,9 @@ public class BlackBarsEffect : SCPEffect
 
     private void Start()
     {
+        // Initialize cinematics
+        cinematics = SceneCore.cinematics;
+
         // Get the black bars effect
         volume.profile.TryGet(typeof(SCPE.BlackBars), out blackBarsEffect);
         //Much like in the inspector, a parameter has to be overriden first if you want to modify it.
@@ -87,7 +90,7 @@ public class BlackBarsEffect : SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
-        hudDisabler.SetActive(false);
+        cinematics.hudDisabler.SetActive(false);
         progress = 0;
         fadeActive = true;
         playingDirection = 1f;
@@ -101,7 +104,7 @@ public class BlackBarsEffect : SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
-        hudDisabler.SetActive(true);
+        cinematics.hudDisabler.SetActive(true);
         progress = 0;
         fadeActive = true;
         playingDirection = -1f;
