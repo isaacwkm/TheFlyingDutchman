@@ -1,41 +1,86 @@
+using System;
 using Needle.Console;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ToggleMap : MonoBehaviour
 {
-    public Camera[] cameras;
-    private int currentCameraIndex = 0;
+    public Camera mainCam;
+    public Transform mapVantagePosition;
+    private InputSystem_Actions inputActions;
+    private int currentCamera = 0;
+    private enum Cameras
+    {
+        Player,
+        Map
+    }
+
+    private Vector3 cameraOriginalPosition;
+    private Quaternion cameraCachedRotation;
+
+    void Awake()
+    {
+        cameraOriginalPosition = mainCam.transform.localPosition;
+        inputActions = InputModeManager.Instance.inputActions;
+    }
+
+    void OnEnable()
+    {
+        inputActions.Player.OpenMap.performed += ctx => SwitchToCamera(1);
+        inputActions.UI.CloseMap.performed += ctx => SwitchToCamera(0);
+    }
+
+    void OnDisable()
+    {
+        inputActions.Player.OpenMap.performed -= ctx => SwitchToCamera(1);
+        inputActions.UI.CloseMap.performed -= ctx => SwitchToCamera(0);
+    }
 
     public void Toggle()
     {
-        if (currentCameraIndex == 1) // Map is open
+        Debug.Log("Toggle Pressed! Current Camera: " + currentCamera); // <-- Add this
+        
+        if (currentCamera == (int)Cameras.Player)
         {
-            SwitchCamera(0);
-            SceneCore.cinematics.SetHUDActive(false);
-            InputModeManager.Instance.EnablePlayerControls(false);
+            SwitchToCamera((int)Cameras.Map);
         }
-        else // Map is not open
+        else
         {
-            SwitchCamera(1);
-            SceneCore.cinematics.SetHUDActive(true);
-            InputModeManager.Instance.EnablePlayerControls(true);
+            SwitchToCamera((int)Cameras.Player);
         }
     }
-    public void SwitchCamera(int camNumber)
+    public void SwitchToCamera(int camNumber)
     {
-        if (camNumber < 0 || camNumber >= cameras.Length)
+        if (camNumber == (int)Cameras.Map)
         {
-            D.LogError("check context", this, "Any");
-            return;
+            currentCamera = camNumber;
+            SaveCameraRotation();
+            SceneCore.cinematics.SetHUDActive(false);
+            InputModeManager.Instance.SwitchToUIControls();
+
+            mainCam.transform.position = mapVantagePosition.position;
+            mainCam.transform.rotation = mapVantagePosition.rotation;
+
         }
-        
-        // Disable the current camera
-        cameras[currentCameraIndex].gameObject.SetActive(false);
+        else if (camNumber == (int)Cameras.Player)
+        {
+            currentCamera = camNumber;
+            SceneCore.cinematics.SetHUDActive(true);
+            InputModeManager.Instance.SwitchToPlayerControls();
 
-        currentCameraIndex = camNumber;
+            mainCam.transform.localPosition = cameraOriginalPosition;
+            mainCam.transform.localRotation = cameraCachedRotation;
+        }
+        else
+        {
+            D.Log("couldnt find cam", this, "Any");
+        }
 
-        // Enable the new active camera
-        cameras[currentCameraIndex].gameObject.SetActive(true);
+    }
+
+    private void SaveCameraRotation()
+    {
+        cameraCachedRotation = mainCam.transform.localRotation;
     }
 }

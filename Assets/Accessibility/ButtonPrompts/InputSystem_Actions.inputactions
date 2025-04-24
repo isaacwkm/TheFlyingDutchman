@@ -188,7 +188,7 @@
                 {
                     "name": "OpenMap",
                     "type": "Button",
-                    "id": "42026502-45d5-4614-be14-ac4ab2e6f552",
+                    "id": "785ab141-da30-45b3-b2e4-646e6259c3c0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -594,7 +594,7 @@
                 },
                 {
                     "name": "",
-                    "id": "28c98238-72a3-4c9d-9885-2551ff9c944c",
+                    "id": "d7f3be20-fbb8-4bd7-9334-4357a09125bd",
                     "path": "<Keyboard>/m",
                     "interactions": "",
                     "processors": "",
@@ -695,6 +695,15 @@
                     "type": "PassThrough",
                     "id": "9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseMap",
+                    "type": "Button",
+                    "id": "714b9ff3-b542-4e8f-8d2a-28fae7520268",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -1193,6 +1202,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d002743-2499-460e-9519-c89d75c08862",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "CloseMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
