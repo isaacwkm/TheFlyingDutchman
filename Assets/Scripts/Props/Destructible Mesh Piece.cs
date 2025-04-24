@@ -23,6 +23,7 @@ public class DestructibleMeshPiece : MonoBehaviour
     [SerializeField] public bool spawnsDebris = true;
     [SerializeField] public float mass = 1.0f;
     [SerializeField] public float collisionFalsePositivePreventionTimeout = 0.25f;
+    [SerializeField] public int aiTargetPriority = 1;
 
     public DestructibleMesh ownerDestructibleMesh {get => _ownerDestructibleMesh;}
     public float health {get; private set;}
