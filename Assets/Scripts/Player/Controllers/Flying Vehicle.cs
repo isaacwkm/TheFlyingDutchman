@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -214,6 +215,7 @@ public class FlyingVehicle : MonoBehaviour
     {
         inputMan.SwitchToShipControls();
         rudderInteractTarget.DisableInteractions();
+
         var pcm = player.GetComponent<PlayerCharacterController>();
         if (pcm)
         {
@@ -227,6 +229,10 @@ public class FlyingVehicle : MonoBehaviour
             cameraInitialDisplacement = playerCamera.transform.localPosition;
             playerCamera.transform.SetParent(transform);
             HandleLookInput(Vector2.zero); // initialize camera transform
+
+            //Hide the item when the player starts controlling the ship
+            Inventory inventory = currentPlayer.gameObject.GetComponent<Inventory>();
+            inventory.HideEquippedItem();
 
         }
         else
@@ -248,6 +254,10 @@ public class FlyingVehicle : MonoBehaviour
         );
         rudderInteractTarget.EnableInteractions();
         inputMan.SwitchToPlayerControls();
+
+        //Show the item when the player starts controlling the ship
+        Inventory inventory = currentPlayer.gameObject.GetComponent<Inventory>();
+        inventory.ShowEquippedItem();
     }
 
     public bool Operating()

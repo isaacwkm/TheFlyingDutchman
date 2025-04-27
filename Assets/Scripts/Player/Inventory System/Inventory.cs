@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     private int inventorySize = 0;
     private int inventoryCapacity = 4;
     private int offsetActiveItemIcon = -40;
+    private int cachedItemSlot = 0; // When switching perspectives
 
     void Awake()
     {
@@ -194,6 +195,20 @@ public class Inventory : MonoBehaviour
         makeItemActive(currentActiveSlot);
 
         setActiveSlotMarker(currentActiveSlot);
+    }
+
+    public void HideEquippedItem()
+    {
+        cachedItemSlot = currentActiveSlot;
+        makeItemInactive(currentActiveSlot);
+        D.Log("Switching to Empty hand!", gameObject, "Inv");
+    }
+
+    public void ShowEquippedItem()
+    {
+        currentActiveSlot = cachedItemSlot;
+        makeItemActive(currentActiveSlot);
+        D.Log("Switching to back to previous item!", gameObject, "Inv");
     }
 
     private void setActiveSlotMarker(int activeSlot)
