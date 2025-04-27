@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultRotation: {x: 0, y: 0, z: 0, w: 1}
   dropSound: {fileID: 0}
+  pickupSound: {fileID: 0}
   itemID: 1
 --- !u!114 &1458709536193697459
 MonoBehaviour:
@@ -188,9 +189,8 @@ MonoBehaviour:
   hasInteractAnim: 1
   interactAnimNames:
   - Dig
-  hasAttack: 1
-  attackAnimNames:
-  - Right Swing
+  hasAttack: 0
+  attackAnimNames: []
 --- !u!114 &3851777319972290947
 MonoBehaviour:
   m_ObjectHideFlags: 0
