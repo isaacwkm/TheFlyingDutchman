@@ -1320,6 +1320,7 @@ Transform:
   - {fileID: 5942988145202408141}
   - {fileID: 6825390782277226199}
   - {fileID: 3717740892408454328}
+  - {fileID: 5662665735163245918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8951849329520403874
@@ -1621,6 +1622,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385080170327957909, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
   m_PrefabInstance: {fileID: 274561148079742790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &826682648756584736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7187406496674489471}
+    m_Modifications:
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9757538
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.649078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.113159
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457120945397595550, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_Name
+      value: treasure Digsite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+--- !u!4 &5662665735163245918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+  m_PrefabInstance: {fileID: 826682648756584736}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1170939686908714745
 PrefabInstance:

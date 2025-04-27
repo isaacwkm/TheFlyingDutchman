@@ -35,8 +35,9 @@ Transform:
   - {fileID: 111931271622579624}
   - {fileID: 7955303297142975301}
   - {fileID: 6791104740394083232}
-  - {fileID: 3496441350505027034}
   - {fileID: 1122637638738909372}
+  - {fileID: 8326269810390549353}
+  - {fileID: 6167372631105123963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087827562880995215
@@ -52,7 +53,7 @@ GameObject:
   - component: {fileID: 3890157523233939729}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -241,6 +242,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 85c7b36c43c3b5d4bb144cc09fc55f71, type: 3}
+--- !u!1001 &1187766941588079109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1480008441180487202}
+    m_Modifications:
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9567184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.47403
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98081386
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.19494659
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 22.483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457120945397595550, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+      propertyPath: m_Name
+      value: treasure Digsite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+--- !u!4 &6167372631105123963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5038722070518953086, guid: 049bb52ccc5c9d44a87775621221f00c, type: 3}
+  m_PrefabInstance: {fileID: 1187766941588079109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1528465740205509020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,91 +613,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1621140841970461050, guid: 1a5b1876065cc9c498f49143fed7e1f1, type: 3}
   m_PrefabInstance: {fileID: 1867617246935970246}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4951897955433256864
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1480008441180487202}
-    m_Modifications:
-    - target: {fileID: 6542334212645520676, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: text
-      value: 'With this shovel I''ve at last buried the last trace of my escape on
-        this blasted archipelago. A rusty key -- from a place far, far away from
-        here. Given to me by some once-close lover I''ve forgotten the face of already.
-        From another time. It doesn''t have any use any more now.
-
-
-        While
-        it pains me to part with it, I can''t afford to be identified again.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.49999988
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.832618
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.66302425
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.52230644
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.011088967
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.65541506
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.5454395
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 44.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 55.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8769516608619176687, guid: c15ac440e577e754f81209749264a08c, type: 3}
-      propertyPath: m_Name
-      value: AlienLog
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c15ac440e577e754f81209749264a08c, type: 3}
---- !u!4 &3496441350505027034 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8375980720572842618, guid: c15ac440e577e754f81209749264a08c, type: 3}
-  m_PrefabInstance: {fileID: 4951897955433256864}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7241215853662887626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,4 +691,74 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
   m_PrefabInstance: {fileID: 7241215853662887626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7351530964425251433
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1480008441180487202}
+    m_Modifications:
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.52001953
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.666992
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1706543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435046224083888104, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: text
+      value: 'Canyon Lookout
+
+
+        [UNKNOWN] There''s no use digging here. This
+        ground is solid stone. I''ll have to move on to another island.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802539032549942839, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+      propertyPath: m_Name
+      value: AlienLog
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+--- !u!4 &8326269810390549353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1551833331752589568, guid: 96b57a5a6bdb92b4d9e774b5c747efd3, type: 3}
+  m_PrefabInstance: {fileID: 7351530964425251433}
   m_PrefabAsset: {fileID: 0}
