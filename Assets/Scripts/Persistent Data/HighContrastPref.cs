@@ -19,7 +19,7 @@ public class HighContrastPref : MonoBehaviour
     void Start()
     {
         LoadPref();
-        currentProfile = null; // force assignment on first Update
+        currentProfile = GetTargetProfile(); // force assignment on first Update
     }
 
     public static bool LoadPref()
@@ -36,15 +36,15 @@ public class HighContrastPref : MonoBehaviour
 
     void Update()
     {
-        // VolumeProfile targetProfile = GetTargetProfile();
+        VolumeProfile targetProfile = GetTargetProfile();
 
-        // // Only reassign if the profile actually changes
-        // if (currentProfile != targetProfile)
-        // {
-        //     D.Log("Reassigning volume profile in HighContrastPref.", this, "PostProc");
-        //     renderVolume.profile = targetProfile;
-        //     currentProfile = targetProfile;
-        // }
+        // Only reassign if the profile actually changes
+        if (currentProfile != targetProfile)
+        {
+            D.Log("Reassigning volume profile in HighContrastPref.", this, "PostProc");
+            renderVolume.profile = targetProfile;
+            currentProfile = targetProfile;
+        }
     }
 
     private VolumeProfile GetTargetProfile()
