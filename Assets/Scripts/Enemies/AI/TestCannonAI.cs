@@ -28,7 +28,7 @@ public class TestCannonAI : MonoBehaviour
         if (displacement.magnitude <= targetMaxDistance)
         {
             launcher.Aim(target);
-            if (launcher.aimTargetInLineOfFire) launcher.Launch();
+            if (launcher.targetInLineOfFire) launcher.LaunchIfReady();
         }
         else
         {
