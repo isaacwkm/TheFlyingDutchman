@@ -10,8 +10,8 @@ public class TestCannonAnimator : MonoBehaviour
     void Update()
     {
         mainBody.localRotation =
-            Quaternion.Euler(0.0f, launcher.aimYaw, 0.0f);
+            Quaternion.Euler(0.0f, launcher.yaw, 0.0f);
         barrel.localRotation =
-            Quaternion.Euler(launcher.aimPitch, 0.0f, 0.0f);
+            Quaternion.Euler(launcher.pitch, 0.0f, 0.0f);
     }
 }

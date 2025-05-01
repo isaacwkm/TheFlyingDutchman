@@ -104,4 +104,62 @@ public static class Misc
         }
         return Imitate(original.gameObject, componentTypes).GetComponent<T>();
     }
+
+    public static readonly Vector3 NaNVec =
+        new (float.NaN, float.NaN, float.NaN);
+
+    public static bool IsNaNVec(Vector3 vec)
+    {
+        return float.IsNaN(vec.x) ||
+            float.IsNaN(vec.y) ||
+            float.IsNaN(vec.z);
+    }
+
+    /* https://en.wikipedia.org/wiki/Projectile_motion
+     * "To hit a target at range x and altitude y
+     * when fired from (0,0) and with initial speed v,
+     * the required angle(s) of launch theta are:
+     * theta = atan(
+     *      (v^2 +/- sqrt(v^4 - g^2x^2 - 2gyv^2)) /
+     *      gx
+     * )" */
+    public static bool CalculateLaunchAngle(
+        Vector3 targetDisplacement,
+        float launchSpeed,
+        out Vector3 plusResult,
+        out Vector3 minusResult
+    ) {
+        float v = launchSpeed;
+        float g = Physics.gravity.magnitude;
+        Vector3 xVec = targetDisplacement;
+        xVec.y = 0.0f;
+        float y = targetDisplacement.y;
+        float x = xVec.magnitude;
+        float vSqr = v*v;
+        float gx = g*x;
+        float posRadTerm = vSqr*vSqr;
+        float negRadTerm = gx*gx + 2.0f*g*y*vSqr;
+        // check whether result would be a real number
+        if (posRadTerm >= negRadTerm)
+        {
+            float rad = Mathf.Sqrt(posRadTerm - negRadTerm);
+            float plusPitch = Mathf.Atan((vSqr + rad)/gx);
+            float minusPitch = Mathf.Atan((vSqr - rad)/gx);
+            Vector3 xVecNorm = xVec.normalized;
+            plusResult = (
+                xVecNorm*Mathf.Cos(plusPitch) +
+                Vector3.up*Mathf.Sin(plusPitch)
+            ).normalized;
+            minusResult = (
+                xVecNorm*Mathf.Cos(minusPitch) +
+                Vector3.up*Mathf.Sin(minusPitch)
+            ).normalized;
+            return true;
+        }
+        else
+        {
+            plusResult = minusResult = NaNVec;
+            return false;
+        }
+    }
 }
