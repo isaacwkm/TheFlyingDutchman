@@ -69,6 +69,23 @@ MonoBehaviour:
     alwaysEnable: 0
     cameraTypes: 5
     reconstructDepthNormals: 0
+--- !u!114 &-5102365897739555557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869ab7a34d3a40447b807792de94f3f0, type: 3}
+  m_Name: '[SCPE] LensFlaresRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &-4928893955353416602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +208,23 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 3
+--- !u!114 &-507138925873252950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6ccf04602df664fa8dcf324b69b67d, type: 3}
+  m_Name: '[SCPE] LightStreaksRenderer'
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    executionOrder: 0
+    alwaysEnable: 0
+    cameraTypes: 5
 --- !u!114 &-66475253101824344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +289,8 @@ MonoBehaviour:
   - {fileID: 2465426044151072468}
   - {fileID: -969634032602594156}
   - {fileID: -8311605769208472941}
+  - {fileID: -507138925873252950}
+  - {fileID: -5102365897739555557}
   m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
