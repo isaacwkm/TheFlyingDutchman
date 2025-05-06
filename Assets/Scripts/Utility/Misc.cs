@@ -105,6 +105,16 @@ public static class Misc
         return Imitate(original.gameObject, componentTypes).GetComponent<T>();
     }
 
+    public static void RecursiveChangeMaterial(MeshRenderer r, Material m)
+    {
+        r.material = m;
+        for (int i = 0; i < r.transform.childCount; i++)
+        {
+            var child = r.transform.GetChild(i).GetComponent<MeshRenderer>();
+            RecursiveChangeMaterial(child, m);
+        }
+    }
+
     public static readonly Vector3 NaNVec =
         new (float.NaN, float.NaN, float.NaN);
 

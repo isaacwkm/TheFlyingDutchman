@@ -168,8 +168,10 @@ public class DestructibleMeshPiece : MonoBehaviour
         var renderer = repairSite.GetComponent<MeshRenderer>();
         if (renderer != null)
         {
-            renderer.material =
-                ownerDestructibleMesh.repairSiteMaterial;
+            Misc.RecursiveChangeMaterial(
+                renderer,
+                ownerDestructibleMesh.repairSiteMaterial
+            );
         }
         foreach (var componentType in new Type[] {
             typeof(MeshCollider),

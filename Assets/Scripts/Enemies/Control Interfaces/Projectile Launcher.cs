@@ -11,6 +11,11 @@ public class ProjectileLauncher : MonoBehaviour
      * (Alternatively, for one-time overrides,
      * an alternative projectile to instantiate can be passed to Launch.) */
     [SerializeField] public Rigidbody projectile = null;
+    /* Object to consider as the projectile source,
+     * for purpose of avoiding friendly fire.
+     * Null indicates the launcher itself is this object,
+     * but it should usually be set to whatever the launcher is attached to. */
+    [SerializeField] public GameObject projectileSource = null;
 
     /* Point where the projectile spawns from,
      * in local space relative to the launcher,
@@ -266,7 +271,11 @@ public class ProjectileLauncher : MonoBehaviour
         rbody.angularVelocity = Vector3.zero;
         rbody.AddForce(launchSpeed*aim*rbody.mass, ForceMode.Impulse);
         var asProjectile = rbody.GetComponent<Projectile>();
-        if (asProjectile != null) asProjectile.source = this.gameObject;
+        if (asProjectile != null)
+        {
+            if (projectileSource != null) asProjectile.source = projectileSource;
+            else asProjectile.source = this.gameObject;
+        }
         if (effectOnLaunch != null)
         {
             Instantiate(effectOnLaunch, spawnPosition, spawnRotation);
