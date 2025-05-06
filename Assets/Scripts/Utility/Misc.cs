@@ -105,13 +105,14 @@ public static class Misc
         return Imitate(original.gameObject, componentTypes).GetComponent<T>();
     }
 
-    public static void RecursiveChangeMaterial(MeshRenderer r, Material m)
+    public static void RecursiveChangeMaterial(GameObject r, Material m)
     {
-        r.material = m;
+        var rend = r.GetComponent<MeshRenderer>();
+        if (rend) rend.material = m;
         for (int i = 0; i < r.transform.childCount; i++)
         {
-            var child = r.transform.GetChild(i).GetComponent<MeshRenderer>();
-            RecursiveChangeMaterial(child, m);
+            var child = r.transform.GetChild(i).gameObject;
+            if (child) RecursiveChangeMaterial(child, m);
         }
     }
 
