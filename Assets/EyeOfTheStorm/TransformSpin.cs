@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LighthouseLight : MonoBehaviour
+public class TransformSpin : MonoBehaviour
 {
     public float rotationSpeed = 90f; // degrees per second
 

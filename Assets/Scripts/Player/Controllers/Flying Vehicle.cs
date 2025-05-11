@@ -42,6 +42,8 @@ public class FlyingVehicle : MonoBehaviour
     private float targetY;
     private Rigidbody rbody;
     private GameObject currentPlayer = null;
+    private float physicsCooldown = 0f; // pauses physics updates when increased by methods or scripts.
+
 
     // events
     private System.Action<InputAction.CallbackContext> movePerformedAction;
@@ -71,7 +73,7 @@ public class FlyingVehicle : MonoBehaviour
         movePerformedAction = ctx => xzMovementInput = ctx.ReadValue<Vector2>();
         moveCanceledAction = ctx => xzMovementInput = Vector2.zero;
         lookPerformedAction = ctx =>
-            lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
+            lookInput = ctx.ReadValue<Vector2>() * LookSensPrefs.GetMultiplier(ctx);
         lookCanceledAction = ctx => lookInput = Vector2.zero;
         zoomPerformedAction = ctx => zoomInput = ctx.ReadValue<float>();
         zoomCanceledAction = ctx => zoomInput = 0.0f;
@@ -137,6 +139,12 @@ public class FlyingVehicle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (physicsCooldown > 0f) // When set to a float value above 0, pauses all updates for that duration.
+        {
+            physicsCooldown -= Time.deltaTime;
+            return;
+        }
+
         RelinquishIfOverboard();
         if (!Operating())
         {
@@ -150,7 +158,7 @@ public class FlyingVehicle : MonoBehaviour
         if (impetus.y == 0.0f)
         {
             // Bobbing
-            targetY += bobDirection*bobSpeed*Time.deltaTime;
+            targetY += bobDirection * bobSpeed * Time.deltaTime;
             if ((targetY - baseY) / bobDirection > bobRange)
             {
                 bobDirection = -bobDirection;
@@ -172,7 +180,7 @@ public class FlyingVehicle : MonoBehaviour
             1.0f - Mathf.Pow(1.0f - traction, Time.deltaTime * 60.0f)
         );
         // Brake
-        if (Vector3.Dot(transform.forward*impetus.z, rbody.linearVelocity) < 0.0f)
+        if (Vector3.Dot(transform.forward * impetus.z, rbody.linearVelocity) < 0.0f)
         {
             rbody.linearVelocity = Vector3.Lerp(
                 rbody.linearVelocity,
@@ -190,21 +198,21 @@ public class FlyingVehicle : MonoBehaviour
         if (impetus.z == 0.0)
         {
             // If ascending or descending without forward or backward motion, rise or drop in-place
-            rbody.AddForce(transform.up*impetus.y*rbody.mass*verticalAcceleration*Time.deltaTime, ForceMode.Impulse);
+            rbody.AddForce(transform.up * impetus.y * rbody.mass * verticalAcceleration * Time.deltaTime, ForceMode.Impulse);
         }
         else
         {
             // Tilt ship with ascent/descent
             rbody.AddTorque(
-                -rbody.mass*angularAcceleration*Time.deltaTime*transform.right*impetus.y *
+                -rbody.mass * angularAcceleration * Time.deltaTime * transform.right * impetus.y *
                 tiltStrength *
-                Vector3.Dot(transform.up, Vector3.up)/4.0f,
+                Vector3.Dot(transform.up, Vector3.up) / 4.0f,
                             ForceMode.Impulse
             );
         }
         // Stabilize
         rbody.AddTorque(
-            rbody.mass*angularAcceleration*Time.deltaTime *
+            rbody.mass * angularAcceleration * Time.deltaTime *
                 stabilizeStrength *
                 Vector3.Cross(transform.up, Vector3.up),
             ForceMode.Impulse
@@ -277,24 +285,24 @@ public class FlyingVehicle : MonoBehaviour
         if (playerCamera)
         {
             float pitch = playerCamera.transform.eulerAngles.x;
-            float pitchCos = Mathf.Cos(pitch*Mathf.PI/180.0f);
+            float pitchCos = Mathf.Cos(pitch * Mathf.PI / 180.0f);
             playerCamera.transform.Rotate(
                 Vector3.up,
-                pitchCos*yx.x*lookSens*lookSpeedMult
+                pitchCos * yx.x * lookSens * lookSpeedMult
             );
-            float dx = -yx.y*lookSens*lookSpeedMult;
-            float checkx = ((pitch%360.0f) + 360.0f)%360.0f;
+            float dx = -yx.y * lookSens * lookSpeedMult;
+            float checkx = ((pitch % 360.0f) + 360.0f) % 360.0f;
             if (checkx >= 180.0f)
             {
                 checkx -= 360.0f;
             }
-            if (dx != 0.0f && checkx/Mathf.Sign(dx) <= lookXLimit)
+            if (dx != 0.0f && checkx / Mathf.Sign(dx) <= lookXLimit)
             {
                 playerCamera.transform.Rotate(Vector3.right, dx);
             }
             playerCamera.transform.eulerAngles =
                 Vector3.ProjectOnPlane(playerCamera.transform.eulerAngles, Vector3.forward);
-            lookVantage.z += zoomInput*lookVantageZoomSens;
+            lookVantage.z += zoomInput * lookVantageZoomSens;
             if (lookVantage.z > lookVantageMaxZ)
             {
                 lookVantage.z = lookVantageMaxZ;
@@ -304,9 +312,23 @@ public class FlyingVehicle : MonoBehaviour
                 lookVantage.z = lookVantageMinZ;
             }
             playerCamera.transform.position = transform.position +
-                lookVantage.x*playerCamera.transform.right +
-                lookVantage.y*transform.up +
-                lookVantage.z*playerCamera.transform.forward;
+                lookVantage.x * playerCamera.transform.right +
+                lookVantage.y * transform.up +
+                lookVantage.z * playerCamera.transform.forward;
         }
     }
+
+    public void TeleportShip(Vector3 newPosition, Quaternion newRotation)
+    {
+        rbody.linearVelocity = Vector3.zero;
+        rbody.angularVelocity = Vector3.zero;
+        rbody.position = newPosition;
+        rbody.rotation = newRotation;
+
+        targetY = newPosition.y;
+        baseY = newPosition.y;
+
+        physicsCooldown = 0.2f; // Delay forces for a few frames
+    }
+
 }

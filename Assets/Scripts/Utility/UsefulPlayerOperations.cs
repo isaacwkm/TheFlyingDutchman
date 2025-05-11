@@ -25,6 +25,7 @@ public class UsefulCommands : MonoBehaviour
         }
 
         CharacterController controller = subject.GetComponent<CharacterController>();
+        PlayerShip playerShip = subject.GetComponent<PlayerShip>();
         if (controller != null)
         {
             controller.enabled = false;
@@ -33,11 +34,17 @@ public class UsefulCommands : MonoBehaviour
             controller.enabled = true;
             Debug.Log($"{subject.name} teleported to {targetPosition}.");
         }
+        else if (playerShip != null)
+        {
+            FlyingVehicle flyingVehicle = playerShip.physicsObject.GetComponent<FlyingVehicle>();
+            flyingVehicle.TeleportShip(targetPosition, targetRotation);
+            Debug.Log($"Special teleport just for the ship! Teleported to {targetPosition}.");
+        }
         else
         {
-            Debug.LogError("CharacterController not found on player.");
             subject.transform.position = targetPosition;
             subject.transform.rotation = targetRotation;
+            Debug.Log($"{subject.name} teleported to {targetPosition}.");
         }
     }
 }
