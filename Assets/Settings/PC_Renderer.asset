@@ -291,7 +291,8 @@ MonoBehaviour:
   - {fileID: -8311605769208472941}
   - {fileID: -507138925873252950}
   - {fileID: -5102365897739555557}
-  m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139
+  - {fileID: 0}
+  m_RendererFeatureMap: ad6b866f10d7b46ce42372730dc8f139e730baeb8d0519d0f189f1c8ae9d832f2496020d6e70fb72672523c2f0b47dec68f1129cdfbd060150f685a5f2050a65e96c978e6f3abd850f14fd917db0ccc366ec96df0f0d99bba8f682081cd513ffa7ed0ebb618af22904901de9168e8e2cf2aca174084352c2dc41d5fb590337c13bb25662aa534c94756b2f2879ebe2908c9079c4a16bde14d4069fbdecf3362294c49714fc2a8bf293da3df5963ea78caa358d77d547f6f81bad2adf3fc130b90000000000000000
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -419,6 +420,20 @@ MonoBehaviour:
     executionOrder: 0
     alwaysEnable: 0
     cameraTypes: 5
+--- !u!114 &3742878508775337045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4ad668ff41c654a8382a49bd2c5e7d, type: 3}
+  m_Name: EyeOfStormFogFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings: {fogMaterial: {fileID: 2100000, guid: 55ef5d71c82b7274793ff63192af01ff, type: 2}, renderPassEvent: 500}
 --- !u!114 &4175338289646150628
 MonoBehaviour:
   m_ObjectHideFlags: 0
