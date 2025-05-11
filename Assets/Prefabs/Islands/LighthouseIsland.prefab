@@ -1292,7 +1292,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58320
+    surfaceParameter: 85800
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: 6615564203280705845
@@ -3654,7 +3654,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58310
+    surfaceParameter: 85784
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 7025281318766154117
@@ -12098,7 +12098,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58318
+    surfaceParameter: 85798
     meshQueryIndex: 7
     subMeshQueryIndex: 0
     geometryHashValue: 48306006637384444
@@ -12216,7 +12216,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 52778
+    surfaceParameter: 65816
     meshQueryIndex: 9
     subMeshQueryIndex: 0
     geometryHashValue: 1568375969039705209
@@ -14842,7 +14842,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 53046
+    surfaceParameter: 66084
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 5608005016793384229
@@ -16685,7 +16685,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58294
+    surfaceParameter: 85768
     meshQueryIndex: 8
     subMeshQueryIndex: 0
     geometryHashValue: 7348615697704966918
@@ -25387,7 +25387,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58298
+    surfaceParameter: 85772
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 5978917529263503685
@@ -28031,6 +28031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e55a877e2b93e643abd24ca7d716461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterTasks: []
+  exitTasks: []
 --- !u!136 &7755185956046107791
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28046,7 +28048,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -28109,7 +28111,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 58302
+    surfaceParameter: 85776
     meshQueryIndex: 10
     subMeshQueryIndex: 0
     geometryHashValue: 354135543303985565

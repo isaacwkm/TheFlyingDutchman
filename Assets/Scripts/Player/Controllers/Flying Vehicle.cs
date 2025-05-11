@@ -320,10 +320,11 @@ public class FlyingVehicle : MonoBehaviour
 
     public void TeleportShip(Vector3 newPosition, Quaternion newRotation)
     {
-        rbody.linearVelocity = Vector3.zero;
-        rbody.angularVelocity = Vector3.zero;
         rbody.position = newPosition;
         rbody.rotation = newRotation;
+        rbody.PublishTransform();
+        rbody.linearVelocity = Vector3.zero;
+        rbody.angularVelocity = Vector3.zero;
 
         targetY = newPosition.y;
         baseY = newPosition.y;
