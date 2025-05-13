@@ -52,5 +52,6 @@ public class Checkpoint : MonoBehaviour
     public void Respawn(Collider playerCol)
     {
         commands.Teleport(playerCol.gameObject, gameObject.transform);
+        Metrics.Increment("times fallen");
     }
 }

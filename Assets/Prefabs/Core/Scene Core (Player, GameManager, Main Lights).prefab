@@ -223,7 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commands: {fileID: 0}
+  cinematics: {fileID: 0}
   sceneStartSpawn: {fileID: 0}
+  showMapHint: {fileID: 0}
 --- !u!1 &1197648876751862413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1128,8 @@ MonoBehaviour:
   m_canvas: {fileID: 7349530578359876276}
   m_uiStack: {fileID: 7629034800730762720}
   m_mainMenu: {fileID: 4687696481469608357, guid: 221a75538baea3d79b17adcdc716708a, type: 3}
+  m_cinematics: {fileID: 0}
+  m_commands: {fileID: 0}
 --- !u!1 &3349699302217261728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,39 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 2835726503704994609}
-  intensityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  hudDisabler: {fileID: 0}
   effectsLibrary:
   - {fileID: 7063663189139731019}
 --- !u!114 &2835726503704994609
@@ -1539,7 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 2835726503704994609}
-  hudDisabler: {fileID: 7428369471954881088}
+  cinematics: {fileID: 0}
   intensityCurveUp:
     serializedVersion: 2
     m_Curve:
@@ -1599,6 +1571,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2710996192412634383}
   - component: {fileID: 3430654882873506976}
+  - component: {fileID: 3145450632967778597}
+  - component: {fileID: 8401515459480750395}
   m_Layer: 0
   m_Name: DevTools
   m_TagString: Untagged
@@ -1646,6 +1620,31 @@ MonoBehaviour:
   logMove: 0
   logStory: 1
   logCombat: 1
+--- !u!114 &3145450632967778597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093600768619104993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9338d6457bbde97a7945f922670de891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: play time
+--- !u!114 &8401515459480750395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093600768619104993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78374cf8c39d446b6b5f37dbfee518dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4212854018637580436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2015,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10be48ef161c1b84a82f32bc2fcf5c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refPoint: {fileID: 0}
+  CreditUI: {fileID: 0}
 --- !u!1 &4680462766875293447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a309d1ace1e8444b920d821031368b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuUI: {fileID: 0}
+  resourceCountersUI: {fileID: 0}
   GameplayHUD: {fileID: 0}
 --- !u!1 &5263345625978179971
 GameObject:
