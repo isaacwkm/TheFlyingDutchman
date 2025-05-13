@@ -1,8 +1,6 @@
 using Needle.Console;
 using UnityEngine;
 using UnityEngine.Rendering;
-
-[RequireComponent(typeof(Volume))]
 public class BlackBarsEffect : SCPEffect
 {
     public override string Name => "BlackBars";
@@ -36,11 +34,6 @@ public class BlackBarsEffect : SCPEffect
     void OnDisable()
     {
         
-    }
-
-    private void Reset()
-    {
-        volume = GetComponent<Volume>();
     }
 
     private void Start()
