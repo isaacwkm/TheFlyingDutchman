@@ -5578,7 +5578,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 52684
+    surfaceParameter: 52708
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: 8203898577400258191
@@ -10759,7 +10759,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 986.581, y: 986.581, z: 986.581}
+  m_LocalScale: {x: 367.4083, y: 367.4083, z: 367.4083}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729361745}
@@ -11041,7 +11041,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 53106
+    surfaceParameter: 53130
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -7689358581916248123
@@ -11271,6 +11271,38 @@ Transform:
   - {fileID: 1493924607}
   m_Father: {fileID: 1526086056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &613526220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 613526221}
+  m_Layer: 0
+  m_Name: PocketDimension - Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &613526221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613526220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2947, y: 379, z: -604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 629173075}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629173074
 GameObject:
   m_ObjectHideFlags: 0
@@ -11295,8 +11327,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629173074}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2947, y: 379, z: -604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11304,7 +11336,7 @@ Transform:
   - {fileID: 277541426}
   - {fileID: 863559484}
   - {fileID: 2065515441}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 613526221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672178828
 GameObject:
@@ -13854,7 +13886,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 53010
+    surfaceParameter: 53034
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 4340136029707878627
@@ -14476,7 +14508,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.823364, y: 211.29877, z: -330.3677}
+  m_LocalPosition: {x: 840.33374, y: 257.22516, z: 1742.4167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16646,7 +16678,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 52838
+    surfaceParameter: 52862
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 2581738547723450026
@@ -23449,6 +23481,7 @@ GameObject:
   - component: {fileID: 4100139962116105031}
   - component: {fileID: 6616297046236933077}
   - component: {fileID: 8622219775503459109}
+  - component: {fileID: 8622219775503459110}
   m_Layer: 0
   m_Name: CinematicsManager
   m_TagString: Untagged
@@ -28429,6 +28462,69 @@ MonoBehaviour:
     m_RotationOrder: 4
   blendInSpeed: 5
   blendOutSpeed: 5
+--- !u!114 &8622219775503459110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846245373962970581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966f18a0c39658c448bcaa0bdd7f6af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 0}
+  intensityCurveUp:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  intensityCurveDown:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  blendInSpeed: 5
+  blendOutSpeed: 5
 --- !u!114 &8707875504037575666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28817,7 +28913,7 @@ SceneRoots:
   - {fileID: 55541075}
   - {fileID: 1702390724}
   - {fileID: 3820779902864672213}
-  - {fileID: 629173075}
+  - {fileID: 613526221}
   - {fileID: 1966737130}
   - {fileID: 1526086056}
   - {fileID: 1528577322}
