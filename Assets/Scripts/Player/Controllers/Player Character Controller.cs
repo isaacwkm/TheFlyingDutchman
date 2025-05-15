@@ -460,6 +460,8 @@ public class PlayerCharacterController : MonoBehaviour
         isCrouching = false;
         isChargingSuperJump = false;
         superJumpCharge = 0;
+
+        Metrics.Set("super jumps", Metrics.Get("super jumps") + 1);
     }
 
     private void HandleMenuInput()

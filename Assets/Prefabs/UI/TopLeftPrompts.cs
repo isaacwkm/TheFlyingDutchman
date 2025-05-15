@@ -98,11 +98,13 @@ public class TopLeftTooltipManager : MonoBehaviour
     {
         const string ascendMessageText = "Ascend: BUTTONPROMPT.Ascend";
         const string descendMessageText = "Descend: BUTTONPROMPT.Descend";
+        const string attackMessageText = "Fire side cannons: look sideways + BUTTONPROMPT.Attack";
         const string exitMessageText = "Exit: BUTTONPROMPT.Jump_Off";
 
         // Use a helper method to create, disable, and set up components for each message
         SetupMessage(ascendMessageText, InputModeManager.InputMode.Flying);
         SetupMessage(descendMessageText, InputModeManager.InputMode.Flying);
+        SetupMessage(attackMessageText, InputModeManager.InputMode.Flying);
         SetupMessage(exitMessageText, InputModeManager.InputMode.Flying);
     }
 

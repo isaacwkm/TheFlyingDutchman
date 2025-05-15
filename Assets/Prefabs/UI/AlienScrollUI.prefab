@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8924441227898002413}
   - component: {fileID: 8999784688672261112}
   - component: {fileID: 478114324873729005}
+  - component: {fileID: 4482688986036326497}
   m_Layer: 0
   m_Name: AlienScrollUI
   m_TagString: Untagged
@@ -90,6 +91,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 6621671474783257391}
+--- !u!114 &4482688986036326497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521462654246050277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9338d6457bbde97a7945f922670de891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: time spent reading
 --- !u!1 &5666366113841381348
 GameObject:
   m_ObjectHideFlags: 0

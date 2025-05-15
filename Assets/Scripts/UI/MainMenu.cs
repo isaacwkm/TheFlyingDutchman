@@ -10,9 +10,11 @@ public class MainMenu : UIStack.Context
     [SerializeField] private Slider masterVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Button rebindControlsButton;
+    [SerializeField] private Button metricsButton;
     [SerializeField] private Button backToGameButton;
     [SerializeField] private Button backToOSButton;
     [SerializeField] private ControlsMenu controlsMenuPrefab;
+    [SerializeField] private UIStack.Context metricsMenuPrefab;
     [SerializeField] private UIStack.Context confirmQuitPrefab;
 
     private InputModeManager inputMan;
@@ -58,6 +60,7 @@ public class MainMenu : UIStack.Context
             VolumePrefs.SavePrefs();
         });
         rebindControlsButton.onClick.AddListener(() => Call(controlsMenuPrefab));
+        metricsButton.onClick.AddListener(() => Call(metricsMenuPrefab));
         backToGameButton.onClick.AddListener(() => Return());
         backToOSButton.onClick.AddListener(() => Call(confirmQuitPrefab));
     }
