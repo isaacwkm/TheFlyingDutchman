@@ -103,22 +103,22 @@ public class GradientEffect : SCPEffect
         playingDirection = -1f;
     }
 
-    public void DelayedPlayForward(float delay, float playSpeed)
+    public void DelayedPlayForward(float delay, float playSpeed = 0f)
     {
         CoroDelayedPlayForward(delay, playSpeed);
     }
 
-    public IEnumerator CoroDelayedPlayForward(float delay, float playSpeed)
+    public IEnumerator CoroDelayedPlayForward(float delay, float playSpeed = 0f)
     {
         yield return new WaitForSeconds(delay);
         PlayForward(playSpeed);
     }
 
-    public void DelayedPlayBackward(float delay, float playSpeed)
+    public void DelayedPlayBackward(float delay, float playSpeed = 0f)
     {
         CoroDelayedPlayBackward(delay, playSpeed);
     }
-    public IEnumerator CoroDelayedPlayBackward(float delay, float playSpeed)
+    public IEnumerator CoroDelayedPlayBackward(float delay, float playSpeed = 0f)
     {
         yield return new WaitForSeconds(delay);
         PlayBackward(playSpeed);
