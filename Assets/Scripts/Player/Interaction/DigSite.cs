@@ -7,7 +7,7 @@ public class DigSite : MonoBehaviour
     [SerializeField] private Transform digSpotTransform;
     [SerializeField] private Transform[] pileTransforms;
     [SerializeField] private Transform itemInstantiateSpot;
-    [SerializeField] private GameObject itemToInstantiate;
+    [SerializeField] private GameObject itemToReveal;
     [SerializeField] private int digsNeeded = 7;
     [SerializeField] private int digsNeededPerStage = 2;
     [SerializeField] private ActionSound digSound;
@@ -80,10 +80,10 @@ public class DigSite : MonoBehaviour
     }
 
     void revealItem(){
-        itemToInstantiate.SetActive(true);
+        itemToReveal.SetActive(true);
         // GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
-        if (itemToInstantiate.GetComponent<DroppedItem>()){
-            itemToInstantiate.GetComponent<DroppedItem>().enableSilentDrop(true);
+        if (itemToReveal.GetComponent<DroppedItem>()){
+            itemToReveal.GetComponent<DroppedItem>().enableSilentDrop(true);
         }
         
     }
