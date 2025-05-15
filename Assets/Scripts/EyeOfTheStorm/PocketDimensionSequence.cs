@@ -22,7 +22,9 @@ public class PocketDimensionSequence : MonoBehaviour
     {
         if (entering)
         {
-            cinematics.FindEffect("Gradient");
+            GradientEffect gradient = cinematics.GetComponent<GradientEffect>();
+            gradient.PlayForward();
+            gradient.CoroDelayedPlayBackward(2f);
         }
         else
         {
@@ -35,6 +37,7 @@ public class PocketDimensionSequence : MonoBehaviour
         if (active)
         {
             pocketDimension.SetActive(true);
+
         }
         else
         {
