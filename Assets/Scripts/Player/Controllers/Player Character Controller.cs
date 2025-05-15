@@ -205,7 +205,7 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
         // Movement handling below
-        float speed = isSprinting ? noclipSpeed * 4 : noclipSpeed; // Sprinting increases speed
+        float speed = isSprinting ? noclipSpeed * 12 : noclipSpeed; // Sprinting increases speed
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
 
         // Handle vertical movement using Jump and Crouch inputs
