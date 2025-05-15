@@ -4,7 +4,6 @@ using UnityEngine.Rendering;
 using System.Collections;
 
 
-[RequireComponent(typeof(Volume))]
 public class GradientEffect : SCPEffect
 {
     public override string Name => "Gradient";
@@ -39,11 +38,6 @@ public class GradientEffect : SCPEffect
     void OnDisable()
     {
 
-    }
-
-    private void Reset()
-    {
-        volume = GetComponent<Volume>();
     }
 
     private void Start()
