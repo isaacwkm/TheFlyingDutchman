@@ -9,7 +9,7 @@ public class GradientEffect : SCPEffect
     public override string Name => "Gradient";
     public Volume volume;
     private Cinematics cinematics;
-    private SCPE.BlackBars gradientEffect;
+    private SCPE.Gradient gradientEffect;
 
     public AnimationCurve intensityCurveUp = new AnimationCurve(new Keyframe[]
     {
@@ -48,9 +48,9 @@ public class GradientEffect : SCPEffect
         // Get the black bars effect
         volume.profile.TryGet(typeof(SCPE.Gradient), out gradientEffect);
         //Much like in the inspector, a parameter has to be overriden first if you want to modify it.
-        gradientEffect.size.overrideState = true;
+        gradientEffect.intensity.overrideState = true;
         //Initialize a starting value
-        gradientEffect.size.value = 0f;
+        gradientEffect.intensity.value = 0f;
     }
 
     void Update()
@@ -68,11 +68,11 @@ public class GradientEffect : SCPEffect
         //You can use IntelliSense to browse the available parameters (CTRL+Space after the period).
         if (playingDirection == 1)
         {
-            gradientEffect.size.value = intensityCurveUp.Evaluate(progress);
+            gradientEffect.intensity.value = intensityCurveUp.Evaluate(progress);
         }
         else
         {
-            gradientEffect.size.value = intensityCurveDown.Evaluate(progress);
+            gradientEffect.intensity.value = intensityCurveDown.Evaluate(progress);
         }
 
     }
