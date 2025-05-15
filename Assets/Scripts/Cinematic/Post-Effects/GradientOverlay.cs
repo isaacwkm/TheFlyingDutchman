@@ -1,24 +1,29 @@
 using Needle.Console;
 using UnityEngine;
 using UnityEngine.Rendering;
-public class BlackBarsEffect : SCPEffect
+using System.Collections;
+
+
+[RequireComponent(typeof(Volume))]
+public class GradientEffect : SCPEffect
 {
-    public override string Name => "BlackBars";
+    public override string Name => "Gradient";
     public Volume volume;
     private Cinematics cinematics;
-    private SCPE.BlackBars blackBarsEffect;
+    private SCPE.BlackBars gradientEffect;
 
     public AnimationCurve intensityCurveUp = new AnimationCurve(new Keyframe[]
     {
         new Keyframe(0f, 0f), new Keyframe(1f, 1f)
     });
 
-      public AnimationCurve intensityCurveDown = new AnimationCurve(new Keyframe[]
-    {
+    public AnimationCurve intensityCurveDown = new AnimationCurve(new Keyframe[]
+  {
         new Keyframe(0f, 1f), new Keyframe(1f, 0f)
-    });
+  });
 
     public float blendInSpeed = 5f;
+    public float blendOutSpeed = 5f;
 
     [Range(0f, 1f)]
     private float progress;
@@ -28,12 +33,17 @@ public class BlackBarsEffect : SCPEffect
 
     void OnEnable()
     {
-        
+
     }
 
     void OnDisable()
     {
-        
+
+    }
+
+    private void Reset()
+    {
+        volume = GetComponent<Volume>();
     }
 
     private void Start()
@@ -42,16 +52,16 @@ public class BlackBarsEffect : SCPEffect
         cinematics = SceneCore.cinematics;
 
         // Get the black bars effect
-        volume.profile.TryGet(typeof(SCPE.BlackBars), out blackBarsEffect);
+        volume.profile.TryGet(typeof(SCPE.Gradient), out gradientEffect);
         //Much like in the inspector, a parameter has to be overriden first if you want to modify it.
-        blackBarsEffect.size.overrideState = true;
+        gradientEffect.size.overrideState = true;
         //Initialize a starting value
-        blackBarsEffect.size.value = 0f;
+        gradientEffect.size.value = 0f;
     }
 
     void Update()
     {
-        if (!blackBarsEffect) return;
+        if (!gradientEffect) return;
         if (!fadeActive) return;
 
 
@@ -64,13 +74,13 @@ public class BlackBarsEffect : SCPEffect
         //You can use IntelliSense to browse the available parameters (CTRL+Space after the period).
         if (playingDirection == 1)
         {
-            blackBarsEffect.size.value = intensityCurveUp.Evaluate(progress);
+            gradientEffect.size.value = intensityCurveUp.Evaluate(progress);
         }
         else
         {
-            blackBarsEffect.size.value = intensityCurveDown.Evaluate(progress);
+            gradientEffect.size.value = intensityCurveDown.Evaluate(progress);
         }
-        
+
     }
 
     public override void PlayForward(float speed = 0f)
@@ -81,7 +91,6 @@ public class BlackBarsEffect : SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
-        cinematics.hudDisabler.SetActive(false);
         progress = 0;
         fadeActive = true;
         playingDirection = 1f;
@@ -95,10 +104,30 @@ public class BlackBarsEffect : SCPEffect
         }
 
         D.Log("Playing SCPE animation!", this, "PostProc");
-        cinematics.hudDisabler.SetActive(true);
         progress = 0;
         fadeActive = true;
         playingDirection = -1f;
+    }
+
+    public void DelayedPlayForward(float delay, float playSpeed)
+    {
+        CoroDelayedPlayForward(delay, playSpeed);
+    }
+
+    public IEnumerator CoroDelayedPlayForward(float delay, float playSpeed)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayForward(playSpeed);
+    }
+
+    public void DelayedPlayBackward(float delay, float playSpeed)
+    {
+        CoroDelayedPlayBackward(delay, playSpeed);
+    }
+    public IEnumerator CoroDelayedPlayBackward(float delay, float playSpeed)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayBackward(playSpeed);
     }
 
     private void CheckAnimationState()
