@@ -18,7 +18,7 @@ public class TransformDrift : MonoBehaviour
     private Vector3 originalPosition;
     private bool isPaused = false;
 
-    void Start()
+    void Awake()
     {
         originalPosition = transform.position;
     }
