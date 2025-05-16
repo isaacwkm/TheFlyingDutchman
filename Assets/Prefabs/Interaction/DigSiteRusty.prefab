@@ -245,7 +245,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.02, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.02, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4459480171743181226}
@@ -432,7 +432,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2.5, y: 1, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2803431555215882722
 MonoBehaviour:
@@ -449,7 +449,7 @@ MonoBehaviour:
   actionTooltip: Dig
   interactSound: {fileID: 0}
   doCooldown: 1
-  interactCooldownSeconds: 3
+  interactCooldownSeconds: 2
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 3269562899024736126}
   requirementTooltipText: 
@@ -555,7 +555,7 @@ MonoBehaviour:
   - {fileID: 2305377211215217989}
   - {fileID: 8547249616050265029}
   itemInstantiateSpot: {fileID: 3655807244343114882}
-  itemToReveal: {fileID: 0}
+  itemToInstantiate: {fileID: 0}
   digsNeeded: 7
   digsNeededPerStage: 2
   digSound: {fileID: 4007844685253574129}

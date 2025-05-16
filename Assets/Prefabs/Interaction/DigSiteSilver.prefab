@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 4576747639293236801}
   - {fileID: 3671232205253078682}
   itemInstantiateSpot: {fileID: 982280639145478515}
-  itemToReveal: {fileID: 0}
+  itemToInstantiate: {fileID: 0}
   digsNeeded: 7
   digsNeededPerStage: 2
   digSound: {fileID: 2324785281317895005}
@@ -434,7 +434,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2.5, y: 1, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3732312877474985981
 MonoBehaviour:
@@ -451,7 +451,7 @@ MonoBehaviour:
   actionTooltip: Dig
   interactSound: {fileID: 0}
   doCooldown: 1
-  interactCooldownSeconds: 3
+  interactCooldownSeconds: 2
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 7602773259856451253}
   requirementTooltipText: 
@@ -498,7 +498,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.02, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.02, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7967010807834039693}
