@@ -1,3 +1,4 @@
+using Needle.Console;
 using UnityEngine;
 
 public class PocketDimensionSequence : MonoBehaviour
@@ -22,8 +23,10 @@ public class PocketDimensionSequence : MonoBehaviour
     {
         if (entering)
         {
+            D.Log("Entering pocket dimension", this.gameObject, LogManager.LogCategory.PostProc);
+            EnablePocketDimension(true);
             GradientEffect gradient = cinematics.GetComponent<GradientEffect>();
-            gradient.PlayForward();
+            gradient.PlayForward(1f);
             gradient.CoroDelayedPlayBackward(2f);
         }
         else

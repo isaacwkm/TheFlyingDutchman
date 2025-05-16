@@ -84,7 +84,7 @@ public class GradientEffect : SCPEffect
             speed = blendInSpeed;
         }
 
-        D.Log("Playing SCPE animation!", this, "PostProc");
+        D.Log("Playing SCPE animation! GradientOverlay PlayForward", this, "PostProc");
         progress = 0;
         fadeActive = true;
         playingDirection = 1f;
@@ -97,7 +97,7 @@ public class GradientEffect : SCPEffect
             speed = blendInSpeed;
         }
 
-        D.Log("Playing SCPE animation!", this, "PostProc");
+        D.Log("Playing SCPE animation! GradientOverlay PlayBackward", this, "PostProc");
         progress = 0;
         fadeActive = true;
         playingDirection = -1f;

@@ -4,37 +4,58 @@ using System.Diagnostics;
 using NUnit.Framework;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
+using UnityEngine;
 
 namespace Needle.Console
 {
-    /// <summary>
-    /// Class to log only in Unity editor, double clicking console logs produced by this class still open the calling source file)
-    /// NOTE: Implement your own version of this is supported. Just implement a class named "DebugEditor" and any method inside this class starting with "Log" will, when double clicked, open the file of the calling method. Use [Conditional] attributes to control when any of these methods should be included.
-    /// </summary>
     public static class D
     {
+        // === ORIGINAL STRING-BASED OVERLOADS (Unchanged) ===
         [Conditional("UNITY_EDITOR")]
         public static void Log(object message, Object context = null, string category = "Any")
         {
-            LogManager.validateLog(category);
-            if (LogManager.ShouldLog(category))
-                Debug.Log($"[{category}] {message}", context);
+            var validated = LogManager.validateLog(category);
+            if (LogManager.ShouldLog(validated))
+                Debug.Log($"[{validated}] {message}", context);
         }
 
         [Conditional("UNITY_EDITOR")]
         public static void LogWarning(object message, Object context = null, string category = "Any")
         {
-            LogManager.validateLog(category);
-            if (LogManager.ShouldLog(category))
-                Debug.LogWarning($"[{category}] {message}", context);
+            var validated = LogManager.validateLog(category);
+            if (LogManager.ShouldLog(validated))
+                Debug.LogWarning($"[{validated}] {message}", context);
         }
 
         [Conditional("UNITY_EDITOR")]
         public static void LogError(object message, Object context = null, string category = "Any")
         {
-            LogManager.validateLog(category);
+            var validated = LogManager.validateLog(category);
+            if (LogManager.ShouldLog(validated))
+                Debug.LogError($"[{validated}] {message}", context);
+        }
+
+        // === NEW ENUM-BASED OVERLOADS ===
+        [Conditional("UNITY_EDITOR")]
+        public static void Log(object message, Object context, LogManager.LogCategory category)
+        {
+            if (LogManager.ShouldLog(category))
+                Debug.Log($"[{category}] {message}", context);
+        }
+
+        [Conditional("UNITY_EDITOR")]
+        public static void LogWarning(object message, Object context, LogManager.LogCategory category)
+        {
+            if (LogManager.ShouldLog(category))
+                Debug.LogWarning($"[{category}] {message}", context);
+        }
+
+        [Conditional("UNITY_EDITOR")]
+        public static void LogError(object message, Object context, LogManager.LogCategory category)
+        {
             if (LogManager.ShouldLog(category))
                 Debug.LogError($"[{category}] {message}", context);
         }
+
     }
 }
