@@ -1,37 +1,49 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// This script is attached to a game object, so multiple instances are automatically existent! TODO!!!
-
-[ExecuteAlways] // Allows updating logs in Editor mode
+[ExecuteAlways]
 public class LogManager : MonoBehaviour
 {
+    // UPDATE TO LOG MANAGER:
+    // - Added enum for log categories to introduce type safety and reduce string usage.
+    // - Also allows for autocompletion in IDEs when determining valid log categories.
+    // - This new enum approach is preferred over the string-based method.
+    // - The string-based method is still available for backward compatibility.
+    public enum LogCategory
+    {
+        Any,
+        UI,
+        Able,
+        Aud,
+        Inv,
+        Item,
+        Int,
+        Dig,
+        Move,
+        Story,
+        Combat,
+        PostProc
+    }
+
     [Header("General Settings")]
     public bool enableLogs = true;
-    [Tooltip("Log Uncategorized and General messages. Keep enabled to receive error logs. If the [Any] channel is overflowing with messages, try to categorize the source of what's causing all the messages.")]
     public bool logAny = true;
-
-    [Tooltip("Log dynamic Post-Processing operations")]
     public bool logPostProc = true;
 
     [Header("UI Logs")]
     public bool logUI = true;
-    [Tooltip("Log Accessibility Systems Logs")]
     public bool logAble = true;
 
     [Header("Audio Logs")]
-    [Tooltip("Log Audio")]
     public bool logAud = true;
 
     [Header("Inventory/Item Logs")]
-    [Tooltip("Log Inventory System")]
     public bool logInv = true;
     public bool logItem = true;
 
     [Header("Interaction Logs")]
     public bool logInt = true;
-
-    [Tooltip("Shovel Digging Logs (Part of Interactions)")]
     public bool logDig = true;
 
     [Header("Player Movement Logs")]
@@ -42,10 +54,10 @@ public class LogManager : MonoBehaviour
 
     [Header("Combat Logs")]
     public bool logCombat = true;
-    
+
     private static LogManager instance;
 
-    private Dictionary<string, bool> categoryStates = new Dictionary<string, bool>();
+    private Dictionary<LogCategory, bool> categoryStates = new Dictionary<LogCategory, bool>();
 
     private void Awake()
     {
@@ -61,28 +73,29 @@ public class LogManager : MonoBehaviour
         UpdateLogFilters();
     }
 
-    private void OnValidate() // Automatically updates categories when a checkbox is toggled
+    private void OnValidate()
     {
         UpdateLogFilters();
     }
 
     private void UpdateLogFilters()
     {
-        categoryStates["Any"] = logAny; // Any = uncategorized. Any can be disabled and still have other categories show up.
-        categoryStates["UI"] = logUI;
-        categoryStates["Able"] = logAble; // Accessibility systems
-        categoryStates["Aud"] = logAud;
-        categoryStates["Inv"] = logInv; // inventory system
-        categoryStates["Int"] = logInt; // interaction system
-        categoryStates["Dig"] = logDig; // Shovel dig feature logs
-        categoryStates["Item"] = logItem; // interaction system
-        categoryStates["Move"] = logMove; // player character movement and abilities
-        categoryStates["Story"] = logStory; // story manager
-        categoryStates["Combat"] = logCombat;
-        categoryStates["PostProc"] = logPostProc; // Post processing operations (during runtime)
+        categoryStates[LogCategory.Any] = logAny;
+        categoryStates[LogCategory.UI] = logUI;
+        categoryStates[LogCategory.Able] = logAble;
+        categoryStates[LogCategory.Aud] = logAud;
+        categoryStates[LogCategory.Inv] = logInv;
+        categoryStates[LogCategory.Item] = logItem;
+        categoryStates[LogCategory.Int] = logInt;
+        categoryStates[LogCategory.Dig] = logDig;
+        categoryStates[LogCategory.Move] = logMove;
+        categoryStates[LogCategory.Story] = logStory;
+        categoryStates[LogCategory.Combat] = logCombat;
+        categoryStates[LogCategory.PostProc] = logPostProc;
     }
 
-    public static bool ShouldLog(string category)
+    // Preferred new method using enum
+    public static bool ShouldLog(LogCategory category)
     {
         if (instance == null)
         {
@@ -98,16 +111,45 @@ public class LogManager : MonoBehaviour
         return instance.categoryStates.TryGetValue(category, out bool isEnabled) && isEnabled;
     }
 
-    public static string validateLog(string category) // Sets category to "Any" if it doesn't exist.
+    // Backward-compatible method that accepts a string
+    public static bool ShouldLog(string categoryStr)
     {
-        // Check if the category exists
-        if (!instance.categoryStates.ContainsKey(category))
+        if (!Enum.TryParse(categoryStr, out LogCategory category))
         {
-            // If the category doesn't exist, add it with the default value 'true'
-            return "Any";
+            category = LogCategory.Any;
         }
-        else{
+
+        return ShouldLog(category);
+    }
+
+    public static string validateLog(string category)
+    {
+        // Try to parse the string into an enum
+        if (Enum.TryParse(category, out LogCategory parsedCategory))
+        {
+            return parsedCategory.ToString(); // Valid, return normalized name (e.g., fixes casing)
+        }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"Unknown log category '{category}' — defaulting to 'Any'");
+#endif
+
+        return LogCategory.Any.ToString();
+    }
+
+    public static LogCategory validateLog(LogCategory category)
+    {
+        if (Enum.IsDefined(typeof(LogCategory), category))
+        {
             return category;
         }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"Invalid enum log category '{category}' — defaulting to 'Any'");
+#endif
+
+        return LogCategory.Any;
     }
+
+
 }
