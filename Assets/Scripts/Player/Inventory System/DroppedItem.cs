@@ -16,6 +16,7 @@ public class DroppedItem : MonoBehaviour
     private bool hasLanded = false;
     private Interactable interactTarget;
     private bool silentDropEnabled = false;
+    private Vector3 originalScale;
 
     public bool InteractRequirementsMet()
     {
@@ -28,6 +29,7 @@ public class DroppedItem : MonoBehaviour
         itemCollider = GetComponent<Collider>();
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // Prevent tunneling
         interactTarget = gameObject.GetComponent<Interactable>();
+        originalScale = transform.localScale;
     }
 
     void OnEnable() {
@@ -72,6 +74,10 @@ public class DroppedItem : MonoBehaviour
         Quaternion rotationModifier = Quaternion.Euler(0f, UnityEngine.Random.Range(0, 360), 90f);
         Quaternion targetRotation = rotationModifier * defaultRotation;
         transform.rotation = targetRotation;
+
+        // Set drop item scale
+        transform.localScale = originalScale;
+
     }
 
     private void OnCollisionEnter(Collision collision)
