@@ -26,18 +26,22 @@ public class IslandDisplay : MonoBehaviour
 
     private IEnumerator DisplayIslandNameCoroutine(string islandName)
     {
-        islandNameText.text = islandName; // Set the island name text
-        islandNameText.color = new Color(islandNameText.color.r, islandNameText.color.g, islandNameText.color.b, 0); // Set initial alpha to 0
+        // Cache base RGB color
+        Color baseColor = islandNameText.color;
+        baseColor.a = 0f;
+        islandNameText.color = baseColor;
+        islandNameText.text = islandName;
 
         // Fade in
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
             float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            islandNameText.color = new Color(islandNameText.color.r, islandNameText.color.g, islandNameText.color.b, alpha);
+            islandNameText.color = new Color(baseColor.r, baseColor.g, baseColor.b, alpha);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        islandNameText.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1f); // Ensure fully visible
 
         // Wait for the display duration
         yield return new WaitForSeconds(displayDuration);
@@ -47,9 +51,12 @@ public class IslandDisplay : MonoBehaviour
         while (elapsedTime < fadeDuration)
         {
             float alpha = Mathf.Clamp01(1 - (elapsedTime / fadeDuration));
-            islandNameText.color = new Color(islandNameText.color.r, islandNameText.color.g, islandNameText.color.b, alpha);
+            islandNameText.color = new Color(baseColor.r, baseColor.g, baseColor.b, alpha);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        // force to 0
+        islandNameText.color = new Color(baseColor.r, baseColor.g, baseColor.b, 0f);
     }
 }

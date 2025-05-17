@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8796295070711132705}
   - component: {fileID: 4710405777289992790}
-  - component: {fileID: 1158065913503297097}
+  - component: {fileID: 7336569421126902846}
   m_Layer: 0
   m_Name: Resource Collider
   m_TagString: Untagged
@@ -402,7 +402,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.87, y: 0.79, z: 24}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1158065913503297097
+--- !u!114 &7336569421126902846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
-  log: 0
+  log: 999
 --- !u!1 &5743085064461989245
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geometryObject: {fileID: 4418638503769594105}
   physicsObject: {fileID: 277970663228825012}
-  resourceInventory: {fileID: 1158065913503297097}
+  resourceInventory: {fileID: 7336569421126902846}
 --- !u!1 &5743961389970834085
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rudderInteractTarget: {fileID: 1732906299933345058}
   rudderHelmSeat: {fileID: 8119690699660904881}
-  seatMaxDistanceFromPlayer: 1
+  seatMaxDistanceFromPlayer: 30
   linearAcceleration: 5
   verticalAcceleration: 2
   angularAcceleration: 12
@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 070d240594c214bcb9ea85bf29add631, type: 3}
-  volume: 0.5
+  volume: 0.15
   pitch: 1
   spatialBlend: 1
   audioSource: {fileID: 0}
