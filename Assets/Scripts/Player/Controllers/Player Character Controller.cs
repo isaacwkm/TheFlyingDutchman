@@ -252,7 +252,14 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
         characterController.height = isCrouching ? crouchHeight : defaultHeight;
-        characterController.Move(moveDirection * Time.deltaTime);
+        CollisionFlags flags = characterController.Move(moveDirection * Time.deltaTime);
+
+
+        if ((flags & CollisionFlags.Above) != 0 && moveDirection.y > 0)
+        {
+            moveDirection.y = 0f;
+        }
+        
     }
 
     private void MovePlayerOnLadder()
