@@ -32,7 +32,7 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] public Transform targetObject = null;
 
     // Initial speed of projectile when launched.
-    [SerializeField] private float launchSpeed = 1.0f;
+    [SerializeField] public float launchSpeed = 1.0f;
     // Cooldown between consecutive launches.
     [SerializeField] private float cooldown = 0.0f;
     // Whether to limit aim speed. If not, always aim directly at target.
