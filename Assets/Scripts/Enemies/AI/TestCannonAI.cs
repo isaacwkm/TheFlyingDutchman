@@ -19,16 +19,16 @@ public class TestCannonAI : MonoBehaviour
             {
                 target = SceneCore.ship.transform;
             }
-        }
-        else
-        {
-            target = SceneCore.playerCharacter.transform;
-        }
-        var displacement = target.position - transform.position;
-        if (displacement.magnitude <= targetMaxDistance)
-        {
-            launcher.Aim(target);
-            if (launcher.targetInLineOfFire) launcher.LaunchIfReady();
+            var displacement = target.position - transform.position;
+            if (displacement.magnitude <= targetMaxDistance)
+            {
+                launcher.Aim(target);
+                if (launcher.targetInLineOfFire) launcher.LaunchIfReady();
+            }
+            else
+            {
+                launcher.Disarm();
+            }
         }
         else
         {
