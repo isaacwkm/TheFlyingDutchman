@@ -51,7 +51,14 @@ public class SyncTransform : MonoBehaviour
                 body.relPosn = target.InverseTransformPoint(body.transform.position);
             }
         }
-        target.rotation = transform.rotation*angularOffset;
+        if (angularOffset == Quaternion.identity)
+        {
+            target.rotation = transform.rotation;
+        }
+        else
+        {
+            target.rotation = transform.rotation*angularOffset;
+        }
         target.position = transform.position + (
             linearOffset.x*transform.right +
             linearOffset.y*transform.up +
