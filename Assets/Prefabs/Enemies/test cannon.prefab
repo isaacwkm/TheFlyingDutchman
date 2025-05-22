@@ -68,6 +68,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5880572482489008350}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4468957918990161366}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7033686684048044858}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4173968898672937723}
   m_SourcePrefab: {fileID: 100100000, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
 --- !u!4 &1815493792870825514 stripped
 Transform:
@@ -92,9 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4009836826258293133, guid: aff6c526207163755a983e5b39c6b0cf, type: 3}
-  aimTargetObject: {fileID: 0}
-  effectOnLaunch: {fileID: 0}
+  projectileSource: {fileID: 0}
   projectileSpawnOffset: {x: 0, y: 0.875, z: 1.25}
+  effectOnLaunch: {fileID: 0}
+  targetObject: {fileID: 0}
   launchSpeed: 80
   cooldown: 2
   useAimSpeed: 0
@@ -154,6 +164,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launcher: {fileID: 2352028082043857679}
   targetMaxDistance: 300
+  velocityTrackingCapability: 0.25
+--- !u!114 &4468957918990161366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444234714254802395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde90dd1620ba3b10ba6d4ef81061c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionTooltip: Sabotage
+  interactSound: {fileID: 0}
+  doCooldown: 1
+  interactCooldownSeconds: 1
+  CooldownReturnSound: {fileID: 0}
+  requirements: {fileID: 0}
+  requirementTooltipText: Need key
+--- !u!114 &7033686684048044858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444234714254802395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf19ce8446e3db4b8907eefad78e7b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonMaterialOverride: {fileID: 0}
+  repairSiteMaterial: {fileID: 0}
+  syncedRigidbody: {fileID: 0}
+--- !u!114 &4173968898672937723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444234714254802395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f17003c46d853e7aadd18c4fbbe006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ownerDestructibleMesh: {fileID: 7033686684048044858}
+  effectOnHit: {fileID: 0}
+  effectOnBreak: {fileID: 0}
+  destructibilityParent: {fileID: 0}
+  maxHealth: 50
+  reparable: 0
+  repairCost: 10
+  repairSound: {fileID: 0}
+  spawnsDebris: 1
+  mass: 1
+  collisionFalsePositivePreventionTimeout: 0.25
+  aiTargetPriority: 2
 --- !u!4 &7721446030278818841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2718933385210839917, guid: 2a67184c3d82c5b89b8aea507158b0d2, type: 3}
