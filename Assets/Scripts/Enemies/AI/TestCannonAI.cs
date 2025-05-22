@@ -1,10 +1,27 @@
 using UnityEngine;
+using System;
 
 public class TestCannonAI : MonoBehaviour
 {
     [SerializeField] ProjectileLauncher launcher;
     [SerializeField] float targetMaxDistance = 100.0f;
     [SerializeField] float velocityTrackingCapability = 0.25f;
+
+    private Action<GameObject> sabotage;
+
+    void OnEnable()
+    {
+        sabotage = (_) => {
+            GetComponent<Interactable>().enabled = false;
+            enabled = false;
+        };
+        GetComponent<Interactable>().OnInteract += sabotage;
+    }
+
+    void OnDisable()
+    {
+        GetComponent<Interactable>().OnInteract -= sabotage;
+    }
 
     // Update is called once per frame
     void Update()

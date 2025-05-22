@@ -661,6 +661,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4173968898672937723, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
+      propertyPath: spawnsDebris
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173968898672937723, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
+      propertyPath: _ownerDestructibleMesh
+      value: 
+      objectReference: {fileID: 1408684289227565703}
     - target: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
       propertyPath: m_Name
       value: test cannon
@@ -677,20 +685,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7033686684048044858, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5115739218015309503}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
 --- !u!114 &254863334216519396 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2352028082043857679, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
   m_PrefabInstance: {fileID: 2534789703170319851}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197886511059638320}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ada3173ccea4aeada3fb4640788e824, type: 3}
@@ -701,35 +707,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3956068407013386081, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
   m_PrefabInstance: {fileID: 2534789703170319851}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2197886511059638320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
-  m_PrefabInstance: {fileID: 2534789703170319851}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5115739218015309503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197886511059638320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f17003c46d853e7aadd18c4fbbe006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerDestructibleMesh: {fileID: 1408684289227565703}
-  effectOnHit: {fileID: 0}
-  effectOnBreak: {fileID: 0}
-  destructibilityParent: {fileID: 0}
-  maxHealth: 1
-  reparable: 0
-  repairCost: 1
-  repairSound: {fileID: 0}
-  spawnsDebris: 1
-  mass: 1
-  collisionFalsePositivePreventionTimeout: 0.25
-  aiTargetPriority: 1
 --- !u!1001 &2818132543590473908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9709,6 +9686,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4173968898672937723, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
+      propertyPath: spawnsDebris
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173968898672937723, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
+      propertyPath: _ownerDestructibleMesh
+      value: 
+      objectReference: {fileID: 1408684289227565703}
     - target: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
       propertyPath: m_Name
       value: test cannon (1)
@@ -9725,43 +9710,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7033686684048044858, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4523836409371472958}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
---- !u!1 &4950206708656838021 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4444234714254802395, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
-  m_PrefabInstance: {fileID: 8727902595846432862}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4523836409371472958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950206708656838021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f17003c46d853e7aadd18c4fbbe006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerDestructibleMesh: {fileID: 1408684289227565703}
-  effectOnHit: {fileID: 0}
-  effectOnBreak: {fileID: 0}
-  destructibilityParent: {fileID: 0}
-  maxHealth: 1
-  reparable: 0
-  repairCost: 1
-  repairSound: {fileID: 0}
-  spawnsDebris: 1
-  mass: 1
-  collisionFalsePositivePreventionTimeout: 0.25
-  aiTargetPriority: 1
 --- !u!4 &5762771796710346559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956068407013386081, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
@@ -9772,7 +9726,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2352028082043857679, guid: ecd6a651a23e6709691d5b6b0b83b516, type: 3}
   m_PrefabInstance: {fileID: 8727902595846432862}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950206708656838021}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ada3173ccea4aeada3fb4640788e824, type: 3}
