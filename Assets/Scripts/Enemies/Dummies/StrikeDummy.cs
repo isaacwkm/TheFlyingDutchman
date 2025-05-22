@@ -7,6 +7,7 @@ using UnityEngine;
 
 // ANY ENEMY OR DESTRUCTIBLE OBJECT THAT CAN BE ATTACKED BY A WEAPON OR TOOL CONTAINS THIS SCRIPT
 // This script allows hit interactions from the player's weapon/handheld item and play a death/destruction animation when hit enough times.
+[RequireComponent(typeof(BoxCollider))]
 public class StrikeDummy : MonoBehaviour
 {
     public ActionSound hitSound;
@@ -19,6 +20,7 @@ public class StrikeDummy : MonoBehaviour
     public string[] deathAnimNames;
     public Animator deathAnimatorExtraEffect; // supplementary animation to be played at the same time
     public string[] deathAnimExtraEffectNames;
+    public event Action deathCheck;
 
     void OnEnable()
     {
@@ -53,6 +55,7 @@ public class StrikeDummy : MonoBehaviour
     {
         playDeathAnim();
         alive = false;
+        deathCheck?.Invoke();
     }
 
     private bool HealthIsPositive()
