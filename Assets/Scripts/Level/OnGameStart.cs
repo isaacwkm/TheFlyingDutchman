@@ -12,7 +12,7 @@ public class OnGameStart : MonoBehaviour
         Cinematics cinematics = SceneCore.cinematics;
         cinematics.SetHUDActive(false);
         CreditUI.SetActive(false); // Activate the credit UI
-        InputModeManager.Instance.SwitchToUIControls(); // Switch to Player Controls when the game starts
+        InputModeManager.Instance.SwitchToUIControls(); // Switch to UI Controls when the game starts
         MapToolTip.SetActive(false); // Deactivate the map tooltip
     }
 
