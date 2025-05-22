@@ -1,12 +1,11 @@
-// using UnityEngine;
-// using UnityEngine.Events;
-// using System;
-// using Needle.Console;
-// using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Events;
+using System;
+using Needle.Console;
 
 // [RequireComponent(typeof(FloatPropertyInterpolator))]
-// public class DynamicZoneSound : MonoBehaviour
-// {
+ public class DynamicZoneSound : MonoBehaviour
+ {
 //     public TriggerZoneHandler[] SoundZones;
 //     private int soundZoneCount;
 //     public event Action<Collider> OnExit;
@@ -176,4 +175,4 @@
 //     }
 
 
-// }
+}
