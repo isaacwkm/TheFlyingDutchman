@@ -23,6 +23,8 @@ public class MultiZoneSound : MonoBehaviour
     private int currentZoneLevel = -1;
     private bool staying = false;
     private float currentStayTime = 0;
+    private float soundStartGraceTime = 0f;
+
 
     private void Awake()
     {
@@ -104,21 +106,42 @@ public class MultiZoneSound : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log($"[Update] staying={staying}, currentStayTime={currentStayTime}, zoneLevel={currentZoneLevel}");
+
         if (staying)
         {
             currentStayTime += Time.deltaTime;
             if (currentStayTime >= secondsToStayInZoneBeforePlaying)
             {
+                Debug.Log("Triggering PlaySound()");
                 PlaySound();
                 staying = false;
                 currentStayTime = -1;
             }
         }
 
-        if (!staying && audioSource.volume < 0.001f && audioSource.isPlaying)
+        if (!staying && audioSource != null && audioSource.volume < 0.001f && audioSource.isPlaying && Time.time > soundStartGraceTime)
         {
+            Debug.Log("Volume low. Stopping sound.");
             audioSource.Stop();
         }
+
+
+        if (currentZoneLevel == -1 && !AnyZoneHasPlayerInside())
+        {
+            staying = false;
+            currentStayTime = 0;
+        }
+
+    }
+
+    private bool AnyZoneHasPlayerInside()
+    {
+        foreach (var zone in zonesInnerToOuter)
+        {
+            if (zone.IsPlayerInside()) return true;
+        }
+        return false;
     }
 
     private void PlaySound()
@@ -129,7 +152,11 @@ public class MultiZoneSound : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
         ApplyVolume(GetGlobalMultiplier());
+
+        // Start grace period (so the system doesn't instantly stop the sound)
+        soundStartGraceTime = Time.time + 0.25f;
     }
+
 
     private void OnGlobalMusicVolumeChanged(float multiplier)
     {
