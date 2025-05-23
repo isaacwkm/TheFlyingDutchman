@@ -49,20 +49,20 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Registers a SingleSound component and configures its AudioSource.
-    // public void RegisterSound(DynamicZoneSound sound)
-    // {
-    //     if (sound.envMusicClip == null)
-    //     {
-    //         Debug.LogWarning($"Sound component on {sound.gameObject.name} has no clip assigned.");
-    //         return;
-    //     }
+    public void RegisterSound(DynamicZoneSound sound)
+    {
+        if (sound.envMusicClip == null)
+        {
+            Debug.LogWarning($"Sound component on {sound.gameObject.name} has no clip assigned.");
+            return;
+        }
 
-    //     // Create and configure an AudioSource
-    //     AudioSource audioSource = sound.gameObject.AddComponent<AudioSource>();
-    //     audioSource.playOnAwake = false;
-    //     audioSource.loop = true;
-    //     sound.audioSource = audioSource;
-    // }
+        // Create and configure an AudioSource
+        AudioSource audioSource = sound.gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.loop = true;
+        sound.audioSource = audioSource;
+    }
 
     /// Plays a specific sound clip from a SingleSound component by index.
     public void PlaySingleSoundAt(ActionSound sound, int clipIndex)
