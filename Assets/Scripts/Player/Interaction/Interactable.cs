@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
     public event Action<GameObject> OffInteract;
     private Coroutine cooldownCoroutine;
     private Collider interactCollider; // Collider that the player has to interact with
+    public bool isUnlocked = false;
+
 
     void Awake()
     {
@@ -27,27 +29,44 @@ public class Interactable : MonoBehaviour
         return actionTooltip;
     }
 
-    public string peekRequirementText(){
+    public string peekRequirementText()
+    {
         return requirementTooltipText;
     }
     public void receiveInteract(GameObject whom)
-    { // Whom = the player who interacted with object
-        D.Log("receiveInteract()", gameObject, "Int");
-
+    {
         if (onCooldown) return;
         if (!canInteract(whom)) return;
 
-        // At this point, all checks have been passed and the object will be interacted with.
-        D.Log("receiveInteract(): Interacted", gameObject, "Int");
+        
+        if (!isUnlocked && requirements != null)
+        {
+            
+            if (requirements.getInteractAllowed(whom))
+            {
+                isUnlocked = true;
+                
+                UnlockDoorVisuals();
+            }
+        }
+
         OnInteract?.Invoke(whom);
         playInteractSound();
+
         if (doCooldown)
         {
-            onCooldown = true; // Prevent interaction for a cooldown
+            onCooldown = true;
             DisableInteractions();
-            cooldownCoroutine = StartCoroutine(InteractCooldown(whom)); // Start cooldown
+            cooldownCoroutine = StartCoroutine(InteractCooldown(whom));
         }
     }
+    private void UnlockDoorVisuals()
+    {
+        
+        Debug.Log("Door unlocked!");
+        
+    }
+
 
     private void playInteractSound()
     {
@@ -74,15 +93,13 @@ public class Interactable : MonoBehaviour
         EnableInteractions();
     }
 
-    public bool canInteract(GameObject player) // Asks whether the player can interact
+    public bool canInteract(GameObject player)
     {
-        if (requirements == null) return true; // Defaults to true if no requirements were given
-
-        else
-        {
-            return requirements.getInteractAllowed(player); // Loops through requirement conditions if requirements were provided.
-        }
+        if (isUnlocked) return true;  
+        if (requirements == null) return true;
+        return requirements.getInteractAllowed(player);
     }
+
 
     public void stopInteractCooldown()
     {
