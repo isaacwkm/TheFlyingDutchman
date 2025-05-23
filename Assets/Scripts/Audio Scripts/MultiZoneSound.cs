@@ -4,9 +4,11 @@ using Needle.Console;
 [RequireComponent(typeof(FloatPropertyInterpolator))]
 public class MultiZoneSound : MonoBehaviour
 {
-    [Header("Volume tiers ordered outer → inner")]
-    public TriggerZoneHandler[] soundZones;
-    [Range(0, 1f)] public float[] volumeTiers = { 0.1f, 0.5f, 1f };
+    [Header("Zones ordered from inner (0) to outer (N)")]
+    public TriggerZoneHandler[] zonesInnerToOuter;
+
+    [Range(0, 1f)]
+    public float[] volumesInnerToOuter = { 1f, 0.5f, 0.1f };
 
     public bool isMusic;
     public AudioClip envMusicClip;
@@ -24,15 +26,24 @@ public class MultiZoneSound : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        fader = GetComponent<FloatPropertyInterpolator>();
-        fader.SetTarget(audioSource, "volume");
-
+        // Register with AudioManager (adds the AudioSource)
         AudioManager.Instance.RegisterSound(this);
     }
 
     private void Start()
     {
+        // Validate audio source after registration
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            D.LogError("MultiZoneSound requires an AudioSource but none was registered.", gameObject, "Aud");
+            enabled = false;
+            return;
+        }
+
+        fader = GetComponent<FloatPropertyInterpolator>();
+        fader.SetTarget(audioSource, "volume");
+
         ApplyVolume(isMusic ? VolumePrefs.musicVolume : 1f);
         SetupZoneCallbacks();
     }
@@ -42,17 +53,17 @@ public class MultiZoneSound : MonoBehaviour
 
     private void SetupZoneCallbacks()
     {
-        for (int i = 0; i < soundZones.Length; i++)
+        for (int i = 0; i < zonesInnerToOuter.Length; i++)
         {
             int zoneIndex = i;
-            soundZones[i].OnEnter += (_) => OnZoneEnter(zoneIndex);
-            soundZones[i].OnExit += (_) => OnZoneExit(zoneIndex);
+            zonesInnerToOuter[i].OnEnter += (_) => OnZoneEnter(zoneIndex);
+            zonesInnerToOuter[i].OnExit += (_) => OnZoneExit(zoneIndex);
         }
     }
 
     private void OnZoneEnter(int level)
     {
-        if (level > currentZoneLevel)
+        if (currentZoneLevel == -1 || level < currentZoneLevel)
         {
             currentZoneLevel = level;
             if (!audioSource.isPlaying && envMusicClip != null)
@@ -72,9 +83,9 @@ public class MultiZoneSound : MonoBehaviour
         if (level == currentZoneLevel)
         {
             int fallbackLevel = -1;
-            for (int i = soundZones.Length - 1; i >= 0; i--)
+            for (int i = 0; i < zonesInnerToOuter.Length; i++)
             {
-                if (soundZones[i].IsPlayerInside()) // Must track this in TriggerZoneHandler
+                if (zonesInnerToOuter[i].IsPlayerInside())
                 {
                     fallbackLevel = i;
                     break;
@@ -88,17 +99,18 @@ public class MultiZoneSound : MonoBehaviour
 
     private void Update()
     {
-        if (!staying) return;
-
-        currentStayTime += Time.deltaTime;
-        if (currentStayTime >= secondsToStayInZoneBeforePlaying)
+        if (staying)
         {
-            PlaySound();
-            staying = false;
-            currentStayTime = -1;
+            currentStayTime += Time.deltaTime;
+            if (currentStayTime >= secondsToStayInZoneBeforePlaying)
+            {
+                PlaySound();
+                staying = false;
+                currentStayTime = -1;
+            }
         }
 
-        if (!staying && audioSource.volume < 0.001f)
+        if (!staying && audioSource.volume < 0.001f && audioSource.isPlaying)
         {
             audioSource.Stop();
         }
@@ -109,6 +121,7 @@ public class MultiZoneSound : MonoBehaviour
         D.Log("Playing zone sound", gameObject, "Aud");
         audioSource.clip = envMusicClip;
         audioSource.volume = 0;
+        audioSource.loop = true;
         audioSource.Play();
         ApplyVolume(GetGlobalMultiplier());
     }
@@ -127,22 +140,23 @@ public class MultiZoneSound : MonoBehaviour
             return;
         }
 
-        float tierVol = volumeTiers[Mathf.Clamp(currentZoneLevel, 0, volumeTiers.Length - 1)];
+        float tierVol = volumesInnerToOuter[Mathf.Clamp(currentZoneLevel, 0, volumesInnerToOuter.Length - 1)];
         targetVolume = tierVol * ambientAndMusicMultiplier * globalMultiplier;
         fader.SetWithDuration(targetVolume, fadeDuration);
     }
 
-    private float GetGlobalMultiplier()
-    {
-        return isMusic ? VolumePrefs.musicVolume : 1f;
-    }
+    private float GetGlobalMultiplier() => isMusic ? VolumePrefs.musicVolume : 1f;
 
     public void ForceStop()
     {
         staying = false;
         currentStayTime = 0;
         currentZoneLevel = -1;
-        fader.SetWithDuration(0f, fadeDuration);
-        audioSource.Stop();
+
+        if (audioSource != null)
+        {
+            fader.SetWithDuration(0f, fadeDuration);
+            audioSource.Stop();
+        }
     }
 }

@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
         sound.audioSource = audioSource;
     }
 
-    /// Registers a SingleSound component and configures its AudioSource.
+    /// Registers a MultiZoneSound component and configures its AudioSource.
     public void RegisterSound(MultiZoneSound sound)
     {
         if (sound.envMusicClip == null)
