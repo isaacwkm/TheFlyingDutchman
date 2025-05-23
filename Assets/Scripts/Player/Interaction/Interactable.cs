@@ -45,6 +45,8 @@ public class Interactable : MonoBehaviour
             if (requirements.getInteractAllowed(whom))
             {
                 isUnlocked = true;
+                Inventory inventory = whom.GetComponent<Inventory>();
+                inventory.DestroyActiveItem();
                 
                 UnlockDoorVisuals();
             }

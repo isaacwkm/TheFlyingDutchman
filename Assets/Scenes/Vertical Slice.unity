@@ -257,6 +257,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
+  isUnlocked: 0
 --- !u!65 &11002009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -879,7 +880,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62476
+    surfaceParameter: 84052
     meshQueryIndex: 10
     subMeshQueryIndex: 0
     geometryHashValue: 4512421527952871889
@@ -1179,7 +1180,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62478
+    surfaceParameter: 71386
     meshQueryIndex: 7
     subMeshQueryIndex: 0
     geometryHashValue: 5139011247952112902
@@ -1229,6 +1230,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 121149825}
   requirementTooltipText: 
+  isUnlocked: 0
 --- !u!114 &121149825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1548,6 +1550,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
+  isUnlocked: 0
 --- !u!65 &131398421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6544,6 +6547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e55a877e2b93e643abd24ca7d716461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagToCheck: Player
   enterTasks: []
   exitTasks: []
 --- !u!1001 &154337389
@@ -12462,7 +12466,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.343624, y: 9.343624, z: 9.343624}
+  m_LocalScale: {x: 125.66439, y: 125.66439, z: 125.66439}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729361745}
@@ -12959,7 +12963,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62584
+    surfaceParameter: 84046
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 455161413439354216
@@ -13443,7 +13447,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 59444
+    surfaceParameter: 84040
     meshQueryIndex: 9
     subMeshQueryIndex: 0
     geometryHashValue: -7331245546821540695
@@ -13922,6 +13926,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 452429777}
   requirementTooltipText: 
+  isUnlocked: 0
 --- !u!114 &452429777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14858,7 +14863,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 57560
+    surfaceParameter: 84152
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: -2862175952384562866
@@ -15041,6 +15046,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 530874774}
   requirementTooltipText: 
+  isUnlocked: 0
 --- !u!114 &530874774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15552,7 +15558,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 57830
+    surfaceParameter: 84024
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -6830643516744875750
@@ -15947,10 +15953,26 @@ PrefabInstance:
       propertyPath: islandDisplay
       value: 
       objectReference: {fileID: 1951047622}
+    - target: {fileID: 613739709658198791, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 861600636066103476, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: playerCameraHere
       value: 
       objectReference: {fileID: 1964635082}
+    - target: {fileID: 934756609321617416, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149393561336923039, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266285822418309131, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 1361302159228204267, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.65
@@ -15987,6 +16009,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1947951862925572686, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2295853133239775612, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620246377586203472, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270370242929483857, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284359409115002295, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 4026611096555758248, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.352
@@ -16019,6 +16061,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5194158471653876251, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275267703713239645, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472918441208077691, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 5699558726856691617, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -16030,6 +16084,10 @@ PrefabInstance:
     - target: {fileID: 6002560539820231143, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.1782227
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153803865161784101, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 6195443615713568628, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16050,6 +16108,10 @@ PrefabInstance:
     - target: {fileID: 6459221031508616748, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LODs.Array.data[1].renderers.Array.data[3].renderer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471251512857945569, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 6619661845165316728, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalScale.x
@@ -16087,9 +16149,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 1.05
       objectReference: {fileID: 0}
+    - target: {fileID: 7032853844214463351, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 7170300850890863361, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 28.684
+      objectReference: {fileID: 0}
+    - target: {fileID: 7219954343458219184, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 7289837970146124296, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16227,6 +16297,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 8273915591176190170, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 8382696662178985927, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -16242,6 +16316,14 @@ PrefabInstance:
     - target: {fileID: 8839093046755007573, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949417803633197160, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985755638280568238, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 9146955917829755567, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       propertyPath: m_LocalScale.x
@@ -16314,6 +16396,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6161683515618885529, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1731516237}
+    - targetCorrespondingSourceObject: {fileID: 8483465983201511445, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1651603175}
   m_SourcePrefab: {fileID: 100100000, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
 --- !u!4 &675576124 stripped
 Transform:
@@ -16428,7 +16513,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62682
+    surfaceParameter: 84072
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: -6492456703110705836
@@ -17256,6 +17341,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
+  isUnlocked: 0
 --- !u!65 &784896162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17689,7 +17775,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 57830
+    surfaceParameter: 84024
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -6830643516744875750
@@ -18064,6 +18150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e55a877e2b93e643abd24ca7d716461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagToCheck: Player
   enterTasks: []
   exitTasks: []
 --- !u!1 &992311775
@@ -19093,7 +19180,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62734
+    surfaceParameter: 84028
     meshQueryIndex: 8
     subMeshQueryIndex: 0
     geometryHashValue: -6872609066922559578
@@ -19546,6 +19633,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
+  isUnlocked: 0
 --- !u!65 &1153205378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20056,7 +20144,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 57830
+    surfaceParameter: 84024
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: -8934801209351581961
@@ -20993,7 +21081,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 62760
+    surfaceParameter: 84096
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -6325602985342839905
@@ -22102,7 +22190,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 59444
+    surfaceParameter: 84040
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: -2534818289692170628
@@ -22519,6 +22607,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 1457948084}
   requirementTooltipText: 
+  isUnlocked: 0
 --- !u!114 &1457948084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23504,7 +23593,7 @@ Transform:
   m_GameObject: {fileID: 1526086054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.017685, y: -23.628258, z: 1810.3793}
+  m_LocalPosition: {x: -61.697678, y: -22.759956, z: 1806.7511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24284,6 +24373,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645093492}
   m_Mesh: {fileID: -69760931014144829, guid: 1bf63c0899d49114e9e0a11b3dbb5187, type: 3}
+--- !u!1 &1651603171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8483465983201511445, guid: 8ba281399af9e3c41bee2f35c0f88f9c, type: 3}
+  m_PrefabInstance: {fileID: 675576123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1651603175
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651603171}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6047243261634742575, guid: a36d1c383515e5a439384ca3f701345c, type: 3}
 --- !u!1 &1684889830
 GameObject:
   m_ObjectHideFlags: 0
@@ -25108,6 +25224,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 1753324628}
   requirementTooltipText: 
+  isUnlocked: 0
 --- !u!114 &1753324628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25712,6 +25829,7 @@ MonoBehaviour:
   CooldownReturnSound: {fileID: 0}
   requirements: {fileID: 0}
   requirementTooltipText: Need key
+  isUnlocked: 0
 --- !u!65 &1841121998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31754,7 +31872,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 57758
+    surfaceParameter: 66678
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -585263850214487863

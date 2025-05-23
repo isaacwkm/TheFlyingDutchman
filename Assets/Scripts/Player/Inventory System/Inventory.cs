@@ -132,8 +132,21 @@ public class Inventory : MonoBehaviour
         itemsInSlots[currentActiveSlot] = null; // Set dropped item pointer to null
         inventorySize--; // update inventory size
     }
+    
+    public void DestroyActiveItem()
+    {
+        if (nothingEquipped()) return; // do nothing if the player is holding nothing
+        
+        // Cleanup
+        Destroy(itemsInSlots[currentActiveSlot]); // remove the texture
+        Destroy(itemIcons[currentActiveSlot]); // remove the texture
+        itemIcons[currentActiveSlot] = null; // remove dangling pointer just in case unity doesnt do it for us
+        itemsInSlots[currentActiveSlot] = null; // Set dropped item pointer to null
+        inventorySize--; // update inventory size
+    }
 
-    public int getHeldItemId(){
+    public int getHeldItemId()
+    {
         if (currentItem() == null) return 0;
 
         else return getItemId(currentItem());
