@@ -35,6 +35,7 @@ public class PlayerCharacterController : MonoBehaviour
     [SerializeField] private float sprintMultiplier = 2f; // How much the walkspeed is multiplied by while sprinting.
     [SerializeField] private float maxInteractDistance = 2f;
     [SerializeField] private float noclipSpeed = 10f;
+    private float NOCLIP_SPRINT_MULTIPLIER = 24f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -205,7 +206,7 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
         // Movement handling below
-        float speed = isSprinting ? noclipSpeed * 4 : noclipSpeed; // Sprinting increases speed
+        float speed = isSprinting ? noclipSpeed * NOCLIP_SPRINT_MULTIPLIER : noclipSpeed; // Sprinting increases speed
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
 
         // Handle vertical movement using Jump and Crouch inputs

@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// Registers a SingleSound component and configures its AudioSource.
-    public void RegisterSound(DynamicZoneSound sound)
+    public void RegisterSound(MultiZoneSound sound)
     {
         if (sound.envMusicClip == null)
         {
