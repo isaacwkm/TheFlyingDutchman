@@ -48,7 +48,12 @@ public class MultiZoneSound : MonoBehaviour
         SetupZoneCallbacks();
     }
 
-    private void OnEnable() => VolumePrefs.OnMusicVolumeChanged += OnGlobalMusicVolumeChanged;
+    private void OnEnable()
+    {
+        fader = GetComponent<FloatPropertyInterpolator>(); // preload if needed
+        VolumePrefs.OnMusicVolumeChanged += OnGlobalMusicVolumeChanged;
+    }
+
     private void OnDisable() => VolumePrefs.OnMusicVolumeChanged -= OnGlobalMusicVolumeChanged;
 
     private void SetupZoneCallbacks()
@@ -134,6 +139,12 @@ public class MultiZoneSound : MonoBehaviour
 
     private void ApplyVolume(float globalMultiplier)
     {
+        if (fader == null)
+        {
+            Debug.LogWarning($"[MultiZoneSound] Tried to apply volume before fader was initialized on {gameObject.name}");
+            return;
+        }
+
         if (currentZoneLevel == -1)
         {
             fader.SetWithDuration(0f, fadeDuration);
@@ -144,6 +155,7 @@ public class MultiZoneSound : MonoBehaviour
         targetVolume = tierVol * ambientAndMusicMultiplier * globalMultiplier;
         fader.SetWithDuration(targetVolume, fadeDuration);
     }
+
 
     private float GetGlobalMultiplier() => isMusic ? VolumePrefs.musicVolume : 1f;
 
