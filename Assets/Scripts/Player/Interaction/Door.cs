@@ -12,11 +12,13 @@ public class Door : MonoBehaviour
     {
         return true;
     }
-    void OnEnable() {
+    void OnEnable()
+    {
         interactTarget.OnInteract += OpenOrClose;
     }
 
-    void OnDisable() {
+    void OnDisable()
+    {
         interactTarget.OnInteract -= OpenOrClose;
     }
 
@@ -26,7 +28,8 @@ public class Door : MonoBehaviour
         hjoint = GetComponent<HingeJoint>();
     }
 
-    void OpenOrClose(GameObject dontCare = null) {
+    void OpenOrClose(GameObject dontCare = null)
+    {
         var motor = hjoint.motor;
         motor.targetVelocity *= -1.0f;
         hjoint.motor = motor;
