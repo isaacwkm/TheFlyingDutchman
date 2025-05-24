@@ -28,28 +28,29 @@ public class MultiZoneSound : MonoBehaviour
     public event Action OnMusicStarted;
     public event Action OnFullyExitedZones;
 
-    public void CheckAndForceZoneReevaluation(Collider playerCollider)
-{
-    int fallbackLevel = -1;
-
-    for (int i = 0; i < zonesInnerToOuter.Length; i++)
+    public void CheckAndForceZoneReevaluation()
     {
-        if (zonesInnerToOuter[i].CheckAndSetPlayerInside(playerCollider))
+        int fallbackLevel = -1;
+
+        for (int i = 0; i < zonesInnerToOuter.Length; i++)
         {
-            fallbackLevel = i;
-            break;
+            if (zonesInnerToOuter[i].IsPlayerInside())
+            {
+                fallbackLevel = i;
+                break;
+            }
+        }
+
+        if (fallbackLevel != currentZoneLevel)
+        {
+            D.Log($"[MultiZoneSound] Player reevaluated into zone level {fallbackLevel}", gameObject, LogManager.LogCategory.Aud);
+            currentZoneLevel = fallbackLevel;
+            ApplyVolume(GetGlobalMultiplier());
+            staying = fallbackLevel != -1;
+            currentStayTime = staying ? 0 : 0;
         }
     }
 
-    if (fallbackLevel != currentZoneLevel)
-    {
-        Debug.Log($"[MultiZoneSound] Player reevaluated into zone level {fallbackLevel}", this);
-        currentZoneLevel = fallbackLevel;
-        ApplyVolume(GetGlobalMultiplier());
-        staying = fallbackLevel != -1;
-        currentStayTime = (staying ? 0 : 0);
-    }
-}
 
     private void Awake()
     {
@@ -74,7 +75,7 @@ public class MultiZoneSound : MonoBehaviour
         ApplyVolume(isMusic ? VolumePrefs.musicVolume : 1f);
         SetupZoneCallbacks();
 
-        CheckAndForceZoneReevaluation(SceneCore.playerCharacter.GetComponent<Collider>());
+        CheckAndForceZoneReevaluation();
     }
 
     private void OnEnable()

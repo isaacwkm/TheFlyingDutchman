@@ -23,7 +23,20 @@ public class TriggerZoneHandler : MonoBehaviour
         if (zoneCollider == null || target == null) return false;
 
         bool inside = zoneCollider.bounds.Intersects(target.bounds);
-        playerInside = inside;
+
+        if (inside && !playerInside)
+        {
+            playerInside = true;
+            OnEnter?.Invoke(target);
+            foreach (var task in enterTasks) task.Invoke();
+        }
+        else if (!inside && playerInside)
+        {
+            playerInside = false;
+            OnExit?.Invoke(target);
+            foreach (var task in exitTasks) task.Invoke();
+        }
+
         return inside;
     }
 
@@ -37,6 +50,8 @@ public class TriggerZoneHandler : MonoBehaviour
                              "Please implement your own version of this script or propose changes if you need to use a different tag.",
                              gameObject, LogManager.LogCategory.Any);
         }
+
+        CheckAndSetPlayerInside(SceneCore.playerCharacter.GetComponent<Collider>()); // if the player starts inside the trigger zone
     }
     void OnTriggerExit(Collider other)
     {
