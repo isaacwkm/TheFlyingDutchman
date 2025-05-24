@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using Needle.Console;
 
 [RequireComponent(typeof(FloatPropertyInterpolator))]
@@ -24,7 +25,31 @@ public class MultiZoneSound : MonoBehaviour
     private bool staying = false;
     private float currentStayTime = 0;
     private float soundStartGraceTime = 0f;
+    public event Action OnMusicStarted;
+    public event Action OnFullyExitedZones;
 
+    public void CheckAndForceZoneReevaluation(Collider playerCollider)
+{
+    int fallbackLevel = -1;
+
+    for (int i = 0; i < zonesInnerToOuter.Length; i++)
+    {
+        if (zonesInnerToOuter[i].CheckAndSetPlayerInside(playerCollider))
+        {
+            fallbackLevel = i;
+            break;
+        }
+    }
+
+    if (fallbackLevel != currentZoneLevel)
+    {
+        Debug.Log($"[MultiZoneSound] Player reevaluated into zone level {fallbackLevel}", this);
+        currentZoneLevel = fallbackLevel;
+        ApplyVolume(GetGlobalMultiplier());
+        staying = fallbackLevel != -1;
+        currentStayTime = (staying ? 0 : 0);
+    }
+}
 
     private void Awake()
     {
@@ -48,6 +73,8 @@ public class MultiZoneSound : MonoBehaviour
 
         ApplyVolume(isMusic ? VolumePrefs.musicVolume : 1f);
         SetupZoneCallbacks();
+
+        CheckAndForceZoneReevaluation(SceneCore.playerCharacter.GetComponent<Collider>());
     }
 
     private void OnEnable()
@@ -106,7 +133,7 @@ public class MultiZoneSound : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"[Update] staying={staying}, currentStayTime={currentStayTime}, zoneLevel={currentZoneLevel}");
+        D.Log($"[Update] staying={staying}, currentStayTime={currentStayTime}, zoneLevel={currentZoneLevel}", null, LogManager.LogCategory.Aud);
 
         if (staying)
         {
@@ -127,10 +154,12 @@ public class MultiZoneSound : MonoBehaviour
         }
 
 
+        // Branch runs if the player is not in any zone
         if (currentZoneLevel == -1 && !AnyZoneHasPlayerInside())
         {
             staying = false;
             currentStayTime = 0;
+            OnFullyExitedZones?.Invoke();
         }
 
     }
@@ -155,6 +184,9 @@ public class MultiZoneSound : MonoBehaviour
 
         // Start grace period (so the system doesn't instantly stop the sound)
         soundStartGraceTime = Time.time + 0.25f;
+
+        OnMusicStarted?.Invoke();
+
     }
 
 

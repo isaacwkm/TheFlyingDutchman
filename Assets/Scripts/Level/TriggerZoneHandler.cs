@@ -11,6 +11,21 @@ public class TriggerZoneHandler : MonoBehaviour
     [SerializeField] private UnityEvent[] enterTasks;
     [SerializeField] private UnityEvent[] exitTasks;
     private bool playerInside = false;
+    public Collider zoneCollider;
+
+    private void Reset()
+    {
+        zoneCollider = GetComponent<Collider>();
+    }
+
+    public bool CheckAndSetPlayerInside(Collider target)
+    {
+        if (zoneCollider == null || target == null) return false;
+
+        bool inside = zoneCollider.bounds.Intersects(target.bounds);
+        playerInside = inside;
+        return inside;
+    }
 
     public bool IsPlayerInside() => playerInside;
 

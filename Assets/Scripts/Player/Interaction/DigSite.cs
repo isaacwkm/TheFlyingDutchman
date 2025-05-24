@@ -7,7 +7,7 @@ public class DigSite : MonoBehaviour
     [SerializeField] private Transform digSpotTransform;
     [SerializeField] private Transform[] pileTransforms;
     [SerializeField] private Transform itemInstantiateSpot;
-    [SerializeField] private GameObject itemToInstantiate;
+    [SerializeField] private GameObject itemToReveal;
     [SerializeField] private int digsNeeded = 7;
     [SerializeField] private int digsNeededPerStage = 2;
     [SerializeField] private ActionSound digSound;
@@ -30,6 +30,7 @@ public class DigSite : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        itemToReveal.SetActive(false);
         digSiteRadiusIncreaseAmount = 1f / digsNeeded;
         D.Log($"Digs Needed Amount: {digsNeeded}", gameObject, "Dig");
         D.Log($"Dig Site Radius Increase Amount: {digSiteRadiusIncreaseAmount}", gameObject, "Dig");
@@ -80,10 +81,10 @@ public class DigSite : MonoBehaviour
     }
 
     void revealItem(){
-        itemToInstantiate.SetActive(true);
+        itemToReveal.SetActive(true);
         // GameObject item = Instantiate(itemToInstantiate, itemInstantiateSpot.position, itemInstantiateSpot.rotation);
-        if (itemToInstantiate.GetComponent<DroppedItem>()){
-            itemToInstantiate.GetComponent<DroppedItem>().enableSilentDrop(true);
+        if (itemToReveal.GetComponent<DroppedItem>()){
+            itemToReveal.GetComponent<DroppedItem>().enableSilentDrop(true);
         }
         
     }
