@@ -13,7 +13,9 @@ public class MultiZoneSound : MonoBehaviour
 
     public bool isMusic;
     public AudioClip envMusicClip;
-    public float fadeDuration = 2f;
+    private float fadeDuration = 2f;
+    public float normalFadeDuration = 2;
+    public float longFadeDuration = 4f;
     public float secondsToStayInZoneBeforePlaying = 1f;
 
     [HideInInspector] public AudioSource audioSource;
@@ -31,6 +33,7 @@ public class MultiZoneSound : MonoBehaviour
     public void CheckAndForceZoneReevaluation()
     {
         int fallbackLevel = -1;
+        fadeDuration = longFadeDuration;
 
         for (int i = 0; i < zonesInnerToOuter.Length; i++)
         {
@@ -56,6 +59,8 @@ public class MultiZoneSound : MonoBehaviour
     {
         // Register with AudioManager (adds the AudioSource)
         AudioManager.Instance.RegisterSound(this);
+
+        fadeDuration = normalFadeDuration;
     }
 
     private void Start()
@@ -115,6 +120,7 @@ public class MultiZoneSound : MonoBehaviour
 
     private void OnZoneExit(int level)
     {
+        fadeDuration = normalFadeDuration;
         if (level == currentZoneLevel)
         {
             int fallbackLevel = -1;
