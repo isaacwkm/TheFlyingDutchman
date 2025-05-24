@@ -88,7 +88,7 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Move.canceled += ctx => movementInput = Vector2.zero;
 
         inputActions.Player.Look.performed +=
-            ctx => lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
+            ctx => lookInput = ctx.ReadValue<Vector2>() * LookSensPrefs.GetMultiplier(ctx);
         inputActions.Player.Look.canceled += ctx => lookInput = Vector2.zero;
 
         enableJumping(true); // Eventually the goal is to replace all the other event listeners with something like this, but only when that needs comes.
@@ -114,7 +114,7 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Menu.canceled += ctx => HandleMenuInput();
         inputActions.Player.CustomAction1.performed += ctx => HandleToggleHUD();
         inputActions.Player.CustomAction2.performed += ctx => HandleToggleNOCLIP();
-        
+
     }
 
     private void OnDisable()
@@ -124,7 +124,7 @@ public class PlayerCharacterController : MonoBehaviour
         inputActions.Player.Move.canceled -= ctx => movementInput = Vector2.zero;
 
         inputActions.Player.Look.performed -=
-            ctx => lookInput = ctx.ReadValue<Vector2>()*LookSensPrefs.GetMultiplier(ctx);
+            ctx => lookInput = ctx.ReadValue<Vector2>() * LookSensPrefs.GetMultiplier(ctx);
         inputActions.Player.Look.canceled -= ctx => lookInput = Vector2.zero;
 
         enableJumping(false);
@@ -260,7 +260,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             moveDirection.y = 0f;
         }
-        
+
     }
 
     private void MovePlayerOnLadder()
@@ -584,5 +584,14 @@ public class PlayerCharacterController : MonoBehaviour
     public bool Climbing()
     {
         return movementMode == MovementMode.Ladder;
+    }
+    
+    public float GetWalkSpeed()
+    {
+        return walkSpeed;
+    }
+    public void SetWalkSpeed(float newWalkSpeed)
+    {
+        walkSpeed = newWalkSpeed;
     }
 }
