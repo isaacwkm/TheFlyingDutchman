@@ -44,6 +44,8 @@ public class TriggerZoneHandler : MonoBehaviour
 
     void Start()
     {
+        CheckAndSetPlayerInside(SceneCore.playerCharacter.GetComponent<Collider>()); // if the player starts inside the trigger zone
+        
         if (tagToCheck != "Player")
         {
             D.LogWarning("TriggerZoneHandler's implementation does not currently handle tags other than 'Player'. " +
@@ -51,7 +53,6 @@ public class TriggerZoneHandler : MonoBehaviour
                              gameObject, LogManager.LogCategory.Any);
         }
 
-        CheckAndSetPlayerInside(SceneCore.playerCharacter.GetComponent<Collider>()); // if the player starts inside the trigger zone
     }
     void OnTriggerExit(Collider other)
     {
